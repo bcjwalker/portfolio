@@ -1,0 +1,23 @@
+{
+  "name": "bcjw_portfolio23",
+  "version": "0.0.1",
+  "description": "Latest version of my (Benjamin Walker) portfolio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcjwalker/portfolio.git"
+  },
+  "keywords": [
+    "design"
+  ],
+  "author": "bcjwalker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcjwalker/portfolio/issues"
+  },
+  "homepage": "https://github.com/bcjwalker/portfolio#readme"
+}
