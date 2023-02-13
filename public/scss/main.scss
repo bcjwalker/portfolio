@@ -1,3 +1,23 @@
-@import 'reset';
-@import 'layout';
-@import 'typography';
+// Base 
+@import "base/reset.scss";
+
+@import "base/buttons.scss";
+@import "base/colour.scss";
+@import "base/typography.scss";
+
+// Layout 
+@import "layouts/body.scss";
+
+    // Modules
+    @import "modules/header.scss";
+    @import "modules/nav.scss";
+    // <main> sections
+    @import "modules/intro.scss";
+    @import "modules/projects.scss";
+    @import "modules/projects-open.scss";
+    @import "modules/contact.scss";
+
+    @import "modules/footer.scss";
+
+// Media queries
+@import "base/queries.scss";
