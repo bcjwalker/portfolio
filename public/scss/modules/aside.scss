@@ -1,0 +1,27 @@
+aside {
+    padding: 50px 60px 0px 0px;
+}
+
+#aside-infobox {
+    padding: 15px 20px 30px 20px;
+
+    background-color: hwb(0 100% 5%);
+    border-radius: 20px;
+    h3 {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        padding-inline-start: 5px;
+    }
+    hr {
+        margin: 5px 0px 5px 0px;
+    }
+    #aside-infobox-avatar {
+        padding: 5px 0px 15px 0px;
+    } 
+    p {
+        line-height: 1.4rem;
+        padding-inline-start: 5px;
+
+        color: hwb(0 20% 100%);
+    }
+}

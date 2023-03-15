@@ -1,4 +1,13 @@
 #nav-box {
     position: fixed;
-    width: 100%;
-}
+    margin-top: 250px;
+
+    ul {
+        padding-inline-start: 60px;
+        list-style-type: none;
+
+        li {
+            padding-bottom: 5px;
+        }
+    }
+ }

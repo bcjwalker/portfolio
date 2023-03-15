@@ -1,13 +1,17 @@
 {
   "name": "bcjw_portfolio23",
   "browserslist": "> 0.5%, last 2 versions, not dead",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Latest version of my (Benjamin Walker) portfolio",
   "//main": "dist/index.html",
   "scripts": {
     "start": "node public/server.js",
-    "prestart": "parcel build ./public/index.html",
-    "dev": "parcel serve ./public/index.html"
+    "prestart": "parcel build ./public/index.html --public-url ./",
+    "dev": "parcel serve ./public/index.html",
+	  "clean": "rimraf dist",
+    
+    "predeploy": "rimraf dist && parcel build ./public/index.html --public-url ./",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -21,13 +25,15 @@
   "bugs": {
     "url": "https://github.com/bcjwalker/portfolio/issues"
   },
-  "homepage": "https://github.com/bcjwalker/portfolio#readme",
+  "homepage": "https://bcjwalker.github.io/portfolio/",
   "dependencies": {
     "express": "^4.18.2"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.3",
+    "gh-pages": "^5.0.0",
     "parcel": "^2.8.3",
+    "rimraf": "^4.1.2",
     "sass": "^1.58.0"
   }
 }

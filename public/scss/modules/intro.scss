@@ -1,0 +1,100 @@
+#main-intro-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    height: 90vh;
+    padding: 40px;
+}
+    // Name and role
+    #intro-titles {
+        margin-top: 7%;
+
+        display: flex;
+        flex-direction: column;
+        #intro-titles-names {
+            // Signature img
+            img {
+                width: auto;
+                height: auto;
+            }
+            // 'Benjamin Walker'
+            .titles-names-print {
+                font-weight: 600;
+                letter-spacing: 0.015rem;
+                font-size: 2.325rem;
+                color: hwb(0 25% 100%);
+
+                padding-bottom: 2px;
+            }
+        }
+        // Role: 'UI/UX Student Designer'
+        .intro-titles-role {
+            font-size: 5rem;
+            font-weight: 600;
+            line-height: 5.15rem;
+            color: hwb(0 8% 100%);
+            
+            padding-top: 40px;  
+        }
+        #intro-titles-desc {
+            padding: 25px 0px 10px 5px;
+            font-size: 1.25rem;
+            color: hwb(0 20% 100%);
+        }
+    }
+    // Right column of intro, holds quote (anything else?)
+    #intro-graphicfg {
+        margin-top: 7%;
+        margin-right: 10%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        // Quote
+        #intro-graphic-quotebox {
+            width: 390px;
+            height: auto;
+            padding: 20px 20px 40px 20px;
+            
+            box-shadow: 0px 4px 6px hwb(0 10% 100% / 0.28);
+            border-radius: 20px;
+            // Big leading quotation icon
+            h3 {
+                padding: 40px 0px 10px 0px;
+
+                font-size: 6rem;
+                font-weight: 100;
+                line-height: 1.25rem;
+                color: hwb(0 23% 100%);
+            }
+            // Full quote
+            p {
+                padding: 0px 0px 5px 0px;
+                padding-inline-start: 5px;
+
+                font-weight: 500;
+                font-size: 2rem;
+                line-height: 2.65rem;
+                color: hwb(0 24% 100%);
+            }
+        }
+    }
+    
+    // Background of intro, holds some sort of graphic (?)
+    #intro-graphicbg {
+        position: absolute;
+        top: 1vh;
+        right: 20vw;
+        z-index: -1;
+        width: 800px;
+        height: 500px;
+        margin-top: 10%;
+
+        border: 2px solid hwb(0 97% 3%);
+    }
+
+    #intro-about {
+        
+    }

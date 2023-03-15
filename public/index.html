@@ -7,47 +7,95 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="A UX/UI design (student) portfolio">
 <meta name="author" content="bcjwalker">
-<title>Ben Walker</title>
+<title>Ben Walker</title> 
 
 <link href="scss/main.scss" rel="stylesheet" type="text/css" /> 
 </head>
 
 <body>
-    <header>
 
+    <header>
+        <img class="head-icon" id="Intro" src="assets/img-my-signature-head.png" width=auto>  </img>
     </header>
+
     <nav>
         <div id="nav-box">
             <ul>
-                <li> <a class="nav-box-link" href="#Intro"> Intro </a> </li>
+                <li> <a class="nav-box-link" href="#top"> Intro </a> </li>
                 <li> <a class="nav-box-link" href="#Projects"> Work </a> </li>
                 <li> <a class="nav-box=link" href="#Contact"> Contact </a> </li>
             </ul>
         </div>
     </nav>
+
     <main>
-        <!-- Intro-->
-        <div>
-            <img class="main-section-h2" id="Intro"></h2>
+        <!-- Intro holds two columns, titles + graphic and one row, a short about -->
+        <div id="main-intro-container"> 
+
+            <!-- Graphics background holds my parallax background -->
+            <div id="intro-graphicbg">
+
+            </div>
+            
+            <!-- Titles holds signature, print name, job title and a short description -->
+            <div id="intro-titles">
+                <!-- Names holds signature -->
+                <div id="intro-titles-names">
+                    <p class="titles-names-print"> Benjamin Walker </p>
+                    <img id="Intro" src="assets/img-my-signature-main.png" width=auto>  </img>
+                </div>
+                
+                <h3 class="intro-titles-role"> UI/UX Student <br> Designer </h3>
+                
+                <div id="intro-titles-desc">
+                    <p> test test test </p>
+                </div>
+            </div>
+
+            <!-- Graphics foreground holds quote -->
+            <div id="intro-graphicfg">
+                <!-- Box for quote, no ids for cleanliness -->
+                <div id="intro-graphic-quotebox"> 
+                    <h3> ❝ </h3>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+                </div>
+            </div>
+
+            <!--
+            <div id="intro-about">
+                <p>  </p>
+            </div>
+            -->
+
+        <!-- Close Intro -->
         </div>
 
         <!-- Projects -->
-        <div>
+        <div id="main-projects-container">
             <div id="projects-proudof">
                 <h2 class="main-section-h2" id="Projects"> Work I'm proud of </h2>
             </div>
             <div id="projects-learningexp">
                 <h3 class="main-section-h3"> Learning experiences </h3>
             </div>
+        
+        <!-- Close Projects -->
         </div>
 
-        <!-- Contacts -->
-        <div>
-            <h2 class="main-section-h2" id="Contact"> Contact me </h2>
+        <!-- Contact -->
+        <div id="main-contact-container">
+            <h2 class="main-section-h2" id="Contact"> Contact </h2>
+        
+        <!-- Close Contacts -->
         </div>
     </main>
     <aside>
-
+        <div id="aside-infobox">
+            <h3> Learn all about me </h3> 
+            <!-- <hr class="divider"> -->
+            <img id="aside-infobox-avatar" src="assets/img-me2022.png">  </img>
+            <p> …or, maybe a single picture will do. </p>
+        </div>
     </aside>
     <footer>
 
