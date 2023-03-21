@@ -1,27 +1,97 @@
 aside {
-    padding: 50px 60px 0px 0px;
+    padding: 24vh 0 0 30px;
+    
+    //background-image: hwb(0 100% 0%);
 }
+    // Fades in/out for JS
+    aside.fadein {
+        background-image: linear-gradient(to bottom, hwb(0 100% 1%), hwb(0 100% 0%));
+        transition: background-image 0.2s; 
+    }
+    aside.fadeout {
+        background-image: hwb(0 100% 0%);
+        transition: background-color 0.2s; 
+    }
 
+// Infobox holds title, reveal button, subtitle and image
 #aside-infobox {
-    padding: 15px 20px 30px 20px;
+    position: fixed;
+    width: 10%;
+    //padding: 15px 20px 20px 20px;  
 
-    background-color: hwb(0 100% 5%);
+    //background-color: hwb(0 100% 4%);
+    border-left: 1px solid hwb(0 100% 25%);
     border-radius: 20px;
-    h3 {
-        font-size: 1.2rem;
-        line-height: 1.6rem;
-        padding-inline-start: 5px;
-    }
-    hr {
-        margin: 5px 0px 5px 0px;
-    }
-    #aside-infobox-avatar {
-        padding: 5px 0px 15px 0px;
-    } 
-    p {
-        line-height: 1.4rem;
-        padding-inline-start: 5px;
 
-        color: hwb(0 20% 100%);
+    // Infobox header holds title,
+    #aside-infobox-head {
+        display: inline-block;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px 0px 20px;
+        
+        font-size: 1.5rem;
+
+        // Infobox title
+        h4 {              
+            display: inline-block;
+
+            color: hwb(0 23% 100%);
+            font-size: 1.1rem;     
+            line-height: 1.5rem;
+        }
+    }
+
+    #aside-infobox-content {
+        max-height: 265px;
+        overflow: hidden;
+
+        transition: max-height 0.5s;
+
+        // Subtitle
+        p {
+            padding: 0px 20px 5px 20px;
+
+            font-size: 0.95rem;
+            line-height: 1.4rem;
+            color: hwb(0 20% 100%);
+        }
+        // Avatar img
+        #aside-infobox-avatar {
+            padding: 5px 20px 8px 20px;
+            
+        } 
+    }
+        #aside-infobox-content.closed {
+            max-height: 0px;
+            overflow: hidden;
+        
+            transition: max-height 0.5s;
+        }
+
+    // Infobox reveal button container at bottom
+    #aside-infobox-btn-container {
+        margin-top: 10px;
+
+        border-style: solid;
+        border-width: 1px 0px 0px 0px;
+        border-image: linear-gradient(to right, hwb(0 100% 25%), hwb(0 100% 40% / 0)) 1;
+        // Infobox reveal button
+        #aside-infobox-btn {
+            display: block;
+            margin: 0 auto;
+
+            transition: transform 1s;
+
+            span {
+                vertical-align: middle;
+            }
+        }
+        #aside-infobox-btn.closed {
+            transform: rotateX(180deg);
+
+            transition: transform 1s;
+        }
     }
 }

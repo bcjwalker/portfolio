@@ -10,20 +10,33 @@
 <title>Ben Walker</title> 
 
 <link href="scss/main.scss" rel="stylesheet" type="text/css" /> 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
 
+    <!-- Header, only appears after user has scrolled past signature img    -->
     <header>
         <img class="head-icon" id="Intro" src="assets/img-my-signature-head.png" width=auto>  </img>
     </header>
 
+    <!-- Hamburger menu, persistent, remains on top of header -->
+    <button class=iconbtn id="head-hamburger-btn"> 
+        <span class="material-symbols-rounded"> menu </span> 
+    </button>
+
     <nav>
-        <div id="nav-box">
+        <div id="navbox">
             <ul>
-                <li> <a class="nav-box-link" href="#top"> Intro </a> </li>
-                <li> <a class="nav-box-link" href="#Projects"> Work </a> </li>
-                <li> <a class="nav-box=link" href="#Contact"> Contact </a> </li>
+                <li id="navbox-btn-intro"> 
+                    <a class="navbox-btn" href="#top"> <span class="material-symbols-rounded"> contact_page </span> <p class="navbox-btn-p">Intro</p> </a> 
+                </li>
+                <li id="navbox-btn-projects"> 
+                    <a class="navbox-btn" href="#projects"> <span class="material-symbols-rounded"> inventory_2 </span> <p class="navbox-btn-p"> Work </p> </a> 
+                </li>
+                <li id="navbox-btn-contact"> 
+                    <a class="navbox-btn" href="#contact"> <span class="material-symbols-rounded"> send </span> <p class="navbox-btn-p">Contact</p> </a> 
+                </li>
             </ul>
         </div>
     </nav>
@@ -39,17 +52,15 @@
             
             <!-- Titles holds signature, print name, job title and a short description -->
             <div id="intro-titles">
-                <!-- Names holds signature -->
+                <!-- Names holds signature and print name -->
                 <div id="intro-titles-names">
-                    <p class="titles-names-print"> Benjamin Walker </p>
-                    <img id="Intro" src="assets/img-my-signature-main.png" width=auto>  </img>
+                    <img id="Intro" src="assets/img-my-signature-mini.png">  </img>
+                    <h2> Benjamin Walker </h2>
                 </div>
                 
-                <h3 class="intro-titles-role"> UI/UX Student <br> Designer </h3>
-                
-                <div id="intro-titles-desc">
-                    <p> test test test </p>
-                </div>
+                <h3 class="intro-titles-role"> UI+UX <br> Designer </h3>
+                <p class="intro-titles-desc"> Third-year <strong>Design Computing</strong> student at <br> the <strong>University of Sydney</strong> </p>
+
             </div>
 
             <!-- Graphics foreground holds quote -->
@@ -57,44 +68,72 @@
                 <!-- Box for quote, no ids for cleanliness -->
                 <div id="intro-graphic-quotebox"> 
                     <h3> ❝ </h3>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+                    <blockquote> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </blockquote>
                 </div>
             </div>
-
-            <!--
-            <div id="intro-about">
-                <p>  </p>
-            </div>
-            -->
 
         <!-- Close Intro -->
         </div>
 
+        <a class="anchor" id="projects"></a>
+
+        
         <!-- Projects -->
         <div id="main-projects-container">
-            <div id="projects-proudof">
-                <h2 class="main-section-h2" id="Projects"> Work I'm proud of </h2>
+            
+            <!-- Projects big, for my best works -->
+            <div id="projects-big">
+                <h2 class="projects-big-h2"> Work I'm proud of </h2>
+                <!-- Cards carousel -->
+                <div id="projects-big-cardousel">
+                    <div id="projects-big-cardousel">
+                        <div class="big-cardousel-card"></div>
+                        <div class="big-cardousel-card"></div>
+                    </div> 
+                </div>
+
+            <!-- Close Projects big -->
             </div>
-            <div id="projects-learningexp">
-                <h3 class="main-section-h3"> Learning experiences </h3>
+
+            <!-- Projects small, for other, lesser, works -->
+            <div id="projects-small">
+                <h3 class="projects-small-h3"> Learning experiences </h3>
+                <!-- Cards carousel -->
+                <div id="projects-small-cardousel">
+                    <div class="small-cardousel-card"></div>
+                    <div class="small-cardousel-card"></div>
+                </div>
+
+            <!-- Close Projects small -->
             </div>
         
         <!-- Close Projects -->
         </div>
 
+        <a class="anchor" id="contact"></a>
+
+
         <!-- Contact -->
         <div id="main-contact-container">
-            <h2 class="main-section-h2" id="Contact"> Contact </h2>
+            <h2 class="main-section-h2"> Contact </h2>
         
         <!-- Close Contacts -->
         </div>
     </main>
     <aside>
         <div id="aside-infobox">
-            <h3> Learn all about me </h3> 
-            <!-- <hr class="divider"> -->
-            <img id="aside-infobox-avatar" src="assets/img-me2022.png">  </img>
-            <p> …or, maybe a single picture will do. </p>
+            <div id="aside-infobox-head" class="closed">
+                <h4> Read all about me </h4> 
+            </div>
+            <div id="aside-infobox-content">
+                <img id="aside-infobox-avatar" src="assets/img-me2022.png">  </img>
+                <p> …or, maybe a single picture will do. </p>    
+            </div>
+            <div id="aside-infobox-btn-container">
+                <button class="iconbtn" id="aside-infobox-btn"> 
+                    <span class="material-symbols-rounded"> expand_less </span>
+                </button>
+            </div>
         </div>
     </aside>
     <footer>

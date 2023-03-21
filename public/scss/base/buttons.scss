@@ -1,0 +1,32 @@
+button {
+    text-align: center; 
+
+    font-weight: 600;
+    font-family: 'Mulish', sans-serif;
+    color: hwb(0 25% 100%);
+}
+    // Single icon buttons
+    button.iconbtn {
+        aspect-ratio: 1 / 1;
+        border: none;   
+        background-color: transparent;
+
+        // Icon btn material symbols
+        span.material-symbols-rounded {
+            display: block;
+            text-align: center;
+        }
+    }
+
+a p {
+    color: hwb(0 25% 100%)
+}
+
+// All material symbols
+span.material-symbols-rounded {
+    font-weight: 350;
+    font-size: 1.8rem;
+    line-height: 1em;
+    color: hwb(0 25% 100%);
+}
+

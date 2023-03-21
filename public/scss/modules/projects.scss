@@ -1,5 +1,54 @@
 #main-projects-container {
-    height: 95vh;
-    background-color: grey;
-    padding: 40px;
+    height: 89vh;
+    padding: 30px 40px 40px 40px;
+    //border: 1px solid hwb(0 100% 25%);
+    background-color: hwb(0 100% 1%);
+    border-radius: 30px;
+
+    .projects-big-h2 {
+        margin: 0px 0px 30px 0px;
+        font-size: 2.75rem;
+        font-weight: 500;
+    }
+    .projects-small-h3 {
+        margin: 40px 0px 16px 0px;
+        font-size: 1.75rem;
+        font-weight: 500;
+    }
+}
+
+#projects-big-cardousel { 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 40px;
+
+    padding: 0px 0px 0px 10px;
+
+    .big-cardousel-card { 
+        width: 320px;
+        height: auto;
+        aspect-ratio: 4.3/3;
+        
+        background-color: hwb(0 100% 5%);
+        border-radius: 20px;
+    }
+}
+
+#projects-small-cardousel { 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 40px;
+
+    padding: 0px 0px 0px 10px;
+
+    .small-cardousel-card { 
+        width: 250px;
+        height: auto;
+        aspect-ratio: 4.3/3;
+        
+        background-color: hwb(0 100% 5%);
+        border-radius: 15px;
+    }
 }

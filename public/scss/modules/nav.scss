@@ -1,13 +1,61 @@
-#nav-box {
+nav {
+    width: 250px;
+
+    transition: width 0.2s;
+}
+    nav.closed {
+        width: 150px;
+
+        transition: width 0.2s;    
+    }
+
+// Nav box
+#navbox {
     position: fixed;
-    margin-top: 250px;
+    margin-top: 11%;
 
     ul {
-        padding-inline-start: 60px;
+        padding-inline-start: 40px;
         list-style-type: none;
 
-        li {
-            padding-bottom: 5px;
+        // Space all list elements except for last
+        li:not(:last-child) {
+            margin-bottom: 9px;
         }
     }
- }
+}
+
+// Nav buttons
+.navbox-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px;   
+
+    // Button text
+    .navbox-btn-p {
+        display: inline-block;
+        vertical-align: middle; 
+        opacity: 1;
+        padding-bottom: 2px;
+
+        font-size: 1rem;
+        font-weight: 600;
+        color: hwb(0 35% 100%);
+
+        transition: opacity 0.2s;
+    }
+        .navbox-btn-p.closed {
+            opacity: 0;
+
+            transition: opacity 0.2s;
+        }
+    // Button symbols   
+    span.material-symbols-rounded {
+        display: inline-block;
+        vertical-align: middle; 
+        padding-right: 12px;
+
+        font-size: 1.8rem;
+        color: hwb(0 35% 100%);
+    }
+}

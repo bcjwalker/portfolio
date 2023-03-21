@@ -1,4 +1,29 @@
 header {
-    display: none;
-    padding: 20px;
+    width: 100%;
+    position: fixed;
+    display: block;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px 1vw 20px 13vw;
+
+    background-color: hwb(37 99% 2%);
+    opacity: 0;
+    //border-bottom: 1px solid hwb(0 100% 15%);
+    //box-shadow: 0px 1px 2.5px hwb(0 10% 100% / 0.28), 0px 5px 8px hwb(0 10% 100% / 0.15);
+}
+    // Fades in/out for JS
+    header.fadein {
+        opacity: 1;
+        transition: opacity 0.2s; 
+    }
+    header.fadeout {
+        opacity: 0;
+        transition: opacity 0.2s; 
+    }
+
+// Not technically part of header but on top of it
+#head-hamburger-btn {
+    position: fixed;
+    margin-left: 30px;
+    height: 60px;
 }
