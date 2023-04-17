@@ -1,1 +1,167 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="A UX/UI design (student) portfolio"><meta name="author" content="bcjwalker"><title>Ben Walker</title><link href="index.e07dea37.css" rel="stylesheet" type="text/css"></head><body> <header> </header> <nav> <div id="nav-box"> <ul> <li> <a class="nav-box-link" href="#Intro"> Intro </a> </li> <li> <a class="nav-box-link" href="#Projects"> Work </a> </li> <li> <a class="nav-box=link" href="#Contact"> Contact </a> </li> </ul> </div> </nav> <main>  <div> <img class="main-section-h2" id="Intro" src="img-my-signature-main.46037143.png" width="auto"> <p>(Benjamin Walker)</p> <h3>UI/UX Student designer</h3> </div>  <div> <div id="projects-proudof"> <h2 class="main-section-h2" id="Projects"> Work I'm proud of </h2> </div> <div id="projects-learningexp"> <h3 class="main-section-h3"> Learning experiences </h3> </div> </div>  <div> <h2 class="main-section-h2" id="Contact"> Contact me </h2> </div> </main> <aside> <div id="aside-infobox"> <h3>Learn all about me</h3> <img id="aside-infobox-avatar" src="img-me2022.81a4e4e9.png"> <p>...or, if I'm very lucky, maybe a single picture will do.</p> </div> </aside> <footer> </footer> <script type="module" src="index.134e47db.js"></script><script src="index.d82cfe33.js" nomodule defer></script> </body></html>
+<!DOCTYPE html>
+<html>
+
+<!-- Head - intrinsic stuff -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A UX/UI design (student) portfolio">
+<meta name="author" content="bcjwalker">
+<title>Ben Walker</title> 
+
+<link href="index.b10ed863.css" rel="stylesheet" type="text/css"> 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+</head>
+
+<body>
+    <!-- 'Anchor' nav section #works above the section to prevent header overlap -->
+    <a class="anchor" id="intro"></a>
+    <!-- Header, only appears after user has scrolled past signature img    -->
+    <header>
+        <img class="head-icon" src="img-my-signature-head.afacf501.png" width="auto">  
+    </header>
+
+    <!-- Hamburger menu, persistent, remains on top of header -->
+    <button class="iconbtn" id="head-hamburger-btn"> 
+        <span class="material-symbols-rounded"> menu </span> 
+    </button>
+
+    <nav>
+        <div id="navbox">
+            <ul>
+                <li id="navbox-btn-intro"> 
+                    <a class="navbox-btn" href="#intro"> <span class="material-symbols-rounded"> contact_page </span> <p class="navbox-btn-p"> Intro </p> </a> 
+                </li>
+                <li id="navbox-btn-projects"> 
+                    <a class="navbox-btn" href="#works"> <span class="material-symbols-rounded"> inventory_2 </span> <p class="navbox-btn-p"> Works </p> </a> 
+                </li>
+                <li id="navbox-btn-contact"> 
+                    <a class="navbox-btn" href="#contact"> <span class="material-symbols-rounded"> send </span> <p class="navbox-btn-p"> Contact </p> </a> 
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Intro holds two columns, titles + graphic and one row, a short about -->
+        <div id="main-intro-container"> 
+
+            <!-- Graphics background holds my parallax background -->
+            <div id="intro-graphicbg">
+
+            </div>
+            
+            <!-- Titles holds signature, print name, job title and a short description -->
+            <div id="intro-titles">
+                <!-- Names holds signature and print name -->
+                <div id="intro-titles-names">
+                    <img id="Intro" src="img-my-signature-main.c0c6bc4e.png">  
+                    <h2> <em>Benjamin Walker</em> </h2>
+                </div>
+                
+                <h3 class="intro-titles-role"> UI+UX <br> Designer </h3>
+                <p class="intro-titles-desc"> Third-year <strong>Design Computing</strong> student at <br> the <strong>University of Sydney</strong> </p>
+
+            </div>
+
+            <!-- Graphics foreground holds quote -->
+            <div id="intro-graphicfg">
+                <!-- Box for quote, no ids for cleanliness -->
+                <div id="intro-graphic-quotebox"> 
+                    <h3> ❝ </h3>
+                    <blockquote> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </blockquote>
+                </div>
+            </div>
+
+        <!-- Close Intro -->
+        </div>
+
+        <!-- 'Anchor' nav section #works above the section to prevent header overlap -->
+        <a class="anchor" id="works"></a>
+
+        <!-- Projects -->
+        <div id="main-projects-container">
+            <div id="main-projects">
+            
+            <!-- Projects big, for my best works -->
+            <div id="projects-big">
+                <h1 class="projects-big-h1"> Works </h1>
+                <!-- Cards carousel -->
+                <div id="projects-big-cardousel">
+                    <div class="projects-big-card">
+                        <div class="projects-big-card-thumb"></div>
+                        <div class="projects-big-card-details-container"> 
+                            <h3 class="projects-big-card-details"> Studbud </h3>
+                            <p class="projects-big-card-details"> Sub test </p>
+                        </div>
+                    </div>
+                    <div class="projects-big-card">
+                        <div class="projects-big-card-thumb"></div>
+                        <div class="projects-big-card-details-container"> 
+                            <h3 class="projects-big-card-details"> Convey </h3>
+                            <p class="projects-big-card-details"> Sub test </p>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+            <!-- Cut for now, I don't have enough projects  
+            Projects small, for other, lesser, works 
+            <div id="projects-small">
+                <h2 class="projects-small-h2"> Learning experiences </h2>
+                Cards carousel 
+                <div id="projects-small-cardousel">
+                    <div class="projects-small-card"></div>
+                    <div class="projects-small-card"></div>    
+                </div>
+
+            Close Projects small
+            </div>
+            -->
+            </div>
+        </div>
+
+        <!-- 'Anchor' nav section #works above the section to prevent header overlap -->
+        <a class="anchor" id="contact"></a>
+
+        <!-- Contact -->
+        <div id="main-contact-container">
+            <div id="contact-box">
+                <h1 class="main-section-h1"> Contact </h1>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Aside w/ infobox -->
+    <aside>
+        <div id="aside-infobox">
+            <!-- Aside head div -->
+            <div id="aside-infobox-head" class="closed">
+                <h4> Read all about me </h4> 
+            </div>
+            <!-- Aside content div -->
+            <div id="aside-infobox-content">
+                <img id="aside-infobox-avatar" src="img-me2022.34a36ecd.png">  
+                <p class="aside-infobox-p"> …or, maybe a single picture will do. </p>    
+            </div>
+
+            <!-- Aside expand/hide button div -->
+            <div id="aside-infobox-btn-container">
+                <button class="iconbtn" id="aside-infobox-btn"> 
+                    <span class="material-symbols-rounded"> expand_less </span>
+                </button>
+            </div>
+
+        </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer>
+
+    </footer>
+
+    <script type="module" src="index.616c9d4b.js"></script><script src="index.4efb8ce4.js" nomodule="" defer=""></script>
+</body>
+
+</html>
