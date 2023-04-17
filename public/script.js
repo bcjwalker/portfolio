@@ -18,6 +18,17 @@
   const pageBody = document.body;
   // Get header 
   const pageHeader = document.querySelector('header');
+
+  // Aside
+  const asideExpBtnContainer = document.querySelector('#aside-infobox-btn-container');
+  const asideExp = document.querySelector('#aside-infobox-content');
+  const asideExpBtn = document.querySelector('#aside-infobox-btn');
+
+  // Nav
+  const nav = document.querySelector('nav');
+  const navListBtns = document.querySelectorAll('.navbox-btn');
+  const navListBtnPs = document.querySelectorAll('.navbox-btn-p');
+  const navHbBtn = document.querySelector('#head-hamburger-btn');
 ///
 
 
@@ -33,16 +44,17 @@ window.addEventListener('load', function() {
     initNav();
     initHeaderScrolling();
     initAside();
+    //initProjects();
 });
 
-// Init for:
+// Init:
 //  Show header on scroll down past signature
 //  Hide header on scroll up past signature
 function initHeaderScrolling() {
-    window.addEventListener('scroll', (event) => {
+    document.body.addEventListener('scroll', () => {
         // Grab our scroll Y coords
-        const currentScroll = window.pageYOffset;
-
+        const currentScroll = document.body.scrollTop;
+        
         // If we're lower than the signature, show header
         pageHeader.classList.toggle('fadein', currentScroll > 220);
 
@@ -51,27 +63,31 @@ function initHeaderScrolling() {
     });
 };
 
-// Init for aside's expand/collapse button
+// Init aside's expand/collapse button
 function initAside() {
-    const asideExpBtnContainer = document.querySelector('#aside-infobox-btn-container');
-    const asideExp = document.querySelector('#aside-infobox-content');
-    const asideExpBtn = document.querySelector('#aside-infobox-btn');
-
     asideExpBtnContainer.addEventListener('click', () => {
         asideExp.classList.toggle('closed');
         asideExpBtn.classList.toggle('closed');
     });
+    
 };
 
+// Init nav's context menu button
 function initNav() {
-    const nav = document.querySelector('nav');
-    const navListPs = document.querySelectorAll('.navbox-btn-p');
-    const navHbBtn = document.querySelector('#head-hamburger-btn');
-
     navHbBtn.addEventListener('click', () => {
-        navListPs.forEach((element) => {
+        // Remove nav labels
+        navListBtnPs.forEach((element) => {
             element.classList.toggle('closed');
         })
-        nav.classList.toggle('closed');
+        // Shrink actual buttons so overlay thing is lessened
+        navListBtns.forEach((element) => {
+            element.classList.toggle('closed');
+        })
+        // Shrink nav size in body grid
+        pageBody.classList.toggle('retract');
     });
+};
+
+function initProjects() {
+    
 };

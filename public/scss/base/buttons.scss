@@ -1,32 +1,59 @@
 button {
+    cursor: pointer;
     text-align: center; 
 
     font-weight: 600;
     font-family: 'Mulish', sans-serif;
-    color: hwb(0 25% 100%);
+    color: hsl(0, 0%, 20%);
+    border-radius: 100px;
+
+    transition: background-color 0.275s;
 }
+    // Standard icon/text buttons
+    button.stdbtn {
+        
+    }
     // Single icon buttons
     button.iconbtn {
         aspect-ratio: 1 / 1;
         border: none;   
         background-color: transparent;
+    }
+        // Active: a subtle click effect
+        button:active {
+            background-color: hsla(0, 0%, 20%, 0.1);
 
-        // Icon btn material symbols
-        span.material-symbols-rounded {
-            display: block;
-            text-align: center;
+            transition: background-color 0.1s;
+        }
+
+a p {
+    color: hsl(0, 0%, 20%);
+}
+
+// Projects buttons
+    // (Big) Projects cards
+    .projects-big-card {
+
+    }
+    .projects-big-card:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        .projects-big-card-thumb {
+            background-color: hsl(0, 0%, 92.5%);
+            img {
+                opacity: 0.9;
+            }
         }
     }
 
-a p {
-    color: hwb(0 25% 100%)
-}
-
 // All material symbols
 span.material-symbols-rounded {
+    padding: 5px;
+    aspect-ratio: 1/1;
+
     font-weight: 350;
-    font-size: 1.8rem;
+    font-size: 1.8em;
     line-height: 1em;
-    color: hwb(0 25% 100%);
+    color: hsl(0, 0%, 20%);
 }
 

@@ -14,10 +14,11 @@
 </head>
 
 <body>
-
+    <!-- 'Anchor' nav section #works above the section to prevent header overlap -->
+    <a class="anchor" id="intro"></a>
     <!-- Header, only appears after user has scrolled past signature img    -->
     <header>
-        <img class="head-icon" id="Intro" src="assets/img-my-signature-head.png" width=auto>  </img>
+        <img class="head-icon" src="assets/img-my-signature-head.png" width=auto>  </img>
     </header>
 
     <!-- Hamburger menu, persistent, remains on top of header -->
@@ -29,13 +30,13 @@
         <div id="navbox">
             <ul>
                 <li id="navbox-btn-intro"> 
-                    <a class="navbox-btn" href="#top"> <span class="material-symbols-rounded"> contact_page </span> <p class="navbox-btn-p">Intro</p> </a> 
+                    <a class="navbox-btn" href="#intro"> <span class="material-symbols-rounded"> contact_page </span> <p class="navbox-btn-p"> Intro </p> </a> 
                 </li>
                 <li id="navbox-btn-projects"> 
-                    <a class="navbox-btn" href="#projects"> <span class="material-symbols-rounded"> inventory_2 </span> <p class="navbox-btn-p"> Work </p> </a> 
+                    <a class="navbox-btn" href="#works"> <span class="material-symbols-rounded"> inventory_2 </span> <p class="navbox-btn-p"> Works </p> </a> 
                 </li>
                 <li id="navbox-btn-contact"> 
-                    <a class="navbox-btn" href="#contact"> <span class="material-symbols-rounded"> send </span> <p class="navbox-btn-p">Contact</p> </a> 
+                    <a class="navbox-btn" href="#contact"> <span class="material-symbols-rounded"> send </span> <p class="navbox-btn-p"> Contact </p> </a> 
                 </li>
             </ul>
         </div>
@@ -54,8 +55,8 @@
             <div id="intro-titles">
                 <!-- Names holds signature and print name -->
                 <div id="intro-titles-names">
-                    <img id="Intro" src="assets/img-my-signature-mini.png">  </img>
-                    <h2> Benjamin Walker </h2>
+                    <img id="Intro" src="assets/img-my-signature-main.png">  </img>
+                    <h2> <em>Benjamin Walker</em> </h2>
                 </div>
                 
                 <h3 class="intro-titles-role"> UI+UX <br> Designer </h3>
@@ -75,70 +76,91 @@
         <!-- Close Intro -->
         </div>
 
-        <a class="anchor" id="projects"></a>
+        <!-- 'Anchor' nav section #works above the section to prevent header overlap -->
+        <a class="anchor" id="works"></a>
 
-        
         <!-- Projects -->
         <div id="main-projects-container">
+            <div id="main-projects">
             
             <!-- Projects big, for my best works -->
             <div id="projects-big">
-                <h2 class="projects-big-h2"> Work I'm proud of </h2>
+                <h1 class="projects-big-h1"> Works </h1>
                 <!-- Cards carousel -->
                 <div id="projects-big-cardousel">
-                    <div id="projects-big-cardousel">
-                        <div class="big-cardousel-card"></div>
-                        <div class="big-cardousel-card"></div>
-                    </div> 
-                </div>
-
-            <!-- Close Projects big -->
+                    <div class="projects-big-card">
+                        <div class="projects-big-card-thumb"></div>
+                        <div class="projects-big-card-details-container"> 
+                            <h3 class="projects-big-card-details"> Studbud </h3>
+                            <p class="projects-big-card-details"> Sub test </p>
+                        </div>
+                    </div>
+                    <div class="projects-big-card">
+                        <div class="projects-big-card-thumb"></div>
+                        <div class="projects-big-card-details-container"> 
+                            <h3 class="projects-big-card-details"> Convey </h3>
+                            <p class="projects-big-card-details"> Sub test </p>
+                        </div>
+                    </div>
+                </div> 
             </div>
 
-            <!-- Projects small, for other, lesser, works -->
+            <!-- Cut for now, I don't have enough projects  
+            Projects small, for other, lesser, works 
             <div id="projects-small">
-                <h3 class="projects-small-h3"> Learning experiences </h3>
-                <!-- Cards carousel -->
+                <h2 class="projects-small-h2"> Learning experiences </h2>
+                Cards carousel 
                 <div id="projects-small-cardousel">
-                    <div class="small-cardousel-card"></div>
-                    <div class="small-cardousel-card"></div>
+                    <div class="projects-small-card"></div>
+                    <div class="projects-small-card"></div>    
                 </div>
 
-            <!-- Close Projects small -->
+            Close Projects small
             </div>
-        
-        <!-- Close Projects -->
+            -->
+            </div>
         </div>
 
+        <!-- 'Anchor' nav section #works above the section to prevent header overlap -->
         <a class="anchor" id="contact"></a>
-
 
         <!-- Contact -->
         <div id="main-contact-container">
-            <h2 class="main-section-h2"> Contact </h2>
-        
-        <!-- Close Contacts -->
+            <div id="contact-box">
+                <h1 class="main-section-h1"> Contact </h1>
+            </div>
         </div>
+
     </main>
+
+    <!-- Aside w/ infobox -->
     <aside>
         <div id="aside-infobox">
+            <!-- Aside head div -->
             <div id="aside-infobox-head" class="closed">
                 <h4> Read all about me </h4> 
             </div>
+            <!-- Aside content div -->
             <div id="aside-infobox-content">
                 <img id="aside-infobox-avatar" src="assets/img-me2022.png">  </img>
-                <p> …or, maybe a single picture will do. </p>    
+                <p class="aside-infobox-p"> …or, maybe a single picture will do. </p>    
             </div>
+
+            <!-- Aside expand/hide button div -->
             <div id="aside-infobox-btn-container">
                 <button class="iconbtn" id="aside-infobox-btn"> 
                     <span class="material-symbols-rounded"> expand_less </span>
                 </button>
             </div>
+
         </div>
     </aside>
+
+    <!-- Footer -->
     <footer>
 
     </footer>
+
     <script type="module" src="script.js"></script>
 </body>
 

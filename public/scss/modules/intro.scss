@@ -3,62 +3,70 @@
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
-    height: 90vh;
-    padding: 0px 40px 40px 40px;
+    height: 82vh;  
+    padding: 0 3.5vw 6vh 3.5vw;
+    
+    font-size: 38vh;
+    * {
+        color: hsl(035, 6%, 11%);
+    }
 }
 
 // Name and role
 #intro-titles {
     display: flex;
     flex-direction: column;
-    margin-top: 5.5vw;
+    margin-top: 0.365em; 
     height: fit-content;
 
     // Names holds signature and print name
     #intro-titles-names {
-        padding-bottom: 30px;
+        margin-bottom: 0.06em;
         height: auto;
 
         // Signature img
         img {
-            padding-bottom: 0px;
+            width: 1.35em;
         }
         // 'Benjamin Walker'
         h2 {
             padding-inline-start: 2px;
 
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 400;
-            letter-spacing: 0.015rem;
-            font-size: 3.5rem;
-            color: hwb(0 23% 100%);
+            font-weight: 300;
+            letter-spacing: 0.015em;
+            font-size: 0.15em;
+            em {
+            color: hsl(34, 10%, 28%);
+            }
         }
     }
     
-    // Role: 'UI/UX Student Designer'
+    // Role: 'UI + UX Designer'
     .intro-titles-role {
-        padding: 6px 0px 0px 15px;
-        margin-left: 6px;
+        padding: 1px 0 0 0.15em;
+        margin-left: 0.5vw;
 
-        font-size: 6rem;
+        font-size: 0.265em;
         font-weight: 600;
-        line-height: 5.6rem;
-        color: hwb(0 8% 100%);       
-        border-left: 2px solid hwb(0 55% 45%);
+        line-height: 1em;
+        color: hsl(035, 6%, 12%);
+        border-left: 2px solid hsl(035, 6%, 45%);
     }
-    // Short description
+    // Short description: 'usyd etc'
     .intro-titles-desc {
         padding-inline-start: 5px;
-        padding: 20px 15px 30px 20px;
-        width: 200%; 
-        margin-left: 6px;    
+        padding: 1.15em 0 1em 0.95em;
+        margin-left: 0.5vw;    
 
-        font-size: 1.35rem;
-        line-height: 2.06rem;
-        color: hwb(0 25% 100%);
-        border-left: 2px solid hwb(0 55% 45%);
-        //border-bottom: 2px solid hwb(0 50% 100%);
-        border-radius: 0px 0px 20px 20px;
+        font-weight: 500;
+        font-size: 0.06em;
+        line-height: 1.55em;
+        color: hsl(035, 6%, 28%);
+        border-left: 2px solid hsl(035, 6%, 45%);
+        border-radius: 0 0 0 0.75em;
+        strong {
+            color: hsl(035, 6%, 20%);
+        }
     }
 }
 
@@ -67,37 +75,39 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 4vw 6vw 0;
+    padding: 4vh 0.35em 0 0;
 
     // Quote container
     #intro-graphic-quotebox {
-        width: 360px;
+        width: 1.06em;
         height: auto;
-        padding: 15px 25px 45px 25px;   
+        padding: 0.1em 0.07em 0.125em 0.075em;
         
-        background-color: hwb(0 100% 0%);
+        //background-color: hwb(37 99% 5%);
         //border: 2px solid hwb(0 40% 60%);
-        box-shadow: 0px 1px 2px hwb(0 10% 100% / 0.25), 0px 5px 8px hwb(0 10% 100% / 0.14);
-        border-radius: 30px;    
+        box-shadow: 0px 1px 2px hsla(0, 0%, 9%, 0.28), 0px 4px 6px hsla(0, 0%, 9%, 0.26);
+        border-radius: 0.1em;    
+        mix-blend-mode: luminosity;
+        z-index: 0;
 
         // Big leading quotation icon
         h3 {
-            padding: 50px 0px 10px 0px;
+            padding: 0.25em 0 0.025em 0;
 
-            font-size: 5.85rem;
-            font-weight: 100;
-            line-height: 1.25rem;
-            color: hwb(0 15% 100%);
+            font-family: initial;
+            font-size: 0.275em; 
+            line-height: 0.4em; 
+            color: hsl(035, 6%, 15%);
         }
         // Quote text
         blockquote {
-            padding: 0px 0px 5px 0px;
+            padding-right: 10px;
             padding-inline-start: 5px;
 
-            font-weight: 500;
-            font-size: 1.75rem;
-            line-height: 2.35rem;
-            color: hwb(0 24% 100%);
+            font-weight: 400;
+            font-size: 0.085em;
+            line-height: 1.4em;
+            color: hsl(035, 6%, 20%);
         }
     }
 }
@@ -108,8 +118,8 @@
     top: 1vh;
     right: 20vw;
     z-index: -1;
-    width: 800px;
-    height: 500px;
+    width: 600px;
+    height: 400px;
     margin-top: 10%;
 
     //border: 2px solid hwb(0 97% 3%);

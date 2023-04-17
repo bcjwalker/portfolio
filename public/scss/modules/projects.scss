@@ -1,54 +1,77 @@
 #main-projects-container {
-    height: 89vh;
-    padding: 30px 40px 40px 40px;
-    //border: 1px solid hwb(0 100% 25%);
-    background-color: hwb(0 100% 1%);
-    border-radius: 30px;
+    height: 90vh;
+    padding: 2.5em;
+    border-radius: 2.5em;    
+    font-size: 1.05rem;
 
-    .projects-big-h2 {
-        margin: 0px 0px 30px 0px;
-        font-size: 2.75rem;
-        font-weight: 500;
+    background-color: hsl(035, 0%, 100%);
+    .projects-big-h1 {
+        margin-bottom: 0.6em;
     }
-    .projects-small-h3 {
-        margin: 40px 0px 16px 0px;
+    .projects-small-h2 {
+        margin: 30px 0px 16px 0px;
+
         font-size: 1.75rem;
         font-weight: 500;
+        color: hsl(0, 0%, 25%);
     }
 }
 
+// Projects carousel container
 #projects-big-cardousel { 
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 40px;
-
-    padding: 0px 0px 0px 10px;
-
-    .big-cardousel-card { 
-        width: 320px;
-        height: auto;
-        aspect-ratio: 4.3/3;
-        
-        background-color: hwb(0 100% 5%);
-        border-radius: 20px;
-    }
+    gap: 2.5em;
+    padding-left: 5px;
 }
+    // (Big) Project card
+    .projects-big-card {
+        border-radius: 1em;
+        // Thumbnail
+        .projects-big-card-thumb { 
+            width: 350px;
+            height: auto;
+            aspect-ratio: 4/2.76;
+            
+            background-color: hsl(0, 0%, 95%);
+            border-radius: 1em;
+        }   
+        // Details container
+        .projects-big-card-details-container {
+            padding: 0.85em;
 
+            // Details - h3, p
+            h3.projects-big-card-details {
+                font-weight: 700;
+                font-family: 'Mulish', sans-serif;
+                font-size: 1.1em;
+                color: hsl(0, 0%, 25%);
+            }
+            p.projects-big-card-details {
+                font-weight: 600;
+                font-family: 'Mulish', sans-serif;
+                color: hsl(0, 0%, 45%);
+            }
+        }
+    }
+
+/*
 #projects-small-cardousel { 
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 40px;
 
-    padding: 0px 0px 0px 10px;
+    //padding: 0px 0px 0px 10px;
 
-    .small-cardousel-card { 
+    .projects-small-card { 
         width: 250px;
         height: auto;
         aspect-ratio: 4.3/3;
         
         background-color: hwb(0 100% 5%);
-        border-radius: 15px;
+        border-radius: 14px;
     }
 }
+*/

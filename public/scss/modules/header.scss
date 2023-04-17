@@ -4,26 +4,38 @@ header {
     display: block;
     flex-direction: row;
     justify-content: center;
-    padding: 20px 1vw 20px 13vw;
+    padding: 15px 1vw 15px 12vw;
+    z-index: 1;
 
-    background-color: hwb(37 99% 2%);
+    font-size: 2vh;
+    backdrop-filter: blur(2px);
+    background-color: hsl(035, 32%, 92%, 0.98);
     opacity: 0;
+    box-shadow: 0px 1px 2px hsla(0, 0%, 9%, 0.1), 0px 4px 6px hsla(0, 0%, 9%, 0.175);
     //border-bottom: 1px solid hwb(0 100% 15%);
-    //box-shadow: 0px 1px 2.5px hwb(0 10% 100% / 0.28), 0px 5px 8px hwb(0 10% 100% / 0.15);
+    * {
+        color: hsl(035, 6%, 11%);
+    }
 }
     // Fades in/out for JS
     header.fadein {
         opacity: 1;
-        transition: opacity 0.2s; 
+        transition: opacity 0.175s; 
     }
     header.fadeout {
         opacity: 0;
-        transition: opacity 0.2s; 
+        transition: opacity 0.175s; 
     }
 
 // Not technically part of header but on top of it
 #head-hamburger-btn {
+    margin-left: calc(1.15vw + 5px);
     position: fixed;
-    margin-left: 30px;
-    height: 60px;
+    height: 54px;
+    z-index: 1;
+    
+    span {
+        font-size: 30px;
+        color: hsl(035, 6%, 26%);
+    }
 }

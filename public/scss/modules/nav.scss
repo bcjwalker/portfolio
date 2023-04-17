@@ -1,49 +1,67 @@
 nav {
-    width: 250px;
-
-    transition: width 0.2s;
-}
-    nav.closed {
-        width: 150px;
-
-        transition: width 0.2s;    
+    //background-image: linear-gradient(to left, hsl(035, 32%, 95%), hsl(035, 32%, 99%) 50%);
+    font-size: 2vh;
+    * {
+        color: hsl(035, 6%, 11%);
     }
+}
 
 // Nav box
 #navbox {
-    position: fixed;
-    margin-top: 11%;
+    position: sticky;
+    top: 11vh;
+    margin-top: 20vh;
 
+    // List
     ul {
-        padding-inline-start: 40px;
+        padding-inline-start: 1.15vw;
         list-style-type: none;
 
-        // Space all list elements except for last
-        li:not(:last-child) {
-            margin-bottom: 9px;
-        }
+        // List points: nav buttons
+        li a {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                column-gap: 12px;
+                padding: 7px 12px;
+            } 
+            // Closed version: shrinks width
+            li a.closed {
+                max-width: 64px;
+            }
+
+        // (UNDONE) Space all list elements except for last
+        //li:not(:last-child) {
+        //    margin-bottom: 5px;
+        //}
     }
 }
 
 // Nav buttons
 .navbox-btn {
-    display: inline-block;
+    display: block;
     text-decoration: none;
-    padding: 5px;   
+    width: auto;
 
+    border-radius: 100px;
+
+    transition: background-color 0.275s;
     // Button text
     .navbox-btn-p {
         display: inline-block;
         vertical-align: middle; 
         opacity: 1;
-        padding-bottom: 2px;
+        margin: 0;
 
         font-size: 1rem;
-        font-weight: 600;
-        color: hwb(0 35% 100%);
+        font-weight: 700;
+        line-height: 1.9em;
+        color: hsl(035, 6%, 26%);
 
         transition: opacity 0.2s;
     }
+        // Closed version: fades out
         .navbox-btn-p.closed {
             opacity: 0;
 
@@ -53,9 +71,14 @@ nav {
     span.material-symbols-rounded {
         display: inline-block;
         vertical-align: middle; 
-        padding-right: 12px;
 
-        font-size: 1.8rem;
-        color: hwb(0 35% 100%);
+        font-size: 30px;
+        color: hsl(035, 6%, 26%);
     }
 }
+    // Active: a subtle click effect
+    .navbox-btn:active {
+        background-color: hsla(0, 0%, 20%, 0.1);
+
+        transition: background-color 0.1s;
+    }
