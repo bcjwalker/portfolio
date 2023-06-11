@@ -9,7 +9,7 @@
 <meta name="author" content="bcjwalker">
 <title>Ben Walker</title> 
 
-<link href="index.b10ed863.css" rel="stylesheet" type="text/css"> 
+<link href="index.809f5f6e.css" rel="stylesheet" type="text/css"> 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 </head>
 
@@ -19,24 +19,60 @@
     <!-- Header, only appears after user has scrolled past signature img    -->
     <header>
         <img class="head-icon" src="img-my-signature-head.afacf501.png" width="auto">  
+        <p class="head-text"> Benjamin Walker </p>
     </header>
 
     <!-- Hamburger menu, persistent, remains on top of header -->
     <button class="iconbtn" id="head-hamburger-btn"> 
         <span class="material-symbols-rounded"> menu </span> 
+        <span class="tooltiptext">Toggle nav</span>
+
+        <!-- Easy tooltip to show 'toggle nav' when hover, kudos https://www.w3schools.com/css/css_tooltip.asp -->
+        <style>.iconbtn {
+  border-bottom: 1px dotted #000;
+  display: inline-block;
+  position: relative;
+}
+
+.iconbtn .tooltiptext {
+  opacity: 0;
+  width: 90px;
+  text-align: center;
+  z-index: 1;
+  border-radius: 6px;
+  margin-top: 4px;
+  margin-left: -45px;
+  padding: 2px;
+  transition: opacity .1s ease-out;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  background-color: var(--shade-invert-base-1) !important;
+  color: var(--shade-invert-text-1) !important;
+  font: 14px Readex Pro, sans-serif !important;
+}
+
+.iconbtn:hover .tooltiptext {
+  opacity: 1;
+}
+
+</style>
     </button>
 
     <nav>
         <div id="navbox">
             <ul>
                 <li id="navbox-btn-intro"> 
-                    <a class="navbox-btn" href="#intro"> <span class="material-symbols-rounded"> contact_page </span> <p class="navbox-btn-p"> Intro </p> </a> 
+                    <a class="navbox-btn" href="#intro"> <span class="material-symbols-rounded"> contact_page </span> 
+                        <p class="navbox-btn-p"> Intro </p> </a> 
                 </li>
                 <li id="navbox-btn-projects"> 
-                    <a class="navbox-btn" href="#works"> <span class="material-symbols-rounded"> inventory_2 </span> <p class="navbox-btn-p"> Works </p> </a> 
+                    <a class="navbox-btn" href="#works"> <span class="material-symbols-rounded"> inventory_2 </span> 
+                        <p class="navbox-btn-p"> Works </p> </a> 
                 </li>
                 <li id="navbox-btn-contact"> 
-                    <a class="navbox-btn" href="#contact"> <span class="material-symbols-rounded"> send </span> <p class="navbox-btn-p"> Contact </p> </a> 
+                    <a class="navbox-btn" href="#contact"> <span class="material-symbols-rounded"> send </span> 
+                        <p class="navbox-btn-p"> Contact </p> </a> 
                 </li>
             </ul>
         </div>
@@ -56,7 +92,7 @@
                 <!-- Names holds signature and print name -->
                 <div id="intro-titles-names">
                     <img id="Intro" src="img-my-signature-main.c0c6bc4e.png">  
-                    <h2> <em>Benjamin Walker</em> </h2>
+                    <h2> Benjamin Walker </h2>
                 </div>
                 
                 <h3 class="intro-titles-role"> UI+UX <br> Designer </h3>
@@ -88,6 +124,19 @@
                 <h1 class="projects-big-h1"> Works </h1>
                 <!-- Cards carousel -->
                 <div id="projects-big-cardousel">
+                    
+                    <!-- Project card template, appended into the cardousel-->
+                    <template class="projects-big-card-template">
+                    <div class="projects-big-card"> 
+                        <div class="projects-big-card-thumb"></div>
+                        <div class="projects-big-card-details-container"> 
+                            <h3 class="projects-big-card-details-h3">  </h3>
+                            <p class="projects-big-card-details-p">  </p>
+                        </div>
+                    </div>
+                    </template>
+
+                    <!-- 
                     <div class="projects-big-card">
                         <div class="projects-big-card-thumb"></div>
                         <div class="projects-big-card-details-container"> 
@@ -102,8 +151,15 @@
                             <p class="projects-big-card-details"> Sub test </p>
                         </div>
                     </div>
+                    -->
+
                 </div> 
             </div>
+
+            <!-- Project open template, replaces Projects big -->
+            <template class="projects-big-open">
+                
+            </template>
 
             <!-- Cut for now, I don't have enough projects  
             Projects small, for other, lesser, works 
@@ -161,7 +217,7 @@
 
     </footer>
 
-    <script type="module" src="index.616c9d4b.js"></script><script src="index.4efb8ce4.js" nomodule="" defer=""></script>
+    <script type="module" src="index.03f2621e.js"></script><script src="index.0964aa2b.js" nomodule="" defer=""></script>
 </body>
 
 </html>
