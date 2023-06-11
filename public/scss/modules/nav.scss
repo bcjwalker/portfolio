@@ -55,18 +55,13 @@ nav {
         margin: 0;
 
         font-size: 1rem;
-        font-weight: 700;
+        font-weight: 600;
         line-height: 1.9em;
         color: hsl(035, 6%, 26%);
 
         transition: opacity 0.2s;
     }
-        // Closed version: fades out
-        .navbox-btn-p.closed {
-            opacity: 0;
 
-            transition: opacity 0.2s;
-        }
     // Button symbols   
     span.material-symbols-rounded {
         display: inline-block;
@@ -74,11 +69,21 @@ nav {
 
         font-size: 30px;
         color: hsl(035, 6%, 26%);
-    }
-}
-    // Active: a subtle click effect
-    .navbox-btn:active {
-        background-color: hsla(0, 0%, 20%, 0.1);
 
-        transition: background-color 0.1s;
+        transition: color 0.2s;
+    }
+
+}
+    // Closed version: fade out p
+    .navbox-btn.closed {
+        .navbox-btn-p {
+            opacity: 0;
+
+            transition: opacity 0.2s;
+        }
+        span.material-symbols-rounded {
+            color: hsl(035, 6%, 65%);
+
+            transition: color 0.2s;
+        }
     }

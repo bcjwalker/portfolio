@@ -4,7 +4,7 @@
     border-radius: 2.5em;    
     font-size: 1.05rem;
 
-    background-color: hsl(035, 0%, 100%);
+    background-color: var(--shade-base-1);
     .projects-big-h1 {
         margin-bottom: 0.6em;
     }
@@ -13,8 +13,12 @@
 
         font-size: 1.75rem;
         font-weight: 500;
-        color: hsl(0, 0%, 25%);
+        color: var(--shade-text-3);
     }
+}
+
+#projects-big {
+    display: none;
 }
 
 // Projects carousel container
@@ -27,30 +31,31 @@
 }
     // (Big) Project card
     .projects-big-card {
-        border-radius: 1em;
+        border-radius: 0.925em;
         // Thumbnail
         .projects-big-card-thumb { 
             width: 350px;
             height: auto;
             aspect-ratio: 4/2.76;
             
-            background-color: hsl(0, 0%, 95%);
-            border-radius: 1em;
+            background-color: var(--shade-base-2);
+            border-radius: 0.925em;
         }   
         // Details container
         .projects-big-card-details-container {
             padding: 0.85em;
 
             // Details - h3, p
-            h3.projects-big-card-details {
+            .projects-big-card-details-h3 {
                 font-weight: 700;
                 font-family: 'Mulish', sans-serif;
-                font-size: 1.1em;
+                font-size: 0.925em;
                 color: hsl(0, 0%, 25%);
             }
-            p.projects-big-card-details {
+            .projects-big-card-details-p {
                 font-weight: 600;
                 font-family: 'Mulish', sans-serif;
+                font-size: 0.925em;
                 color: hsl(0, 0%, 45%);
             }
         }

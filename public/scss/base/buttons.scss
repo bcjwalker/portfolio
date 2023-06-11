@@ -19,6 +19,13 @@ button {
         border: none;   
         background-color: transparent;
     }
+
+        // Hover: a subtle active effect
+        button:hover {
+            background-color: hsla(0, 0%, 20%, 0.05);
+
+            transition: background-color 0.1s;
+        }
         // Active: a subtle click effect
         button:active {
             background-color: hsla(0, 0%, 20%, 0.1);
@@ -26,9 +33,19 @@ button {
             transition: background-color 0.1s;
         }
 
-a p {
-    color: hsl(0, 0%, 20%);
-}
+// Nav buttons
+    // Hover: a subtle overlay effect
+    .navbox-btn:hover {
+        background-color: hsla(0, 0%, 20%, 0.05);
+
+        transition: background-color 0.1s;
+    }
+    // Active: a subtle click effect
+    .navbox-btn:active {
+        background-color: hsla(0, 0%, 20%, 0.1);
+
+        transition: background-color 0.1s;
+    }
 
 // Projects buttons
     // (Big) Projects cards
@@ -40,6 +57,8 @@ a p {
         text-decoration: underline;
         .projects-big-card-thumb {
             background-color: hsl(0, 0%, 92.5%);
+
+            transition: background-color 0.1s;
             img {
                 opacity: 0.9;
             }

@@ -1,13 +1,12 @@
 header {
     width: 100%;
     position: fixed;
-    display: block;
-    flex-direction: row;
-    justify-content: center;
+    display: flex;
+    align-items: center;
     padding: 15px 1vw 15px 12vw;
     z-index: 1;
 
-    font-size: 2vh;
+    font-size: 2vmin;
     backdrop-filter: blur(2px);
     background-color: hsl(035, 32%, 92%, 0.98);
     opacity: 0;
@@ -15,6 +14,21 @@ header {
     //border-bottom: 1px solid hwb(0 100% 15%);
     * {
         color: hsl(035, 6%, 11%);
+    }
+    .head-icon {
+        display: inline-block;
+        padding-right: 1.25em;
+        margin-right: 1.25em;
+        
+        border-right: 1px solid hsl(34, 10%, 55%);
+    }
+    .head-text {
+        display: inline-block;
+
+        font-weight: 500;
+        line-height: 24px;
+        font-size: 18px;
+        color: hsl(34, 10%, 35%);
     }
 }
     // Fades in/out for JS

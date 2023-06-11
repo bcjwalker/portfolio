@@ -1,9 +1,64 @@
-body {
-    background-color: hsl(035, 32%, 96%);
-}
-
 main {
     //background-color: hwb(0 100% 0%);
     border-radius: 40px;
     //border-left: 1px solid hwb(0 100% 15%);
+}
+
+// Colour variables
+:root {
+    --shade-base-1: hsl(035, 32%, 96%);
+    --shade-base-2: hsl(035, 32%, 95%);
+    --shade-base-3: hsl(035, 32%, 92%);
+    --shade-base-4: hsl(035, 32%, 89%);
+    --shade-base-5: hsl(035, 32%, 86%);
+
+    --shade-invert-base-1: hsl(035, 8%, 30%);
+
+    --shade-text-0: hsl(035, 5%, 12%);
+    --shade-text-1: hsl(035, 5%, 17%);
+    --shade-text-2: hsl(035, 5%, 21%);
+    --shade-text-3: hsl(035, 5%, 25%);
+    --shade-text-4: hsl(035, 5%, 29%);
+    --shade-text-5: hsl(035, 5%, 34%);
+
+    --shade-invert-text-1: var(--shade-base-1);
+
+    --shade-outline-1: hsl(035, 6%, 87%);
+    --shade-outline-2: hsl(035, 6%, 84%);
+    --shade-outline-3: hsl(035, 5%, 79%);
+    --shade-outline-4: hsl(035, 5%, 75%);
+
+    --shade-accent-0: hsl(035, 12%, 60%);
+}
+
+// Colour vars for projects
+#main-projects-container {
+    --shade-base-1: hsl(0, 0%, 100%);
+    --shade-base-2: hsl(0, 0%, 96%);
+    --shade-base-3: hsl(0, 0%, 92%);
+    --shade-base-4: hsl(0, 0%, 89%);
+    --shade-base-5: hsl(0, 0%, 86%);
+
+    --shade-invert-base-1: hsl(0, 0%, 30%);
+
+    --shade-text-0: hsl(0, 0%, 12%);
+    --shade-text-1: hsl(0, 0%, 17%);
+    --shade-text-2: hsl(0, 0%, 21%);
+    --shade-text-3: hsl(0, 0%, 25%);
+    --shade-text-4: hsl(0, 0%, 29%);
+    --shade-text-5: hsl(0, 0%, 34%);
+    --shade-text-6: hsl(0, 0%, 40%);
+
+    --shade-invert-text-1: hsl(035, 5%, 96%);
+
+    --shade-outline-1: hsl(035, 5%, 23%);
+    --shade-outline-2: hsl(035, 5%, 30%);
+    --shade-outline-3: hsl(035, 5%, 35%);
+    --shade-outline-4: hsl(035, 5%, 60%);
+
+    --shade-accent-0: hsl(353, 12%, 60%);
+}
+
+body {
+    background-color: var(--shade-base-1);    
 }

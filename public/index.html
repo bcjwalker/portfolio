@@ -19,24 +19,62 @@
     <!-- Header, only appears after user has scrolled past signature img    -->
     <header>
         <img class="head-icon" src="assets/img-my-signature-head.png" width=auto>  </img>
+        <p class="head-text"> Benjamin Walker </p>
     </header>
 
     <!-- Hamburger menu, persistent, remains on top of header -->
     <button class=iconbtn id="head-hamburger-btn"> 
         <span class="material-symbols-rounded"> menu </span> 
+        <span class="tooltiptext">Toggle nav</span>
+
+        <!-- Easy tooltip to show 'toggle nav' when hover, kudos https://www.w3schools.com/css/css_tooltip.asp -->
+        <style>
+            .iconbtn {
+                position: relative;
+                display: inline-block;
+                border-bottom: 1px dotted black;
+            }
+            
+            .iconbtn .tooltiptext {
+                opacity: 0;
+                width: 90px;
+                top: 100%;
+                left: 50%;
+                margin-left: -45px; /* Use half of the width (120/2 = 60), to center the tooltip */
+                background-color: var(--shade-invert-base-1) !important;
+                color: var(--shade-invert-text-1) !important;
+                text-align: center;
+                border-radius: 6px;
+                margin-top: 4px;
+                font: 14px "Readex Pro", sans-serif !important;
+                padding: 2px;
+            
+                /* Position the tooltip */
+                position: absolute;
+                z-index: 1;
+                transition: opacity ease-out 0.1s;
+            }
+            
+            .iconbtn:hover .tooltiptext {
+                opacity: 1;
+            }
+        </style>
     </button>
 
     <nav>
         <div id="navbox">
             <ul>
                 <li id="navbox-btn-intro"> 
-                    <a class="navbox-btn" href="#intro"> <span class="material-symbols-rounded"> contact_page </span> <p class="navbox-btn-p"> Intro </p> </a> 
+                    <a class="navbox-btn" href="#intro"> <span class="material-symbols-rounded"> contact_page </span> 
+                        <p class="navbox-btn-p"> Intro </p> </a> 
                 </li>
                 <li id="navbox-btn-projects"> 
-                    <a class="navbox-btn" href="#works"> <span class="material-symbols-rounded"> inventory_2 </span> <p class="navbox-btn-p"> Works </p> </a> 
+                    <a class="navbox-btn" href="#works"> <span class="material-symbols-rounded"> inventory_2 </span> 
+                        <p class="navbox-btn-p"> Works </p> </a> 
                 </li>
                 <li id="navbox-btn-contact"> 
-                    <a class="navbox-btn" href="#contact"> <span class="material-symbols-rounded"> send </span> <p class="navbox-btn-p"> Contact </p> </a> 
+                    <a class="navbox-btn" href="#contact"> <span class="material-symbols-rounded"> send </span> 
+                        <p class="navbox-btn-p"> Contact </p> </a> 
                 </li>
             </ul>
         </div>
@@ -56,7 +94,7 @@
                 <!-- Names holds signature and print name -->
                 <div id="intro-titles-names">
                     <img id="Intro" src="assets/img-my-signature-main.png">  </img>
-                    <h2> <em>Benjamin Walker</em> </h2>
+                    <h2> Benjamin Walker </h2>
                 </div>
                 
                 <h3 class="intro-titles-role"> UI+UX <br> Designer </h3>
@@ -88,6 +126,19 @@
                 <h1 class="projects-big-h1"> Works </h1>
                 <!-- Cards carousel -->
                 <div id="projects-big-cardousel">
+                    
+                    <!-- Project card template, appended into the cardousel-->
+                    <template class="projects-big-card-template">
+                    <div class="projects-big-card"> 
+                        <div class="projects-big-card-thumb"></div>
+                        <div class="projects-big-card-details-container"> 
+                            <h3 class="projects-big-card-details-h3">  </h3>
+                            <p class="projects-big-card-details-p">  </p>
+                        </div>
+                    </div>
+                    </template>
+
+                    <!-- 
                     <div class="projects-big-card">
                         <div class="projects-big-card-thumb"></div>
                         <div class="projects-big-card-details-container"> 
@@ -102,8 +153,15 @@
                             <p class="projects-big-card-details"> Sub test </p>
                         </div>
                     </div>
+                    -->
+
                 </div> 
             </div>
+
+            <!-- Project open template, replaces Projects big -->
+            <template class="projects-big-open">
+                
+            </template>
 
             <!-- Cut for now, I don't have enough projects  
             Projects small, for other, lesser, works 

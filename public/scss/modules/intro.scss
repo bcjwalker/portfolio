@@ -6,7 +6,7 @@
     height: 82vh;  
     padding: 0 3.5vw 6vh 3.5vw;
     
-    font-size: 38vh;
+    font-size: 385px;
     * {
         color: hsl(035, 6%, 11%);
     }
@@ -16,7 +16,7 @@
 #intro-titles {
     display: flex;
     flex-direction: column;
-    margin-top: 0.365em; 
+    margin-top: 0.325em; 
     height: fit-content;
 
     // Names holds signature and print name
@@ -35,9 +35,7 @@
             font-weight: 300;
             letter-spacing: 0.015em;
             font-size: 0.15em;
-            em {
             color: hsl(34, 10%, 28%);
-            }
         }
     }
     
@@ -49,7 +47,7 @@
         font-size: 0.265em;
         font-weight: 600;
         line-height: 1em;
-        color: hsl(035, 6%, 12%);
+        color: var(--shade-text-0);
         border-left: 2px solid hsl(035, 6%, 45%);
     }
     // Short description: 'usyd etc'

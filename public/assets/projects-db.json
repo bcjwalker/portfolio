@@ -1,0 +1,42 @@
+[
+	// Big 1: Studbud
+	{
+		// Metadata
+		"thumb": "url",
+		"name": "Studbud",
+		"tags": [
+			"Desktop",
+			"Study"
+		]
+	},
+	// Big 2: Convey
+	{
+		// Metadata
+		"thumb": "url",
+		"name": "Convey",
+		"tags": [
+			"Mobile",
+			"Transport"
+		],
+		// Open project content
+		"carousel-1": {
+			"slides": [
+				"url", 
+				"url"],
+			"descs": [
+				"desc",
+				"desc"
+			]
+		},
+		"carousel-2": {
+			"slides": [
+				"url", 
+				"url"],
+			"descs": [
+				"desc",
+				"desc"
+			]
+		}
+	}
+	
+]

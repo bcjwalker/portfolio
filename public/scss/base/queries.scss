@@ -1,16 +1,16 @@
 // 1080p
-@media screen and (min-width: 0px) and (max-width: 2559px) {
-    #main-projects-container {
+@media screen and (width < 2560px) {
+    #main-projects-container{
         font-size: 1.55vmin;
     }
   }
 
-// 1440p
-@media screen and (min-width: 2560px) and (max-width: 3840px) {
+// 1440p – 2160p 
+@media screen and (2560px <= width <= 3840px) {
     main {
-      padding: 0 1.225vw 0 1.225vw;
+      margin: 0 1.225vw 0 1.225vw;
     }
-    body {
+    body {  
         grid-template-columns: 11vw 76vw 13vw;
     }
         body.retract {
@@ -19,6 +19,14 @@
 
     #intro-titles {
         margin-top: 0.425em; 
+        font-size: 36vh;
+    }
+
+    // Quote container
+    #intro-graphic-quotebox {
+        width: 1.06em;
+        height: auto;
+        padding: 0.1em 0.07em 0.125em 0.075em;
         font-size: 36vh;
     }
 

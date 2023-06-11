@@ -8,9 +8,8 @@
     "start": "node public/server.js",
     "prestart": "parcel build ./public/index.html --public-url ./",
     "dev": "parcel serve ./public/index.html",
-	  "clean": "rimraf dist && rimraf .parcel-cache",
-    
-    "predeploy": "rimraf dist && parcel build ./public/index.html --no-minify --public-url ./",
+    "clean": "rimraf dist && rimraf .parcel-cache",
+    "predeploy": "rimraf dist && parcel build ./public/index.html --no-optimize --public-url ./",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
@@ -30,9 +29,9 @@
     "express": "^4.18.2"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.8.3",
+    "@parcel/transformer-sass": "^2.7.0",
     "gh-pages": "^5.0.0",
-    "parcel": "^2.8.3",
+    "parcel": "^2.7.0",
     "rimraf": "^4.1.2",
     "sass": "^1.58.0"
   }

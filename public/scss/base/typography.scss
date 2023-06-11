@@ -1,8 +1,8 @@
-// Import Readex Pro and Mulish
-@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+// Import Readex Pro and Figtree
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
 
 * {
-    color: hsl(0, 0%, 17%);
+    color: var(--shade-text-1);
 
     // Headings
     h1, h2, h3, 
@@ -19,17 +19,17 @@
     // Everything else
     p {
         font-weight: 400;
-        font-family: 'Mulish', sans-serif;
+        font-family: 'Figtree', sans-serif;
         strong, em {
-            font-family: 'Mulish', sans-serif;
+            font-family: 'Figtree', sans-serif;
         }
     }
     button * {
-        font-family: 'Mulish', sans-serif;
+        font-family: 'Figtree', sans-serif;
     }
     a {
         font-weight: 400;
-        font-family: 'Mulish', sans-serif;
+        font-family: 'Figtree', sans-serif;
     }
     blockquote {
         font-family: 'Readex Pro', sans-serif;
@@ -40,7 +40,7 @@
 
 hr {
     border: none;
-    border-top: 1px solid hsl(035, 6%, 87%);
+    border-top: 1px solid var(--shade-outline-1);
 }   
     hr.divider-section {
         //margin: 0px 40px 0px 40px;

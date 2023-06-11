@@ -112,11 +112,21 @@ aside {
 
                 transition: transform 0.4s;
             }
+            // Hover: remove hover effect as it transforms
+            #aside-infobox-btn:hover {
+                background-color: initial;
+            }            
             // Active: remove click effect as it transforms
             #aside-infobox-btn:active {
                 background-color: initial;
             }
     }
+        // Hover: replaces button hover effect because that one transforms
+        #aside-infobox-btn-container:hover {
+            background-color: hsla(0, 0%, 20%, 0.05);
+
+            transition: background-color 0.1s;
+        }
         // Active: replaces button click effect because that one transforms
         #aside-infobox-btn-container:active {
             background-color: hsla(0, 0%, 20%, 0.1);
