@@ -27,7 +27,7 @@ body {
 header { grid-area: header; }
 main { 
   grid-area: main; 
-  padding: 0 1vw 0 1vw;
+  margin: 0 1vw 0 1.25vw;
 } 
 nav { grid-area: nav; }
 aside { grid-area: 1 / 3 / 4 / 4; }

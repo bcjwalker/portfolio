@@ -70,11 +70,12 @@ nav {
         font-size: 30px;
         color: hsl(035, 6%, 26%);
 
+        transition: font-weight 0.2s;
         transition: color 0.2s;
     }
 
 }
-    // Closed version: fade out p
+    // Closed version: fade out p, darken symbols
     .navbox-btn.closed {
         .navbox-btn-p {
             opacity: 0;
@@ -82,8 +83,10 @@ nav {
             transition: opacity 0.2s;
         }
         span.material-symbols-rounded {
-            color: hsl(035, 6%, 65%);
+            color: hsl(035, 6%, 75%);
+            font-weight: 260;
 
+            transition: font-weight 0.2s;
             transition: color 0.2s;
         }
     }

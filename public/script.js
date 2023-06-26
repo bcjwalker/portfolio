@@ -98,14 +98,14 @@ function initAside() {
 // Init project section
 function initProjects() { 
 
-    // Render for all entries
+    // Create a card for all entries
     for(i=0; i < projectDataNo; i++) {
-        renderProject(i);
+        renderProjectCard(i);
     };
 }
 
-// Populate projects section with projects from DB
-function renderProject(pos) {
+// Render project card thumbnail in grid
+function renderProjectCard(pos) {
     // Grab project thumb carousel and template
     const projectThumbCardousel = document.querySelector('#projects-big-cardousel');
     const projectThumbTemplate = document.querySelector('template.projects-big-card-template');
@@ -113,7 +113,7 @@ function renderProject(pos) {
         // Grab details
         const projectThumbPrefab = projectThumbTemplate.content.cloneNode(true);
         const projectTPhead = projectThumbPrefab.querySelector('.projects-big-card-details-h3')
-        const projectTPtags = projectThumbPrefab.querySelector('.projects-big-card-details-p')
+        const projectTPtags = projectThumbPrefab.querySelector('.projects-big-card-tag')
         console.log(projectThumbPrefab);
 
     // Fill new project metadata

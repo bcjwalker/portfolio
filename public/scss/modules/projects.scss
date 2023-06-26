@@ -2,7 +2,6 @@
     height: 90vh;
     padding: 2.5em;
     border-radius: 2.5em;    
-    font-size: 1.05rem;
 
     background-color: var(--shade-base-1);
     .projects-big-h1 {
@@ -11,14 +10,9 @@
     .projects-small-h2 {
         margin: 30px 0px 16px 0px;
 
-        font-size: 1.75rem;
         font-weight: 500;
         color: var(--shade-text-3);
     }
-}
-
-#projects-big {
-    display: none;
 }
 
 // Projects carousel container
@@ -26,37 +20,61 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 2.5em;
-    padding-left: 5px;
+    gap: 30px;
+    //padding-left: 5px;
 }
     // (Big) Project card
     .projects-big-card {
-        border-radius: 0.925em;
+        border-radius: 20px;
+        height: fit-content;
+        //margin-top: 50px;
+
         // Thumbnail
         .projects-big-card-thumb { 
             width: 350px;
-            height: auto;
-            aspect-ratio: 4/2.76;
+            height: 250px;
             
             background-color: var(--shade-base-2);
-            border-radius: 0.925em;
+            border-radius: 20px 20px 0 0;
         }   
         // Details container
         .projects-big-card-details-container {
-            padding: 0.85em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            bottom: 20px;
+            width: 350px;
+            height: 180px;
+            margin: 0 0 -20px 0;
+            padding: 20px;
 
-            // Details - h3, p
+            border-radius: 20px;
+            background-color: var(--shade-base-1);
+
+            // Name 
             .projects-big-card-details-h3 {
-                font-weight: 700;
-                font-family: 'Mulish', sans-serif;
-                font-size: 0.925em;
-                color: hsl(0, 0%, 25%);
+                font-weight: 500;
+                font-family: 'Figtree', sans-serif;
+                font-size: 28px;
+                color: var(--shade-text-2);
             }
-            .projects-big-card-details-p {
+            // Platform tag
+            .projects-big-card-tag {
+                //position: relative;
+                //left: 8px;
+                //top: 8px;
+                //width: fit-content;
+                display: inline-block;
+                padding: 8px;
+
+                background-color: var(--shade-container-1);
+                border-radius: 10px;
                 font-weight: 600;
-                font-family: 'Mulish', sans-serif;
-                font-size: 0.925em;
-                color: hsl(0, 0%, 45%);
+                font-family: 'Figtree', sans-serif;
+                font-size: 13px;
+                line-height: 13px;
+                color: var(--shade-text-5);
             }
         }
     }

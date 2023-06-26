@@ -1,22 +1,53 @@
+// Projects database
 [
-	// Big 1: Studbud
+	// Big projects
+	// 1: Studbud
 	{
 		// Metadata
 		"thumb": "url",
 		"name": "Studbud",
 		"tags": [
 			"Desktop",
-			"Study"
+			//"Study"
 		]
 	},
-	// Big 2: Convey
+	// 2: Convey
 	{
 		// Metadata
 		"thumb": "url",
 		"name": "Convey",
 		"tags": [
 			"Mobile",
-			"Transport"
+			//"Transport"
+		],
+		// Open project content
+		"carousel-1": {
+			"slides": [
+				"url", 
+				"url"],
+			"descs": [
+				"desc",
+				"desc"
+			]
+		},
+		"carousel-2": {
+			"slides": [
+				"url", 
+				"url"],
+			"descs": [
+				"desc",
+				"desc"
+			]
+		}
+	},
+	// 3: Biodiversity article
+	{
+		// Metadata
+		"thumb": "url",
+		"name": "Biodiversity in the Human Era",
+		"tags": [
+			"Desktop",
+			//"Article"
 		],
 		// Open project content
 		"carousel-1": {

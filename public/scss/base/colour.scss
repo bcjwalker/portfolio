@@ -6,57 +6,73 @@ main {
 
 // Colour variables
 :root {
+    // Base shade
+    --shade-base-0: hsl(035, 32%, 99%);
     --shade-base-1: hsl(035, 32%, 96%);
-    --shade-base-2: hsl(035, 32%, 95%);
+    --shade-base-2: hsl(035, 32%, 94%);
     --shade-base-3: hsl(035, 32%, 92%);
     --shade-base-4: hsl(035, 32%, 89%);
     --shade-base-5: hsl(035, 32%, 86%);
 
-    --shade-invert-base-1: hsl(035, 8%, 30%);
+    // Base shade accent - interaction states, e.g. button hovers
+    --shade-base-accent-1: hsla(035, 25%, 80%, 0.2);
+    --shade-base-accent-2: hsla(035, 18%, 78%, 0.325);
 
+    // Text shades
     --shade-text-0: hsl(035, 5%, 12%);
-    --shade-text-1: hsl(035, 5%, 17%);
-    --shade-text-2: hsl(035, 5%, 21%);
-    --shade-text-3: hsl(035, 5%, 25%);
-    --shade-text-4: hsl(035, 5%, 29%);
-    --shade-text-5: hsl(035, 5%, 34%);
+    --shade-text-1: hsl(035, 5%, 21%);
+    --shade-text-2: hsl(035, 7%, 25%);
+    --shade-text-3: hsl(035, 7%, 30%);
+    --shade-text-4: hsl(035, 9%, 35%);
+    --shade-text-5: hsl(035, 9%, 40%);
+    --shade-text-6: hsl(035, 12%, 46%);
 
+    // Outline shades
+    --shade-outline-1: hsl(035, 12%, 87%);
+    --shade-outline-2: hsl(035, 12%, 84%);
+    --shade-outline-3: hsl(035, 12%, 79%);
+    --shade-outline-4: hsl(035, 18%, 75%);
+    --shade-outline-5: hsl(035, 18%, 69%);
+
+    --shade-accent-0: hsl(90, 12%, 60%);
+
+    // Inverted shades - for necessarily contrasting elements, e.g. tooltips
+    --shade-invert-base-1: hsl(035, 8%, 35%);
     --shade-invert-text-1: var(--shade-base-1);
-
-    --shade-outline-1: hsl(035, 6%, 87%);
-    --shade-outline-2: hsl(035, 6%, 84%);
-    --shade-outline-3: hsl(035, 5%, 79%);
-    --shade-outline-4: hsl(035, 5%, 75%);
-
-    --shade-accent-0: hsl(035, 12%, 60%);
 }
 
 // Colour vars for projects
 #main-projects-container {
+    // Base shade
     --shade-base-1: hsl(0, 0%, 100%);
-    --shade-base-2: hsl(0, 0%, 96%);
-    --shade-base-3: hsl(0, 0%, 92%);
-    --shade-base-4: hsl(0, 0%, 89%);
-    --shade-base-5: hsl(0, 0%, 86%);
+    --shade-base-2: hsl(0, 0%, 98%);
+    --shade-base-3: hsl(0, 0%, 95%);
+    --shade-base-4: hsl(0, 0%, 91%);
+    --shade-base-5: hsl(0, 0%, 88%);
 
-    --shade-invert-base-1: hsl(0, 0%, 30%);
+    --shade-container-1: hsl(90, 50%, 94%);
 
+    // Text shades
     --shade-text-0: hsl(0, 0%, 12%);
-    --shade-text-1: hsl(0, 0%, 17%);
-    --shade-text-2: hsl(0, 0%, 21%);
-    --shade-text-3: hsl(0, 0%, 25%);
-    --shade-text-4: hsl(0, 0%, 29%);
-    --shade-text-5: hsl(0, 0%, 34%);
-    --shade-text-6: hsl(0, 0%, 40%);
+    --shade-text-1: hsl(0, 0%, 21%);
+    --shade-text-2: hsl(0, 0%, 25%);
+    --shade-text-3: hsl(0, 0%, 30%);
+    --shade-text-4: hsl(0, 0%, 35%);
+    --shade-text-5: hsl(0, 0%, 40%);
+    --shade-text-6: hsl(0, 0%, 46%);
 
-    --shade-invert-text-1: hsl(035, 5%, 96%);
+    // Outline shades
+    --shade-outline-1: hsl(0, 0%, 87%);
+    --shade-outline-2: hsl(0, 0%, 84%);
+    --shade-outline-3: hsl(0, 0%, 79%);
+    --shade-outline-4: hsl(0, 0%, 75%);
+    --shade-outline-5: hsl(0, 0%, 69%);
 
-    --shade-outline-1: hsl(035, 5%, 23%);
-    --shade-outline-2: hsl(035, 5%, 30%);
-    --shade-outline-3: hsl(035, 5%, 35%);
-    --shade-outline-4: hsl(035, 5%, 60%);
+    --shade-accent-0: hsl(90, 12%, 60%);
 
-    --shade-accent-0: hsl(353, 12%, 60%);
+    // Inverted shades - for necessarily contrasting elements, e.g. tooltips
+    --shade-invert-base-1: hsl(0, 0%, 35%);
+    --shade-invert-text-1: var(--shade-base-1);
 }
 
 body {

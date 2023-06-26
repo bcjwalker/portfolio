@@ -16,19 +16,19 @@ button {
     // Single icon buttons
     button.iconbtn {
         aspect-ratio: 1 / 1;
-        border: none;   
+        border: none;
         background-color: transparent;
     }
 
         // Hover: a subtle active effect
         button:hover {
-            background-color: hsla(0, 0%, 20%, 0.05);
+            background-color: var( --shade-base-accent-1);
 
             transition: background-color 0.1s;
         }
         // Active: a subtle click effect
         button:active {
-            background-color: hsla(0, 0%, 20%, 0.1);
+            background-color: var( --shade-base-accent-2);
 
             transition: background-color 0.1s;
         }
@@ -36,13 +36,13 @@ button {
 // Nav buttons
     // Hover: a subtle overlay effect
     .navbox-btn:hover {
-        background-color: hsla(0, 0%, 20%, 0.05);
+        background-color: var( --shade-base-accent-1);
 
         transition: background-color 0.1s;
     }
     // Active: a subtle click effect
     .navbox-btn:active {
-        background-color: hsla(0, 0%, 20%, 0.1);
+        background-color: var( --shade-base-accent-2);
 
         transition: background-color 0.1s;
     }
@@ -50,29 +50,46 @@ button {
 // Projects buttons
     // (Big) Projects cards
     .projects-big-card {
-
-    }
-    .projects-big-card:hover {
-        cursor: pointer;
-        text-decoration: underline;
-        .projects-big-card-thumb {
-            background-color: hsl(0, 0%, 92.5%);
-
+        box-shadow: none;
+        transition: box-shadow 0.1s;
+        .projects-big-card-details-container {
             transition: background-color 0.1s;
-            img {
-                opacity: 0.9;
-            }
+        }
+        .projects-big-card-thumb {
+            transition: background-color 0.1s;
         }
     }
+        .projects-big-card:hover {
+            cursor: pointer;
+
+            box-shadow: 0px 1px 2px hsla(0, 0%, 9%, 0.1), 0px 2px 6px hsla(0, 0%, 9%, 0.16);
+
+            transition: box-shadow 0.1s;
+            .projects-big-card-details-container {
+                //background-color: var(--shade-base-2);
+    
+                transition: background-color 0.1s;
+            }
+            .projects-big-card-thumb {
+                //background-color: var(--shade-base-3);
+    
+                transition: background-color 0.1s;
+                img {
+                    opacity: 0.9;
+                }
+            }
+        }
+
+    
 
 // All material symbols
 span.material-symbols-rounded {
     padding: 5px;
     aspect-ratio: 1/1;
 
-    font-weight: 350;
+    font-weight: 320;
     font-size: 1.8em;
     line-height: 1em;
-    color: hsl(0, 0%, 20%);
+    color: var(--shade-text-1);
 }
 
