@@ -4,7 +4,9 @@
 #############
 */
 
-
+// Glob file paths (see https://en.parceljs.org/module_resolution.html#glob-file-paths)
+import projectImgs from "./assets/projects/**/*.jpg";
+console.log(projectImgs)
 
 /*
 ###############
@@ -92,7 +94,7 @@ function initAside() {
 
 ////
 // Projects:
-//   All code required for the projects section to work
+//   All code for the projects section to work
 ////
 
 // Init project section
@@ -106,20 +108,60 @@ function initProjects() {
 
 // Render project card thumbnail in grid
 function renderProjectCard(pos) {
-    // Grab project thumb carousel and template
-    const projectThumbCardousel = document.querySelector('#projects-big-cardousel');
-    const projectThumbTemplate = document.querySelector('template.projects-big-card-template');
+    // DOM
+    // Grab project thumb carousel and template, then clone
+    const projectThumbCardousel = document.querySelector('#projects-bigcardousel');
+    const projectThumbTemplate = document.querySelector('template.projects-bigcard-template');
+    const projectThumbPrefab = projectThumbTemplate.content.cloneNode(true);
+    // Grab details from prefab clone (TP)
+    const projectTProot = projectThumbPrefab.querySelector('.projects-bigcard')
+    const projectTPdtlsRoot = projectThumbPrefab.querySelector('.projects-bigcard-details')
+    const projectTPthumb = projectThumbPrefab.querySelector('.projects-bigcard-thumb')
+    const projectTPhead = projectThumbPrefab.querySelector('.projects-bigcard-details-h3')
+    const projectTPtagList = projectThumbPrefab.querySelector('.projects-bigcard-details-taglist')
+    console.log(projectThumbPrefab);
 
-        // Grab details
-        const projectThumbPrefab = projectThumbTemplate.content.cloneNode(true);
-        const projectTPhead = projectThumbPrefab.querySelector('.projects-big-card-details-h3')
-        const projectTPtags = projectThumbPrefab.querySelector('.projects-big-card-tag')
-        console.log(projectThumbPrefab);
+    // Thumb url from JSON DB id
+    projectTPthumb.src = projectImgs[`${projectData[pos].id}`]['thumb'];
 
     // Fill new project metadata
+    // Card title, just grab name
     projectTPhead.textContent = projectData[pos].name;
-    projectTPtags.textContent = projectData[pos].tags;
+    // Card tags, grab tag array then push contents as individual elements 
+    const projectTags = projectData[pos].tags;
+    for (x = 0; x < projectTags.length; x++) {
+        // New DOM element for each tag
+        projectTPtagList.appendChild(renderProjectCardTags(projectTags[x]));
+    };
+
+    // Calculate px of how much we're shifting the details container on hover state
+    // Work out how many extra lines the title will reach when rendered in full
+    const TPheadExtraLines = Math.round(projectData[pos].name.length / 24)
+    // Base offset (100px) plus however many extra line heights (42) we need 
+    // to push up the container by
+    const TPheadHoverOffset = `${180 + (TPheadExtraLines * 42)}px`;
+    projectTProot.style.setProperty('--hover-bottom', TPheadHoverOffset);
 
     // Append to cardousel
     projectThumbCardousel.appendChild(projectThumbPrefab);
+}
+
+// Set up project card tag DOM
+function renderProjectCardTags(tag) {
+    const projectTPtag = document.createElement('p');
+    projectTPtag.classList.add('projects-bigcard-tag');
+    projectTPtag.textContent = tag;
+
+    return projectTPtag;
+}
+
+function getHeight(element)
+{
+    element = element.cloneNode(true); 
+    element.style.visibility = "hidden";
+    document.body.appendChild(element);
+    var height = element.scrollWidth;
+    document.body.removeChild(element);
+    element.style.visibility = "visible";
+    return height;
 }

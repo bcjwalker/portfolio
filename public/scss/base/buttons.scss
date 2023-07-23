@@ -4,15 +4,15 @@ button {
 
     font-weight: 600;
     font-family: 'Mulish', sans-serif;
-    color: hsl(0, 0%, 20%);
+    color: var(--shade-text-1);
     border-radius: 100px;
 
     transition: background-color 0.275s;
 }
     // Standard icon/text buttons
-    button.stdbtn {
+    //button.stdbtn {
         
-    }
+    //}
     // Single icon buttons
     button.iconbtn {
         aspect-ratio: 1 / 1;
@@ -49,28 +49,47 @@ button {
 
 // Projects buttons
     // (Big) Projects cards
-    .projects-big-card {
+    .projects-bigcard {
         box-shadow: none;
-        transition: box-shadow 0.1s;
-        .projects-big-card-details-container {
-            transition: background-color 0.1s;
+        transition: box-shadow 0.15s, transform 0.15s;
+        .projects-bigcard-details-container {
+            bottom: var(--idle-bottom);
+
+            transition: bottom 0.15s;
+
+            // Shrink/unshrink
+            .projects-bigcard-details-h3 {
+                height: 42px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
         }
-        .projects-big-card-thumb {
+        .projects-bigcard-thumb {
             transition: background-color 0.1s;
         }
     }
-        .projects-big-card:hover {
+        .projects-bigcard:hover {
             cursor: pointer;
+            transform: translateX(-1) translateY(-2);
 
             box-shadow: 0px 1px 2px hsla(0, 0%, 9%, 0.1), 0px 2px 6px hsla(0, 0%, 9%, 0.16);
 
-            transition: box-shadow 0.1s;
-            .projects-big-card-details-container {
-                //background-color: var(--shade-base-2);
-    
-                transition: background-color 0.1s;
+            transition: box-shadow 0.1s, transform 0.15s;
+            .projects-bigcard-details-container {
+                bottom: var(--hover-bottom);
+                
+                transition: bottom 0.275s;
+
+                // Shrink/unshrink
+                .projects-bigcard-details-h3 {
+                    height: auto;
+                    text-overflow: initial;
+                    white-space: normal;
+                    overflow: visible;
+                }
             }
-            .projects-big-card-thumb {
+            .projects-bigcard-thumb {
                 //background-color: var(--shade-base-3);
     
                 transition: background-color 0.1s;

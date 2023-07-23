@@ -125,17 +125,28 @@
             <div id="projects-big">
                 <h1 class="projects-big-h1"> Works </h1>
                 <!-- Cards carousel -->
-                <div id="projects-big-cardousel">
+                <div id="projects-bigcardousel">
                     
                     <!-- Project card template, appended into the cardousel-->
-                    <template class="projects-big-card-template">
-                    <div class="projects-big-card"> 
-                        <div class="projects-big-card-thumb"></div>
-                        <div class="projects-big-card-details-container"> 
-                            <h3 class="projects-big-card-details-h3"> </h3>
-                            <p class="projects-big-card-tag"> </p>
+                    <template class="projects-bigcard-template">
+                        <div class="projects-bigcard"> 
+                            <!-- Variables for hover/unhover bottom values -->
+                            <style>
+                                .projects-bigcard {
+                                    --idle-bottom: 64px;
+                                    --hover-bottom: 180px;
+                                }
+                            </style>
+
+                            <img class="projects-bigcard-thumb"></img>
+                            <div class="projects-bigcard-details-container"> 
+                                <h3 class="projects-bigcard-details-h3"> </h3>
+
+                                <div class="projects-bigcard-details-taglist"> </div>
+                                
+                                <h3 class="projects-bigcard-details-desc"> </h3>
+                            </div>
                         </div>
-                    </div>
                     </template>
 
                 </div> 

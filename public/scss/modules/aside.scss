@@ -5,7 +5,7 @@ aside {
     //background-color: var(--shade-base-1);
     font-size: 17px;
     * {
-        color: hsl(035, 6%, 11%);
+        color: var(--shade-text-0);
     }
 }
 
@@ -50,7 +50,7 @@ aside {
 
             font-size: 0.825em;
             line-height: 1.48em;
-            color: var(--shade-text-2);
+            color: var(--shade-text-0);
         }
         // Avatar img
         #aside-infobox-avatar {

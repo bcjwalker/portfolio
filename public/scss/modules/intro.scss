@@ -1,14 +1,14 @@
 #main-intro-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-content: center;
-    height: 82vh;  
-    padding: 0 3.5vw 6vh 3.5vw;
+    height: 85vh;  
+    padding: 0 0 6vh 0;
     
-    font-size: 385px;
+    font-size: 48vmin;
     * {
-        color: hsl(035, 6%, 11%);
+        color: var(--shade-text-0);
     }
 }
 
@@ -16,8 +16,8 @@
 #intro-titles {
     display: flex;
     flex-direction: column;
-    margin-top: 0.325em; 
-    height: fit-content;
+    justify-content: center; 
+    height: 100%;
 
     // Names holds signature and print name
     #intro-titles-names {
@@ -35,7 +35,7 @@
             font-weight: 300;
             letter-spacing: 0.015em;
             font-size: 0.15em;
-            color: hsl(34, 10%, 28%);
+            color: hsl(34, 15%, 29%);
         }
     }
     
@@ -48,7 +48,7 @@
         font-weight: 600;
         line-height: 1em;
         color: var(--shade-text-0);
-        border-left: 2px solid hsl(035, 6%, 45%);
+        border-left: 2px solid var(--shade-invert-base-2);
     }
     // Short description: 'usyd etc'
     .intro-titles-desc {
@@ -59,11 +59,11 @@
         font-weight: 500;
         font-size: 0.06em;
         line-height: 1.55em;
-        color: hsl(035, 6%, 28%);
-        border-left: 2px solid hsl(035, 6%, 45%);
+        color: var(--shade-text-3);
+        border-left: 2px solid var(--shade-invert-base-2);
         border-radius: 0 0 0 0.75em;
         strong {
-            color: hsl(035, 6%, 20%);
+            color: var(--shade-text-2);
         }
     }
 }
@@ -73,7 +73,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 4vh 0.35em 0 0;
 
     // Quote container
     #intro-graphic-quotebox {
@@ -105,7 +104,7 @@
             font-weight: 400;
             font-size: 0.085em;
             line-height: 1.4em;
-            color: hsl(035, 6%, 20%);
+            color: var(--shade-text-1);
         }
     }
 }

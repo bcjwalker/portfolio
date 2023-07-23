@@ -15,7 +15,7 @@ main {
     --shade-base-5: hsl(035, 32%, 86%);
 
     // Base shade accent - interaction states, e.g. button hovers
-    --shade-base-accent-1: hsla(035, 25%, 80%, 0.2);
+    --shade-base-accent-1: hsla(035, 18%, 80%, 0.2);
     --shade-base-accent-2: hsla(035, 18%, 78%, 0.325);
 
     // Text shades
@@ -38,6 +38,8 @@ main {
 
     // Inverted shades - for necessarily contrasting elements, e.g. tooltips
     --shade-invert-base-1: hsl(035, 8%, 35%);
+    --shade-invert-base-2: hsl(035, 8%, 45%);
+    --shade-invert-base-3: hsl(035, 8%, 55%);
     --shade-invert-text-1: var(--shade-base-1);
 }
 
@@ -45,12 +47,13 @@ main {
 #main-projects-container {
     // Base shade
     --shade-base-1: hsl(0, 0%, 100%);
-    --shade-base-2: hsl(0, 0%, 98%);
-    --shade-base-3: hsl(0, 0%, 95%);
-    --shade-base-4: hsl(0, 0%, 91%);
-    --shade-base-5: hsl(0, 0%, 88%);
+    --shade-base-2: hsl(0, 0%, 91%);
+    --shade-base-3: hsl(0, 0%, 94%);
+    --shade-base-4: hsl(0, 0%, 90%);
+    --shade-base-5: hsl(0, 0%, 87%);
 
-    --shade-container-1: hsl(90, 50%, 94%);
+    --shade-container-1: hsl(200, 40%, 94%);
+    --shade-container-1-text-1: hsl(200, 15%, 35%);
 
     // Text shades
     --shade-text-0: hsl(0, 0%, 12%);

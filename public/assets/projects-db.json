@@ -1,25 +1,36 @@
-// Projects database
+/*
+#######################
+## Projects database ##
+#######################
+*/
+
+// Structure is lost in conversion to JS object, so always refer back here
 [
 	// Big projects
 	// 1: Studbud
 	{
 		// Metadata
-		"thumb": "url",
+		"id": "studbud",
 		"name": "Studbud",
 		"tags": [
 			"Desktop",
-			//"Study"
-		]
+			"Educational"
+		],
+		"date": "2021",
+		"desc": "text here"
 	},
 	// 2: Convey
 	{
 		// Metadata
-		"thumb": "url",
+		"id": "convey",
 		"name": "Convey",
 		"tags": [
 			"Mobile",
-			//"Transport"
+			"Transport"
 		],
+		"date": "2022",
+		"desc": "text here",
+
 		// Open project content
 		"carousel-1": {
 			"slides": [
@@ -43,12 +54,15 @@
 	// 3: Biodiversity article
 	{
 		// Metadata
-		"thumb": "url",
+		"id": "biodiversity",
 		"name": "Biodiversity in the Human Era",
 		"tags": [
 			"Desktop",
-			//"Article"
+			"Infovis"
 		],
+		"date": "2023",
+		"desc": "text here",
+
 		// Open project content
 		"carousel-1": {
 			"slides": [
