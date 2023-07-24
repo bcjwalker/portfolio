@@ -108,7 +108,7 @@ $93eafa1434f2e08a$export$5a759dc7a1cfb72a = $93eafa1434f2e08a$var$getOrigin;
 
 var $bf44df13f2eee72a$exports = {};
 
-(parcelRequire("9xqYB")).register(JSON.parse('{"ihKoB":"index.e4000a81.js","j4MT3":"thumb.f2bf334c.jpg","jkNVD":"thumb.ecdbf45a.jpg","3AADh":"thumb.a6d67c57.jpg"}'));
+(parcelRequire("9xqYB")).register(JSON.parse('{"ihKoB":"index.8e880976.js","j4MT3":"thumb.f2bf334c.jpg","jkNVD":"thumb.ecdbf45a.jpg","3AADh":"thumb.a6d67c57.jpg"}'));
 
 var $4b1ac8313b9dd875$exports = {};
 var $bdc59f8c4d542d81$exports = {};
@@ -142,14 +142,15 @@ $4b1ac8313b9dd875$exports = {
 };
 
 
-console.log((0, (/*@__PURE__*/$parcel$interopDefault($4b1ac8313b9dd875$exports))));
 var $829ae6dc27d91a64$exports = {};
 $829ae6dc27d91a64$exports = JSON.parse('[{"id":"studbud","name":"Studbud","tags":["Desktop","Educational"],"date":"2021","desc":"text here"},{"id":"convey","name":"Convey","tags":["Mobile","Transport"],"date":"2022","desc":"text here","carousel-1":{"slides":["url","url"],"descs":["desc","desc"]},"carousel-2":{"slides":["url","url"],"descs":["desc","desc"]}},{"id":"biodiversity","name":"Biodiversity in the Human Era","tags":["Desktop","Infovis"],"date":"2023","desc":"text here","carousel-1":{"slides":["url","url"],"descs":["desc","desc"]},"carousel-2":{"slides":["url","url"],"descs":["desc","desc"]}}]');
 
 
-console.log($829ae6dc27d91a64$exports);
+console.log((0, (/*@__PURE__*/$parcel$interopDefault($4b1ac8313b9dd875$exports))));
+//const projectData = require("./assets/projects-db.json");
+console.log((0, (/*@__PURE__*/$parcel$interopDefault($829ae6dc27d91a64$exports))));
 // Number of projects for recursive access
-const $dc22a61828523e3d$var$projectDataNo = $829ae6dc27d91a64$exports.length;
+const $dc22a61828523e3d$var$projectDataNo = (0, (/*@__PURE__*/$parcel$interopDefault($829ae6dc27d91a64$exports))).length;
 console.log($dc22a61828523e3d$var$projectDataNo);
 // DOM
 // Get body
@@ -233,18 +234,18 @@ function $dc22a61828523e3d$var$renderProjectCard(pos) {
     const projectTPtagList = projectThumbPrefab.querySelector(".projects-bigcard-details-taglist");
     console.log(projectThumbPrefab);
     // Thumb url from JSON DB id
-    projectTPthumb.src = (0, (/*@__PURE__*/$parcel$interopDefault($4b1ac8313b9dd875$exports)))[`${$829ae6dc27d91a64$exports[pos].id}`]["thumb"];
+    projectTPthumb.src = (0, (/*@__PURE__*/$parcel$interopDefault($4b1ac8313b9dd875$exports)))[`${(0, (/*@__PURE__*/$parcel$interopDefault($829ae6dc27d91a64$exports)))[pos].id}`]["thumb"];
     console.log(projectTPthumb.src);
     // Fill new project metadata
     // Card title, just grab name
-    projectTPhead.textContent = $829ae6dc27d91a64$exports[pos].name;
+    projectTPhead.textContent = (0, (/*@__PURE__*/$parcel$interopDefault($829ae6dc27d91a64$exports)))[pos].name;
     // Card tags, grab tag array then push contents as individual elements 
-    const projectTags = $829ae6dc27d91a64$exports[pos].tags;
+    const projectTags = (0, (/*@__PURE__*/$parcel$interopDefault($829ae6dc27d91a64$exports)))[pos].tags;
     for(x = 0; x < projectTags.length; x++)// New DOM element for each tag
     projectTPtagList.appendChild($dc22a61828523e3d$var$renderProjectCardTags(projectTags[x]));
     // Calculate px of how much we're shifting the details container on hover state
     // Work out how many extra lines the title will reach when rendered in full
-    const TPheadExtraLines = Math.round($829ae6dc27d91a64$exports[pos].name.length / 24);
+    const TPheadExtraLines = Math.round((0, (/*@__PURE__*/$parcel$interopDefault($829ae6dc27d91a64$exports)))[pos].name.length / 24);
     // Base offset (100px) plus however many extra line heights (42) we need 
     // to push up the container by
     const TPheadHoverOffset = `${180 + TPheadExtraLines * 42}px`;
@@ -270,4 +271,4 @@ function $dc22a61828523e3d$var$getHeight(element) {
 }
 
 })();
-//# sourceMappingURL=index.e4000a81.js.map
+//# sourceMappingURL=index.8e880976.js.map
