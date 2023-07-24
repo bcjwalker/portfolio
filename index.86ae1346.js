@@ -108,7 +108,7 @@ $93eafa1434f2e08a$export$5a759dc7a1cfb72a = $93eafa1434f2e08a$var$getOrigin;
 
 var $bf44df13f2eee72a$exports = {};
 
-(parcelRequire("9xqYB")).register(JSON.parse('{"ihKoB":"index.8e880976.js","j4MT3":"thumb.f2bf334c.jpg","jkNVD":"thumb.ecdbf45a.jpg","3AADh":"thumb.a6d67c57.jpg"}'));
+(parcelRequire("9xqYB")).register(JSON.parse('{"ihKoB":"index.86ae1346.js","j4MT3":"thumb.f2bf334c.jpg","jkNVD":"thumb.ecdbf45a.jpg","3AADh":"thumb.a6d67c57.jpg"}'));
 
 var $4b1ac8313b9dd875$exports = {};
 var $bdc59f8c4d542d81$exports = {};
@@ -217,7 +217,7 @@ function $dc22a61828523e3d$var$initAside() {
 // Init project section
 function $dc22a61828523e3d$var$initProjects() {
     // Create a card for all entries
-    for(i = 0; i < $dc22a61828523e3d$var$projectDataNo; i++)$dc22a61828523e3d$var$renderProjectCard(i);
+    for(y = 0; y < $dc22a61828523e3d$var$projectDataNo; y++)$dc22a61828523e3d$var$renderProjectCard(y);
 }
 // Render project card thumbnail in grid
 function $dc22a61828523e3d$var$renderProjectCard(pos) {
@@ -271,4 +271,4 @@ function $dc22a61828523e3d$var$getHeight(element) {
 }
 
 })();
-//# sourceMappingURL=index.8e880976.js.map
+//# sourceMappingURL=index.86ae1346.js.map
