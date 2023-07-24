@@ -9,7 +9,7 @@
 <meta name="author" content="bcjwalker">
 <title>Ben Walker</title> 
 
-<link href="index.809f5f6e.css" rel="stylesheet" type="text/css"> 
+<link href="index.dd1af776.css" rel="stylesheet" type="text/css"> 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 </head>
 
@@ -123,35 +123,31 @@
             <div id="projects-big">
                 <h1 class="projects-big-h1"> Works </h1>
                 <!-- Cards carousel -->
-                <div id="projects-big-cardousel">
+                <div id="projects-bigcardousel">
                     
                     <!-- Project card template, appended into the cardousel-->
-                    <template class="projects-big-card-template">
-                    <div class="projects-big-card"> 
-                        <div class="projects-big-card-thumb"></div>
-                        <div class="projects-big-card-details-container"> 
-                            <h3 class="projects-big-card-details-h3">  </h3>
-                            <p class="projects-big-card-details-p">  </p>
-                        </div>
-                    </div>
-                    </template>
+                    <template class="projects-bigcard-template">
+                        <div class="projects-bigcard"> 
+                            <!-- Variables for hover/unhover bottom values -->
+                            <style>.projects-bigcard {
+  --idle-bottom: 64px;
+  --hover-bottom: 180px;
+}
 
-                    <!-- 
-                    <div class="projects-big-card">
-                        <div class="projects-big-card-thumb"></div>
-                        <div class="projects-big-card-details-container"> 
-                            <h3 class="projects-big-card-details"> Studbud </h3>
-                            <p class="projects-big-card-details"> Sub test </p>
+</style>
+
+                            <div class="projects-bigcard-thumb">
+                                <img class="projects-bigcard-thumb-img">
+                            </div>
+                            <div class="projects-bigcard-details-container"> 
+                                <h3 class="projects-bigcard-details-h3"> </h3>
+
+                                <div class="projects-bigcard-details-taglist"> </div>
+                                
+                                <h3 class="projects-bigcard-details-desc"> </h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="projects-big-card">
-                        <div class="projects-big-card-thumb"></div>
-                        <div class="projects-big-card-details-container"> 
-                            <h3 class="projects-big-card-details"> Convey </h3>
-                            <p class="projects-big-card-details"> Sub test </p>
-                        </div>
-                    </div>
-                    -->
+                    </template>
 
                 </div> 
             </div>
@@ -160,6 +156,8 @@
             <template class="projects-big-open">
                 
             </template>
+
+            
 
             <!-- Cut for now, I don't have enough projects  
             Projects small, for other, lesser, works 
@@ -217,7 +215,7 @@
 
     </footer>
 
-    <script type="module" src="index.03f2621e.js"></script><script src="index.0964aa2b.js" nomodule="" defer=""></script>
+    <script type="module" src="index.c96fc319.js"></script><script src="index.7415e177.js" nomodule="" defer=""></script>
 </body>
 
 </html>
