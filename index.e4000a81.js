@@ -106,21 +106,21 @@ $93eafa1434f2e08a$export$5a759dc7a1cfb72a = $93eafa1434f2e08a$var$getOrigin;
 
 });
 
-var $d99f44584c7c0617$exports = {};
+var $bf44df13f2eee72a$exports = {};
 
-(parcelRequire("9xqYB")).register(JSON.parse('{"ihKoB":"index.7415e177.js","jkNVD":"thumb.ecdbf45a.jpg","j4MT3":"thumb.f2bf334c.jpg","3AADh":"thumb.a6d67c57.jpg"}'));
+(parcelRequire("9xqYB")).register(JSON.parse('{"ihKoB":"index.e4000a81.js","j4MT3":"thumb.f2bf334c.jpg","jkNVD":"thumb.ecdbf45a.jpg","3AADh":"thumb.a6d67c57.jpg"}'));
 
-var $1f0f21a42de4f462$exports = {};
-var $78068915ab5df169$exports = {};
-
-
-$78068915ab5df169$exports = (parcelRequire("cHmwT")).getBundleURL("ihKoB") + (parcelRequire("9xqYB")).resolve("jkNVD");
-
-
+var $4b1ac8313b9dd875$exports = {};
 var $bdc59f8c4d542d81$exports = {};
 
 
 $bdc59f8c4d542d81$exports = (parcelRequire("cHmwT")).getBundleURL("ihKoB") + (parcelRequire("9xqYB")).resolve("j4MT3");
+
+
+var $78068915ab5df169$exports = {};
+
+
+$78068915ab5df169$exports = (parcelRequire("cHmwT")).getBundleURL("ihKoB") + (parcelRequire("9xqYB")).resolve("jkNVD");
 
 
 var $b1be4592e6190b0f$exports = {};
@@ -129,12 +129,12 @@ var $b1be4592e6190b0f$exports = {};
 $b1be4592e6190b0f$exports = (parcelRequire("cHmwT")).getBundleURL("ihKoB") + (parcelRequire("9xqYB")).resolve("3AADh");
 
 
-$1f0f21a42de4f462$exports = {
-    "convey": {
-        "thumb": $78068915ab5df169$exports
-    },
+$4b1ac8313b9dd875$exports = {
     "biodiversity": {
         "thumb": $bdc59f8c4d542d81$exports
+    },
+    "convey": {
+        "thumb": $78068915ab5df169$exports
     },
     "studbud": {
         "thumb": $b1be4592e6190b0f$exports
@@ -142,13 +142,15 @@ $1f0f21a42de4f462$exports = {
 };
 
 
-console.log((0, (/*@__PURE__*/$parcel$interopDefault($1f0f21a42de4f462$exports))));
+console.log((0, (/*@__PURE__*/$parcel$interopDefault($4b1ac8313b9dd875$exports))));
 var $829ae6dc27d91a64$exports = {};
 $829ae6dc27d91a64$exports = JSON.parse('[{"id":"studbud","name":"Studbud","tags":["Desktop","Educational"],"date":"2021","desc":"text here"},{"id":"convey","name":"Convey","tags":["Mobile","Transport"],"date":"2022","desc":"text here","carousel-1":{"slides":["url","url"],"descs":["desc","desc"]},"carousel-2":{"slides":["url","url"],"descs":["desc","desc"]}},{"id":"biodiversity","name":"Biodiversity in the Human Era","tags":["Desktop","Infovis"],"date":"2023","desc":"text here","carousel-1":{"slides":["url","url"],"descs":["desc","desc"]},"carousel-2":{"slides":["url","url"],"descs":["desc","desc"]}}]');
 
 
-const $dc22a61828523e3d$var$projectDataNo = $829ae6dc27d91a64$exports.length;
 console.log($829ae6dc27d91a64$exports);
+// Number of projects for recursive access
+const $dc22a61828523e3d$var$projectDataNo = $829ae6dc27d91a64$exports.length;
+console.log($dc22a61828523e3d$var$projectDataNo);
 // DOM
 // Get body
 const $dc22a61828523e3d$var$pageBody = document.body;
@@ -231,7 +233,8 @@ function $dc22a61828523e3d$var$renderProjectCard(pos) {
     const projectTPtagList = projectThumbPrefab.querySelector(".projects-bigcard-details-taglist");
     console.log(projectThumbPrefab);
     // Thumb url from JSON DB id
-    projectTPthumb.src = (0, (/*@__PURE__*/$parcel$interopDefault($1f0f21a42de4f462$exports)))[`${$829ae6dc27d91a64$exports[pos].id}`]["thumb"];
+    projectTPthumb.src = (0, (/*@__PURE__*/$parcel$interopDefault($4b1ac8313b9dd875$exports)))[`${$829ae6dc27d91a64$exports[pos].id}`]["thumb"];
+    console.log(projectTPthumb.src);
     // Fill new project metadata
     // Card title, just grab name
     projectTPhead.textContent = $829ae6dc27d91a64$exports[pos].name;
@@ -267,4 +270,4 @@ function $dc22a61828523e3d$var$getHeight(element) {
 }
 
 })();
-//# sourceMappingURL=index.7415e177.js.map
+//# sourceMappingURL=index.e4000a81.js.map
