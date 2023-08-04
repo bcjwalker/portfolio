@@ -15,14 +15,21 @@ console.log(projectImgs)
 */
 
 // Get project DB
-const projectData = require("./assets/projects-db.json");
-const projectDataNo = projectData.length;
+import projectData from "./assets/projects-db.json";
+//const projectData = require("./assets/projects-db.json");
 console.log(projectData);
+// Number of projects for recursive access
+const projectDataNo = projectData.length;
+console.log(projectDataNo);
+
 
 // DOM
   // Get body
   const pageBody = document.body;
 
+  // Get projects stuff necessary globally
+  const projectsContainer = document.querySelector('#main-projects-container')
+  const projectsBigGrid = document.querySelector('#projects-big');
 
 /*
 ########################
@@ -38,9 +45,13 @@ window.addEventListener('load', function() {
     initNav();
     initHead();
     initAside();
+    initEffects();
 
     // Finally, init projects functionality
-    initProjects();
+    //initProjects();
+
+    // TEMPTEMP: Show projects open
+    renderProjectOpen(0);
 });
 
 // Init nav's context menu button
@@ -92,6 +103,11 @@ function initAside() {
     });
 }
 
+// Init epic FX
+function initEffects() {
+    
+}
+
 ////
 // Projects:
 //   All code for the projects section to work
@@ -101,7 +117,7 @@ function initAside() {
 function initProjects() { 
 
     // Create a card for all entries
-    for(i=0; i < projectDataNo; i++) {
+    for(i = 0; i < projectDataNo; i++) {
         renderProjectCard(i);
     };
 }
@@ -114,15 +130,17 @@ function renderProjectCard(pos) {
     const projectThumbTemplate = document.querySelector('template.projects-bigcard-template');
     const projectThumbPrefab = projectThumbTemplate.content.cloneNode(true);
     // Grab details from prefab clone (TP)
-    const projectTProot = projectThumbPrefab.querySelector('.projects-bigcard')
-    const projectTPdtlsRoot = projectThumbPrefab.querySelector('.projects-bigcard-details')
-    const projectTPthumb = projectThumbPrefab.querySelector('.projects-bigcard-thumb')
-    const projectTPhead = projectThumbPrefab.querySelector('.projects-bigcard-details-h3')
-    const projectTPtagList = projectThumbPrefab.querySelector('.projects-bigcard-details-taglist')
+    const projectTProot = projectThumbPrefab.querySelector('.projects-bigcard');
+    const projectTPdtlsRoot = projectThumbPrefab.querySelector('.projects-bigcard-details-container');
+    const projectTPthumb = projectThumbPrefab.querySelector('.projects-bigcard-thumb-img');
+    const projectTPhead = projectThumbPrefab.querySelector('.projects-bigcard-details-h3');
+    const projectTPtagList = projectThumbPrefab.querySelector('.projects-bigcard-details-taglist');
+    const projectTPdesc = projectThumbPrefab.querySelector('.projects-bigcard-details-desc');
     console.log(projectThumbPrefab);
 
     // Thumb url from JSON DB id
     projectTPthumb.src = projectImgs[`${projectData[pos].id}`]['thumb'];
+    console.log(projectTPthumb.src);
 
     // Fill new project metadata
     // Card title, just grab name
@@ -134,12 +152,16 @@ function renderProjectCard(pos) {
         projectTPtagList.appendChild(renderProjectCardTags(projectTags[x]));
     };
 
+    // Project details
+    //const projectFooter = projectData[pos].date;
+    projectTPdesc.textContent = projectData[pos].date;;
+
     // Calculate px of how much we're shifting the details container on hover state
     // Work out how many extra lines the title will reach when rendered in full
     const TPheadExtraLines = Math.round(projectData[pos].name.length / 24)
-    // Base offset (100px) plus however many extra line heights (42) we need 
+    // Base offset (150px) plus however many extra line heights (42) we need 
     // to push up the container by
-    const TPheadHoverOffset = `${180 + (TPheadExtraLines * 42)}px`;
+    const TPheadHoverOffset = `${150 + (TPheadExtraLines * 42)}px`;
     projectTProot.style.setProperty('--hover-bottom', TPheadHoverOffset);
 
     // Append to cardousel
@@ -155,13 +177,30 @@ function renderProjectCardTags(tag) {
     return projectTPtag;
 }
 
-function getHeight(element)
-{
-    element = element.cloneNode(true); 
-    element.style.visibility = "hidden";
-    document.body.appendChild(element);
-    var height = element.scrollWidth;
-    document.body.removeChild(element);
-    element.style.visibility = "visible";
-    return height;
+// Set up project card tag DOM
+function renderProjectCardFooter(tag) {
+    const projectTPfoot = document.createElement('p');
+    projectTPfoot.classList.add('projects-bigcard-footer');
+    projectTPfoot.textContent = tag;
+
+    return projectTPfoot;
+}
+
+function renderProjectOpen(pos) {
+    // DOM
+    // Grab project open template, then clone
+    const projectOpenTemplate = document.querySelector('template.project-big-open-template');
+    const projectOpenPrefab = projectOpenTemplate.content.cloneNode(true);
+    // Grab details from prefab clone (OP)
+    const projectOProot = projectOpenPrefab.querySelector('.project-big-open');
+    const projectOPhead = projectOpenPrefab.querySelector('.project-big-open-header');
+        const projectOPheadTxt = projectOPhead.querySelector('.project-big-open-header-title');
+
+    // Set project titlte
+    projectOPheadTxt.textContent = projectData[pos].name;
+
+    // Hide projects grid
+    projectsBigGrid.classList.toggle('closed');
+    // Render project open 
+    projectsContainer.appendChild(projectOpenPrefab);
 }

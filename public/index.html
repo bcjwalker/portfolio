@@ -121,7 +121,7 @@
         <div id="main-projects-container">
             <div id="main-projects">
             
-            <!-- Projects big, for my best works -->
+            <!-- Projects big grid, for my best works -->
             <div id="projects-big">
                 <h1 class="projects-big-h1"> Works </h1>
                 <!-- Cards carousel -->
@@ -133,18 +133,20 @@
                             <!-- Variables for hover/unhover bottom values -->
                             <style>
                                 .projects-bigcard {
-                                    --idle-bottom: 64px;
+                                    --idle-bottom: 68px;
                                     --hover-bottom: 180px;
                                 }
                             </style>
 
-                            <img class="projects-bigcard-thumb"></img>
+                            <div class="projects-bigcard-thumb">
+                                <img class="projects-bigcard-thumb-img"></img>
+                            </div>
                             <div class="projects-bigcard-details-container"> 
                                 <h3 class="projects-bigcard-details-h3"> </h3>
 
                                 <div class="projects-bigcard-details-taglist"> </div>
                                 
-                                <h3 class="projects-bigcard-details-desc"> </h3>
+                                <p class="projects-bigcard-details-desc"> </p>
                             </div>
                         </div>
                     </template>
@@ -152,11 +154,45 @@
                 </div> 
             </div>
 
-            <!-- Project open template, replaces Projects big -->
-            <template class="projects-big-open">
-                
-            </template>
+            <!-- Project open template, replaces the projects card grid -->
+            <template class="project-big-open-template">
+                <div class="project-big-open">
+                    <!-- Header -->
+                    <div class="project-big-open-header-container">
+                        <div class="project-big-open-header">
+                            <div class="project-big-open-header-topdtls">
+                                <button class="project-big-open-header-backbtn stdbtn icon">
+                                    <span class="material-symbols-rounded"> arrow_back </span> 
+                                </button>
+                                
+                                <h1 class="project-big-open-header-title">Project title</h1>
+                            </div>
+                            <div class="project-big-open-header-bottomdtls">
+                                <div class="project-big-open-header-taglist"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel 1 -->
+                    <h2>Final project</h2>
+                    <div class="project-big-open-carousel-1">
+                        <button class="iconbtn"> < </button>
+                        <div>
 
+                        </div>
+                        <button class="iconbtn"> > </button>
+                    </div>
+                    <!-- Carousel 2 -->
+                    <h2>Design process</h2>
+                    <div class="project-big-open-carousel-2">
+
+                    </div>
+                    <!-- Credits -->
+                    <h2>Credits</h2>
+                    <div class="project-big-open-credits">
+
+                    </div>
+                </div>
+            </template>
             
 
             <!-- Cut for now, I don't have enough projects  

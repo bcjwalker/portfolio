@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node public/server.js",
     "prestart": "parcel build ./public/index.html --public-url ./",
-    "dev": "parcel serve ./public/index.html assets/**",
+    "dev": "parcel serve ./public/index.html",
     "clean": "rimraf dist && rimraf .parcel-cache",
     "predeploy": "rimraf dist && parcel build ./public/index.html --no-optimize --public-url ./",
     "deploy": "gh-pages -d dist"

@@ -2,17 +2,20 @@ button {
     cursor: pointer;
     text-align: center; 
 
-    font-weight: 600;
-    font-family: 'Mulish', sans-serif;
-    color: var(--shade-text-1);
     border-radius: 100px;
+    color: var(--shade-text-1);
 
     transition: background-color 0.275s;
 }
     // Standard icon/text buttons
-    //button.stdbtn {
-        
-    //}
+    button.stdbtn {
+        border: none;
+        background-color: var(--shade-base-1);
+    }
+        // Standard/icon
+        button.stdbtn.icon {
+            aspect-ratio: 1 / 1;
+        }
     // Single icon buttons
     button.iconbtn {
         aspect-ratio: 1 / 1;
@@ -22,13 +25,13 @@ button {
 
         // Hover: a subtle active effect
         button:hover {
-            background-color: var( --shade-base-accent-1);
+            background-color: var( --shade-base-accent-1) !important;
 
             transition: background-color 0.1s;
         }
         // Active: a subtle click effect
         button:active {
-            background-color: var( --shade-base-accent-2);
+            background-color: var( --shade-base-accent-2) !important;
 
             transition: background-color 0.1s;
         }
@@ -54,6 +57,7 @@ button {
         transition: box-shadow 0.15s, transform 0.15s;
         .projects-bigcard-details-container {
             bottom: var(--idle-bottom);
+            //background-color: var(--shade-base-1);
 
             transition: bottom 0.15s;
 
@@ -66,18 +70,24 @@ button {
             }
         }
         .projects-bigcard-thumb {
-            transition: background-color 0.1s;
+            background-color: none;
+            img {
+                opacity: 1;
+
+                transition: opacity 0.15s;
+            }
         }
     }
         .projects-bigcard:hover {
             cursor: pointer;
             transform: translateX(-1) translateY(-2);
 
-            box-shadow: 0px 1px 2px hsla(0, 0%, 9%, 0.1), 0px 2px 6px hsla(0, 0%, 9%, 0.16);
+            box-shadow: 0px 1px 2px hsla(0, 0%, 9%, 0.1), 0px 2px 6px hsla(0, 0%, 9%, 0.18);
 
             transition: box-shadow 0.1s, transform 0.15s;
             .projects-bigcard-details-container {
                 bottom: var(--hover-bottom);
+                //background-color: var(--shade-base-2);
                 
                 transition: bottom 0.275s;
 
@@ -90,11 +100,10 @@ button {
                 }
             }
             .projects-bigcard-thumb {
-                //background-color: var(--shade-base-3);
-    
-                transition: background-color 0.1s;
                 img {
-                    opacity: 0.9;
+                    opacity: 0.75;
+
+                    transition: opacity 0.15s;
                 }
             }
         }
