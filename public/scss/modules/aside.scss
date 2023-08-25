@@ -102,11 +102,11 @@ aside {
             }
             // Hover: remove hover effect as it transforms
             #aside-infobox-btn:hover {
-                background-color: initial;
+                background-color: initial !important;
             }            
             // Active: remove click effect as it transforms
             #aside-infobox-btn:active {
-                background-color: initial;
+                background-color: initial !important;
             }
     }
         // Hover: replaces button hover effect because that one transforms

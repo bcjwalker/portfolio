@@ -17,8 +17,8 @@ main {
     --shade-base-5: hsl(035, 32%, 86%);
 
     // Base shade accent - interaction states, e.g. button hovers
-    --shade-base-accent-1: hsla(035, 18%, 80%, 0.2);
-    --shade-base-accent-2: hsla(035, 18%, 78%, 0.325);
+    --shade-base-accent-1: hsla(035, 45%, 80%, 0.2);
+    --shade-base-accent-2: hsla(035, 40%, 78%, 0.3);
 
     // Text shades
     --shade-text-0: hsl(035, 5%, 12%);
@@ -97,9 +97,22 @@ main {
 
     --shade-base-1-trans: hsla(035, 5%, 99%, 0.95);
 
-    --shade-container-1: hsl(70, 40%, 94%);
-    --shade-container-1-text-1: hsl(70, 12%, 36%);
+    // Base shade accent - interaction states, e.g. button hovers
+    --shade-base-accent-1: hsla(035, 45%, 80%, 0.2);
+    --shade-base-accent-2: hsla(035, 40%, 78%, 0.3);
+
+    // Bronze elements
+    --shade-container-1: hsl(70, 32%, 94%);
+    --shade-container-1-text-1: hsl(70, 18%, 45%);
     --shade-container-1-outline-1: hsl(70, 12%, 79%);
+
+    --shade-container-2: hsl(70, 40%, 91%);
+    --shade-container-2-text-1: hsl(70, 15%, 35%);
+    --shade-container-2-outline-1: hsl(70, 12%, 75%);
+
+        // Bronze accent - interaction states, e.g. button hovers
+        --shade-container-accent-1: hsla(70, 45%, 55%, 0.2);
+        --shade-container-accent-2: hsla(70, 40%, 53%, 0.3);
 
     // Text shades
     --shade-text-0: hsl(035, 5%, 12%);
@@ -111,6 +124,7 @@ main {
     --shade-text-6: hsl(035, 12%, 46%);
 
     // Outline shades
+    --shade-outline-0: hsl(035, 12%, 94%);
     --shade-outline-1: hsl(035, 12%, 87%);
     --shade-outline-2: hsl(035, 12%, 84%);
     --shade-outline-3: hsl(035, 12%, 79%);

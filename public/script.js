@@ -154,7 +154,7 @@ function renderProjectCard(pos) {
 
     // Project details
     //const projectFooter = projectData[pos].date;
-    projectTPdesc.textContent = projectData[pos].date;;
+    projectTPdesc.textContent = projectData[pos].date;
 
     // Calculate px of how much we're shifting the details container on hover state
     // Work out how many extra lines the title will reach when rendered in full
@@ -170,7 +170,7 @@ function renderProjectCard(pos) {
 
 // Set up project card tag DOM
 function renderProjectCardTags(tag) {
-    const projectTPtag = document.createElement('p');
+    const projectTPtag = document.createElement('button');
     projectTPtag.classList.add('projects-bigcard-tag');
     projectTPtag.textContent = tag;
 
@@ -195,9 +195,20 @@ function renderProjectOpen(pos) {
     const projectOProot = projectOpenPrefab.querySelector('.project-big-open');
     const projectOPhead = projectOpenPrefab.querySelector('.project-big-open-header');
         const projectOPheadTxt = projectOPhead.querySelector('.project-big-open-header-title');
+        const projectOPtagList = projectOPhead.querySelector('.project-big-open-header-taglist');
+    const projectOPdesc = projectOpenPrefab.querySelector('.project-big-open-desc');
 
-    // Set project titlte
+    // Header
+    // Set project title
     projectOPheadTxt.textContent = projectData[pos].name;
+    // Card tags, grab tag array then push contents as individual elements 
+    const projectTags = projectData[pos].tags;
+    for (x = 0; x < projectTags.length; x++) {
+        // New DOM element for each tag
+        projectOPtagList.appendChild(renderProjectCardTags(projectTags[x]));
+    };
+
+    projectOPdesc.textContent = projectData[pos].desc;
 
     // Hide projects grid
     projectsBigGrid.classList.toggle('closed');

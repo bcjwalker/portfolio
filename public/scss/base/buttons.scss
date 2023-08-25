@@ -3,6 +3,7 @@ button {
     text-align: center; 
 
     border-radius: 100px;
+    border: none;
     color: var(--shade-text-1);
 
     transition: background-color 0.275s;
@@ -107,7 +108,21 @@ button {
                 }
             }
         }
-
+    // (Big) Open project
+    .project-big-open {
+        // Nav buttons
+        .navbox-2-btn:hover {
+            background-color: var( --shade-base-accent-1);
+    
+            transition: background-color 0.1s;
+        }
+        // Active: a subtle click effect
+        .navbox-2-btn:active {
+            background-color: var( --shade-base-accent-2);
+    
+            transition: background-color 0.1s;
+        }
+    }
     
 
 // All material symbols
