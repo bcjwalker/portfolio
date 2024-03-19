@@ -1,24 +1,29 @@
 (function () {
+
 function $parcel$export(e, n, v, s) {
   Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
 }
+
 function $parcel$interopDefault(a) {
   return a && a.__esModule ? a.default : a;
 }
-var $parcel$global =
-typeof globalThis !== 'undefined'
-  ? globalThis
-  : typeof self !== 'undefined'
-  ? self
-  : typeof window !== 'undefined'
-  ? window
-  : typeof global !== 'undefined'
-  ? global
-  : {};
+
+      var $parcel$global =
+        typeof globalThis !== 'undefined'
+          ? globalThis
+          : typeof self !== 'undefined'
+          ? self
+          : typeof window !== 'undefined'
+          ? window
+          : typeof global !== 'undefined'
+          ? global
+          : {};
+  
 var $parcel$modules = {};
 var $parcel$inits = {};
 
 var parcelRequire = $parcel$global["parcelRequiree4ca"];
+
 if (parcelRequire == null) {
   parcelRequire = function(id) {
     if (id in $parcel$modules) {
@@ -43,29 +48,32 @@ if (parcelRequire == null) {
 
   $parcel$global["parcelRequiree4ca"] = parcelRequire;
 }
-parcelRequire.register("9xqYB", function(module, exports) {
+
+var parcelRegister = parcelRequire.register;
+parcelRegister("9xqYB", function(module, exports) {
 
 $parcel$export(module.exports, "register", function () { return $6f1c1f1b2dada3ed$export$6503ec6e8aabbaf; }, function (v) { return $6f1c1f1b2dada3ed$export$6503ec6e8aabbaf = v; });
-$parcel$export(module.exports, "resolve", function () { return $6f1c1f1b2dada3ed$export$f7ad0328861e2f03; }, function (v) { return $6f1c1f1b2dada3ed$export$f7ad0328861e2f03 = v; });
 var $6f1c1f1b2dada3ed$export$6503ec6e8aabbaf;
 var $6f1c1f1b2dada3ed$export$f7ad0328861e2f03;
 "use strict";
-var $6f1c1f1b2dada3ed$var$mapping = {};
-function $6f1c1f1b2dada3ed$var$register(pairs) {
-    var keys = Object.keys(pairs);
-    for(var i = 0; i < keys.length; i++)$6f1c1f1b2dada3ed$var$mapping[keys[i]] = pairs[keys[i]];
+var $6f1c1f1b2dada3ed$var$mapping = new Map();
+function $6f1c1f1b2dada3ed$var$register(baseUrl, manifest) {
+    for(var i = 0; i < manifest.length - 1; i += 2)$6f1c1f1b2dada3ed$var$mapping.set(manifest[i], {
+        baseUrl: baseUrl,
+        path: manifest[i + 1]
+    });
 }
 function $6f1c1f1b2dada3ed$var$resolve(id) {
-    var resolved = $6f1c1f1b2dada3ed$var$mapping[id];
+    var resolved = $6f1c1f1b2dada3ed$var$mapping.get(id);
     if (resolved == null) throw new Error("Could not resolve bundle with id " + id);
-    return resolved;
+    return new URL(resolved.path, resolved.baseUrl).toString();
 }
 $6f1c1f1b2dada3ed$export$6503ec6e8aabbaf = $6f1c1f1b2dada3ed$var$register;
 $6f1c1f1b2dada3ed$export$f7ad0328861e2f03 = $6f1c1f1b2dada3ed$var$resolve;
 
 });
 
-parcelRequire.register("cHmwT", function(module, exports) {
+parcelRegister("cHmwT", function(module, exports) {
 
 $parcel$export(module.exports, "getBundleURL", function () { return $93eafa1434f2e08a$export$bdfd709ae4826697; }, function (v) { return $93eafa1434f2e08a$export$bdfd709ae4826697 = v; });
 var $93eafa1434f2e08a$export$bdfd709ae4826697;
@@ -94,7 +102,8 @@ function $93eafa1434f2e08a$var$getBundleURL() {
 }
 function $93eafa1434f2e08a$var$getBaseURL(url) {
     return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
 function $93eafa1434f2e08a$var$getOrigin(url) {
     var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
     if (!matches) throw new Error("Origin not found");
@@ -106,47 +115,50 @@ $93eafa1434f2e08a$export$5a759dc7a1cfb72a = $93eafa1434f2e08a$var$getOrigin;
 
 });
 
-var $bf44df13f2eee72a$exports = {};
-
-(parcelRequire("9xqYB")).register(JSON.parse('{"ihKoB":"index.86ae1346.js","j4MT3":"thumb.f2bf334c.jpg","jkNVD":"thumb.ecdbf45a.jpg","3AADh":"thumb.a6d67c57.jpg"}'));
-
-var $4b1ac8313b9dd875$exports = {};
-var $bdc59f8c4d542d81$exports = {};
+var $3fb8917ba793bc22$exports = {};
 
 
-$bdc59f8c4d542d81$exports = (parcelRequire("cHmwT")).getBundleURL("ihKoB") + (parcelRequire("9xqYB")).resolve("j4MT3");
+(parcelRequire("9xqYB")).register((parcelRequire("cHmwT")).getBundleURL("ihKoB"), JSON.parse('["ihKoB","index.e1bfd3b0.js","j4MT3","thumb.f2bf334c.jpg","jkNVD","thumb.ecdbf45a.jpg","3AADh","thumb.a6d67c57.jpg"]'));
+
+/*
+#############
+## Modules ##
+#############
+*/ // Glob file paths (see https://en.parceljs.org/module_resolution.html#glob-file-paths)
+var $1390d44b4638509a$exports = {};
+var $6a4f6ed12d4752f2$exports = {};
+
+$6a4f6ed12d4752f2$exports = (parcelRequire("cHmwT")).getBundleURL("ihKoB") + "thumb.f2bf334c.jpg";
 
 
-var $78068915ab5df169$exports = {};
+var $f5c395f448c57b89$exports = {};
+
+$f5c395f448c57b89$exports = (parcelRequire("cHmwT")).getBundleURL("ihKoB") + "thumb.ecdbf45a.jpg";
 
 
-$78068915ab5df169$exports = (parcelRequire("cHmwT")).getBundleURL("ihKoB") + (parcelRequire("9xqYB")).resolve("jkNVD");
+var $c89a82f737a6eac3$exports = {};
+
+$c89a82f737a6eac3$exports = (parcelRequire("cHmwT")).getBundleURL("ihKoB") + "thumb.a6d67c57.jpg";
 
 
-var $b1be4592e6190b0f$exports = {};
-
-
-$b1be4592e6190b0f$exports = (parcelRequire("cHmwT")).getBundleURL("ihKoB") + (parcelRequire("9xqYB")).resolve("3AADh");
-
-
-$4b1ac8313b9dd875$exports = {
+$1390d44b4638509a$exports = {
     "biodiversity": {
-        "thumb": $bdc59f8c4d542d81$exports
+        "thumb": $6a4f6ed12d4752f2$exports
     },
     "convey": {
-        "thumb": $78068915ab5df169$exports
+        "thumb": $f5c395f448c57b89$exports
     },
     "studbud": {
-        "thumb": $b1be4592e6190b0f$exports
+        "thumb": $c89a82f737a6eac3$exports
     }
 };
 
 
 var $829ae6dc27d91a64$exports = {};
-$829ae6dc27d91a64$exports = JSON.parse('[{"id":"studbud","name":"Studbud","tags":["Desktop","Educational"],"date":"2021","desc":"text here"},{"id":"convey","name":"Convey","tags":["Mobile","Transport"],"date":"2022","desc":"text here","carousel-1":{"slides":["url","url"],"descs":["desc","desc"]},"carousel-2":{"slides":["url","url"],"descs":["desc","desc"]}},{"id":"biodiversity","name":"Biodiversity in the Human Era","tags":["Desktop","Infovis"],"date":"2023","desc":"text here","carousel-1":{"slides":["url","url"],"descs":["desc","desc"]},"carousel-2":{"slides":["url","url"],"descs":["desc","desc"]}}]');
+$829ae6dc27d91a64$exports = JSON.parse('[{"id":"studbud","name":"Studbud","tags":["Desktop","Educational"],"date":"2021","desc":"A browser-based Kanban study tracker with integrated Pomodoro timer."},{"id":"convey","name":"Convey","tags":["Mobile","Transport"],"date":"2022","desc":"text here","carousel-1":{"slides":["url","url"],"descs":["desc","desc"]},"carousel-2":{"slides":["url","url"],"descs":["desc","desc"]}},{"id":"biodiversity","name":"Biodiversity in the Human Era","tags":["Desktop","Infovis"],"date":"2023","desc":"text here","carousel-1":{"slides":["url","url"],"descs":["desc","desc"]},"carousel-2":{"slides":["url","url"],"descs":["desc","desc"]}}]');
 
 
-console.log((0, (/*@__PURE__*/$parcel$interopDefault($4b1ac8313b9dd875$exports))));
+console.log((0, (/*@__PURE__*/$parcel$interopDefault($1390d44b4638509a$exports))));
 //const projectData = require("./assets/projects-db.json");
 console.log((0, (/*@__PURE__*/$parcel$interopDefault($829ae6dc27d91a64$exports))));
 // Number of projects for recursive access
@@ -155,6 +167,9 @@ console.log($dc22a61828523e3d$var$projectDataNo);
 // DOM
 // Get body
 const $dc22a61828523e3d$var$pageBody = document.body;
+// Get projects stuff necessary globally
+const $dc22a61828523e3d$var$projectsContainer = document.querySelector("#main-projects-container");
+const $dc22a61828523e3d$var$projectsBigGrid = document.querySelector("#projects-big");
 /*
 ########################
 ## Page Functionality ##
@@ -166,8 +181,11 @@ window.addEventListener("load", function() {
     $dc22a61828523e3d$var$initNav();
     $dc22a61828523e3d$var$initHead();
     $dc22a61828523e3d$var$initAside();
+    $dc22a61828523e3d$var$initEffects();
     // Finally, init projects functionality
     $dc22a61828523e3d$var$initProjects();
+// TEMPTEMP: Show projects open
+//renderProjectOpen(0);
 });
 // Init nav's context menu button
 function $dc22a61828523e3d$var$initNav() {
@@ -210,14 +228,16 @@ function $dc22a61828523e3d$var$initAside() {
         asideExpBtn.classList.toggle("closed");
     });
 }
+// Init epic FX
+function $dc22a61828523e3d$var$initEffects() {}
 ////
 // Projects:
 //   All code for the projects section to work
 ////
 // Init project section
 function $dc22a61828523e3d$var$initProjects() {
-    // Create a card for all entries
-    for(y = 0; y < $dc22a61828523e3d$var$projectDataNo; y++)$dc22a61828523e3d$var$renderProjectCard(y);
+    // Render a card for all entries
+    for(i = 0; i < $dc22a61828523e3d$var$projectDataNo; i++)$dc22a61828523e3d$var$renderProjectCard(i);
 }
 // Render project card thumbnail in grid
 function $dc22a61828523e3d$var$renderProjectCard(pos) {
@@ -228,13 +248,14 @@ function $dc22a61828523e3d$var$renderProjectCard(pos) {
     const projectThumbPrefab = projectThumbTemplate.content.cloneNode(true);
     // Grab details from prefab clone (TP)
     const projectTProot = projectThumbPrefab.querySelector(".projects-bigcard");
-    const projectTPdtlsRoot = projectThumbPrefab.querySelector(".projects-bigcard-details");
+    const projectTPdtlsRoot = projectThumbPrefab.querySelector(".projects-bigcard-details-container");
     const projectTPthumb = projectThumbPrefab.querySelector(".projects-bigcard-thumb-img");
     const projectTPhead = projectThumbPrefab.querySelector(".projects-bigcard-details-h3");
     const projectTPtagList = projectThumbPrefab.querySelector(".projects-bigcard-details-taglist");
+    const projectTPdesc = projectThumbPrefab.querySelector(".projects-bigcard-details-desc");
     console.log(projectThumbPrefab);
     // Thumb url from JSON DB id
-    projectTPthumb.src = (0, (/*@__PURE__*/$parcel$interopDefault($4b1ac8313b9dd875$exports)))[`${(0, (/*@__PURE__*/$parcel$interopDefault($829ae6dc27d91a64$exports)))[pos].id}`]["thumb"];
+    projectTPthumb.src = (0, (/*@__PURE__*/$parcel$interopDefault($1390d44b4638509a$exports)))[`${(0, (/*@__PURE__*/$parcel$interopDefault($829ae6dc27d91a64$exports)))[pos].id}`]["thumb"];
     console.log(projectTPthumb.src);
     // Fill new project metadata
     // Card title, just grab name
@@ -243,32 +264,85 @@ function $dc22a61828523e3d$var$renderProjectCard(pos) {
     const projectTags = (0, (/*@__PURE__*/$parcel$interopDefault($829ae6dc27d91a64$exports)))[pos].tags;
     for(x = 0; x < projectTags.length; x++)// New DOM element for each tag
     projectTPtagList.appendChild($dc22a61828523e3d$var$renderProjectCardTags(projectTags[x]));
+    // Project details
+    //const projectFooter = projectData[pos].date;
+    projectTPdesc.textContent = (0, (/*@__PURE__*/$parcel$interopDefault($829ae6dc27d91a64$exports)))[pos].date;
     // Calculate px of how much we're shifting the details container on hover state
     // Work out how many extra lines the title will reach when rendered in full
     const TPheadExtraLines = Math.round((0, (/*@__PURE__*/$parcel$interopDefault($829ae6dc27d91a64$exports)))[pos].name.length / 24);
-    // Base offset (100px) plus however many extra line heights (42) we need 
+    // Base offset (150px) plus however many extra line heights (42) we need 
     // to push up the container by
-    const TPheadHoverOffset = `${180 + TPheadExtraLines * 42}px`;
+    const TPheadHoverOffset = `${150 + TPheadExtraLines * 42}px`;
     projectTProot.style.setProperty("--hover-bottom", TPheadHoverOffset);
+    // Go give the card functionality!
+    $dc22a61828523e3d$var$initProjectCard(pos, projectTProot);
     // Append to cardousel
     projectThumbCardousel.appendChild(projectThumbPrefab);
 }
 // Set up project card tag DOM
 function $dc22a61828523e3d$var$renderProjectCardTags(tag) {
-    const projectTPtag = document.createElement("p");
+    const projectTPtag = document.createElement("button");
     projectTPtag.classList.add("projects-bigcard-tag");
     projectTPtag.textContent = tag;
     return projectTPtag;
 }
-function $dc22a61828523e3d$var$getHeight(element) {
-    element = element.cloneNode(true);
-    element.style.visibility = "hidden";
-    document.body.appendChild(element);
-    var height = element.scrollWidth;
-    document.body.removeChild(element);
-    element.style.visibility = "visible";
-    return height;
+// Set up project card tag DOM
+function $dc22a61828523e3d$var$renderProjectCardFooter(tag) {
+    const projectTPfoot = document.createElement("p");
+    projectTPfoot.classList.add("projects-bigcard-footer");
+    projectTPfoot.textContent = tag;
+    return projectTPfoot;
+}
+// Set up card functionality
+function $dc22a61828523e3d$var$initProjectCard(pos, card1) {
+    card1.addEventListener("click", ()=>{
+        $dc22a61828523e3d$var$renderProjectOpen(pos);
+    });
+}
+// Render project window to work section
+function $dc22a61828523e3d$var$renderProjectOpen(pos) {
+    // DOM
+    // Grab project open template, then clone
+    const projectOpenTemplate = document.querySelector("template.project-big-open-template");
+    const projectOpenPrefab1 = projectOpenTemplate.content.cloneNode(true);
+    // Grab details from prefab clone (OP)
+    const projectOProot = projectOpenPrefab1.querySelector(".project-big-open");
+    const projectOPhead = projectOpenPrefab1.querySelector(".project-big-open-header");
+    const projectOPheadTxt = projectOPhead.querySelector(".project-big-open-header-title");
+    const projectOPtagList = projectOPhead.querySelector(".project-big-open-header-taglist");
+    const projectOPdesc = projectOpenPrefab1.querySelector(".project-big-open-desc");
+    // Header
+    // Set project title
+    projectOPheadTxt.textContent = (0, (/*@__PURE__*/$parcel$interopDefault($829ae6dc27d91a64$exports)))[pos].name;
+    // Card tags, grab tag array then push contents as individual elements 
+    const projectTags = (0, (/*@__PURE__*/$parcel$interopDefault($829ae6dc27d91a64$exports)))[pos].tags;
+    for(x = 0; x < projectTags.length; x++)// New DOM element for each tag
+    projectOPtagList.appendChild($dc22a61828523e3d$var$renderProjectCardTags(projectTags[x]));
+    projectOPdesc.textContent = (0, (/*@__PURE__*/$parcel$interopDefault($829ae6dc27d91a64$exports)))[pos].desc;
+    // Go give the window functionality!
+    //initProjectOpen(pos);
+    // Add back button functionality
+    const projectBkBtn = projectOPhead.querySelector(".project-big-open-header-backbtn");
+    projectBkBtn.addEventListener("click", ()=>{
+        // Render project open 
+        $dc22a61828523e3d$var$projectsContainer.removeChild(projectOProot);
+        // Show projects grid
+        $dc22a61828523e3d$var$projectsBigGrid.classList.toggle("closed");
+    });
+    // Hide projects grid
+    $dc22a61828523e3d$var$projectsBigGrid.classList.toggle("closed");
+    // Render project open 
+    $dc22a61828523e3d$var$projectsContainer.appendChild(projectOpenPrefab1);
+}
+// Set up project window functionality
+function $dc22a61828523e3d$var$initProjectOpen(pos) {
+    card.addEventListener("click", ()=>{
+        // Hide projects grid
+        $dc22a61828523e3d$var$projectsBigGrid.classList.toggle("closed");
+        // Render project open 
+        $dc22a61828523e3d$var$projectsContainer.appendChild(projectOpenPrefab);
+    });
 }
 
 })();
-//# sourceMappingURL=index.86ae1346.js.map
+//# sourceMappingURL=index.e1bfd3b0.js.map
