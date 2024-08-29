@@ -48,10 +48,10 @@ window.addEventListener('load', function() {
     initEffects();
 
     // Finally, init projects functionality
-    //initProjects();
+    initProjects();
 
     // TEMPTEMP: Show projects open
-    renderProjectOpen(0);
+    //renderProjectOpen(0);
 });
 
 // Init nav's context menu button
@@ -115,12 +115,12 @@ function initEffects() {
 
 // Init project section
 function initProjects() { 
-
-    // Create a card for all entries
-    for(i = 0; i < projectDataNo; i++) {
+    // Render a card for all entries
+    for(let i = 0; i < projectDataNo; i++) {
         renderProjectCard(i);
     };
-}
+
+};
 
 // Render project card thumbnail in grid
 function renderProjectCard(pos) {
@@ -134,6 +134,7 @@ function renderProjectCard(pos) {
     const projectTPdtlsRoot = projectThumbPrefab.querySelector('.projects-bigcard-details-container');
     const projectTPthumb = projectThumbPrefab.querySelector('.projects-bigcard-thumb-img');
     const projectTPhead = projectThumbPrefab.querySelector('.projects-bigcard-details-h3');
+    const projectTPyear = projectThumbPrefab.querySelector('.projects-bigcard-details-year');
     const projectTPtagList = projectThumbPrefab.querySelector('.projects-bigcard-details-taglist');
     const projectTPdesc = projectThumbPrefab.querySelector('.projects-bigcard-details-desc');
     console.log(projectThumbPrefab);
@@ -145,9 +146,11 @@ function renderProjectCard(pos) {
     // Fill new project metadata
     // Card title, just grab name
     projectTPhead.textContent = projectData[pos].name;
+    // Card year
+    projectTPyear.textContent = projectData[pos].year;
     // Card tags, grab tag array then push contents as individual elements 
     const projectTags = projectData[pos].tags;
-    for (x = 0; x < projectTags.length; x++) {
+    for (let x = 0; x < projectTags.length; x++) {
         // New DOM element for each tag
         projectTPtagList.appendChild(renderProjectCardTags(projectTags[x]));
     };
@@ -164,9 +167,12 @@ function renderProjectCard(pos) {
     const TPheadHoverOffset = `${150 + (TPheadExtraLines * 42)}px`;
     projectTProot.style.setProperty('--hover-bottom', TPheadHoverOffset);
 
+    // Go give the card functionality!
+    initProjectCard(pos, projectTProot);
+
     // Append to cardousel
     projectThumbCardousel.appendChild(projectThumbPrefab);
-}
+};
 
 // Set up project card tag DOM
 function renderProjectCardTags(tag) {
@@ -175,7 +181,7 @@ function renderProjectCardTags(tag) {
     projectTPtag.textContent = tag;
 
     return projectTPtag;
-}
+};
 
 // Set up project card tag DOM
 function renderProjectCardFooter(tag) {
@@ -184,8 +190,16 @@ function renderProjectCardFooter(tag) {
     projectTPfoot.textContent = tag;
 
     return projectTPfoot;
-}
+};
 
+// Set up card functionality
+function initProjectCard(pos, card) {
+    card.addEventListener('click', () => {
+        renderProjectOpen(pos);
+    });
+};
+
+// Render project window to work section
 function renderProjectOpen(pos) {
     // DOM
     // Grab project open template, then clone
@@ -203,15 +217,37 @@ function renderProjectOpen(pos) {
     projectOPheadTxt.textContent = projectData[pos].name;
     // Card tags, grab tag array then push contents as individual elements 
     const projectTags = projectData[pos].tags;
-    for (x = 0; x < projectTags.length; x++) {
+    for (let x = 0; x < projectTags.length; x++) {
         // New DOM element for each tag
         projectOPtagList.appendChild(renderProjectCardTags(projectTags[x]));
     };
 
     projectOPdesc.textContent = projectData[pos].desc;
 
+    // Go give the window functionality!
+    //initProjectOpen(pos);
+    // Add back button functionality
+    const projectBkBtn = projectOPhead.querySelector('.project-big-open-header-backbtn');
+    
+    projectBkBtn.addEventListener('click', () => {
+        // Render project open 
+        projectsContainer.removeChild(projectOProot);
+        // Show projects grid
+        projectsBigGrid.classList.toggle('closed');
+    });
+
     // Hide projects grid
     projectsBigGrid.classList.toggle('closed');
     // Render project open 
     projectsContainer.appendChild(projectOpenPrefab);
-}
+};
+
+// Set up project window functionality
+function initProjectOpen(pos) {
+    card.addEventListener('click', () => {
+        // Hide projects grid
+        projectsBigGrid.classList.toggle('closed');
+        // Render project open 
+        projectsContainer.appendChild(projectOpenPrefab);
+    });
+};

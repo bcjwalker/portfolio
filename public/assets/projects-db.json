@@ -12,6 +12,7 @@
 		// Metadata
 		"id": "studbud",
 		"name": "Studbud",
+		"year": "2021",
 		"tags": [
 			"Desktop",
 			"Educational"
@@ -24,6 +25,7 @@
 		// Metadata
 		"id": "convey",
 		"name": "Convey",
+		"year": "2022",
 		"tags": [
 			"Mobile",
 			"Transport"
@@ -56,6 +58,7 @@
 		// Metadata
 		"id": "biodiversity",
 		"name": "Biodiversity in the Human Era",
+		"year": "2023",
 		"tags": [
 			"Desktop",
 			"Infovis"

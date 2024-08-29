@@ -4,7 +4,7 @@
     border-radius: 2.5em;    
     font-size: 15px;
 
-    background-color: var(--shade-base-1);
+    background-color: var(--shade-base-0);
     .projects-big-h1 {
         margin-bottom: 0.6em;
     }
@@ -65,12 +65,29 @@
                     font-size: 28px;
                     color: var(--shade-text-2);
                 }
-                // Tag list
-                .projects-bigcard-details-taglist {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 10px;
+                // Metadata: year & tags
+                .projects-bicard-details-meta {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                    // Year
+                    .projects-bigcard-details-year {
+                        display: inline-block;
+                        padding: 6px 8px;
+    
+                        font-weight: 800;
+                        font-family: 'Figtree', sans-serif;
+                        font-size: 13px;
+                        color: var(--shade-text-8);
+                    }
+                    // Tag list
+                    .projects-bigcard-details-taglist {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 10px;
+                    }
                 }
+
                 // Desc
                 .projects-bigcard-details-desc {
                     display: inline-block;
