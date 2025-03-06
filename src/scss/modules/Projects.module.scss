@@ -1,0 +1,228 @@
+// Projects (big)
+#projects-big {
+    display: block;
+    padding: 2.5em;
+    width: 75%;
+    
+    #projects-big-head-container {
+    padding-left: 16px;
+    margin-bottom: 2.5rem;
+        #projects-big-h1 {
+            margin-bottom: 0.01em;
+            line-height: 1.25em;
+        }
+        #projects-big-desc {
+        
+        }
+    }
+    // Projects carousel container
+    #projects-bigcardousel { 
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 30px;
+    }
+    #projects-small-h1 {
+        margin: 30px 0px 16px 0px;
+    
+        font-weight: 500;
+        color: var(--shade-text-3);
+    }
+}
+
+// (Big) Project card
+.projects-bigcard {
+    border-radius: 20px;
+    height: 290px;
+    overflow: hidden;
+    // Thumbnail
+    .projects-bigcard-thumb { 
+        width: 400px;
+        height: 290px;
+        
+        //background-color: black;
+        img {
+            border-radius: 20px 20px 25px 25px;
+            transition: filter 0.25s;
+        }
+    }   
+    // Details container
+    .projects-bigcard-details-container {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        position: relative;
+        width: 400px;
+        height: 300px;
+        padding: 16px;
+
+        border-radius: 20px;
+
+        // Name 
+        .projects-bigcard-details-h3 {
+            font-weight: 450;
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            line-height: 36px;
+            color: var(--shade-text-1);
+        }
+        // Metadata: year & tags
+        .projects-bigcard-details-meta {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px 0px 10px 4px;
+        opacity: 0;
+            // Year
+            .projects-bigcard-details-year {
+                display: inline-block;
+
+                font-weight: 500;
+                font-family: 'Outfit', sans-serif;
+                font-size: 13px;
+                color: var(--shade-text-6);
+            }
+            // Dot
+            .projects-bigcard-details-dot {
+                display: inline-block;
+                padding: 0 4px;
+
+                font-weight: 300;
+                font-family: 'Outfit', sans-serif;
+                font-size: 13px;
+                color: var(--shade-text-6);
+            }
+            // Tag list
+            .projects-bigcard-details-taglist {
+                display: flex;
+                flex-direction: row;
+                gap: 3px;
+            }
+        }
+
+        // Desc
+        .projects-bigcard-details-desc {
+            display: inline-block;
+            padding: 0px 4px;
+
+            font-weight: 400;
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            color: var(--shade-text-2);
+        }
+    }
+}
+// Tag
+.projects-bigcard-tag {
+    width: fit-content;
+    display: inline-block;
+    padding: 3px 6px;
+
+    background-color: transparent;
+    border: 1px solid var(--shade-base-4);
+    border-radius: 4px;
+    font-weight: 500;
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    line-height: 12px;
+    color: var(--shade-text-8);
+}
+
+// Projects buttons
+// (Big) Projects cards
+.projects-bigcard {
+    box-shadow: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    --idle-bottom: 72px;
+    --hover-bottom: 180px;
+
+    .projects-bigcard-details-container {
+        bottom: var(--idle-bottom);
+        background-color: var(--shade-card-0);
+
+        transition: bottom 0.15s, background-color 0.15s;
+        // Shrink/unshrink
+        .projects-bigcard-details-h3 {
+            height: 42px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        // Details container hover
+        &:hover {
+            background-color: var(--shade-card-0-hover2) !important;
+            transition: bottom 0.15s, background-color 0.05s;
+        }
+    }
+    .projects-bigcard-thumb {
+        background-color: none;
+        img {
+            opacity: 1;
+
+            transition: opacity 0.15s;
+        }
+    }
+
+    // Bigcard hover
+    &:hover {
+        cursor: pointer;
+        transform: translateX(-1px) translateY(-2px);
+
+        box-shadow: 0px 1px 2px hsla(0, 0%, 9%, 0.1), 0px 2px 6px hsla(0, 0%, 9%, 0.18);
+
+        transition: box-shadow 0.15s, transform 0.15s;
+        .projects-bigcard-details-container {
+            bottom: var(--hover-bottom);
+            box-shadow: 0px 1px 2px hsla(0, 0%, 9%, 0.1), 0px 2px 6px hsla(0, 0%, 9%, 0.18);
+            background-color: var(--shade-card-0-hover);
+            
+            transition: bottom 0.25s, background-color 0.15s;
+
+            // Shrink/unshrink
+            .projects-bigcard-details-h3 {
+                height: auto;
+                text-overflow: initial;
+                white-space: normal;
+                overflow: visible;
+            }
+            .projects-bigcard-details-meta {
+                opacity: 100 !important;
+
+                transition: opacity 0.275s;
+            }
+        }
+        .projects-bigcard-thumb {
+            img {
+                filter: brightness(90%);
+
+                transition: opacity 0.15s;
+            }
+        }
+    }
+    // Bigcard active
+    &:active {
+        background-color: var(--shade-card-0-active2) !important;
+        box-shadow: 0px 2px 2px hsla(0, 0%, 9%, 0.15), 0px 3px 6px hsla(0, 0%, 9%, 0.25);
+
+        transition: box-shadow 0.1s, transform 0.15s;
+        .projects-bigcard-details-container {
+            box-shadow: 0px 2px 3px hsla(0, 0%, 9%, 0.16), 0px 3px 7px hsla(0, 0%, 9%, 0.2);
+            background-color: var(--shade-card-0-active);
+            
+            transition: bottom 0.25s, background-color 0.15s;
+
+            h3 {
+                letter-spacing: -0.0075rem;
+                
+                transition: letter-spacing 0.1s;
+            }
+        }
+        .projects-bigcard-thumb {
+            img {
+                filter: brightness(85%);
+
+                transition: opacity 0.15s;
+            }
+        }
+    }
+}

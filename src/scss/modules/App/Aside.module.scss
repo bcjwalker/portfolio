@@ -1,0 +1,118 @@
+aside {
+    padding-left: 10%;
+
+    //background-image: linear-gradient(to right, var(--shade-base-1), var(--shade-base-0) 50%);
+    //background-color: var(--shade-base-1);
+    font-size: 17px;
+    * {
+        color: var(--shade-text-0);
+    }
+}
+
+// Infobox holds title, reveal button, subtitle and image
+#aside-infobox {
+    position: sticky;
+    top: 12%;
+    width: 150px;
+    margin: 22vh 0% 0 5%;
+
+    //background-color: var(--shade-base-1);
+    border-left: 1px solid var(--shade-outline-3);
+    border-radius: 1em;
+
+    // Infobox header holds title,
+    #aside-infobox-head {
+        display: inline-block;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem 0 0 1rem;
+        
+        // Infobox title
+        h4 {              
+            display: inline-block;
+            
+            color: var(--shade-text-1);
+            font-size: 0.9em;     
+            line-height: 1.35em;
+        }
+    }
+
+    #aside-infobox-content {
+        max-height: 13em;
+        overflow: hidden;
+        margin: 0 1rem;
+
+        transition: max-height 0.4s;
+
+        // Subtitle
+        p {
+            padding-bottom: 0.5em;
+
+            font-style: italic;
+            font-size: 0.75em;
+            line-height: 1.4em;
+            color: var(--shade-text-3);
+        }
+        // Avatar img
+        #aside-infobox-avatar {
+            margin: 5px 0px 1px 0px;
+            padding: 1rem 0.5rem 1rem 0.5rem;
+            
+            // Give a weird semi-shadow reflection 
+            filter: drop-shadow(6px 6px 0.375px hsl(075, 18%, 75%)) 
+                    drop-shadow(-6px -6px 0.375px hsl(075, 18%, 75%));
+        } 
+    }
+        #aside-infobox-content.closed {
+            max-height: 0em;
+            overflow: hidden;
+        
+            transition: max-height 0.4;
+        }
+
+    // Infobox reveal button container at bottom
+    #aside-infobox-btn-container {
+        margin-top: 0.65em;
+
+        border-style: solid;
+        border-width: 1px 0px 0px 0px;
+        border-image: linear-gradient(to right, var(--shade-outline-3), hsla(035, 12%, 79%, 0)) 1;
+        border-radius: 0 0 1em 1em;
+
+        transition: background-color 0.275s;
+        // Infobox reveal button
+        #aside-infobox-btn {
+            width: 100%;
+
+            transition: transform 0.4s;
+        }
+            #aside-infobox-btn.closed {
+                transform: rotateX(180deg);
+
+                border-radius: 1.275em 1.275em 0 0;
+
+                transition: transform 0.4s;
+            }
+            // Hover: remove hover effect as it transforms
+            #aside-infobox-btn:hover {
+                background-color: initial !important;
+            }            
+            // Active: remove click effect as it transforms
+            #aside-infobox-btn:active {
+                background-color: initial !important;
+            }
+    }
+        // Hover: replaces button hover effect because that one transforms
+        #aside-infobox-btn-container:hover {
+            background-color: var( --shade-base-accent-1);
+
+            transition: background-color 0.1s;
+        }
+        // Active: replaces button click effect because that one transforms
+        #aside-infobox-btn-container:active {
+            background-color: var( --shade-base-accent-2);
+
+            transition: background-color 0.1s;
+        }
+}

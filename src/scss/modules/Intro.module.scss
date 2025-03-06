@@ -1,0 +1,122 @@
+// Queries
+// 1080p
+@media screen and (width < 2560px) {
+    #main-intro-container { 
+        font-size: 1rem;
+    }
+}
+// 1440p – 2160p 
+@media screen and (2560px <= width <= 3840px) {
+    #main-intro-container {
+        font-size: 1.25rem;
+    }
+}
+
+// Name and role
+#intro-titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+
+    // Names holds signature and print name
+    #intro-titles-names {
+        margin-bottom: 1.5em;
+        height: auto;
+
+        // Signature img
+        img {
+            width: 85%;
+        }
+        // 'Benjamin Walker'
+        h2 {
+            padding-inline-start: 2px;
+
+            font-weight: 300;
+            letter-spacing: 0.015em;
+            font-size: 4em;
+            color: hsl(34, 15%, 29%);
+        }
+    }
+    
+    // Role: 'UI + UX Designer'
+    .intro-titles-role {
+        padding: 1px 0 0 0.25em;
+        margin-left: 10px;
+
+        font-size: 7em;
+        font-weight: 600;
+        line-height: 1em;
+        color: var(--shade-text-0);
+        border-left: 2px solid var(--shade-outline-5);
+    }
+    // Short description: 'usyd etc'
+    .intro-titles-desc {
+        padding: 1.15em 0 1em 1.5em;
+        margin-left: 10px;    
+
+        font-weight: 500;
+        font-size: 1.5em;
+        line-height: 1.55em;
+        color: var(--shade-text-6);
+        border-left: 2px solid var(--shade-outline-5);
+        border-radius: 0 0 0 0.75em;
+        strong {
+            color: var(--shade-text-3);
+        }
+    }
+}
+
+// Right column of intro, holds quote
+#intro-graphicfg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // Quote container
+    #intro-graphic-quotebox {
+        //aspect-ratio: 1 / 1;
+        width: 33em;
+        padding: 1em 2.5em 3em 2.5em;
+        
+        background-color: var(--shade-base-3);
+        //border: 2px solid hwb(0 40% 60%);
+        //box-shadow: 0px 1px 2px hsla(0, 0%, 9%, 0.28), 0px 4px 6px hsla(0, 0%, 9%, 0.26);
+        border-radius: 3em;
+        mix-blend-mode: luminosity;
+        z-index: 0;
+
+        // Big leading quotation icon
+        h3 {
+            padding: 0.5em 0 0em 0;
+
+            font-family: initial;
+            font-size: 7.5em; 
+            line-height: 0.4em; 
+            color: hsl(035, 6%, 15%);
+        }
+        // Quote text
+        blockquote {
+            font-weight: 500;
+            font-size: 2.75em;
+            line-height: 1.25em;
+            color: var(--shade-text-1);
+        }
+    }
+}
+
+// Background of intro, holds some sort of graphic (?)
+#intro-graphicbg {
+    position: absolute;
+    top: 1vh;
+    right: 20vw;
+    z-index: -1;
+    width: 600px;
+    height: 400px;
+    margin-top: 10%;
+
+    //border: 2px solid hwb(0 97% 3%);
+}
+
+#intro-about {
+    
+}

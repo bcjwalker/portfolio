@@ -1,12 +1,4 @@
-/*
-#############
-## Modules ##
-#############
-*/
 
-// Glob file paths (see https://en.parceljs.org/module_resolution.html#glob-file-paths)
-import projectImgs from "./assets/projects/**/*.jpg";
-console.log(projectImgs)
 
 /*
 ###############
@@ -14,13 +6,7 @@ console.log(projectImgs)
 ###############
 */
 
-// Get project DB
-import projectData from "./assets/projects-db.json";
-//const projectData = require("./assets/projects-db.json");
-console.log(projectData);
-// Number of projects for recursive access
-const projectDataNo = projectData.length;
-console.log(projectDataNo);
+
 
 
 // DOM
@@ -146,8 +132,8 @@ function renderProjectCard(pos) {
     // Fill new project metadata
     // Card title, just grab name
     projectTPhead.textContent = projectData[pos].name;
-    // Card year
-    projectTPyear.textContent = projectData[pos].year;
+    // Card date
+    projectTPyear.textContent = projectData[pos].date;
     // Card tags, grab tag array then push contents as individual elements 
     const projectTags = projectData[pos].tags;
     for (let x = 0; x < projectTags.length; x++) {
@@ -157,14 +143,14 @@ function renderProjectCard(pos) {
 
     // Project details
     //const projectFooter = projectData[pos].date;
-    projectTPdesc.textContent = projectData[pos].date;
+    projectTPdesc.textContent = projectData[pos].desc;
 
     // Calculate px of how much we're shifting the details container on hover state
     // Work out how many extra lines the title will reach when rendered in full
     const TPheadExtraLines = Math.round(projectData[pos].name.length / 24)
     // Base offset (150px) plus however many extra line heights (42) we need 
     // to push up the container by
-    const TPheadHoverOffset = `${150 + (TPheadExtraLines * 42)}px`;
+    const TPheadHoverOffset = `${170 + (TPheadExtraLines * 42)}px`;
     projectTProot.style.setProperty('--hover-bottom', TPheadHoverOffset);
 
     // Go give the card functionality!
@@ -225,7 +211,7 @@ function renderProjectOpen(pos) {
     projectOPdesc.textContent = projectData[pos].desc;
 
     // Go give the window functionality!
-    //initProjectOpen(pos);
+    // initProjectOpen(pos);
     // Add back button functionality
     const projectBkBtn = projectOPhead.querySelector('.project-big-open-header-backbtn');
     

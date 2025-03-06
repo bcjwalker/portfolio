@@ -1,0 +1,29 @@
+.iconbtn {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.iconbtn .tooltiptext {
+    opacity: 0;
+    width: 90px;
+    top: 100%;
+    left: 50%;
+    margin-left: -45px; /* Use half of the width (120/2 = 60), to center the tooltip */
+    background-color: var(--shade-invert-base-1) !important;
+    color: var(--shade-invert-text-1) !important;
+    text-align: center;
+    border-radius: 6px;
+    margin-top: 4px;
+    font: 14px "Readex Pro", sans-serif !important;
+    padding: 2px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    transition: opacity ease-out 0.1s;
+}
+
+.iconbtn:hover .tooltiptext {
+    opacity: 1;
+}

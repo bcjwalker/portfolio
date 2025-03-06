@@ -1,0 +1,22 @@
+* {
+    transition-timing-function: ease-out;
+}
+
+@view-transition {
+    navigation: auto;
+  }
+
+@keyframes btn-p-fade {
+    0% {
+        opacity: 1.0;
+        display: inline-block;
+    }
+    99% {
+        opacity: 0;
+        display: inline-block;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}

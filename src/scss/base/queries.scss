@@ -1,0 +1,22 @@
+// 1080p
+@media screen and (width < 2560px) {
+
+  }
+
+// 1440p – 2160p 
+@media screen and (2560px <= width <= 3840px) {
+    main {
+      margin: 0 1.225vw 0 1.225vw;
+    }
+
+    html {
+        width: 100%;
+        width: fixed;
+    }
+    body {
+        grid-template-columns: 10vw auto 300px;
+    }
+      body.retract {
+        grid-template-columns: 110px auto 300px;
+      }
+  }

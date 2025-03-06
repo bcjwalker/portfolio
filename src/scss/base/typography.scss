@@ -1,0 +1,63 @@
+// Import Readex Pro and Outfit
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Readex+Pro:wght@160..700&display=swap');
+* {
+    color: var(--shade-text-1);
+
+    // Headings
+    h1, h2, h3, 
+    h4, h5, h6 { 
+        font-family: 'Readex Pro', sans-serif;
+        font-size: 25px;
+        font-weight: 500;
+        color: var(--shade-text-0);
+    }
+        h1 {
+            font-size: 5rem;
+            font-weight: 400;
+        }
+            .h1-sub {
+                font-size: 1.375rem;
+                font-weight: 400;
+                color: var(--shade-text-3);
+            }
+        h2 {
+            font-size: 48px;
+            font-weight: 400;
+        }
+
+    // Everything else
+    p {
+        font-weight: 400;
+        font-family: 'Outfit', sans-serif;
+        strong, em {
+            font-family: 'Outfit', sans-serif;
+        }
+    }
+    button * {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+    }
+    a {
+        font-weight: 400;
+        font-family: 'Outfit', sans-serif;
+    }
+    blockquote {
+        font-family: 'Readex Pro', sans-serif;
+        font-size: 16px;
+    }
+}
+
+
+hr {
+    border: none;
+    border-top: 1px solid var(--shade-outline-1);
+}   
+    hr.divider-section {
+        //margin: 0px 40px 0px 40px;
+    }
+    hr.divider-h {
+        margin: 12px 0px 12px 0px;
+    }
+    hr.divider-v {
+
+    }

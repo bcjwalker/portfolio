@@ -1,0 +1,140 @@
+button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    letter-spacing: 0.025ch;
+    border-radius: 100px;
+    border: none;
+    color: var(--shade-text-1);
+
+    transition: background-color 0.275s;
+
+    p {
+        padding-right: 20px;
+        transition: font-weight 0.125s;
+    }
+    span {
+        margin: 0px 7px;
+    }
+
+    // Hover: a subtle active effect
+    &:hover {
+        background-color: var( --shade-base-accent-1) !important;
+
+        transition: background-color 0.1s;
+        p {
+            font-weight: 700;
+        }
+        span.material-symbols-rounded, span.material-symbols-sharp {
+            font-weight: 400;
+        }
+    }
+    // Active: a subtle click effect
+    &:active {
+        background-color: var( --shade-base-accent-2) !important;
+        p {
+            font-weight: 600;
+        }
+        span.material-symbols-rounded, span.material-symbols-sharp {
+            font-weight: 300;
+        }
+    }
+}
+    // Standard icon/text buttons
+    button.stdbtn {
+        border: none;
+        background-color: var(--shade-base-1);
+    }
+        // Standard/icon
+        button.stdbtn.icon {
+            aspect-ratio: 1 / 1;
+        }
+    // Single icon buttons
+    button.iconbtn {
+        border: none;
+        background-color: transparent;
+        justify-content: center;
+        span {
+            margin: 0px 0px;
+        }
+    }
+ 
+// Nav buttons
+.navbox-btn {
+    width: 150px;
+    border-radius: 100px;
+
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    transition: background-color 0.275s;
+    // Button text
+    .navbox-btn-p {
+        display: inline-block;
+        vertical-align: middle; 
+        opacity: 1;
+        margin: 0;
+
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.9em;
+        color: var(--shade-text-4);
+    }
+
+    // Button symbols   
+    span.material-symbols-rounded {
+        color: var(--shade-text-2);
+    }
+    // States
+    &:hover {
+        background-color: var( --shade-base-accent-1);
+    
+        transition: background-color 0.1s;
+        .navbox-btn-p {
+            color: var(--shade-text-0);
+        }
+    }
+    &:active {
+        background-color: var( --shade-base-accent-2);
+    
+        transition: background-color 0.1s;
+        .navbox-btn-p {
+            color: var(--shade-text-1);
+        }
+    }
+    // Closed version: fade out p, darken symbols
+    &.closed {
+        width: auto;
+        .navbox-btn-p {
+            animation: btn-p-fade 0.15s ease-out both;
+        }
+        span.material-symbols-rounded {
+            color: hsl(035, 6%, 75%);
+            font-weight: 250;
+        }
+    }
+}
+    
+
+// All material symbols
+span.material-symbols-rounded, span.material-symbols-sharp {
+    display: flex;
+    aspect-ratio: 1/1;
+    min-height: 54px;
+    min-width: 54px;
+    align-items: center;
+    justify-content: center;
+    
+    line-height: 54px;
+    font-size: 1.65rem;
+    font-weight: 300;
+    font-optical-sizing: auto;
+    line-height: 1em;
+    color: var(--shade-text-1);
+
+    transition: font-weight 0.25s, color 0.15s;
+}
