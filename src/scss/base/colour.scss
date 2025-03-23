@@ -5,49 +5,21 @@ main {
 }
 
 // Colour variables
-
-// Base (brass, oxidised bronze shades)
 :root {
-    // Base shade
+    // Bronze base
     --shade-base-null: hsl(0, 0%, 100%);
     --shade-base-0: hsl(042, 44%, 98%);
         --shade-base-0-alt: hsl(042, 24%, 90%);
-    --shade-base-1: hsl(042, 44%, 96%);
+    --shade-base-1: hsl(042, 40%, 96%);
         --shade-base-1-trans: hsla(042, 5%, 99%, 0.95);
-    --shade-base-2: hsl(042, 37%, 95%);
+    --shade-base-2: hsl(042, 37%, 94%);
     --shade-base-3: hsl(042, 32%, 92%);
     --shade-base-4: hsl(042, 17%, 90%);
     --shade-base-5: hsl(042, 10%, 87%);
 
-    // Green shade
-    --green-base-0: hsl(075, 44%, 98%);
-        --green-base-0-alt: hsl(075, 24%, 90%);
-    --green-base-1: hsl(075, 44%, 96%);
-        --green-base-1-trans: hsla(075, 5%, 99%, 0.95);
-    --green-base-2: hsl(075, 37%, 95%);
-    --green-base-3: hsl(075, 32%, 92%);
-    --green-base-4: hsl(075, 17%, 90%);
-    --green-base-5: hsl(075, 10%, 87%);
+    --shade-card-0: hsl(042, 90%, 92%);
+        --shade-card-0-text: hsl(042, 40%, 37%);
 
-    // Cards
-    --shade-card-0: hsl(042, 45%, 93%);
-    --shade-card-0-hover: hsl(042, 42%, 91%);
-    --shade-card-0-hover2: hsl(042, 42%, 89%);
-    --shade-card-0-active: hsl(042, 42%, 86%);
-
-    
-    --green-card-1: hsl(075, 100%, 92%);
-        --green-card-1-text: hsl(075, 25%, 31%);
-        --green-card-1-outline: hsl(075, 12%, 79%);
-    --green-card-2: hsl(075, 40%, 91%);
-        --green-card-2-text: hsl(075, 15%, 35%);
-        --green-contcardainer-2-outline: hsl(075, 12%, 75%);
-
-    // Oxidised accent - interaction states, e.g. button hovers
-    --green-card-accent-1: hsla(075, 45%, 55%, 0.2);
-    --green-card-accent-2: hsla(075, 40%, 53%, 0.3);
-
-    --green-accent-0: hsl(075, 12%, 60%);
 
     // Base shade accent - interaction states, e.g. button hovers
     --shade-base-accent-1: hsla(042, 45%, 80%, 0.2);
@@ -74,6 +46,39 @@ main {
     --shade-invert-base-2: hsl(042, 8%, 45%);
     --shade-invert-base-3: hsl(042, 8%, 55%);
     --shade-invert-text-1: var(--shade-base-1);
+
+    // Tonal
+    --tonal-card-0: hsl(042, 55%, 95%);
+        --tonal-card-0-hover: hsl(042, 51%, 92%);
+        --tonal-card-0-hover2: hsl(042, 46%, 90%);
+        --tonal-card-0-active: hsl(042, 42%, 88%);
+    --tonal-card-1: hsl(042, 55%, 88%);
+
+    // Green
+    --green-base-0: hsl(075, 44%, 98%);
+        --green-base-0-alt: hsl(075, 24%, 90%);
+    --green-base-1: hsl(075, 44%, 96%);
+        --green-base-1-trans: hsla(075, 5%, 99%, 0.95);
+    --green-base-2: hsl(075, 37%, 95%);
+    --green-base-3: hsl(075, 32%, 92%);
+    --green-base-4: hsl(075, 17%, 90%);
+    --green-base-5: hsl(075, 10%, 87%);
+
+
+
+    
+    --green-card-1: hsl(075, 100%, 92%);
+        --green-card-1-text: hsl(075, 25%, 31%);
+        --green-card-1-outline: hsl(075, 12%, 79%);
+    --green-card-2: hsl(075, 40%, 91%);
+        --green-card-2-text: hsl(075, 15%, 35%);
+        --green-contcardainer-2-outline: hsl(075, 12%, 75%);
+
+    // Oxidised accent - interaction states, e.g. button hovers
+    --green-card-accent-1: hsla(075, 45%, 55%, 0.2);
+    --green-card-accent-2: hsla(075, 40%, 53%, 0.3);
+
+    --green-accent-0: hsl(075, 12%, 60%);
 }
 
 body {

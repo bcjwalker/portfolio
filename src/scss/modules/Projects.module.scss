@@ -2,7 +2,6 @@
 #projects-big {
     display: block;
     padding: 2.5em;
-    width: 75%;
     
     #projects-big-head-container {
     padding-left: 16px;
@@ -58,39 +57,38 @@
 
         border-radius: 20px;
 
-        // Name 
-        .projects-bigcard-details-h3 {
-            font-weight: 450;
-            font-family: 'Outfit', sans-serif;
-            font-size: 28px;
-            line-height: 36px;
-            color: var(--shade-text-1);
+        .projects-bicard-details-title {
+            // Name 
+            .projects-bigcard-details-h3 {
+                font-weight: 450;
+                font-family: 'Outfit', sans-serif;
+                font-size: 28px;
+                line-height: 36px;
+                color: var(--shade-text-1);
+            }
         }
-        // Metadata: year & tags
+
+        // Metadata: year and tags
         .projects-bigcard-details-meta {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 0px 0px 10px 4px;
-        opacity: 0;
+            margin-bottom: 4px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            opacity: 0;
             // Year
             .projects-bigcard-details-year {
+                width: fit-content;
                 display: inline-block;
-
+                padding: 3px 6px;
+            
+                background-color: var(--shade-card-0);
+                //border: 1px solid var(--shade-base-4);
+                border-radius: 4px;
                 font-weight: 500;
                 font-family: 'Outfit', sans-serif;
-                font-size: 13px;
-                color: var(--shade-text-6);
-            }
-            // Dot
-            .projects-bigcard-details-dot {
-                display: inline-block;
-                padding: 0 4px;
-
-                font-weight: 300;
-                font-family: 'Outfit', sans-serif;
-                font-size: 13px;
-                color: var(--shade-text-6);
+                font-size: 12px;
+                line-height: 12px;
+                color: var(--shade-text-8);
             }
             // Tag list
             .projects-bigcard-details-taglist {
@@ -98,17 +96,16 @@
                 flex-direction: row;
                 gap: 3px;
             }
-        }
-
+        }        
         // Desc
         .projects-bigcard-details-desc {
             display: inline-block;
-            padding: 0px 4px;
-
+            
+            opacity: 0;
             font-weight: 400;
             font-family: 'Outfit', sans-serif;
             font-size: 14px;
-            color: var(--shade-text-2);
+            color: var(--shade-text-6);
         }
     }
 }
@@ -118,8 +115,8 @@
     display: inline-block;
     padding: 3px 6px;
 
-    background-color: transparent;
-    border: 1px solid var(--shade-base-4);
+    background-color: var(--shade-card-0);
+    //border: 1px solid var(--shade-base-4);
     border-radius: 4px;
     font-weight: 500;
     font-family: 'Outfit', sans-serif;
@@ -138,7 +135,7 @@
 
     .projects-bigcard-details-container {
         bottom: var(--idle-bottom);
-        background-color: var(--shade-card-0);
+        background-color: var(--tonal-card-0);
 
         transition: bottom 0.15s, background-color 0.15s;
         // Shrink/unshrink
@@ -150,7 +147,7 @@
         }
         // Details container hover
         &:hover {
-            background-color: var(--shade-card-0-hover2) !important;
+            background-color: var(--tonal-card-0-hover2) !important;
             transition: bottom 0.15s, background-color 0.05s;
         }
     }
@@ -174,7 +171,7 @@
         .projects-bigcard-details-container {
             bottom: var(--hover-bottom);
             box-shadow: 0px 1px 2px hsla(0, 0%, 9%, 0.1), 0px 2px 6px hsla(0, 0%, 9%, 0.18);
-            background-color: var(--shade-card-0-hover);
+            background-color: var(--tonal-card-0-hover);
             
             transition: bottom 0.25s, background-color 0.15s;
 
@@ -190,6 +187,11 @@
 
                 transition: opacity 0.275s;
             }
+            .projects-bigcard-details-desc {
+                opacity: 100 !important;
+
+                transition: opacity 0.275s;
+            }
         }
         .projects-bigcard-thumb {
             img {
@@ -201,13 +203,13 @@
     }
     // Bigcard active
     &:active {
-        background-color: var(--shade-card-0-active2) !important;
+        background-color: var(--tonal-card-0-active2) !important;
         box-shadow: 0px 2px 2px hsla(0, 0%, 9%, 0.15), 0px 3px 6px hsla(0, 0%, 9%, 0.25);
 
         transition: box-shadow 0.1s, transform 0.15s;
         .projects-bigcard-details-container {
             box-shadow: 0px 2px 3px hsla(0, 0%, 9%, 0.16), 0px 3px 7px hsla(0, 0%, 9%, 0.2);
-            background-color: var(--shade-card-0-active);
+            background-color: var(--tonal-card-0-active);
             
             transition: bottom 0.25s, background-color 0.15s;
 

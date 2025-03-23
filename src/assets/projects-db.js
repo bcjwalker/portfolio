@@ -3,7 +3,7 @@
 ## Projects database ##
 #######################
 */
-export const projectDataRaw =
+const projectDataRaw =
 [
 	//////////////////
 	// BIG PROJECTS //
@@ -100,7 +100,7 @@ export const projectDataRaw =
 			"Desktop",
 			"Datavis"
 		],
-		"date": "2023",
+		"date": "2024",
 		"thumb": "/src/assets/projects/sunstop/thumb.jpg",
 		"desc": "text here",
 
@@ -126,3 +126,5 @@ export const projectDataRaw =
 	}
 	
 ]
+
+export const projectData = projectDataRaw.reverse()
