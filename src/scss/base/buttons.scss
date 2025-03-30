@@ -10,7 +10,7 @@ button {
 
     transition: background-color 0.275s;
 
-    p {
+    label {
         padding-right: 20px;
         transition: font-weight 0.125s;
     }
@@ -20,7 +20,7 @@ button {
 
     // Hover: a subtle active effect
     &:hover {
-        background-color: var( --shade-base-accent-1) !important;
+        background-color: var(--shade-button-accent-1) !important;
 
         transition: background-color 0.1s;
         p {
@@ -32,7 +32,7 @@ button {
     }
     // Active: a subtle click effect
     &:active {
-        background-color: var( --shade-base-accent-2) !important;
+        background-color: var(--shade-button-accent-2) !important;
         p {
             font-weight: 600;
         }
@@ -45,11 +45,11 @@ button {
     button.stdbtn {
         border: none;
         background-color: var(--shade-base-1);
-    }
-        // Standard/icon
-        button.stdbtn.icon {
+        .icon {
             aspect-ratio: 1 / 1;
         }
+    }
+
     // Single icon buttons
     button.iconbtn {
         border: none;
@@ -59,6 +59,23 @@ button {
             margin: 0px 0px;
         }
     }
+    button.greenbtn {
+        background-color: var(--green-card-1);
+        * { // colour all elements inside (text, span)
+            color: var(--green-card-1-text-1);
+        }
+        &:hover {
+            background-color: var(--green-button-accent-1) !important;
+    
+            transition: background-color 0.1s;
+        }
+        &:active {
+            background-color: var(--green-button-accent-2) !important;
+    
+            transition: background-color 0.1s;
+        }
+    }
+
  
 // Nav buttons
 .navbox-btn {
@@ -73,7 +90,8 @@ button {
 
     transition: background-color 0.275s;
     // Button text
-    .navbox-btn-p {
+    label {
+        cursor: pointer;
         display: inline-block;
         vertical-align: middle; 
         opacity: 1;
@@ -85,31 +103,31 @@ button {
         color: var(--shade-text-4);
     }
 
-    // Button symbols   
+    // Button symbols
     span.material-symbols-rounded {
         color: var(--shade-text-2);
     }
     // States
     &:hover {
-        background-color: var( --shade-base-accent-1);
+        background-color: var( --shade-button-accent-1);
     
         transition: background-color 0.1s;
-        .navbox-btn-p {
+        label {
             color: var(--shade-text-0);
         }
     }
     &:active {
-        background-color: var( --shade-base-accent-2);
+        background-color: var( --shade-button-accent-2);
     
         transition: background-color 0.1s;
-        .navbox-btn-p {
+        label {
             color: var(--shade-text-1);
         }
     }
     // Closed version: fade out p, darken symbols
     &.closed {
         width: auto;
-        .navbox-btn-p {
+        label {
             animation: btn-p-fade 0.15s ease-out both;
         }
         span.material-symbols-rounded {

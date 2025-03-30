@@ -1,9 +1,8 @@
 aside {
-    padding-left: 10%;
-
     //background-image: linear-gradient(to right, var(--shade-base-1), var(--shade-base-0) 50%);
     //background-color: var(--shade-base-1);
     font-size: 17px;
+    padding-left: 10%;
     * {
         color: var(--shade-text-0);
     }
@@ -14,7 +13,7 @@ aside {
     position: sticky;
     top: 12%;
     width: 150px;
-    margin: 22vh 0% 0 5%;
+    margin-top: 22vh;
 
     //background-color: var(--shade-base-1);
     border-left: 1px solid var(--shade-outline-3);
@@ -60,8 +59,8 @@ aside {
             padding: 1rem 0.5rem 1rem 0.5rem;
             
             // Give a weird semi-shadow reflection 
-            filter: drop-shadow(6px 6px 0.375px hsl(075, 18%, 75%)) 
-                    drop-shadow(-6px -6px 0.375px hsl(075, 18%, 75%));
+            filter: drop-shadow(6px 6px 0.375px hsl(090, 25%, 84%)) 
+                    drop-shadow(-6px -6px 0.375px hsl(090, 25%, 84%));
         } 
     }
         #aside-infobox-content.closed {
@@ -77,7 +76,7 @@ aside {
 
         border-style: solid;
         border-width: 1px 0px 0px 0px;
-        border-image: linear-gradient(to right, var(--shade-outline-3), hsla(035, 12%, 79%, 0)) 1;
+        border-image: linear-gradient(to right, var(--shade-outline-3), hsla(042, 12%, 79%, 0)) 1;
         border-radius: 0 0 1em 1em;
 
         transition: background-color 0.275s;
@@ -105,13 +104,13 @@ aside {
     }
         // Hover: replaces button hover effect because that one transforms
         #aside-infobox-btn-container:hover {
-            background-color: var( --shade-base-accent-1);
+            background-color: var( --shade-button-accent-1);
 
             transition: background-color 0.1s;
         }
         // Active: replaces button click effect because that one transforms
         #aside-infobox-btn-container:active {
-            background-color: var( --shade-base-accent-2);
+            background-color: var( --shade-button-accent-2);
 
             transition: background-color 0.1s;
         }

@@ -28,33 +28,17 @@ function RenderProjectThumb( props ) {
     console.log(props);
     return (
         <>
-            <div className={styles['projects-bigcard']} key={props.id} onClick={handleThumbClick}> 
-                {/* BEN 2024: What?
-                Variables for hover/unhover bottom values 
-                <style>
-                    .projects-bigcard {
-                        --idle-bottom: 72px;
-                        --hover-bottom: 180px;
-                    }
-                </style> */}
-                <div className={styles['projects-bicard-header']}> 
-                    <p className={styles['projects-bigcard-header-tag']}>  </p> 
+            <div className={styles['projects-card']} key={props.id} onClick={handleThumbClick}> 
+                <div className={styles['projects-card-thumb']}>
+                    <img className={styles['projects-card-thumb-img']} src={props.thumb}/>
                 </div>
-                <div className={styles['projects-bigcard-content']}>
-                    <div className={styles['projects-bigcard-thumb']}>
-                        <img className={styles['projects-bigcard-thumb-img']} src={props.thumb}/>
-                    </div>
-                    <div className={styles['projects-bigcard-details-container']}> 
-                        <div className={styles['projects-bicard-details-title']}>
-                            <h3 className={styles['projects-bigcard-details-h3']}> {props.title} </h3>
-                        </div>
-                        <div className={styles['projects-bigcard-details-meta']}> 
-                            <p className={styles['projects-bigcard-details-year']}> {props.date} </p> 
-                            <div className={styles['projects-bigcard-details-taglist']}> {tagsList} </div> 
-                        </div>
-                        <p className={styles['projects-bigcard-details-desc']}> {props.desc} </p>
 
+                <div className={styles['projects-card-details-container']}> 
+                    <div className={styles['projects-card-details-title']}>
+                        <p> {props.date} </p> 
+                        <h3> {props.title} </h3>                        
                     </div>
+                    <p className={styles['projects-card-details-desc']}> {props.desc} </p>
                 </div>
             </div>
         </>
@@ -65,7 +49,7 @@ function RenderProjectThumb( props ) {
 function RenderProjectThumbTag( props ) {
     return (
         <>
-        <button className={styles['projects-bigcard-tag']}>
+        <button className={styles['projects-card-tag']}>
             {props}
         </button>
         </>
@@ -87,7 +71,7 @@ function Projects() {
                 <p className='h1-sub' id={styles['projects-big-desc']}> Browse the projects I'm most proud of </p>
             </div>
             {/* Cards carousel */}
-            <div id={styles['projects-bigcardousel']}>
+            <div id={styles['projects-cardousel']}>
                 {thumbsList}
             </div> 
         </div>

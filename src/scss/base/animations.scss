@@ -4,8 +4,9 @@
 
 @view-transition {
     navigation: auto;
-  }
+}
 
+// Handle most universal fade-in animations
 @keyframes btn-p-fade {
     0% {
         opacity: 1.0;
@@ -19,4 +20,32 @@
         opacity: 0;
         display: none;
     }
+}
+
+// Header
+@keyframes headerAppear {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+// Floating header, tracks root y
+#root {
+    view-timeline-name: --mainTimeline;
+    view-timeline-axis: y;
+}
+header {
+    transition: opacity 0.12s; 
+    animation-name: headerAppear;
+    animation-timeline: --mainTimeline;
+    animation-range: entry 200px exit 100%;
 }

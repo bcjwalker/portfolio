@@ -1,11 +1,12 @@
 // Style
 import styles from '../../scss/modules/App/Header.module.scss';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 // Imgs
 import imgSignHead from '../../assets/img-my-signature-head.png';
 
 function Header ( {switchNavOpen} ) {
+    /* UNDONE: replaced by view anims
     // Lovely scroll tracking from https://stackoverflow.com/questions/62497110/detect-scroll-direction-in-react-js/62497293#62497293
     // Check: can this be cut down?
     const [headerOpen, setHeaderOpen] = useState("scrolling down");
@@ -39,14 +40,18 @@ function Header ( {switchNavOpen} ) {
     
       return () => window.removeEventListener("scroll", onScroll);
     }, [headerOpen]);
+    */
 
     return (
         <>
-            {/* Header, only appears after user has scrolled past signature img */}
-            <header className={`${headerOpen ? styles['fade-out'] : styles['fade-in'] }`} >
-                <img className={styles['head-icon']} src={imgSignHead} /> 
-                <p className={styles['head-text']}> Benjamin Walker </p>
-            </header>
+        {/* Header, only appears after user has scrolled past signature img */}
+        {/* UNDONE: replaced by view anims
+        <header className={`${headerOpen ? styles['fade-out'] : styles['fade-in'] }`} > */}
+        
+        <header >
+            <img className={styles['head-icon']} src={imgSignHead} /> 
+            <p className={styles['head-text']}> Benjamin Walker </p>
+        </header>
         </>
     )
 }

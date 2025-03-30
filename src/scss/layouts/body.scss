@@ -1,21 +1,20 @@
 // Stock holy layout grid wrapping the body
 #site-container {
-    display: grid; 
-    grid-template-columns: 15vw 5fr 15vw;
-    grid-template-rows: 50px 1fr 100px; 
-    //gap: 20px;
-    grid-template-areas: 
-      "header header header"
-      "nav main aside"
-      "footer footer footer"; 
+  display: grid; 
+  grid-template-columns: 0.75fr 3.5fr 0.75fr;
+  grid-template-rows: 50px 1fr 100px; 
+  //gap: 20px;
+  grid-template-areas: 
+    "header header header"
+    "nav main aside"
+    "footer footer footer"; 
 
-    transition: all 0.2s; 
-    
-    &.retract {
-      grid-template-columns: 98px auto 10.5vw;
-  
-      transition: grid-template-columns 0.3s;   
-    } 
+    transition: 0.3s;
+  // Retract nav buttons
+  &.retract {
+    grid-template-columns: 0.25fr 3.5fr 0.75fr;
+    transition: 0.3s;   
+  } 
 }
 
 header { grid-area: header; }
@@ -48,6 +47,13 @@ footer { grid-area: footer; }
 a.anchor {
   display: block;
   position: relative;
-  top: -80px;
+  top: -64px;
+  visibility: hidden;
+}
+// Version for project nav
+a.projects-anchor {
+  display: block;
+  position: relative;
+  top: -160px;
   visibility: hidden;
 }

@@ -7,7 +7,7 @@
     h1, h2, h3, 
     h4, h5, h6 { 
         font-family: 'Readex Pro', sans-serif;
-        font-size: 25px;
+        font-size: 2rem;
         font-weight: 500;
         color: var(--shade-text-0);
     }
@@ -21,7 +21,9 @@
                 color: var(--shade-text-3);
             }
         h2 {
-            font-size: 48px;
+            font-family: 'Outfit', sans-serif;
+            font-variant-ligatures: normal;
+            font-size: 3.25rem;
             font-weight: 400;
         }
 
@@ -29,8 +31,10 @@
     p {
         font-weight: 400;
         font-family: 'Outfit', sans-serif;
+        font-variant-ligatures: normal;
         strong, em {
             font-family: 'Outfit', sans-serif;
+            font-weight: 500;
         }
     }
     button * {

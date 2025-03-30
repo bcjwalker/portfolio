@@ -3,7 +3,7 @@
 ## Projects database ##
 #######################
 */
-const projectDataRaw =
+export const projectDataRaw =
 [
 	//////////////////
 	// BIG PROJECTS //
@@ -103,6 +103,43 @@ const projectDataRaw =
 		"date": "2024",
 		"thumb": "/src/assets/projects/sunstop/thumb.jpg",
 		"desc": "text here",
+		// Lead card info
+		"collabs": {
+			"nicole": {
+				"name": "Nicole Low", 
+				"thumb": "/src/assets/projects/sunstop/people/nicole.jpg", 
+				"roles": [ "Front-end development", "UX research", "UI design" ],
+				"url": "https://www.linkedin.com/in/nicolexylow"
+				},
+			"ashley": {
+				"name": "Ashley Xu", 
+				"thumb": "/src/assets/projects/sunstop/people/ashley.jpg", 
+				"roles": [ "UX research", "UI design" ],
+				"url": "https://www.linkedin.com/in/ashleyfxu"
+				},
+			"chloe": {
+				"name": "Chloe Gassoub", 
+				"thumb": "/src/assets/projects/sunstop/people/chloe.jpg", 
+				"roles": [ "UX research", "UI design", "Graphic design" ],
+				"url": "https://www.linkedin.com/in/chloe-gassoub-b90695216"
+				},
+		},
+		"roles": [
+			"User research",
+			"UI/UX design",
+			"Full stack webdev",
+			"Report writing"
+		],
+		"software": [
+			"Figma",
+			"Visual Studio",
+			"React.js",
+			"Node.js",
+		],
+		"timeline": [
+			"~3", 
+			"months"
+		],
 
 		// Open project content
 		"carousel-1": {
