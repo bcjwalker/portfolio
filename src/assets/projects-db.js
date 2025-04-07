@@ -97,8 +97,8 @@ export const projectDataRaw =
 		"title": "Sunstop",
 		"dir": "sunstop",
 		"tags": [
-			"Desktop",
-			"Datavis"
+			"Tablet,",
+			"Health"
 		],
 		"date": "2024",
 		"thumb": "/src/assets/projects/sunstop/thumb.jpg",
@@ -108,7 +108,7 @@ export const projectDataRaw =
 			"nicole": {
 				"name": "Nicole Low", 
 				"thumb": "/src/assets/projects/sunstop/people/nicole.jpg", 
-				"roles": [ "Front-end development", "UX research", "UI design" ],
+				"roles": [ "Front-end webdev", "UX research", "UI design" ],
 				"url": "https://www.linkedin.com/in/nicolexylow"
 				},
 			"ashley": {

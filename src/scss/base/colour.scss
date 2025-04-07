@@ -7,7 +7,11 @@ main {
 // Colour variables
 :root {
     // Theme colour
-    --shade-theme-0: hsl(042, 35%, 91%);
+    --theme-base-0: hsl(042, 98%, 48%);
+        // Theme interaction states, e.g. button hovers
+        --theme-card-0-hover: hsl(042, 100%, 50%);
+        --theme-card-0-active: hsl(042, 100%, 45%);
+    --theme-base-text-0: hsl(042, 0%, 100%);
 
     // Bronze base
     --shade-base-null: hsl(0, 0%, 100%);
@@ -15,20 +19,23 @@ main {
         --shade-base-0-alt: hsl(042, 24%, 90%);
     --shade-base-1: hsl(042, 40%, 96%);
         --shade-base-1-trans: hsla(042, 5%, 99%, 0.95);
-    --shade-base-2: hsl(042, 37%, 94%);
-    --shade-base-3: hsl(042, 32%, 92%);
-    --shade-base-4: hsl(042, 17%, 90%);
-    --shade-base-5: hsl(042, 10%, 87%);
+    --shade-base-2: hsl(042, 35%, 93%);
+    --shade-base-3: hsl(042, 28%, 90%);
+    --shade-base-4: hsl(042, 20%, 90%);
+    --shade-base-5: hsl(042, 15%, 87%);
 
-    --shade-card-0: hsl(042, 90%, 92%);
-        --shade-card-0-text: hsl(042, 70%, 30%);
+    --shade-card-0: hsl(042, 80%, 92%);
+        --shade-card-0-text-1: hsl(042, 42%, 28%);
+        --shade-card-0-text-2: hsl(042, 65%, 28%);
 
-    // Base shade accent - interaction states, e.g. button hovers
+    // Base shade accent - interaction states for transparent elements, e.g. button hovers
     --shade-button-accent-1: hsla(042, 45%, 80%, 0.2);
     --shade-button-accent-2: hsla(042, 40%, 78%, 0.3);
 
     // Text shades
     --shade-text-0: hsl(042, 4%, 10%);
+        --shade-text-0-highlight: hsl(040, 100%, 45%);
+        --shade-text-0-tonal: hsl(040, 50%, 45%);
     --shade-text-1: hsl(042, 5%, 15%);
     --shade-text-2: hsl(042, 7%, 21%);
     --shade-text-3: hsl(042, 7%, 26%);
@@ -38,10 +45,12 @@ main {
 
     // Outline shades
     --shade-outline-1: hsl(042, 25%, 87%);
+        --shade-outline-1-colour: hsl(042, 50%, 78%);
     --shade-outline-2: hsl(042, 25%, 84%);
-    --shade-outline-3: hsl(042, 25%, 79%);
-    --shade-outline-4: hsl(042, 35%, 75%);
-    --shade-outline-5: hsl(042, 15%, 70%);
+    --shade-outline-3: hsl(042, 20%, 79%);
+    --shade-outline-4: hsl(042, 20%, 75%);
+    --shade-outline-5: hsl(042, 15%, 65%);
+        --shade-outline-5-colour: hsl(042, 30%, 70%);
 
     // Inverted shades - for necessarily contrasting elements, e.g. tooltips
     --shade-invert-base-1: hsl(042, 8%, 35%);
@@ -51,9 +60,13 @@ main {
 
     // Tonal
     --tonal-card-0: hsl(042, 55%, 95%);
-        --tonal-card-0-hover: hsl(042, 51%, 92%);
+        --tonal-card-0-text-1: hsl(042, 25%, 18%);
+        --tonal-card-0-hover: hsl(042, 60%, 92%);
         --tonal-card-0-active: hsl(042, 46%, 90%);
-    --tonal-card-1: hsl(042, 55%, 88%);
+    --tonal-card-1: hsl(042, 45%, 87%);
+        --tonal-card-1-text-1: hsl(042, 12%, 25%);
+        --tonal-card-1-hover: hsl(042, 50%, 90%);
+        --tonal-card-1-active: hsl(042, 40%, 83%);
 
     // Green
     --green-base-0: hsl(090, 44%, 98%);
@@ -87,11 +100,30 @@ main {
 
     --green-accent-0: hsl(090, 12%, 60%);
 }
+    .outline-1 {
+        border: 1px solid var(--shade-outline-1);
+    }
+    .outline-2 {
+        border: 1px solid var(--shade-outline-2);
+    }
+    .outline-3 {
+        border: 1px solid var(--shade-outline-3);
+    }
+    .outline-4 {
+        border: 1px solid var(--shade-outline-4);
+    }
+    .outline-5 {
+        border: 1px solid var(--shade-outline-5);
+    }
 
 // Misc styles
 :root {
-    --drop-shadow-1: 0px 1.5px 2px 0px hsla(0, 0%, 10%, 0.15), 0px 1px 3px 1px hsla(0, 0%, 0%, 0.1);
+    --drop-shadow-1: 0px 1px 2px 0px hsla(0, 0%, 10%, 0.15), 0px 1px 2px 1px hsla(0, 0%, 0%, 0.075);
+    --drop-shadow-2: 0px 1.5px 2px 0px hsla(0, 0%, 10%, 0.15), 0px 1px 3px 1px hsla(0, 0%, 0%, 0.1);
 }
+    .shadow-1 {
+        box-shadow: var(--drop-shadow-1);
+    }
 
 body {
     background-color: var(--shade-base-1);

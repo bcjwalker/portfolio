@@ -3,7 +3,7 @@ import { Outlet } from 'react-router';
 
 
 // Styles
-import styles from '../scss/modules/Projects.module.scss';
+import styles from './Projects.module.scss';
 
 // Get project DB
 import { projectData } from '../assets/projects-db.js';

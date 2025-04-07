@@ -1,5 +1,5 @@
 // Style
-import styles from '../../scss/modules/App/Nav.module.scss';
+import styles from './Nav.module.scss';
 
 function Nav ( props ) {
 
@@ -11,13 +11,13 @@ function Nav ( props ) {
             {/* List of nav links for page */}
             <div id={styles['navbox']}>
                 {/* Hamburger menu, persistent, remains on top of header */}
-                <button className='iconbtn' id={styles['head-hamburger-btn']} onClick={() => props.switchNavOpen()}> 
+                <button className='icon-btn' id={styles['head-hamburger-btn']} onClick={() => props.switchNavOpen()}> 
                     <span className='material-symbols-sharp'> list </span> 
                 </button>
                 <ul>
                     <li id={styles['navbox-btn-intro']}> 
                         <button 
-                        className={`navbox-btn ${props.navOpen ? null : `closed` }`} 
+                        className={`icon-text-btn navbox-btn ${props.navOpen ? null : `closed` }`} 
                         onClick={() => document.getElementById('intro')?.scrollIntoView({behavior: 'smooth', block: 'start'})}> 
                             <span className='material-symbols-rounded'> contact_page </span> 
                             <label> Intro </label> 
@@ -25,7 +25,7 @@ function Nav ( props ) {
                     </li>
                     <li id={styles['navbox-btn-projects']}> 
                         <button 
-                        className={`navbox-btn ${props.navOpen ? null : `closed`}`} 
+                        className={`icon-text-btn navbox-btn ${props.navOpen ? null : `closed`}`} 
                         onClick={() => document.getElementById('works')?.scrollIntoView({behavior: 'smooth', block: 'start'})}> 
                             <span className='material-symbols-rounded'> inventory_2 </span> 
                             <label> Works </label> 
@@ -33,7 +33,7 @@ function Nav ( props ) {
                     </li>
                     <li id={styles['navbox-btn-contact']}> 
                         <button 
-                        className={`navbox-btn ${props.navOpen ? null : `closed`}`} 
+                        className={`icon-text-btn navbox-btn ${props.navOpen ? null : `closed`}`} 
                         onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth', block: 'start'})}>
                             <span className='material-symbols-rounded'> send </span> 
                             <label> Contact </label> 

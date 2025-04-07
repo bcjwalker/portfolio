@@ -1,0 +1,53 @@
+nav {
+    padding-right: 10%;
+    //background-image: linear-gradient(to left, hsl(035, 32%, 95%), hsl(035, 32%, 99%) 50%);
+
+    transition: 0.2s;
+    * {
+        color: var(--shade-text-2);
+    }
+    #navbox {
+        float: right;
+        height: 100%;
+        li {
+            // HACK: Label text appearing adjusts width of nav, stuttering the close anim, so locking
+            // the li width means nav is able to scale up/down without stuterring
+        }
+        // List of links
+        ul {
+            position: sticky;
+            float: left;
+            top: 12%;
+            margin-top: 20vh;
+
+            padding-inline-start: 0;
+            list-style-type: none;
+        }
+    }
+
+    @media screen and (0px <= width <= 1425px) {
+        display: flex;
+        justify-content: center;
+        padding: 0%;
+        margin-right: 5px;
+        #navbox {
+            float:none;
+        }
+    }
+}
+
+// Not technically part of header but on top of it
+#head-hamburger-btn {
+    display: none;
+    margin-left: 1em;
+    margin-top: 5px;
+    position: sticky;
+    top: 0;
+    height: 54px;
+    z-index: 1;
+    
+    span {
+        font-size: 1.65rem;
+        color: hsl(035, 6%, 26%);
+    }
+}

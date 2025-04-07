@@ -1,10 +1,21 @@
+import {useState, useRef, useEffect} from 'react'
+import { RollingNumber } from '@layflags/rolling-number';
+
 // Style
-import styles from '../scss/modules/Intro.module.scss';
+import styles from './Intro.module.scss';
 
 // Imgs
 import imgSignMain from '../assets/img-my-signature-main.png';
 
 function Intro() {
+    const [ tagline, setTagline ] = useState('expression and simplicity');
+
+    useEffect(() => {
+        setTimeout(()=>{
+            setTagline('derp')
+        }, 4250)
+    }, [tagline])
+
     return (
         <>
         {/* Intro holds two columns, titles + graphic and one row, a short about */}
@@ -29,13 +40,15 @@ function Intro() {
                 </p>
             </div>
 
+            <div id={styles['intro-graphicbg']}></div>
             {/* Graphics foreground holds quote */}
             <div id={styles['intro-graphicfg']}>
                 {/* Box for quote, no ids for cleanliness */}
-                <div id={styles['intro-graphic-quotebox']}> 
-                    <h3> ❝ </h3>
-                    <blockquote> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </blockquote>
-                </div>
+                <blockquote id={styles['intro-graphic-quotebox']}> 
+                    <span> ❝ </span>
+                    I'm a Sydney-based designer who treasures balance between
+                    <div className={styles['rotating-text']}>{tagline}</div>
+                </blockquote>
             </div>
         </div>
         </>

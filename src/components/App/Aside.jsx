@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 // Style
-import styles from '../../scss/modules/App/Aside.module.scss';
+import styles from './Aside.module.scss';
 
 // Imgs
 import imgSelfie from '../../assets/img-me2022.png';
@@ -30,7 +30,7 @@ function Aside () {
                     <div id={styles['aside-infobox-btn-container']}>
                         <button id={styles['aside-infobox-btn']}
                         onClick={handleAsideUpdate}
-                        className={`${asideOpen ? 'iconbtn'  : ` iconbtn ${styles['closed']}`}`}> 
+                        className={`${asideOpen ? 'icon-btn'  : ` icon-btn ${styles['closed']}`}`}> 
                             <span className='material-symbols-rounded'> expand_less </span>
                         </button>
                     </div>

@@ -8,7 +8,7 @@
     h4, h5, h6 { 
         font-family: 'Readex Pro', sans-serif;
         font-size: 2rem;
-        font-weight: 500;
+        font-weight: 400;
         color: var(--shade-text-0);
     }
         h1 {
@@ -20,15 +20,13 @@
                 font-weight: 400;
                 color: var(--shade-text-3);
             }
-        h2 {
-            font-family: 'Outfit', sans-serif;
-            font-variant-ligatures: normal;
-            font-size: 3.25rem;
-            font-weight: 400;
+        h4 {
+            font-weight: 500; 
         }
 
+
     // Everything else
-    p {
+    p, label, span {
         font-weight: 400;
         font-family: 'Outfit', sans-serif;
         font-variant-ligatures: normal;
@@ -46,7 +44,7 @@
         font-family: 'Outfit', sans-serif;
     }
     blockquote {
-        font-family: 'Readex Pro', sans-serif;
+        font-family: 'Outfit', sans-serif;
         font-size: 16px;
     }
 }

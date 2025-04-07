@@ -1,92 +1,170 @@
-button {
+// All material symbols
+span.material-symbols-rounded, span.material-symbols-sharp {
+    font-size: 1.65rem;
+    font-weight: 300;
+    font-optical-sizing: auto;
+    color: var(--shade-text-1);
+
+    transition: font-weight 0.25s, color 0.15s;
+}
+
+// Links
+a {
     cursor: pointer;
+    label { cursor: pointer; }
+}
+
+// Universal button attributes
+button {
     display: flex;
     align-items: center;
 
+    cursor: pointer;
     letter-spacing: 0.025ch;
-    border-radius: 100px;
-    border: none;
+    border-radius: 100rem;
     color: var(--shade-text-1);
 
     transition: background-color 0.275s;
 
     label {
-        padding-right: 20px;
-        transition: font-weight 0.125s;
+        cursor: pointer;
+        font-weight: 400;
+
+        transition: -webkit-text-stroke-width 0.125s;
     }
     span {
-        margin: 0px 7px;
+        aspect-ratio: 1;
     }
-
-    // Hover: a subtle active effect
-    &:hover {
-        background-color: var(--shade-button-accent-1) !important;
-
-        transition: background-color 0.1s;
-        p {
-            font-weight: 700;
+        // Hover: a subtle active effect
+        &:hover {
+            background-color: var(--shade-button-accent-1) !important; transition: background-color 0.1s;
         }
-        span.material-symbols-rounded, span.material-symbols-sharp {
-            font-weight: 400;
+        // Active: a subtle click effect
+        &:active {
+            background-color: var(--shade-button-accent-2) !important;
         }
-    }
-    // Active: a subtle click effect
-    &:active {
-        background-color: var(--shade-button-accent-2) !important;
-        p {
-            font-weight: 600;
-        }
-        span.material-symbols-rounded, span.material-symbols-sharp {
-            font-weight: 300;
-        }
-    }
 }
-    // Standard icon/text buttons
-    button.stdbtn {
+    // Button colours
+    // Standard shaded button
+    button.shaded-btn {
+        height: 54px;
+        padding: 1.5rem;
         border: none;
-        background-color: var(--shade-base-1);
-        .icon {
-            aspect-ratio: 1 / 1;
-        }
+        background-color: var(--tonal-card-1);
+        font-size: 1rem;
     }
+        // Primary colour button
+        a.prmry-btn, button.prmry-btn {
+            border: none;
+            background-color: var(--theme-base-0);
+            color: var(--theme-base-text-0);
+            span {
+                color: var(--theme-base-text-0);
+            }
+            label {
+                color: var(--shade-theme-0-text);
+            }
+            // Hover: a subtle active effect
+            &:hover {
+                background-color: var(--theme-card-0-hover) !important;
+            }
+            // Active: a subtle click effect
+            &:active {
+                background-color: var(--theme-card-0-active) !important;
+            }
+        }
+        // Toned button
+        a.toned-btn, button.toned-btn {
+            border: none;
+            background-color: var(--tonal-card-1);
+            label, span {
+                color: var(--tonal-card-1-text-1);
+            }
+            // Hover: a subtle active effect
+            &:hover {
+                background-color: var(--tonal-card-1-hover) !important;
+            }
+            // Active: a subtle click effect
+            &:active {
+                background-color: var(--tonal-card-1-active) !important;
 
+                transition: background-color 0.1s;
+            }
+        }
+        button.green-btn {
+            background-color: var(--green-card-1);
+            * { // colour all elements inside (text, span)
+                color: var(--green-card-1-text-1);
+            }
+            &:hover {
+                background-color: var(--green-button-accent-1) !important;
+        
+                transition: background-color 0.1s;
+            }
+            &:active {
+                background-color: var(--green-button-accent-2) !important;
+        
+                transition: background-color 0.1s;
+            }
+        }
+    
+    // Layout options
+    // Icon + text buttons
+    button.icon-text-btn {
+        min-height: 3.25rem;
+        min-width: 3.25rem;
+        gap: 1rem;
+        padding: 0 1.25rem;
+    }
     // Single icon buttons
-    button.iconbtn {
-        border: none;
-        background-color: transparent;
+    button.icon-btn {
+        min-height: 3.25rem;
+        min-width: 3.25rem;
         justify-content: center;
         span {
-            margin: 0px 0px;
-        }
-    }
-    button.greenbtn {
-        background-color: var(--green-card-1);
-        * { // colour all elements inside (text, span)
-            color: var(--green-card-1-text-1);
-        }
-        &:hover {
-            background-color: var(--green-button-accent-1) !important;
-    
-            transition: background-color 0.1s;
-        }
-        &:active {
-            background-color: var(--green-button-accent-2) !important;
-    
-            transition: background-color 0.1s;
-        }
-    }
 
- 
-// Nav buttons
+        }
+    }
+	.icon-text-btn, .icon-btn {
+		label {
+			cursor: pointer;
+			font-weight: 300 !important;
+			-webkit-text-stroke-width: 0.5px;
+			letter-spacing: 0.055ch;
+
+			transition: -webkit-text-stroke-width 0.125s;
+		}
+		// Hover: a subtle active effect
+		&:hover {
+			background-color: var(--shade-button-accent-1) !important; transition: background-color 0.1s;
+			label {
+			}
+			span.material-symbols-rounded, span.material-symbols-sharp {
+				font-weight: 375;
+			}
+		}
+		// Active: a subtle click effect
+		&:active {
+			background-color: var(--shade-button-accent-2) !important;
+			label {
+				-webkit-text-stroke-width: 0.25px;
+			}
+			span.material-symbols-rounded, span.material-symbols-sharp {
+				font-weight: 275;
+			}
+		}
+	}
+    
+// Main nav button
 .navbox-btn {
     width: 150px;
-    border-radius: 100px;
-
-    background-color: transparent;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+
+    background-color: transparent;
+    border-radius: 100px;
 
     transition: background-color 0.275s;
     // Button text
@@ -102,9 +180,8 @@ button {
         line-height: 1.9em;
         color: var(--shade-text-4);
     }
-
-    // Button symbols
-    span.material-symbols-rounded {
+    // Button symbol(s)
+    span {
         color: var(--shade-text-2);
     }
     // States
@@ -135,24 +212,67 @@ button {
             font-weight: 250;
         }
     }
+    @media screen and (0px <= width <= 1425px) {
+        width: 75px;
+        padding: 0.35rem !important;
+        margin-top: 2px;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0rem !important;
+        label {
+            font-size: 12px;
+            font-weight: 250 !important;
+        }
+    }
 }
-    
 
-// All material symbols
-span.material-symbols-rounded, span.material-symbols-sharp {
-    display: flex;
-    aspect-ratio: 1/1;
-    min-height: 54px;
-    min-width: 54px;
-    align-items: center;
-    justify-content: center;
-    
-    line-height: 54px;
-    font-size: 1.65rem;
-    font-weight: 300;
-    font-optical-sizing: auto;
-    line-height: 1em;
-    color: var(--shade-text-1);
+// Dockets
+.docket {
+    padding: 2px 3px;
 
-    transition: font-weight 0.25s, color 0.15s;
+    border-radius: 6px;
+    label {
+        font-weight: 400;
+        font-size: 0.825rem;
+        letter-spacing: 0.025ch;
+    }
+    span {
+        font-weight: 300;
+    }
+
+    // Hover: a subtle active effect
+    &:hover {
+        background-color: var(--shade-button-accent-1) !important; transition: background-color 0.1s;
+        label {
+        }
+        span.material-symbols-rounded, span.material-symbols-sharp {
+            font-weight: 300;
+        }
+    }
+    // Active: a subtle click effect
+    &:active {
+        background-color: var(--shade-button-accent-2) !important;
+        label {
+        }
+        span.material-symbols-rounded, span.material-symbols-sharp {
+            font-weight: 250;
+        }
+    }
+}
+    // Variation with leading icon
+    .docket.icon {
+        padding: 3px 12px 3px 6px;
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+        display: flex;
+        gap: 5px;
+
+        border-radius: 6px;
+        span {
+            font-size: 1.25rem;
+        }
+    }
+a.docket {
+    text-decoration: none;
 }

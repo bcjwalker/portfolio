@@ -15,7 +15,7 @@ import Aside from './components/App/Aside';
 // Main sections
 import Intro from './components/Intro';
 import Projects from './components/Projects';
-    import Project_Open from './components/Projects_Open';
+    //import Project_Open from './components/Projects_Open';
     import Projects_Sunstop from './components/Projects/Sunstop';
 import Contact from './components/Contact';
 
@@ -58,7 +58,6 @@ export default function App () {
             {/* Wrap  */}
             <Route element={<PageWrapper />}> 
                 <Route path='/' element={<Projects />} /> 
-                <Route path='/project_open' element={<Project_Open />} /> 
                 <Route path='/projects/sunstop' element={<Projects_Sunstop />} /> 
             </Route>
         </Routes>
