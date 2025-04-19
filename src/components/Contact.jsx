@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 // Styles
-import styles from './Contact.module.scss';
+import styles from './Contact.module.css';
 
 // Imgs
 import imgSelfie from '../assets/img-me2022.png';

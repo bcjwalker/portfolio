@@ -1,0 +1,296 @@
+/* Name and role */
+#intro-titles {
+    width: 55%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    /* - 1425w */
+    @media screen and (0px <= width <= 1425px) { width: auto; }
+
+    /* Names holds signature and print name */
+    #intro-titles-names {
+        margin-bottom: 1.5em;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        /* position: sticky; */
+        /* top: 4.5rem; */
+
+        /* Signature img */
+        img {
+            max-width: 415px;
+        }
+        /* 'Benjamin Walker' */
+        h2 {
+            padding-inline-start: 2px;
+            white-space: nowrap;
+
+            font-weight: 300;
+            letter-spacing: 0.015em;
+            line-height: 5rem;
+            font-size: 3.25rem;
+            color: var(--shade-text-4);
+        }
+    }
+    
+    /* Role: 'UI + UX Designer' */
+    .intro-titles-role {
+        padding: 1px 0 0 0.25em;
+        margin-left: 10px;
+
+        font-size: 7em;
+        font-weight: 600;
+        line-height: 1em;
+        color: var(--shade-text-0);
+        border-left: 2px solid var(--shade-outline-5);
+    }
+    /* Short description: 'usyd etc' */
+    .intro-titles-desc {
+        padding: 1.15em 0 1em 1.5em;
+        margin-left: 10px;    
+
+        font-weight: 500;
+        font-size: 1.5em;
+        line-height: 1.55em;
+        color: var(--shade-text-6);
+        border-left: 2px solid var(--shade-outline-5);
+        border-radius: 0 0 0 0.75em;
+        strong {
+            color: var(--shade-text-3);
+        }
+    }
+}
+
+/* Right column of intro, holds quote */
+#intro-graphicfg {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+    /* UNDONE: shape behind quotebox
+    #intro-graphic-quotebox-container::before {
+        content: ' ';
+        display: block;
+        position: relative;
+        top: 20px;
+        left: 0;
+        height: 50vh;
+        margin-bottom: -50vh;
+        z-index: -1;
+
+        font-size: 5em;
+        border-radius: 3em 5em 5em 3em;
+        background-color: var(--theme-base-0);
+
+        animation: quoteboxJumpy 3s infinite ease-out;
+    } */
+    /* - 1425w */
+    @media screen and (0px <= width <= 1425px) { width: auto; }
+    #intro-graphic-quotebox::before {
+        content: "";
+        position: absolute;
+        left: -50px; right: 10px;
+        top: -50px; bottom: -10px;
+        
+        border-radius: 3em 5em 5em 3em;
+        opacity: 0.375;
+        border: 4px solid var(--shade-outline-1);
+        mix-blend-mode: lighten;
+        pointer-events: none;
+        
+        /* transition: border-radius 0.375s; */
+    }
+        /* #intro-graphic-quotebox:hover:before { */
+        /*    border-radius: 5em 5em 8em 3em; */
+        /*    transition: border-radius 0.375s; */
+        /* } */
+    #intro-graphic-quotebox::after {
+        content: "";
+        position: absolute;
+        left: 20px; right: -50px;
+        top: 20px; bottom: -50px;
+        
+        border-radius: 3em 5em 5em 3em;
+        border: 4px solid var(--shade-outline-2);
+        mix-blend-mode: lighten;
+        pointer-events: none;
+
+        transition: border-radius 0.25s;
+    }
+        #intro-graphic-quotebox:hover:after {
+            border-radius: 3em 5em 10em 3em;
+
+            transition: border-radius 0.375s;
+        }
+    /* Quote box */
+    #intro-graphic-quotebox {
+        position: relative;
+        max-width: 820px;   
+        padding: 5rem;
+
+        font-weight: 500;
+        font-size: 5em;
+        line-height: 1.125em;
+        color: var(--shade-text-1);
+        background-color: var(--shade-base-1);
+        border-radius: 3em 5em 5em 3em;
+        z-index: 0;
+        .rotating-text {
+            font-weight: 500;
+            color: var(--shade-text-0-highlight);
+        }
+    }
+}
+
+
+#intro-graphicbg, #intro-graphicfg {
+
+}
+/* Background of intro, holds some sort of graphic (?) */
+#intro-graphicbg {
+    /* display: none; */
+    position: absolute;
+    left: 24%;
+    top: 12%;
+    z-index: -1;
+    width: 65vw;
+    height: 75vh;
+    
+    opacity: 0.5;
+    background: radial-gradient(closest-side, var(--shade-base-5-colour) 22%, var(--shade-base-1) 100%);
+}
+
+
+/* Interactions */
+/* Sticky name, transitions to be a part of the header */
+@keyframes nameSignViewSticky {
+    0% {
+        margin-bottom: 1.5em;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    5% {
+        position: fixed;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        position: sticky;
+        top: 20px;
+    }
+    25% {
+        position: fixed;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        top: 20px;
+    }
+    90% {
+        position: fixed;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        top: 20px;
+    }
+    100% {
+        position: fixed;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        top: 20px;
+    }
+}
+    /* Sticky name text */
+    @keyframes nameSignViewStickyText {
+        70% {
+            font-size: 3.25rem;
+            line-height: 5rem;
+        }
+        90% {
+            font-size: 0.75rem;
+            font-weight: 350;
+            letter-spacing: 0.015ch;
+            line-height: 1.625rem;
+        }
+        100% {
+            font-size: 0.75rem;
+            font-weight: 350;
+            letter-spacing: 0.015ch;
+            line-height: 1.625rem;
+        }
+    }
+    /* Sticky name img */
+    @keyframes nameSignViewStickyImg {
+        0% {
+            border-right: none;
+        }
+        35% {
+            max-width: 415px;
+        }
+        50% {
+            border-right: none;
+        }
+        90% {
+            max-width: 165px;
+            padding-right: 1rem;
+            margin-right: 1rem;
+
+            border-right: 1px solid var(--shade-outline-4);
+        }
+        100% {
+            max-width: 165px; 
+            padding-right: 1rem;
+            margin-right: 1rem;
+
+            border-right: 1px solid var(--shade-outline-4);
+        }
+    }
+
+#intro-titles-names {
+    animation: nameSignViewSticky forwards;
+    animation-timeline: scroll();
+    animation-range: entry 28vh exit 100%;
+    z-index: 500;
+    img {
+        animation: nameSignViewStickyImg forwards;
+        animation-timeline: --introTimeline;
+        animation-range: contain -50vh exit 100%;
+        transition: 0.25s;
+    }
+    h2 {
+        animation: nameSignViewStickyText forwards;
+        animation-timeline: --introTimeline;
+        animation-range: contain -175vh exit 100%;
+        transition: 0.25s;
+    }
+}
+
+@keyframes introQuoteStroll {
+    0% {
+        transform: translateX(0) translateY(0)
+    }
+    25% {
+        transform: translateX(-3px) translateY(-2px)
+    }
+    50% {
+        transform: translateX(5px) translateY(2px)
+    }
+    75% {
+        transform: translateX(5px) translateY(-3px)
+    }
+    100% {
+        transform: translateX(0) translateY(0)
+    }
+}
+
+#intro-graphicbg, #intro-graphicfg {
+    transition: transform 1s ease-out;
+}
+#intro-graphicbg, #intro-graphicfg:hover {
+    transform: translateX(-3px) translateY(-2px);
+    transition: transform 0.5s ease-out;
+}

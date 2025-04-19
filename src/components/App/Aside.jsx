@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 
 // Style
-import styles from './Aside.module.scss';
+import styles from './Aside.module.css';
 
 // Imgs
 import imgSelfie from '../../assets/img-me2022.png';
 
 function Aside () {
-    const [asideOpen, updateAsideOpen] = useState(true);
+    const [asideOpen, updateAsideOpen] = useState(false);
     const handleAsideUpdate = () => {
         updateAsideOpen(asideOpen => !asideOpen)
     }
@@ -24,14 +24,16 @@ function Aside () {
                     <div id={styles['aside-infobox-content']} 
                     className={`${asideOpen ? null : styles['closed'] }`}>
                         <img id={styles['aside-infobox-avatar']} src={imgSelfie} />
-                        <p className={styles['aside-infobox-p']}> …or, maybe a single picture will do. </p>    
+                        <p className={styles['aside-infobox-p']}> …or, maybe a single picture will do. </p>   
+                        { /* UNDONE: location marker
+                         <div><span class="material-symbols-rounded"> location_on </span> <span>Sydney, Australia</span></div> */}
                     </div>
                     {/* Aside expand/hide button div */}
                     <div id={styles['aside-infobox-btn-container']}>
                         <button id={styles['aside-infobox-btn']}
                         onClick={handleAsideUpdate}
                         className={`${asideOpen ? 'icon-btn'  : ` icon-btn ${styles['closed']}`}`}> 
-                            <span className='material-symbols-rounded'> expand_less </span>
+                            <span className='material-symbols-sharp'> expand_less </span>
                         </button>
                     </div>
                 </div>

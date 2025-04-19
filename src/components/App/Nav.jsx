@@ -1,5 +1,5 @@
 // Style
-import styles from './Nav.module.scss';
+import styles from './Nav.module.css';
 
 function Nav ( props ) {
 

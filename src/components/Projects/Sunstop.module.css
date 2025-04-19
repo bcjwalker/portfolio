@@ -1,0 +1,17 @@
+/* First section */
+.section1 {
+    .section1-h2 {
+        /* padding-top: 48px; */
+    }
+}
+
+.section3 {
+    .section3a-media {
+        .lead {
+            flex-basis: 75%;
+        }
+        .side {
+            flex-basis: 25%;
+        }
+    }
+}

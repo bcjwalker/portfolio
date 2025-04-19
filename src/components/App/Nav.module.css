@@ -1,6 +1,6 @@
 nav {
     padding-right: 10%;
-    //background-image: linear-gradient(to left, hsl(035, 32%, 95%), hsl(035, 32%, 99%) 50%);
+    /* background-image: linear-gradient(to left, hsl(035, 32%, 95%), hsl(035, 32%, 99%) 50%); */
 
     transition: 0.2s;
     * {
@@ -10,10 +10,10 @@ nav {
         float: right;
         height: 100%;
         li {
-            // HACK: Label text appearing adjusts width of nav, stuttering the close anim, so locking
-            // the li width means nav is able to scale up/down without stuterring
+            /* HACK: Label text appearing adjusts width of nav, stuttering the close anim, so locking */
+            /* the li width means nav is able to scale up/down without stuterring */
         }
-        // List of links
+        /* List of links */
         ul {
             position: sticky;
             float: left;
@@ -36,7 +36,7 @@ nav {
     }
 }
 
-// Not technically part of header but on top of it
+/* Not technically part of header but on top of it */
 #head-hamburger-btn {
     display: none;
     margin-left: 1em;

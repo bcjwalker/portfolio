@@ -2,7 +2,7 @@ import { useNavigate, useLocation } from 'react-router';
 
 
 // Styles
-import styles from '../scss/modules/ProjectOpen.module.scss';
+import styles from '../scss/modules/ProjectOpen.module.css';
 
 
 function Project_Open( ) {

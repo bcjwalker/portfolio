@@ -15,8 +15,9 @@ export const projectDataRaw =
 		"title": "Studbud",
 		"dir": "studbud",
 		"tags": [
-			"Desktop",
-			"Educational"
+			"Uni,",
+			"Webdev,",
+			"UI/UX"
 		],
 		"date": "2021",
 		"thumb": "/src/assets/projects/studbud/thumb.jpg",
@@ -29,32 +30,14 @@ export const projectDataRaw =
 		"title": "Convey",
 		"dir": "convey",
 		"tags": [
-			"Mobile",
-			"Transport"
+			"Uni,",
+			"UI/UX"
 		],
 		"date": "2022",
 		"thumb": "/src/assets/projects/convey/thumb.jpg",
 		"desc": "text here",
 
 		// Open project content
-		"carousel-1": {
-			"slides": [
-				"url", 
-				"url"],
-			"descs": [
-				"desc",
-				"desc"
-			]
-		},
-		"carousel-2": {
-			"slides": [
-				"url", 
-				"url"],
-			"descs": [
-				"desc",
-				"desc"
-			]
-		}
 	},
 	// 2: Biodiversity article
 	{
@@ -63,7 +46,9 @@ export const projectDataRaw =
 		"title": "Biodiversity in the Human Era",
 		"dir": "biodiversity",
 		"tags": [
-			"Desktop",
+			"Uni,",
+			"Webdev,",
+			"UI/UX,",
 			"Datavis"
 		],
 		"date": "2023",
@@ -71,24 +56,6 @@ export const projectDataRaw =
 		"desc": "text here",
 
 		// Open project content
-		"carousel-1": {
-			"slides": [
-				"url", 
-				"url"],
-			"descs": [
-				"desc",
-				"desc"
-			]
-		},
-		"carousel-2": {
-			"slides": [
-				"url", 
-				"url"],
-			"descs": [
-				"desc",
-				"desc"
-			]
-		}
 	},
 	// 3: Sunstop
 	{
@@ -97,12 +64,15 @@ export const projectDataRaw =
 		"title": "Sunstop",
 		"dir": "sunstop",
 		"tags": [
-			"Tablet,",
-			"Health"
+			"Uni,",
+			"Webdev,",
+			"UI/UX"
 		],
 		"date": "2024",
 		"thumb": "/src/assets/projects/sunstop/thumb.jpg",
-		"desc": "text here",
+		"desc": "A Sunscreen-as-a-Service kiosk and platform designed to increase sunscreen usage in young Australians.",
+			"descFull": "A Sunscreen-as-a-Service kiosk and platform designed to increase sunscreen usage in young Australians. The main product was a colourful sunscreen dispenser kiosk, which motivated users to continue regular sunscreen usage with a variety of rewards.",
+			"descFull2": "My personal touch was in pushing for increased visual expression in the use of colour, form and motion in the interface, making countless revisions as well as managing the layout and visual design of the reports.",
 		// Lead card info
 		"collabs": {
 			"nicole": {
@@ -142,24 +112,6 @@ export const projectDataRaw =
 		],
 
 		// Open project content
-		"carousel-1": {
-			"slides": [
-				"url", 
-				"url"],
-			"descs": [
-				"desc",
-				"desc"
-			]
-		},
-		"carousel-2": {
-			"slides": [
-				"url", 
-				"url"],
-			"descs": [
-				"desc",
-				"desc"
-			]
-		}
 	}
 	
 ]

@@ -3,7 +3,7 @@ import { Outlet } from 'react-router';
 
 
 // Styles
-import styles from './Projects.module.scss';
+import styles from './Projects.module.css';
 
 // Get project DB
 import { projectData } from '../assets/projects-db.js';
@@ -35,10 +35,10 @@ function RenderProjectThumb( props ) {
 
                 <div className={styles['projects-card-details-container']}> 
                     <div className={styles['projects-card-details-title']}>
-                        <p> {props.date} </p> 
+                        <label> {props.date} </label> 
                         <h3> {props.title} </h3>                        
                     </div>
-                    <p className={styles['projects-card-details-desc']}> {props.desc} </p>
+                    <span className={styles['projects-card-details-desc']}> {props.desc} </span>
                 </div>
             </div>
         </>

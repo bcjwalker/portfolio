@@ -1,0 +1,217 @@
+* {
+    transition-timing-function: ease-out;
+}
+/* Transition for details... if allowed */
+@supports (interpolate-size: allow-keywords) {
+    :root {
+      interpolate-size: allow-keywords;
+    }
+  
+    ::details-content {
+        height: 0;
+        overflow: clip;
+        transition: height 0.2s ease-out, content-visibility 0.2s ease-out allow-discrete;
+    }
+    details[open]::details-content {
+      height: auto;
+      transition: height 0.2s ease-out, content-visibility 0.2s ease-out allow-discrete;
+    }
+}
+
+
+@view-transition {
+    navigation: auto;
+}
+
+/* Handle most universal fade-in animations */
+@keyframes btn-p-fade {
+    0% {
+        opacity: 1.0;
+        display: inline-block;
+    }
+    99% {
+        opacity: 0;
+        display: inline-block;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+/* Header */
+@keyframes headerAppear {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Floating header, tracks root y */
+#root {
+    view-timeline-name: --mainTimeline;
+    view-timeline-axis: y;
+}
+header {
+    transition: opacity 0.12s; 
+    animation: headerAppear ease-out forwards;
+    animation-timeline: --mainTimeline;
+    animation-range: entry-crossing 50vh exit 100%;
+}
+
+/* Project open sticky header */
+@keyframes headerViewSticky {
+    0% {
+    }
+    12% {
+        width: 100%;
+        padding: 48px;
+        gap: 0.25rem;
+        box-shadow: none;
+        align-items: flex-start;
+
+        font-size: 4rem;
+        font-weight: 350;
+        flex-direction: column;
+        background-color: transparent;
+        pointer-events: none;
+    }
+    18% {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.25rem;
+
+        pointer-events: none;
+    }
+    25% {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.25rem;
+
+        width: 100%;
+
+        pointer-events: none;
+    }
+    30% {
+        width: 100%;
+        padding: 16px 42px 16px 48px;
+        gap: 1.25rem;
+        flex-direction: row;
+        align-items: center;
+
+        font-size: 1.75rem;
+        font-weight: 400;
+        background-color: var(--shade-base-0);
+        pointer-events: all;
+        box-shadow: var(--drop-shadow-1);
+    }
+    100% {
+        width: 100%;
+        padding: 16px 42px 16px 48px;
+        gap: 1.25rem;
+        flex-direction: row;
+        align-items: center;
+        
+        font-size: 1.75rem;
+        pointer-events: all;
+        font-weight: 400;
+        background-color: var(--shade-base-0);
+        box-shadow: var(--drop-shadow-1);
+    }
+}
+/* Project open sticky header */
+@keyframes headerViewStickyBtns {
+    0% {
+    }
+    30% {
+        opacity: 0;
+        pointer-events: none;
+    }
+    35% {
+        opacity: 1;
+        pointer-events: all;
+    }
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+/* Project open sticky header */
+@keyframes headerViewContainerBacking {
+    35% {
+        background-color: transparent;
+    }
+    38% {
+        background-color: var(--shade-base-0);
+    }
+    100% {
+        background-color: var(--shade-base-0);
+    }
+}
+
+/* Projects open */
+article.project-big-open {
+    view-timeline-name: --projectTimeline;
+    view-timeline-axis: y;
+}
+
+
+/* Floating header */
+.header-topdtls-container {
+    animation: headerViewContainerBacking ease-out forwards;
+    animation-timeline: --projectTimeline;
+    animation-range: 25% 50%;
+}
+.header-topdtls {
+    font-size: 4rem;
+    font-weight: 350;
+
+    animation: headerViewSticky ease-out forwards;
+    animation-timeline: --projectTimeline;
+    animation-range: contain -400px;
+    .btns-header {
+        animation: headerViewStickyBtns ease-out forwards;
+        animation-timeline: --projectTimeline;
+        animation-range: contain -600px;
+        @media screen and ( width <= 1100px) {
+            animation: none;
+            animation-timeline: none;
+            animation-range: none;
+        }
+    }
+}
+
+/* Title name sticky */
+#main-intro-container {
+    view-timeline-name: --introTimeline;
+    view-timeline-axis: y;
+}
+
+/* Intro text */
+@keyframes flipEnter {
+    0% {
+        opacity: 0;
+        transform: rotateX(-90deg)translateY(-30px)
+    }
+    100% {
+        opacity: 1;
+        transform: rotateX(0)translateY(0)
+    }
+}
+    @keyframes flipExit {
+        0% {
+            transform: rotateX(0)translateY(0)
+        }
+        100% {
+            opacity: 0;
+            transform: rotateX(90deg)translateY(30px)
+        }
+    }

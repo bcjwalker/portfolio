@@ -1,38 +1,46 @@
 main {
-    //background-color: hwb(0 100% 0%);
+    /* background-color: hwb(0 100% 0%); */
     border-radius: 40px;
-    //border-left: 1px solid hwb(0 100% 15%);
+    /* border-left: 1px solid hwb(0 100% 15%); */
 }
 
-// Colour variables
+/* Colour variables */
 :root {
-    // Theme colour
+    /* Theme colour */
     --theme-base-0: hsl(042, 98%, 48%);
-        // Theme interaction states, e.g. button hovers
+        /* Theme interaction states, e.g. button hovers */
         --theme-card-0-hover: hsl(042, 100%, 50%);
         --theme-card-0-active: hsl(042, 100%, 45%);
-    --theme-base-text-0: hsl(042, 0%, 100%);
+        --theme-base-text-0: hsl(042, 0%, 100%);
+    /* Theme colour for inline links */
+    --theme-base-1:  hsl(042, 98%, 46%);
+        /* Theme interaction states, e.g. button hovers */
+        --theme-card-1-hover: hsl(042, 100%, 50%);
+        --theme-card-1-active: hsl(042, 100%, 43%);
 
-    // Bronze base
+    /* Bronze base */
     --shade-base-null: hsl(0, 0%, 100%);
-    --shade-base-0: hsl(042, 44%, 98%);
+    --shade-base-0: hsl(042, 40%, 99%);
         --shade-base-0-alt: hsl(042, 24%, 90%);
-    --shade-base-1: hsl(042, 40%, 96%);
+    --shade-base-1: hsl(042, 35%, 96%);
         --shade-base-1-trans: hsla(042, 5%, 99%, 0.95);
-    --shade-base-2: hsl(042, 35%, 93%);
+    --shade-base-2: hsl(042, 32%, 93%);
     --shade-base-3: hsl(042, 28%, 90%);
     --shade-base-4: hsl(042, 20%, 90%);
     --shade-base-5: hsl(042, 15%, 87%);
+        --shade-base-5-colour: hsl(042, 25%, 85%);
 
     --shade-card-0: hsl(042, 80%, 92%);
+        --shade-card-0-text-0: hsl(042, 15%, 40%);
+            --shade-card-0-text-0-select: hsl(042, 50%, 12%);
         --shade-card-0-text-1: hsl(042, 42%, 28%);
         --shade-card-0-text-2: hsl(042, 65%, 28%);
 
-    // Base shade accent - interaction states for transparent elements, e.g. button hovers
+    /* Base shade accent - interaction states for transparent elements, e.g. button hovers */
     --shade-button-accent-1: hsla(042, 45%, 80%, 0.2);
     --shade-button-accent-2: hsla(042, 40%, 78%, 0.3);
 
-    // Text shades
+    /* Text shades */
     --shade-text-0: hsl(042, 4%, 10%);
         --shade-text-0-highlight: hsl(040, 100%, 45%);
         --shade-text-0-tonal: hsl(040, 50%, 45%);
@@ -40,35 +48,40 @@ main {
     --shade-text-2: hsl(042, 7%, 21%);
     --shade-text-3: hsl(042, 7%, 26%);
     --shade-text-4: hsl(042, 9%, 30%);
-    --shade-text-5: hsl(042, 9%, 40%);
+    --shade-text-5: hsl(042, 9%, 34%);
     --shade-text-6: hsl(042, 11%, 42%);
+    --shade-text-7: hsl(042, 11%, 58%);
 
-    // Outline shades
+    /* Outline shades */
     --shade-outline-1: hsl(042, 25%, 87%);
-        --shade-outline-1-colour: hsl(042, 50%, 78%);
+        --shade-outline-1-colour: hsl(042, 35%, 80%);
+        --shade-outline-1-highlight: hsl(040, 85%, 65%);
     --shade-outline-2: hsl(042, 25%, 84%);
     --shade-outline-3: hsl(042, 20%, 79%);
     --shade-outline-4: hsl(042, 20%, 75%);
     --shade-outline-5: hsl(042, 15%, 65%);
         --shade-outline-5-colour: hsl(042, 30%, 70%);
 
-    // Inverted shades - for necessarily contrasting elements, e.g. tooltips
+    /* Inverted shades - for necessarily contrasting elements, e.g. tooltips */
     --shade-invert-base-1: hsl(042, 8%, 35%);
     --shade-invert-base-2: hsl(042, 8%, 45%);
     --shade-invert-base-3: hsl(042, 8%, 55%);
     --shade-invert-text-1: var(--shade-base-1);
 
-    // Tonal
+    /* Tonal */
     --tonal-card-0: hsl(042, 55%, 95%);
         --tonal-card-0-text-1: hsl(042, 25%, 18%);
         --tonal-card-0-hover: hsl(042, 60%, 92%);
         --tonal-card-0-active: hsl(042, 46%, 90%);
-    --tonal-card-1: hsl(042, 45%, 87%);
-        --tonal-card-1-text-1: hsl(042, 12%, 25%);
+    --tonal-card-1: hsl(042, 41%, 90%);
+        --tonal-card-1-text-0: hsl(042, 26%, 30%);
+        --tonal-card-1-text-1: hsl(042, 80%, 18%);
+        --tonal-card-1-text-2: hsl(042, 40%, 35%);
+        --tonal-card-1-text-3: hsl(042, 15%, 30%);
         --tonal-card-1-hover: hsl(042, 50%, 90%);
         --tonal-card-1-active: hsl(042, 40%, 83%);
 
-    // Green
+    /* Green */
     --green-base-0: hsl(090, 44%, 98%);
         --green-base-0-alt: hsl(090, 24%, 90%);
     --green-base-1: hsl(090, 44%, 96%);
@@ -78,12 +91,12 @@ main {
     --green-base-4: hsl(090, 17%, 90%);
     --green-base-5: hsl(090, 10%, 87%);
 
-    --green-outline-1: hsl(090, 25%, 87%);
+    --green-outline-1: hsl(090, 25%, 83%);
     --green-outline-2: hsl(090, 15%, 75%);
 
     --green-card-1: hsl(090, 65%, 92%);
-        --green-card-1-text-1: hsl(090, 18%, 20%);
-        --green-card-1-text-2: hsl(090, 25%, 30%);
+        --green-card-1-text-1: hsl(090, 25%, 28%);
+        --green-card-1-text-2: hsl(090, 50%, 20%);
         --green-card-1-outline: hsl(090, 12%, 79%);
     --green-card-2: hsl(090, 40%, 91%);
         --green-card-2-text-1: hsl(090, 15%, 35%);
@@ -94,32 +107,35 @@ main {
         --green-card-3-outline: hsl(090, 12%, 75%);
     --green-card-4: hsl(090, 75%, 80%);
 
-    // Oxidised accent - interaction states, e.g. button hovers
+    /* Oxidised accent - interaction states, e.g. button hovers */
     --green-button-accent-1: hsla(090, 45%, 80%, 0.2);
     --green-button-accent-2: hsla(090, 40%, 78%, 0.3);
 
     --green-accent-0: hsl(090, 12%, 60%);
 }
     .outline-1 {
-        border: 1px solid var(--shade-outline-1);
+        border-color: var(--shade-outline-1) !important;
     }
     .outline-2 {
-        border: 1px solid var(--shade-outline-2);
+        border-color: var(--shade-outline-2) !important;
     }
     .outline-3 {
-        border: 1px solid var(--shade-outline-3);
+        border-color: var(--shade-outline-3) !important;
     }
     .outline-4 {
-        border: 1px solid var(--shade-outline-4);
+        border-color: var(--shade-outline-4) !important;
     }
     .outline-5 {
-        border: 1px solid var(--shade-outline-5);
+        border-color: var(--shade-outline-5) !important;
     }
 
-// Misc styles
+/* Misc styles */
 :root {
     --drop-shadow-1: 0px 1px 2px 0px hsla(0, 0%, 10%, 0.15), 0px 1px 2px 1px hsla(0, 0%, 0%, 0.075);
     --drop-shadow-2: 0px 1.5px 2px 0px hsla(0, 0%, 10%, 0.15), 0px 1px 3px 1px hsla(0, 0%, 0%, 0.1);
+    .filter-shadow1 {
+        filter: drop-shadow(0px 1px 1px hsla(0, 0%, 10%, 0.35)) drop-shadow(0px 0px 3px hsla(0, 0%, 0%, 0.125));
+    }
 }
     .shadow-1 {
         box-shadow: var(--drop-shadow-1);
@@ -130,4 +146,16 @@ body {
 }
 #main-projects-container {
     background-color: var(--shade-base-0);
+}
+
+/* Per-project theme colour  */
+/* (Used for gradient hues) */
+@property --prmry-btn-theme {
+    syntax: '<color>';
+    initial-value: red;
+    inherits: true;
+}
+
+.project-big-open.sunstop {
+    --prmry-btn-theme: hsl(29, 75%, 50%);
 }

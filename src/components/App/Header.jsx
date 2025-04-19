@@ -1,5 +1,5 @@
 // Style
-import styles from './Header.module.scss';
+import styles from './Header.module.css';
 import { useState, useEffect, useRef } from 'react';
 
 // Imgs

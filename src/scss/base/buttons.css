@@ -1,20 +1,24 @@
-// All material symbols
+/* All material symbols */
 span.material-symbols-rounded, span.material-symbols-sharp {
     font-size: 1.65rem;
     font-weight: 300;
     font-optical-sizing: auto;
     color: var(--shade-text-1);
-
-    transition: font-weight 0.25s, color 0.15s;
+    user-select: none; 
+}
+a, button {
+    span.material-symbols-rounded, span.material-symbols-sharp {
+        transition: font-weight 0.25s, color 0.15s;
+    }
 }
 
-// Links
+/* Links */
 a {
     cursor: pointer;
     label { cursor: pointer; }
 }
 
-// Universal button attributes
+/* Universal button attributes */
 button {
     display: flex;
     align-items: center;
@@ -35,17 +39,17 @@ button {
     span {
         aspect-ratio: 1;
     }
-        // Hover: a subtle active effect
+        /* Hover: a subtle active effect */
         &:hover {
             background-color: var(--shade-button-accent-1) !important; transition: background-color 0.1s;
         }
-        // Active: a subtle click effect
+        /* Active: a subtle click effect */
         &:active {
             background-color: var(--shade-button-accent-2) !important;
         }
 }
-    // Button colours
-    // Standard shaded button
+    /* Button styling */
+    /* Standard shaded colour button */
     button.shaded-btn {
         height: 54px;
         padding: 1.5rem;
@@ -53,7 +57,7 @@ button {
         background-color: var(--tonal-card-1);
         font-size: 1rem;
     }
-        // Primary colour button
+        /* Primary colour button */
         a.prmry-btn, button.prmry-btn {
             border: none;
             background-color: var(--theme-base-0);
@@ -64,27 +68,27 @@ button {
             label {
                 color: var(--shade-theme-0-text);
             }
-            // Hover: a subtle active effect
+            /* Hover: a subtle active effect */
             &:hover {
                 background-color: var(--theme-card-0-hover) !important;
             }
-            // Active: a subtle click effect
+            /* Active: a subtle click effect */
             &:active {
                 background-color: var(--theme-card-0-active) !important;
             }
         }
-        // Toned button
+        /* Toned button */
         a.toned-btn, button.toned-btn {
             border: none;
             background-color: var(--tonal-card-1);
             label, span {
                 color: var(--tonal-card-1-text-1);
             }
-            // Hover: a subtle active effect
+            /* Hover: a subtle active effect */
             &:hover {
                 background-color: var(--tonal-card-1-hover) !important;
             }
-            // Active: a subtle click effect
+            /* Active: a subtle click effect */
             &:active {
                 background-color: var(--tonal-card-1-active) !important;
 
@@ -93,9 +97,8 @@ button {
         }
         button.green-btn {
             background-color: var(--green-card-1);
-            * { // colour all elements inside (text, span)
+            /* * { colour all elements inside (text, span) */
                 color: var(--green-card-1-text-1);
-            }
             &:hover {
                 background-color: var(--green-button-accent-1) !important;
         
@@ -107,16 +110,22 @@ button {
                 transition: background-color 0.1s;
             }
         }
+    a.outline-btn, button.outline-btn {
+        border: 1px solid var(--shade-outline-1);
+        label, span {
+            color: var(--shade-card-0-text-0);
+        }
+    }
     
-    // Layout options
-    // Icon + text buttons
+    /* Layout options */
+    /* Icon + text buttons */
     button.icon-text-btn {
         min-height: 3.25rem;
         min-width: 3.25rem;
         gap: 1rem;
         padding: 0 1.25rem;
     }
-    // Single icon buttons
+    /* Single icon buttons */
     button.icon-btn {
         min-height: 3.25rem;
         min-width: 3.25rem;
@@ -134,7 +143,7 @@ button {
 
 			transition: -webkit-text-stroke-width 0.125s;
 		}
-		// Hover: a subtle active effect
+		/* Hover: a subtle active effect */
 		&:hover {
 			background-color: var(--shade-button-accent-1) !important; transition: background-color 0.1s;
 			label {
@@ -143,7 +152,7 @@ button {
 				font-weight: 375;
 			}
 		}
-		// Active: a subtle click effect
+		/* Active: a subtle click effect */
 		&:active {
 			background-color: var(--shade-button-accent-2) !important;
 			label {
@@ -155,7 +164,7 @@ button {
 		}
 	}
     
-// Main nav button
+/* Main nav button */
 .navbox-btn {
     width: 150px;
     display: flex;
@@ -167,7 +176,7 @@ button {
     border-radius: 100px;
 
     transition: background-color 0.275s;
-    // Button text
+    /* Button text */
     label {
         cursor: pointer;
         display: inline-block;
@@ -180,11 +189,11 @@ button {
         line-height: 1.9em;
         color: var(--shade-text-4);
     }
-    // Button symbol(s)
+    /* Button symbol(s) */
     span {
         color: var(--shade-text-2);
     }
-    // States
+    /* States */
     &:hover {
         background-color: var( --shade-button-accent-1);
     
@@ -201,7 +210,7 @@ button {
             color: var(--shade-text-1);
         }
     }
-    // Closed version: fade out p, darken symbols
+    /* Closed version: fade out p, darken symbols */
     &.closed {
         width: auto;
         label {
@@ -226,30 +235,31 @@ button {
     }
 }
 
-// Dockets
+/* Dockets */
 .docket {
-    padding: 2px 3px;
+    padding: 5px 4px;
 
     border-radius: 6px;
     label {
-        font-weight: 400;
+        font-weight: 450;
         font-size: 0.825rem;
         letter-spacing: 0.025ch;
     }
     span {
         font-weight: 300;
+        color: var(--shade-text-0);
     }
 
-    // Hover: a subtle active effect
+    /* Hover: a subtle active effect */
     &:hover {
         background-color: var(--shade-button-accent-1) !important; transition: background-color 0.1s;
         label {
         }
         span.material-symbols-rounded, span.material-symbols-sharp {
-            font-weight: 300;
+            font-weight: 350;
         }
     }
-    // Active: a subtle click effect
+    /* Active: a subtle click effect */
     &:active {
         background-color: var(--shade-button-accent-2) !important;
         label {
@@ -259,9 +269,26 @@ button {
         }
     }
 }
-    // Variation with leading icon
+.docket.outline-btn {
+    span {
+        color: var(--tonal-card-0-text-1);
+    }
+    label {
+        color: var(--tonal-card-1-text-1);
+    }
+}
+/* Change primary button icon weight to better contrast against bright background */
+.docket.prmry-btn {
+    /* Active: a subtle click effect */
+    &:active {
+        span.material-symbols-rounded, span.material-symbols-sharp {
+            font-weight: 200;
+        }
+    }
+}
+    /* Variation with leading icon */
     .docket.icon {
-        padding: 3px 12px 3px 6px;
+        padding: 6px 14px 6px 10px;
         display: flex;
         align-items: center;
         gap: 0.375rem;
@@ -275,4 +302,121 @@ button {
     }
 a.docket {
     text-decoration: none;
+}
+
+/* 
+PROJECT (OPEN) ARTICLES
+*/
+
+/* Details elements */
+.details-card {
+    min-height: 52px;
+    summary::marker {
+        content: "";
+    }
+        /* Fuck safari */
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+
+        cursor: pointer;
+        border-bottom: 1px solid transparent;
+
+        transition: border-bottom 0.125s;
+    }
+    .summary-header-wrapper {
+        .summary-label {
+            display: block;
+            margin-top: 0.25rem;
+            
+            font-size: 0.825rem;
+            font-weight: 500;
+            letter-spacing: 0.01ch;
+            line-height: 1rem;
+        }
+        h5 {
+            display: inline;
+
+            /* font-family: 'Outfit', sans-serif; */
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 2rem;
+        }
+    }
+    span.material-symbols-sharp {
+        transform: rotateX(180deg);        
+        font-size: 1.75rem;
+        font-weight: 400;
+        cursor: pointer;
+
+        transition: transform 0.325s;
+    }
+    .details-content-wrapper {
+        padding: 16px;
+
+        opacity: 0;
+
+        transition: opacity 0.125s;
+        p.details-content {
+            margin: 0;
+
+            font-size: 0.95rem;
+            line-height: 1.4rem;
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    /* Insights card specific styling */
+    &.insight-card {
+        border-radius: 14px;
+    }
+    /* Open state */
+    &[open] {
+        summary { 
+            span.material-symbols-sharp {
+                transform: rotateX(0deg);
+
+                transition: transform 0.325s;
+            }
+        }
+        .details-content-wrapper {
+            opacity: 1;
+            transition: opacity 0.125s;
+        }
+    }
+        /* Primary insights colours */
+        &.prmry {
+            background-color: var(--tonal-card-1);
+            * { color: var(--tonal-card-1-text-0); }
+            h5 { color: var(--tonal-card-1-text-1); }
+            .summary-label {color: var(--tonal-card-1-text-2); }
+            &[open] {
+                summary { border-bottom: 1px solid var(--shade-outline-1-colour); }
+            }
+        }
+        /* Secondary insights colours */
+        &.scndry {
+            border: 1px solid var(--shade-outline-1);
+            h5 { color: var(--tonal-card-1-text-3); }
+            * { color: var(--shade-text-4); }
+            .summary-label { color: var(--shade-text-7); }
+            &[open] {
+                summary { border-bottom: 1px solid var(--shade-outline-1); }
+            }
+        }
+}
+.details-card.static {
+    padding: 12px 16px;
+    .details-content-wrapper {
+        margin-top: 0.425rem;
+        padding: 0;
+
+        opacity: 1;
+    }
 }

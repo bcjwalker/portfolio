@@ -5,7 +5,7 @@ import { Outlet } from 'react-router';
 window.history.scrollRestoration = 'manual'
 
 // Style
-import './scss/manifest.scss';
+import './scss/manifest.css';
 
 // Wrapper sections
 import Header from './components/App/Header';
