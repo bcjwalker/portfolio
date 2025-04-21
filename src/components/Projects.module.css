@@ -63,6 +63,7 @@
                 font-size: 2rem;
                 line-height: 2.75rem;
                 color: var(--shade-text-1);
+                view-transition-name: post-title; 
             }
         }
 

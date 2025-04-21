@@ -6,16 +6,24 @@
   grid-template-rows: 50px 1fr 100px; 
   /* gap: 20px; */
   grid-template-areas: 
-    "header header header"
+    "nav header header"
     "nav main aside"
-    "footer footer footer"; 
+    "nav footer footer"; 
 
-  /* transition: 0.3s; 
-   Retract nav buttons 
-   &.retract { 
-    grid-template-columns: 0.25fr 3.5fr 0.75fr; 
-    transition: 0.3s;    
-  }*/
+  transition: 0.2s ease-out; 
+  /* Retract nav buttons  */
+  &.retract { 
+    grid-template-columns: 0.375fr 4fr 0.425fr; 
+    transition: 0.3s ease-out;    
+    .project-body-container {
+      margin-left: 0;
+      margin-right: 84px;
+      justify-content: center;
+      gap: 128px;
+
+      transition: flex 0.3s ease-out;   
+    }
+  }
 }
 
 header { grid-area: header; }

@@ -21,8 +21,8 @@
     }
 }
 
-/* 800 - 1425w   */
-@media screen and (800px <= width <= 1425px) {
+/* 900 - 1425w   */
+@media screen and (900px <= width <= 1425px) {
   #site-container {
     grid-template-columns: 100px 6fr;
     grid-template-areas: 
@@ -40,8 +40,8 @@
   }
 }
 
-/* - 799w   */
-@media screen and (0px <= width <= 799px) {
+/* - 899w   */
+@media screen and (0px <= width <= 899px) {
   #site-container {
     display: block;
   }

@@ -2,15 +2,12 @@ aside {
     /* background-image: linear-gradient(to right, var(--shade-base-1), var(--shade-base-0) 50%); */
     /* background-color: var(--shade-base-1); */
     padding-left: 10%;
-    * {
-        color: var(--shade-text-0);
-    }
 }
 
 /* Infobox holds title, reveal button, subtitle and image */
 #aside-infobox {
     position: sticky;
-    top: 12%;
+    top: 22vh;
     width: 150px;
     margin-top: 22vh;
 
@@ -30,7 +27,6 @@ aside {
         h4 {              
             display: inline-block;
             
-            color: var(--shade-text-1);
             font-size: 0.965rem;     
             line-height: 1.375rem;
         }

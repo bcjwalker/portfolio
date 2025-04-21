@@ -1,7 +1,7 @@
 function Tooltip( props ) {
     return (
         <>
-            <span className="tooltiptext"> {props.msg} </span>
+            <span className={`tooltiptext ${props.pos}`}> {props.msg} </span>
         </>
     )
 }

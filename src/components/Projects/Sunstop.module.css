@@ -1,12 +1,14 @@
-/* First section */
-.section1 {
-    .section1-h2 {
-        /* padding-top: 48px; */
-    }
+#nav-sunstop {
+    /* li:nth-child(3) {
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--shade-outline-2);
+    } */
 }
 
-.section3 {
-    .section3a-media {
+/* First section */
+.section1 {
+    .section1a-media {
         .lead {
             flex-basis: 75%;
         }
@@ -14,4 +16,11 @@
             flex-basis: 25%;
         }
     }
+    .section1-h2 {
+        /* padding-top: 48px; */
+    }
+}
+
+.section3 {
+
 }

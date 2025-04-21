@@ -33,25 +33,17 @@ button {
     label {
         cursor: pointer;
         font-weight: 400;
+        font-size: .875rem;
 
         transition: -webkit-text-stroke-width 0.125s;
     }
-    span {
+    span.material-symbols-rounded, span.material-symbols-sharp {
         aspect-ratio: 1;
     }
-        /* Hover: a subtle active effect */
-        &:hover {
-            background-color: var(--shade-button-accent-1) !important; transition: background-color 0.1s;
-        }
-        /* Active: a subtle click effect */
-        &:active {
-            background-color: var(--shade-button-accent-2) !important;
-        }
 }
     /* Button styling */
     /* Standard shaded colour button */
     button.shaded-btn {
-        height: 54px;
         padding: 1.5rem;
         border: none;
         background-color: var(--tonal-card-1);
@@ -62,7 +54,7 @@ button {
             border: none;
             background-color: var(--theme-base-0);
             color: var(--theme-base-text-0);
-            span {
+            span.material-symbols-rounded, span.material-symbols-sharp {
                 color: var(--theme-base-text-0);
             }
             label {
@@ -81,8 +73,8 @@ button {
         a.toned-btn, button.toned-btn {
             border: none;
             background-color: var(--tonal-card-1);
-            label, span {
-                color: var(--tonal-card-1-text-1);
+            label, span.material-symbols-rounded, span.material-symbols-sharp {
+                color: var(--tonal-card-1-text-2);
             }
             /* Hover: a subtle active effect */
             &:hover {
@@ -112,7 +104,7 @@ button {
         }
     a.outline-btn, button.outline-btn {
         border: 1px solid var(--shade-outline-1);
-        label, span {
+        label, span.material-symbols-rounded, span.material-symbols-sharp {
             color: var(--shade-card-0-text-0);
         }
     }
@@ -120,24 +112,25 @@ button {
     /* Layout options */
     /* Icon + text buttons */
     button.icon-text-btn {
-        min-height: 3.25rem;
-        min-width: 3.25rem;
+        min-height: 52px;
+        min-width: 52px;
         gap: 1rem;
-        padding: 0 1.25rem;
+        /* Text needs extra padding for visual balance */
+        padding: 0 1.4rem 0 1.125rem;
     }
     /* Single icon buttons */
     button.icon-btn {
         min-height: 3.25rem;
         min-width: 3.25rem;
         justify-content: center;
-        span {
+        span.material-symbols-rounded, span.material-symbols-sharp {
 
         }
     }
 	.icon-text-btn, .icon-btn {
 		label {
 			cursor: pointer;
-			font-weight: 300 !important;
+			font-weight: 300;
 			-webkit-text-stroke-width: 0.5px;
 			letter-spacing: 0.055ch;
 
@@ -184,13 +177,12 @@ button {
         opacity: 1;
         margin: 0;
 
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 1.9em;
+        font-size: 0.875rem;
+        line-height: 1.9rem;
         color: var(--shade-text-4);
     }
     /* Button symbol(s) */
-    span {
+    span.material-symbols-rounded, span.material-symbols-sharp {
         color: var(--shade-text-2);
     }
     /* States */
@@ -245,7 +237,7 @@ button {
         font-size: 0.825rem;
         letter-spacing: 0.025ch;
     }
-    span {
+    span.material-symbols-rounded, span.material-symbols-sharp {
         font-weight: 300;
         color: var(--shade-text-0);
     }
@@ -270,7 +262,7 @@ button {
     }
 }
 .docket.outline-btn {
-    span {
+    span.material-symbols-rounded, span.material-symbols-sharp {
         color: var(--tonal-card-0-text-1);
     }
     label {
@@ -296,7 +288,7 @@ button {
         gap: 5px;
 
         border-radius: 6px;
-        span {
+        span.material-symbols-rounded, span.material-symbols-sharp {
             font-size: 1.25rem;
         }
     }
@@ -311,6 +303,15 @@ PROJECT (OPEN) ARTICLES
 /* Details elements */
 .details-card {
     min-height: 52px;
+
+    border: 1px solid var(--shade-outline-1);
+    h5 { color: var(--tonal-card-1-text-3); }
+    * { color: var(--shade-text-4); }
+    .summary-label { color: var(--shade-text-7); }    
+    border-radius: 14px;
+    &[open] {
+        summary { border-bottom: 1px solid var(--shade-outline-1); }
+    }
     summary::marker {
         content: "";
     }
@@ -326,8 +327,28 @@ PROJECT (OPEN) ARTICLES
 
         cursor: pointer;
         border-bottom: 1px solid transparent;
-
-        transition: border-bottom 0.125s;
+        border-radius: 14px;
+        
+        transition: border-bottom 0.125s, border-radius 0.25s;
+        /* Hover: a subtle active effect */
+		&:hover {
+			background-color: var(--shade-button-accent-1) !important; transition: background-color 0.1s;
+			label {
+			}
+			span.material-symbols-rounded, span.material-symbols-sharp {
+				font-weight: 375;
+			}
+		}
+		/* Active: a subtle click effect */
+		&:active {
+			background-color: var(--shade-button-accent-2) !important;
+			label {
+				-webkit-text-stroke-width: 0.25px;
+			}
+			span.material-symbols-rounded, span.material-symbols-sharp {
+				font-weight: 275;
+			}
+		}
     }
     .summary-header-wrapper {
         .summary-label {
@@ -340,15 +361,15 @@ PROJECT (OPEN) ARTICLES
             line-height: 1rem;
         }
         h5 {
-            display: inline;
+            margin-top: 0.25rem;
 
             /* font-family: 'Outfit', sans-serif; */
             font-size: 1.1rem;
             font-weight: 500;
-            line-height: 2rem;
+            /* line-height: 2rem; */
         }
     }
-    span.material-symbols-sharp {
+    span.expand-btn {
         transform: rotateX(180deg);        
         font-size: 1.75rem;
         font-weight: 400;
@@ -374,14 +395,14 @@ PROJECT (OPEN) ARTICLES
     }
     /* Insights card specific styling */
     &.insight-card {
-        border-radius: 14px;
     }
     /* Open state */
     &[open] {
         summary { 
+            border-radius: 14px 14px 0 0;
+            transition: border-bottom 0.125s, border-radius 0.25s;
             span.material-symbols-sharp {
                 transform: rotateX(0deg);
-
                 transition: transform 0.325s;
             }
         }
@@ -396,15 +417,13 @@ PROJECT (OPEN) ARTICLES
             * { color: var(--tonal-card-1-text-0); }
             h5 { color: var(--tonal-card-1-text-1); }
             .summary-label {color: var(--tonal-card-1-text-2); }
+            border: none;
             &[open] {
                 summary { border-bottom: 1px solid var(--shade-outline-1-colour); }
             }
         }
         /* Secondary insights colours */
         &.scndry {
-            border: 1px solid var(--shade-outline-1);
-            h5 { color: var(--tonal-card-1-text-3); }
-            * { color: var(--shade-text-4); }
             .summary-label { color: var(--shade-text-7); }
             &[open] {
                 summary { border-bottom: 1px solid var(--shade-outline-1); }

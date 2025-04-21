@@ -28,24 +28,24 @@ function PageWrapper() {
 
     return (
         <>
-            <div id='site-container' className={`${navOpen ? null : `retract` }`}>
-                <Header navOpen={navOpen} />
-                <Nav navOpen={navOpen} switchNavOpen={handleNavUpdate} />
-                <Aside/>
+        <div id='site-container' className={`${navOpen ? null : `retract` }`}>
+            <Header/>
+            <Nav navOpen={navOpen} switchNavOpen={handleNavUpdate} readNavState={navOpen}/>
+            <Aside/>
+            {/* Main w/ anchors above each section to prevent header overlap */}
+            <main>
+                <a className='anchor' id='intro'/>
+                <Intro/>
 
-                {/* Main w/ anchors above each section to prevent header overlap */}
-                <main>
-                    <a className='anchor' id='intro'/>
-                    <Intro/>
-                    <a className='anchor' id='works'/>
-                    {/* Projects */}
-                    <div id="main-projects-container">
-                        <Outlet />
-                    </div>
-                    <a className='anchor' id='contact'/>
-                    <Contact/>
-                </main>
-            </div>
+                <a className='anchor' id='works'/>
+                <div id="main-projects-container">
+                <Outlet />
+                </div>
+                
+                <a className='anchor' id='contact'/>
+                <Contact/>
+            </main>
+        </div>
         </>
     )
 }

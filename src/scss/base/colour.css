@@ -92,9 +92,9 @@ main {
     --green-base-5: hsl(090, 10%, 87%);
 
     --green-outline-1: hsl(090, 25%, 83%);
-    --green-outline-2: hsl(090, 15%, 75%);
+    --green-outline-2: hsl(090, 20%, 75%);
 
-    --green-card-1: hsl(090, 65%, 92%);
+    --green-card-1: hsl(090, 65%, 90%);
         --green-card-1-text-1: hsl(090, 25%, 28%);
         --green-card-1-text-2: hsl(090, 50%, 20%);
         --green-card-1-outline: hsl(090, 12%, 79%);
@@ -108,8 +108,8 @@ main {
     --green-card-4: hsl(090, 75%, 80%);
 
     /* Oxidised accent - interaction states, e.g. button hovers */
-    --green-button-accent-1: hsla(090, 45%, 80%, 0.2);
-    --green-button-accent-2: hsla(090, 40%, 78%, 0.3);
+    --green-button-accent-1: hsla(090, 80%, 80%, 0.2);
+    --green-button-accent-2: hsla(090, 60%, 72%, 0.3);
 
     --green-accent-0: hsl(090, 12%, 60%);
 }

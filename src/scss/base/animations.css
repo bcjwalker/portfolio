@@ -1,27 +1,18 @@
 * {
     transition-timing-function: ease-out;
 }
-/* Transition for details... if allowed */
-@supports (interpolate-size: allow-keywords) {
-    :root {
-      interpolate-size: allow-keywords;
-    }
-  
-    ::details-content {
-        height: 0;
-        overflow: clip;
-        transition: height 0.2s ease-out, content-visibility 0.2s ease-out allow-discrete;
-    }
-    details[open]::details-content {
-      height: auto;
-      transition: height 0.2s ease-out, content-visibility 0.2s ease-out allow-discrete;
-    }
-}
-
-
 @view-transition {
     navigation: auto;
 }
+::view-transition {
+    animation-duration: .5s;
+  }
+  ::view-transition-group(.animate-in) { animation: animate-in ease-in 0.25s; }
+::view-transition-group(.animate-out) {
+animation: animate-out ease-out 0.5s; }
+
+
+
 
 /* Handle most universal fade-in animations */
 @keyframes btn-p-fade {
@@ -36,6 +27,21 @@
     100% {
         opacity: 0;
         display: none;
+    }
+}
+/* Transition for details... if allowed */
+@supports (interpolate-size: allow-keywords) {
+    :root {
+      interpolate-size: allow-keywords;
+    }
+    ::details-content {
+        height: 0;
+        overflow: clip;
+        transition: height 0.2s ease-out, content-visibility 0.2s ease-out allow-discrete;
+    }
+    details[open]::details-content {
+      height: auto;
+      transition: height 0.2s ease-out, content-visibility 0.2s ease-out allow-discrete;
     }
 }
 
@@ -67,9 +73,10 @@ header {
     animation-range: entry-crossing 50vh exit 100%;
 }
 
-/* Project open sticky header */
-@keyframes headerViewSticky {
+/* UNDONE: Project open sticky header  */
+/* @keyframes headerViewSticky {
     0% {
+        border-bottom: 4px solid transparent;
     }
     12% {
         width: 100%;
@@ -83,6 +90,7 @@ header {
         flex-direction: column;
         background-color: transparent;
         pointer-events: none;
+        border-bottom: 4px solid transparent;
     }
     18% {
         flex-direction: row;
@@ -90,32 +98,34 @@ header {
         gap: 1.25rem;
 
         pointer-events: none;
+        border-bottom: 4px solid transparent;
     }
     25% {
         flex-direction: row;
         align-items: center;
         gap: 1.25rem;
-
         width: 100%;
 
         pointer-events: none;
+        border-bottom: 4px solid transparent;
     }
     30% {
         width: 100%;
-        padding: 16px 42px 16px 48px;
+        padding: 12px 36px 12px 42px;
         gap: 1.25rem;
         flex-direction: row;
         align-items: center;
 
         font-size: 1.75rem;
         font-weight: 400;
-        background-color: var(--shade-base-0);
+        background-color: var(--shade-base-2);
         pointer-events: all;
         box-shadow: var(--drop-shadow-1);
+        border-bottom: 4px solid var(--shade-base-4);
     }
     100% {
         width: 100%;
-        padding: 16px 42px 16px 48px;
+        padding: 12px 36px 12px 42px;
         gap: 1.25rem;
         flex-direction: row;
         align-items: center;
@@ -123,12 +133,13 @@ header {
         font-size: 1.75rem;
         pointer-events: all;
         font-weight: 400;
-        background-color: var(--shade-base-0);
+        background-color: var(--shade-base-2);
         box-shadow: var(--drop-shadow-1);
+        border-bottom: 4px solid var(--shade-base-4);
     }
-}
-/* Project open sticky header */
-@keyframes headerViewStickyBtns {
+} */
+/* UNDONE: Project open sticky header */
+/* @keyframes headerViewStickyBtns {
     0% {
     }
     30% {
@@ -143,9 +154,9 @@ header {
         opacity: 1;
         pointer-events: all;
     }
-}
-/* Project open sticky header */
-@keyframes headerViewContainerBacking {
+} */
+/* UNDONE: Project open sticky header */
+/* @keyframes headerViewContainerBacking {
     35% {
         background-color: transparent;
     }
@@ -155,16 +166,16 @@ header {
     100% {
         background-color: var(--shade-base-0);
     }
-}
+} */
 
 /* Projects open */
-article.project-big-open {
+/* article.project-big-open {
     view-timeline-name: --projectTimeline;
     view-timeline-axis: y;
-}
+} */
 
 
-/* Floating header */
+/* UNDONE: Floating header 
 .header-topdtls-container {
     animation: headerViewContainerBacking ease-out forwards;
     animation-timeline: --projectTimeline;
@@ -188,6 +199,7 @@ article.project-big-open {
         }
     }
 }
+*/
 
 /* Title name sticky */
 #main-intro-container {

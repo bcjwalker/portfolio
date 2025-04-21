@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router'
-import {useState, useRef, useEffect} from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 // Project info from raw table (not reversed);
 // Sunstop id 3, 3rd in table
@@ -87,10 +87,10 @@ function Projects_Open_Template( {children, article} ) {
         <a className='anchor' id='project-open-top'  ref={articleTopRef}/>
         {/* Project open template, replaces the projects card grid */}
         <article className={`project-big-open ${article}`}>
-            {/* Header */}
+            {/* UNDONE: Cut sticky header
             <div className='header-topdtls-container'  onClick={(e) => e.stopPropagation()}>
-                {/* UNDONE: replaced by view anims
-                <div className={`header-topdtls ${headerSticky ? 'sticky' : null }`}> */}
+                UNDONE: replaced by view anims
+                <div className={`header-topdtls ${headerSticky ? 'sticky' : null }`}> 
                 <div className={`header-topdtls`} onClick={(e) => e.stopPropagation()}>
                     <button className='icon-btn header-backbtn'
                     onClick={handleBackClick}>
@@ -107,14 +107,25 @@ function Projects_Open_Template( {children, article} ) {
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> */}
+
+            {/* Header */}
             <div className='project-open-header'>
                 <div className='header-main'>
                     <div className='header-main-left-wrapper'>
+                        <div className={`header-topdtls`} onClick={(e) => e.stopPropagation()}>
+                            <button title="Go back" className='icon-btn header-backbtn green-btn'
+                            onClick={handleBackClick}>
+                                <span className='material-symbols-sharp'> arrow_back </span> 
+                            </button>
+                            <h1>Sunstop</h1>
+                        </div>
+
                         <div>
                             <p className='desc-text'>{currentProj.descFull}</p>
                             <p className='desc-text'>{currentProj.descFull2}</p>
                         </div>
+
                         <div className='header-metadata'>
                             <div className='metadata-btns-wrapper'>
                                 <label className='metadata-section-label'>Links:</label>
@@ -123,7 +134,7 @@ function Projects_Open_Template( {children, article} ) {
                                         <span className='material-symbols-rounded'> open_in_new </span> 
                                         <label>View interface</label> 
                                     </a>
-                                    <a href="/src/assets/projects/sunstop/DECO4200_A4_report.pdf" className='docket outline-btn outline-3 med icon metadata-link'>
+                                    <a href="/src/assets/projects/sunstop/DECO4200_A4_report.pdf" target='_blank' className='docket outline-btn outline-3 med icon metadata-link'>
                                         <span className='material-symbols-rounded'> open_in_new </span> <label>Read case study</label> 
                                     </a>
                                 </div>

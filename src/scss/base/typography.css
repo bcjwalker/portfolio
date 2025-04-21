@@ -31,24 +31,26 @@ h4, h5, h6 {
         /* line-height: 4.5rem; */
     }
     h4 {
-        font-size: 1.25rem;
-        font-weight: 500; 
-        color: var(--shade-text-3);
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.125rem;
+        font-weight: 400; 
+        color: var(--shade-text-4);
     }
 
 p {
     font-weight: 400;
     font-size: 1.05rem;
-    line-height: 1.6rem;
+    line-height: 1.625rem;
     color: var(--shade-text-1);
+    strong, em {
+        font-weight: 550;
+        color: var(--shade-text-0);
+    }
 }
 /* Everything else */
 p, label, span {
     font-weight: 400;
     font-variant-ligatures: normal;
-    strong, em {
-        font-weight: 500;
-    }
 }
 button * {
     font-weight: 600;

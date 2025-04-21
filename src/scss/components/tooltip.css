@@ -1,29 +1,34 @@
-.icon-btn {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-}
-
-.icon-btn .tooltiptext {
-    opacity: 0;
+button .tooltiptext {
+    position: absolute;
     width: 90px;
-    top: 100%;
-    left: 50%;
-    margin-left: -45px; /* Use half of the width (120/2 = 60), to center the tooltip */
-    background-color: var(--shade-invert-base-1) !important;
-    color: var(--shade-invert-text-1) !important;
     text-align: center;
-    border-radius: 6px;
     margin-top: 4px;
-    font: 14px "Readex Pro", sans-serif !important;
     padding: 2px;
 
-    /* Position the tooltip */
-    position: absolute;
+    font-weight: 350;
+    font-size: 0.825rem;
+    background-color: var(--shade-invert-base-1) !important;
+    color: var(--shade-invert-text-1) !important;
+    border-radius: 6px;
+    opacity: 0;
     z-index: 1;
+
     transition: opacity ease-out 0.1s;
+    &.top {
+        width: 120px;
+        height: auto;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+        margin-bottom: 5px;
+    }
+    &.right {
+        top: -5px;
+        left: 105%;
+    }
 }
 
-.iconbtn:hover .tooltiptext {
+button:hover .tooltiptext {
     opacity: 1;
 }
+

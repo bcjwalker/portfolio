@@ -17,7 +17,7 @@ function RenderProjectThumb( props ) {
 
     const navigate = useNavigate();
     const handleThumbClick = () => {
-        navigate('/projects/sunstop', { state: { props } }, {viewTransition: 'true' });
+        navigate('/projects/sunstop', { state: { props } }, { viewTransition: true });
     };
 
     const tagsProps = props.tags;
@@ -36,7 +36,7 @@ function RenderProjectThumb( props ) {
                 <div className={styles['projects-card-details-container']}> 
                     <div className={styles['projects-card-details-title']}>
                         <label> {props.date} </label> 
-                        <h3> {props.title} </h3>                        
+                        <h3> {props.title} </h3>  
                     </div>
                     <span className={styles['projects-card-details-desc']}> {props.desc} </span>
                 </div>

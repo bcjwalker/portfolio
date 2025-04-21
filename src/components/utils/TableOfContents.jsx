@@ -120,12 +120,12 @@ function TableOfContents() {
   useIntersectionObserver(setActiveId, activeId);
 
   return (
-    <div className='project-nav-container'>
-      <nav nav className='projects-nav' aria-label="Table of contents">
-        <label>Article contents</label>
-        <Headings headings={nestedHeadings}  activeId={activeId}/>
-      </nav>
-    </div>
+    <>
+    <nav className='projects-nav' aria-label="Table of contents">
+      <label className='projects-nav-label'>Article contents</label>
+      <Headings headings={nestedHeadings}  activeId={activeId}/>
+    </nav>
+    </>
   );
 };
 
