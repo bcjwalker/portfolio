@@ -1,16 +1,22 @@
-import { useNavigate } from 'react-router'
+import { useNavigate, useOutletContext } from 'react-router'
 import { useState, useRef, useEffect } from 'react'
+import TableOfContents from '../utils/Article_TableOfContents.jsx';
+
+// Animations :)
+import { Fade } from "react-awesome-reveal";
+import { fadeInPushUp } from "../utils/Animations.jsx";
 
 // Project info from raw table (not reversed);
-// Sunstop id 3, 3rd in table
+// Sunstop id 0, first in table
 import { projectData } from '../../assets/projects-db.js';
-const currentProj = projectData[0];
-
-// Styles
 
 // Glob import
-const projectImgs = import.meta.glob(['@assets/projects/sunstop/*.jpg', '@assets/projects/sunstop/*.png', '@assets/projects/sunstop/*.pdf']);
-console.log(projectImgs);
+const projectMedia = import.meta.glob(
+    ['@assets/projects/*/*/*.{jpg,png,mp4,png}',
+    '@assets/projects/*/*.{jpg,png,mp4,png,pdf}',
+    '@assets/software/*.ico'], 
+    {eager: true, query: '?url', import: 'default'});
+console.log(projectMedia)
 
 // Simple tag component
 function RenderProjectThumbTag( props ) {
@@ -23,10 +29,177 @@ function RenderProjectThumbTag( props ) {
     );
 }
 
-function Projects_Open_Template( {children, article} ) {
+// LeadCard spits out different kinds of cards for the project overview
+export function LeadCard(props) {
+    console.log(props)
+    const currentProj = projectData[props.index];
+    console.log(props.index)
+    console.log(currentProj)
+    // Docket for collab card
+    const RenderLeadCard1CollabEntry = (props) => { 
+        return (<>
+            <div className='collab-wrapper'>
+                <div className='lead-icon'>
+                    <img src={projectMedia[props.thumb]}/>
+                </div>
+                <label>{props.name}</label>
+            </div>
+            </>
+        )};
+        const collabsKeys = Object.entries(currentProj.collabs);
+        const collabsList = collabsKeys.map ( (colleague, index) =>
+            RenderLeadCard1CollabEntry(collabsKeys[index][1])
+        );
+
+    // 1: Important collaborators
+    if (props.cardType == 'Collaborators') return (
+        <>
+        <div className='lead-card'>
+            <h4>{props.cardType}</h4>
+            <div className='collabs-container'>
+                {collabsList}
+            </div>
+        </div>
+        </>);
+
+    // 2: My roles :)
+    const rolesList = currentProj.roles.map ( function (colleague, index) {
+        return (<span>{currentProj.roles[index]}</span>)
+    });
+    if (props.cardType == 'My roles') return (
+        <>
+        <div className='lead-card'>
+            <h4>{props.cardType}</h4>
+            <div className='roles-container'>
+                {rolesList}
+            </div>
+        </div>
+        </>);
+
+    // 3: Project stack
+    const softwareList = currentProj.software.map ( function (software, index) {
+        return (<>
+            <div className='software-wrapper'>
+                <img src={projectMedia[`/src/assets/software/${software}.ico`]}></img>
+                <label>{currentProj.software[index]}</label>
+            </div>
+            </>)
+    });
+    if (props.cardType == 'Project stack') return (
+        <>
+        <div className='lead-card'>
+            <h4>{props.cardType}</h4>
+            <div className='software-container'>
+                {softwareList}
+            </div>
+        </div>
+        </>);
+
+    // 4: Timeline
+    if (props.cardType == 'Timeline') return (
+        <>
+        <div className='lead-card'>
+            <h4>{props.cardType}</h4>
+            <div className='timeline-container'>
+                <h5>{currentProj.timeline[0]}</h5>
+                <span>{currentProj.timeline[1]}</span>
+            </div>
+        </div>
+        </>);
+}
+
+// Details card
+export function Details( props ) {
+    // Card type label
+    let cardType = '';
+    if (props.colour === 'prmry') {
+        cardType = 'Primary insight'
+    } 
+    else if (props.colour === 'scndry') {
+        cardType = 'Secondary insight'
+    }
+
+    return (
+    <>
+    <details className={`details-card ${props.type} ${props.colour}`}>
+        <summary>
+            <div className='summary-header-wrapper'>
+                <span className='summary-label'>{cardType}</span>
+                <h5>{props.title}</h5>
+            </div>
+            <span className='material-symbols-sharp expand-btn'> expand_less </span>
+        </summary>
+        <div className='details-content-wrapper'>
+            {props.children}
+        </div>
+    </details>
+    </>);
+}
+// Details card static
+export function Details_Static( props ) {
+    // Card type label
+    let cardType = '';
+    if (props.colour === 'prmry') {
+        cardType = 'Primary insight'
+    } 
+    else if (props.colour === 'scndry') {
+        cardType = 'Secondary insight'
+    }
+
+    return (
+    <>
+    <div className={`details-card static ${props.type} ${props.colour}`}>
+        <div className='summary-header-wrapper'>
+            <span className='summary-label'>{cardType}</span>
+            <h5>{props.title}</h5>
+        </div>
+        <div className='details-content-wrapper'>
+            {props.children}
+        </div>
+    </div>
+    </>);
+}
+
+// Left nav-TOC column
+export function Nav( index ) {
     const navigate = useNavigate();
     const handleBackClick = () => {
-        navigate('/');
+        navigate('/', { viewTransition: true } );
+    };
+    return (
+        <>
+        <div className='project-nav-wrapper'>
+            <div className={`nav-topdtls`} onClick={(e) => e.stopPropagation()}>
+                <button title="Go back" className='icon-btn nav-backbtn green-btn'
+                onClick={handleBackClick}>
+                    <span className='material-symbols-sharp'> arrow_back </span> 
+                </button>
+            </div>
+            <TableOfContents/>
+            <div className='nav-btns-wrapper'>
+                <label className='projects-nav-label'>External links</label>
+                <div className='btns'>
+                    <a href='https://nicolexylow.github.io/sunstop/' target='_blank' className='docket med icon prmry-btn metadata-link'>
+                        <span className='material-symbols-rounded'> open_in_new </span> 
+                        <label>View interface</label> 
+                    </a>
+                    <a href={projectMedia["/src/assets/projects/sunstop/DECO4200_A4_report.pdf"]} target='_blank' className='docket outline-btn outline-3 med icon metadata-link'>
+                        <span className='material-symbols-rounded'> open_in_new </span> <label>Read case study</label> 
+                    </a>
+                </div>
+            </div>
+        </div>
+        </>
+    )
+}
+
+export function ProjectOpen_Template( {children, article, index} ) {
+    const currentProj = projectData[index];
+
+    // Route us   
+    const navigate = useNavigate();
+    const handleBackClick = () => {
+        navigate('/', { viewTransition: true } );
     };
 
     // Tags
@@ -86,7 +259,7 @@ function Projects_Open_Template( {children, article} ) {
         <>
         <a className='anchor' id='project-open-top'  ref={articleTopRef}/>
         {/* Project open template, replaces the projects card grid */}
-        <article className={`project-big-open ${article}`}>
+        <article className={`project-big-open ${article}`}  style={{viewTransitionName: `post-card-${article}`}}>
             {/* UNDONE: Cut sticky header
             <div className='header-topdtls-container'  onClick={(e) => e.stopPropagation()}>
                 UNDONE: replaced by view anims
@@ -113,31 +286,33 @@ function Projects_Open_Template( {children, article} ) {
             <div className='project-open-header'>
                 <div className='header-main'>
                     <div className='header-main-left-wrapper'>
-                        <div className={`header-topdtls`} onClick={(e) => e.stopPropagation()}>
-                            <button title="Go back" className='icon-btn header-backbtn green-btn'
+                        <div className={`header-topdtls`}>
+                            <button title="Go back" className='icon-btn header-backbtn'
                             onClick={handleBackClick}>
                                 <span className='material-symbols-sharp'> arrow_back </span> 
                             </button>
-                            <h1>Sunstop</h1>
+                            <h1 style={{viewTransitionName: `post-title-${article}`}}>{currentProj.title}</h1>
                         </div>
 
-                        <div>
+                        <Fade triggerOnce duration={200} delay={150} cascade damping={0.1}>
                             <p className='desc-text'>{currentProj.descFull}</p>
                             <p className='desc-text'>{currentProj.descFull2}</p>
-                        </div>
+                        </Fade>
 
+                        <Fade triggerOnce cascade damping={0.1} duration={350} delay={150}>
                         <div className='header-metadata'>
                             <div className='metadata-btns-wrapper'>
                                 <label className='metadata-section-label'>Links:</label>
-                                <div className='btns'>
-                                    <a href='https://nicolexylow.github.io/sunstop/' target='_blank' className='docket med icon prmry-btn metadata-link'>
-                                        <span className='material-symbols-rounded'> open_in_new </span> 
-                                        <label>View interface</label> 
-                                    </a>
-                                    <a href="/src/assets/projects/sunstop/DECO4200_A4_report.pdf" target='_blank' className='docket outline-btn outline-3 med icon metadata-link'>
-                                        <span className='material-symbols-rounded'> open_in_new </span> <label>Read case study</label> 
-                                    </a>
-                                </div>
+                                <a href='https://nicolexylow.github.io/sunstop/' target='_blank' className='docket med icon prmry-btn metadata-link'>
+                                    <span className='material-symbols-rounded'> open_in_new </span> 
+                                    <label>View interface</label> 
+                                </a>
+                                <a href={projectMedia["/src/assets/projects/sunstop/DECO4200_A1_report.pdf"]} target='_blank' className='docket outline-btn outline-3 med icon metadata-link'>
+                                    <span className='material-symbols-rounded'> description </span> <label>Read research report</label> 
+                                </a>
+                                <a href={projectMedia["/src/assets/projects/sunstop/DECO4200_A4_report.pdf"]} target='_blank' className='docket outline-btn outline-3 med icon metadata-link'>
+                                    <span className='material-symbols-rounded'> description </span> <label>Read case study</label> 
+                                </a>
                             </div>
                             <div className='metadata-tags-wrapper'>
                                 <label className='metadata-year'>{currentProj.date}</label>
@@ -145,8 +320,11 @@ function Projects_Open_Template( {children, article} ) {
                                 {tagsList}
                             </div>
                         </div>
+                        </Fade>
                     </div>
-                    <img className='header-main-right-wrapper' src="/src/assets/projects/sunstop/thumb.jpg"/>
+                    <div className='header-main-right-wrapper'>
+                        <img src={projectMedia[currentProj.thumb]}/>
+                    </div>
                 </div>
             </div>
             {/* Main wrapper */}
@@ -157,5 +335,3 @@ function Projects_Open_Template( {children, article} ) {
         </>
     )
 }
-
-export default Projects_Open_Template

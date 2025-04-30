@@ -1,67 +1,37 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router';
-import { useState, useEffect } from 'react';
-import { Outlet } from 'react-router';
-// Retain scorll state
-window.history.scrollRestoration = 'manual'
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-// Style
-import './scss/manifest.css';
+// Global style
+import "./scss/manifest.css";
 
-// Wrapper sections
-import Header from './components/App/Header';
-import Nav from './components/App/Nav';
-import Aside from './components/App/Aside';
+// Components
+import { PageWrapper, Main } from "./App_Wrapper.jsx";
+import Projects from "./components/Projects.jsx";
+  import Projects_Sunstop from "./components/Projects/Sunstop.jsx";
+  import Projects_Biodiversity from "./components/Projects/Biodiversity.jsx";
+  import Projects_Convey from "./components/Projects/Convey.jsx";
+  import Projects_Studbud from "./components/Projects/Studbud.jsx";
 
-// Main sections
-import Intro from './components/Intro';
-import Projects from './components/Projects';
-    //import Project_Open from './components/Projects_Open';
-    import Projects_Sunstop from './components/Projects/Sunstop';
-import Contact from './components/Contact';
+const router = createBrowserRouter([
+  { element: <PageWrapper/>,
+    children: [
+      { element: <Main/>,
+        children: [
+          { path: "/", element: <Projects/> },
+          { path: "/projects/biodiversity", element: <Projects_Biodiversity/> },
+          { path: "/projects/sunstop", element: <Projects_Sunstop/> },
+          { path: "/projects/convey", element: <Projects_Convey/> },
+          { path: "/projects/studbud", element: <Projects_Studbud/> },
+        ]
+      }
+    ]
+  }],
+  { basename: "/portfolio" }
+);
 
-function PageWrapper() {
-    // Nav open/close true/false state
-    const [navOpen, updateNavOpen] = useState(true);
-    const handleNavUpdate = () => {
-        updateNavOpen(navOpen => !navOpen)
-    }
+const root = document.getElementById('root');
 
-    return (
-        <>
-        <div id='site-container' className={`${navOpen ? null : `retract` }`}>
-            <Header/>
-            <Nav navOpen={navOpen} switchNavOpen={handleNavUpdate} readNavState={navOpen}/>
-            <Aside/>
-            {/* Main w/ anchors above each section to prevent header overlap */}
-            <main>
-                <a className='anchor' id='intro'/>
-                <Intro/>
-
-                <a className='anchor' id='works'/>
-                <div id="main-projects-container">
-                <Outlet />
-                </div>
-                
-                <a className='anchor' id='contact'/>
-                <Contact/>
-            </main>
-        </div>
-        </>
-    )
-}
-
-export default function App () {
-  return (
-    <>
-    <Router>
-        <Routes>
-            {/* Wrap  */}
-            <Route element={<PageWrapper />}> 
-                <Route path='/' element={<Projects />} /> 
-                <Route path='/projects/sunstop' element={<Projects_Sunstop />} /> 
-            </Route>
-        </Routes>
-    </Router>
-    </>
-  );
-}
+ReactDOM.createRoot(root).render(
+  <RouterProvider router={router} />
+);

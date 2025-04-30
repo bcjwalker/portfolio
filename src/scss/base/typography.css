@@ -25,10 +25,13 @@ h4, h5, h6 {
         letter-spacing: -0.0275ch;
         font-size: 3.5rem;
         line-height: 4.825rem;
+        @media screen and (0px <= width <= 1425px) { font-size: 2.825rem; line-height: 4rem; }
     }
     h3 {
         font-size: 1.85rem;
         /* line-height: 4.5rem; */
+        /* <= Tablet size */
+        @media screen and (0px <= width <= 1425px) { font-size: 1.5rem; }
     }
     h4 {
         font-family: 'Outfit', sans-serif;
@@ -83,3 +86,44 @@ hr {
     hr.divider-v {
 
     }
+
+/* Tag */
+.projects-card-tag {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    max-height: 20px;
+
+    background-color: var(--tonal-card-0);
+    box-shadow: var(--drop-shadow-1);
+    /* border: 1px solid var(--shade-outline-4); */
+    border-radius: 4px;
+    * {
+        font-weight: 500;
+        font-size: 0.8rem;
+    }
+    label {
+        line-height: 0.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    &.tag-icontext {
+        padding: 4px 2px;
+        gap: 2px;
+        label {
+            padding-right: 2px
+        }
+        span {
+            margin-top: 1px;
+            font-size: 1.1rem;
+            font-weight: 400;
+            font-variation-settings: 'FILL' 1;
+        }
+    }
+    &.tag-recent, &.tag-links {
+        background-color: var(--green-card-1);
+        * {
+            color: var(--green-card-1-text-2)
+        }
+    }
+}

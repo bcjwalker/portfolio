@@ -47,17 +47,15 @@ function Intro() {
             {/* Graphics foreground holds quote */}
             <div id={styles['intro-graphicfg']}>
                 {/* Box for quote, no ids for cleanliness */}
-                <div id={styles['intro-graphic-quotebox-container']}>
-                    <blockquote id={styles['intro-graphic-quotebox']}> 
-                        I'm a Sydney-based designer captivated by balance between
-                        <ScrollingText className={styles['rotating-text']} ref={scrollTxtRef} 
-                        options={{enterAnimation:'flipEnter', exitAnimation:'flipExit' }}>
-                        <div className={styles['rotating-text']}>expression and<br/>simplicity</div>
-                        <div className={styles['rotating-text']}>novelty and<br/>familiarity</div>
-                        <div className={styles['rotating-text']}>form and<br/>function</div>
-                        </ScrollingText>
-                    </blockquote>
-                </div>
+                <blockquote id={styles['intro-graphic-quotebox']}> 
+                    I'm a Sydney-based designer captivated by balance between
+                    <ScrollingText className={styles['rotating-text']} ref={scrollTxtRef} 
+                    options={{enterAnimation:'flipEnter', exitAnimation:'flipExit' }}>
+                    <div className={styles['rotating-text']}>expression and<br/>simplicity</div>
+                    <div className={styles['rotating-text']}>novelty and<br/>familiarity</div>
+                    <div className={styles['rotating-text']}>form and<br/>function</div>
+                    </ScrollingText>
+                </blockquote>
             </div>
         </div>
         </>

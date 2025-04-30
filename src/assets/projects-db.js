@@ -19,9 +19,32 @@ export const projectDataRaw =
 			"Webdev,",
 			"UI/UX"
 		],
+		"cardTags": {
+			"links": "2 links",
+		},
 		"date": "2021",
 		"thumb": "/src/assets/projects/studbud/thumb.jpg",
-		"desc": "A browser-based Kanban study tracker with integrated Pomodoro timer."
+		"desc": "Browser-based Kanban study tracker with integrated Pomodoro timer.",
+			"descFull": "Browser-based Kanban study tracker with integrated Pomodoro timer.",
+			"descFull2": "Individual project.",
+		// Lead card info
+		"collabs": "none",
+		"roles": [
+			"User research",
+			"UI/UX design",
+			"Full stack webdev",
+			"Report writing"
+		],
+		"software": [
+			"Figma",
+			"Visual Studio",
+			"React.js",
+			"Node.js",
+		],
+		"timeline": [
+			"~3", 
+			"months"
+		],
 	},
 	// 1: Convey
 	{
@@ -33,9 +56,36 @@ export const projectDataRaw =
 			"Uni,",
 			"UI/UX"
 		],
+		"cardTags": {
+			"links": "2 links",
+		},
 		"date": "2022",
 		"thumb": "/src/assets/projects/convey/thumb.jpg",
-		"desc": "text here",
+		"desc": "An exploratory app service redesigning Sydney's bus system.",
+			"descFull": "An exploratory app service redesigning Sydney's bus system.",
+			"descFull2": "Lorem ipsum",
+		// Lead card info
+		"collabs": {
+			"jonathan": {
+				"name": "Jonathan Pratama", 
+				"thumb": "/src/assets/projects/sunstop/people/nicole.jpg", 
+				"roles": [ "Front-end webdev", "UX research", "UI design" ],
+				"url": "https://www.linkedin.com/in/nicolexylow"
+				},
+		},
+		"roles": [
+			"User research",
+			"UI/UX design",
+			"Report writing"
+		],
+		"software": [
+			"Figma",
+			"Adobe Xd"
+		],
+		"timeline": [
+			"~3", 
+			"months"
+		],
 
 		// Open project content
 	},
@@ -51,11 +101,29 @@ export const projectDataRaw =
 			"UI/UX,",
 			"Datavis"
 		],
+		"cardTags": {
+			"links": "2 links"
+		},
 		"date": "2023",
 		"thumb": "/src/assets/projects/biodiversity/thumb.jpg",
-		"desc": "text here",
-
-		// Open project content
+		"desc": "An activist website detailing the Anthropocene.",
+			"descFull": "An activist website detailing the Anthropocene.",
+			"descFull2": "Individual project.",
+		// Lead card info
+		"collabs": "none",
+		"roles": [
+			"Data visualisation",
+			"UI/UX design",
+			"Front end webdev",
+		],
+		"software": [
+			"Visual Studio",
+			"Node.js",
+		],
+		"timeline": [
+			"~3", 
+			"months"
+		],
 	},
 	// 3: Sunstop
 	{
@@ -68,11 +136,15 @@ export const projectDataRaw =
 			"Webdev,",
 			"UI/UX"
 		],
+		"cardTags": {
+			"recent": "New",
+			"links": "3 links"
+		},
 		"date": "2024",
 		"thumb": "/src/assets/projects/sunstop/thumb.jpg",
-		"desc": "A Sunscreen-as-a-Service kiosk and platform designed to increase sunscreen usage in young Australians.",
-			"descFull": "A Sunscreen-as-a-Service kiosk and platform designed to increase sunscreen usage in young Australians. The main product was a colourful sunscreen dispenser kiosk, which motivated users to continue regular sunscreen usage with a variety of rewards.",
-			"descFull2": "My personal touch was in pushing for increased visual expression in the use of colour, form and motion in the interface, making countless revisions as well as managing the layout and visual design of the reports.",
+		"desc": "A holistic solution to promote sun safety in young Australian men.",
+			"descFull": "A holistic solution to promote sun safety in young Australian men through interactive sunscreen kiosks, promoting sunscreen as a habit through ubiquity, convenience and rewards.",
+			"descFull2": "My personal touch was in pushing for increased visual expression in the use of colour, form and motion in the interface.",
 		// Lead card info
 		"collabs": {
 			"nicole": {
@@ -110,8 +182,6 @@ export const projectDataRaw =
 			"~3", 
 			"months"
 		],
-
-		// Open project content
 	}
 	
 ]

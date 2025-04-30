@@ -11,7 +11,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "rimraf dist && vite build public/index.html",
+    "clean": "rimraf dist",
+    "predeploy": "vite build",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
@@ -26,12 +27,13 @@
   "bugs": {
     "url": "https://github.com/bcjwalker/portfolio/issues"
   },
-  "homepage": "https://bcjwalker.github.io/portfolio/",
+  "homepage": "https://bcjwalker.github.io/portfolio",
   "dependencies": {
+    "@emotion/react": "^11.14.0",
     "@fecapark/number-rolling": "^0.1.2",
     "express": "^5.1.0",
-    "motion": "^12.6.3",
     "react": "^19.1.0",
+    "react-awesome-reveal": "^4.3.1",
     "react-compare-slider": "^3.1.0",
     "react-dom": "^19.1.0",
     "react-router": "^7.5.0",
@@ -44,11 +46,12 @@
     "@types/react-dom": "^19.1.1",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.21",
+    "babel-plugin-react-compiler": "^19.0.0-beta-ebf51a3-20250411",
+    "eslint-plugin-react-compiler": "^19.0.0-beta-ebf51a3-20250411",
     "gh-pages": "^6.3.0",
     "lightningcss": "^1.29.3",
     "postcss": "^8.5.3",
     "rimraf": "^6.0.1",
-    "sass": "^1.86.3",
     "vite": "^6.2.5"
   }
 }

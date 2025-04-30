@@ -3,15 +3,27 @@ nav#body-nav {
     /* background-image: linear-gradient(to left, hsl(035, 32%, 95%), hsl(035, 32%, 99%) 50%); */
     display: flex;
     flex-flow: column;
-    align-items: flex-end;
+    align-items: center;
+
     transition: 0.2s;
+    /* Reduced margins */
+    &.closed {
+        display: flex;
+        align-items: center;
+        padding: 0%;
+        #navbox {
+            float:none;
+        }
+
+        transition: 0.2s;
+    }
     #navbox {
         height: 100%;
         /* List of links */
         ul {
             position: sticky;
             float: right;
-            top: 15vh;
+            top: 10vh;
             margin-top: 20vh;
 
             padding-inline-start: 0;
@@ -21,7 +33,8 @@ nav#body-nav {
         }
     }
 
-    @media screen and (0px <= width <= 1425px) {
+    /* <= Tablet */
+    @media screen and (900px <= width <= 1425px) {
         display: flex;
         align-items: center;
         padding: 0%;
@@ -31,27 +44,14 @@ nav#body-nav {
     }
 }
 
-/* Hamburger button for mobile to hide/show nav */
-#head-hamburger-btn {
-    display: none;
-    margin-left: 1em;
-    margin-top: 5px;
-    position: sticky;
-    top: 0;
-    height: 54px;
-    z-index: 1;
-    
-    span {
-        font-size: 1.65rem;
-        color: var(--shade-text-2);
-    }
-}
-
 #navbox-foot {
     width: 150px;
     position: sticky;
     float: right;
     bottom: 20px;    
+
+    transition: width 0.125s;
+    /* <= Tablet: disable */
     @media screen and (0px <= width <= 1425px) {
         display: none;
     }
@@ -66,6 +66,60 @@ nav#body-nav {
         }
         label {
             display: none;
+        }
+    }
+    &.closed {
+        width: 64px;
+
+        transition: width 0.125s;
+    }
+}
+
+
+/* Nav pops open/close in mobile dimensions */
+@media screen and (0px <= width <= 899px) { 
+    nav#body-nav {
+        visibility: hidden;
+        position: fixed;
+        display: block;
+        left: 0; top: 0;
+        padding: 0;
+        width: 100%; height: 100%;
+        z-index: 9;
+        background-color: hsl(0 0 0 / 0.25);
+        opacity: 0;
+
+        transition: visibility .2s ease-out, opacity .2s ease-out;
+        #navbox {
+            position: static;
+            width: 250px;
+            height: 100%;
+            z-index: 9;
+            
+            transform: translateX(-250px);
+            background-color: var(--shade-base-1);
+            /* box-shadow: var(--drop-shadow-2); */
+
+            transition: transform .15s ease-out;
+            ul {
+                float: left;
+                li {
+                    margin-top: 0.25rem;
+                }
+            }
+        }
+        /* Use the .closed class for nav open/close in mobile dimensions */
+        &.closed {
+            display: block;
+            visibility: visible;
+            opacity: 1;
+
+            transition: visibility .2s ease-out, opacity .2s ease-out;
+            #navbox {
+                transform: translateX(0px);
+                
+                transition: transform .15s ease-out;
+            }
         }
     }
 }

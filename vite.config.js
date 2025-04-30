@@ -1,32 +1,34 @@
 import * as path from "path";
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+const ReactCompilerConfig = { /* ... */ };
 //import autoprefixer from 'autoprefixer'
 // vite.config.js / vite.config.ts
 
 // https://vitejs.dev/config/
 export default defineConfig({
+	base: "/portfolio",
 	css: {
 		transformer: 'lightningcss'
 	},
+	
 	build: {
-		cssMinify: 'lightningcss'
+		cssMinify: 'lightningcss',
+		emptyOutDir: true, // also necessary
 	},
-	plugins: [react()],
-	// Remove pre-processors, replaced with LightningCSS
-    //preprocessorOptions: {
-    //  scss: {
-    //    api: 'modern-compiler' // or "modern"
-    //  }
-    //},
-	//postcss: {
-    //  plugins: [
-    //    autoprefixer({}) // add options if needed
-    //  ],
-    //}
+	
+	plugins: [react({
+        babel: {
+          plugins: [
+            ["babel-plugin-react-compiler", ReactCompilerConfig],
+          ],
+        },
+      }
+	)],
+	
 	resolve: {
 		alias: {
-			"@assets": path.resolve(__dirname, "src/assets"),
+			"@assets": path.resolve(__dirname, "./src/assets"),
 		},
 	},
 

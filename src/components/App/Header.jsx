@@ -6,15 +6,13 @@ import { useState, useEffect, useRef } from 'react';
 import imgSignHead from '../../assets/img-my-signature-head.png';
 
 function Header ( {switchNavOpen} ) {
-    /* UNDONE: replaced by view anims
     // Lovely scroll tracking from https://stackoverflow.com/questions/62497110/detect-scroll-direction-in-react-js/62497293#62497293
     // Check: can this be cut down?
-    const [headerOpen, setHeaderOpen] = useState("scrolling down");
+    const [headerOpen, setHeaderOpen] = useState(false);
     useEffect(() => {
       const threshold = 0;
       let lastScrollY = window.scrollY;
       let ticking = false;
-      console.log(window.scrollY)
     
       const updateHeaderOpen = () => {
         const scrollY = window.scrollY;
@@ -23,7 +21,7 @@ function Header ( {switchNavOpen} ) {
           ticking = false;
           return;
         }
-        setHeaderOpen(scrollY < 220 ? true : false);
+        setHeaderOpen(scrollY < 350 ? true : false);
         lastScrollY = scrollY > 0 ? scrollY : 0;
         ticking = false;
       };
@@ -36,11 +34,10 @@ function Header ( {switchNavOpen} ) {
       };
     
       window.addEventListener("scroll", onScroll);
-      console.log(headerOpen);
     
       return () => window.removeEventListener("scroll", onScroll);
     }, [headerOpen]);
-    */
+    
 
     return (
         <>
@@ -48,9 +45,17 @@ function Header ( {switchNavOpen} ) {
         {/* UNDONE: replaced by view anims
         <header className={`${headerOpen ? styles['fade-out'] : styles['fade-in'] }`} > */}
         
-        <header >
-            <img className={styles['head-icon']} src={imgSignHead} /> 
-            <p className={styles['head-text']}> Benjamin Walker </p>
+        <header className={`${headerOpen ? styles['fade-out'] : styles['fade-in'] }`}>
+            {/* Hamburger menu
+            * Persistent, remains on top of header 
+            * Only appears in mobile width */}
+            <button className='icon-btn' id={styles['head-hamburger-btn']} onClick={() => switchNavOpen()}> 
+                <span className='material-symbols-sharp'> menu </span> 
+            </button>
+            <div id={styles['header-headline-wrapper']}>
+              <img className={styles['headline-icon']} src={imgSignHead} /> 
+              <p className={styles['headline-text']}> Benjamin Walker </p>
+            </div>
         </header>
         </>
     )

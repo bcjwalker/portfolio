@@ -1,15 +1,50 @@
 * {
     transition-timing-function: ease-out;
 }
+/* Universal (uni) animations */
 @view-transition {
     navigation: auto;
 }
-::view-transition {
-    animation-duration: .5s;
+::view-transition-group(*) {
+    animation-duration: .275s;
+    animation-timing-function: ease-out;
+}
+@keyframes uniFadeInPushUp {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Project card anims */
+::view-transition-image-pair(post-card-sunstop) {
+    isolation: auto;
+    z-index: 2;
+}
+    ::view-transition-new(post-card-sunstop) {
+        animation-duration: 0.125s;
+        animation-name: card-article-expand;
+    }
+    ::view-transition-old(post-card-sunstop) {
+        animation-duration: 0.125s;
+        animation-name: card-article-expand backwards;
+    }
+
+/* Keyframes for blending when there are 2 images */
+@keyframes card-article-expand {
+    from {
+        opacity: 0;
+        z-index: 1;
+    }
+    to {
+        opacity: 1;
+        z-index: 2;
+    }
   }
-  ::view-transition-group(.animate-in) { animation: animate-in ease-in 0.25s; }
-::view-transition-group(.animate-out) {
-animation: animate-out ease-out 0.5s; }
 
 
 
@@ -21,10 +56,12 @@ animation: animate-out ease-out 0.5s; }
         display: inline-block;
     }
     99% {
+        width: 0px;
         opacity: 0;
         display: inline-block;
     }
     100% {
+        width: 0px;
         opacity: 0;
         display: none;
     }
@@ -45,8 +82,8 @@ animation: animate-out ease-out 0.5s; }
     }
 }
 
-/* Header */
-@keyframes headerAppear {
+/* UNDONE: Header */
+/* @keyframes headerAppear {
     0% {
         opacity: 0;
     }
@@ -61,7 +98,7 @@ animation: animate-out ease-out 0.5s; }
     }
 }
 
-/* Floating header, tracks root y */
+ Floating header, tracks root y 
 #root {
     view-timeline-name: --mainTimeline;
     view-timeline-axis: y;
@@ -71,7 +108,7 @@ header {
     animation: headerAppear ease-out forwards;
     animation-timeline: --mainTimeline;
     animation-range: entry-crossing 50vh exit 100%;
-}
+} */
 
 /* UNDONE: Project open sticky header  */
 /* @keyframes headerViewSticky {
@@ -192,7 +229,7 @@ header {
         animation: headerViewStickyBtns ease-out forwards;
         animation-timeline: --projectTimeline;
         animation-range: contain -600px;
-        @media screen and ( width <= 1100px) {
+        @media screen and ( width <= 1425px) {
             animation: none;
             animation-timeline: none;
             animation-range: none;
@@ -201,11 +238,11 @@ header {
 }
 */
 
-/* Title name sticky */
-#main-intro-container {
+/* UNDONE: Title name sticky */
+/* #main-intro-container {
     view-timeline-name: --introTimeline;
     view-timeline-axis: y;
-}
+} */
 
 /* Intro text */
 @keyframes flipEnter {
@@ -225,5 +262,24 @@ header {
         100% {
             opacity: 0;
             transform: rotateX(90deg)translateY(30px)
+        }
+    }
+
+    @keyframes fadeInPushUp {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
         }
     }

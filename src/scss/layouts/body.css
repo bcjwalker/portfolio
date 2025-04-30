@@ -3,25 +3,27 @@
   width: 100%;
   display: grid; 
   grid-template-columns: 1fr 4fr 1.25fr;
-  grid-template-rows: 50px 1fr 100px; 
+  grid-template-rows: 50px 1fr auto 100px; 
   /* gap: 20px; */
   grid-template-areas: 
     "nav header header"
     "nav main aside"
     "nav footer footer"; 
 
-  transition: 0.2s ease-out; 
+  transition: 0.325s ease-out; 
   /* Retract nav buttons  */
-  &.retract { 
-    grid-template-columns: 0.375fr 4fr 0.425fr; 
-    transition: 0.3s ease-out;    
-    .project-body-container {
-      margin-left: 0;
-      margin-right: 84px;
-      justify-content: center;
-      gap: 128px;
+  /* <= Tablet: disable */
+    @media screen and (min-width: 1425px) {
+    &.retract { 
+      grid-template-columns: 0.25fr 4fr 0.5fr; 
+      transition: 0.4s ease-out;  
+      .project-body-container {
+        margin-right: 10%;
+        justify-content: center;
+        gap: 128px;
 
-      transition: flex 0.3s ease-out;   
+        transition: flex 0.3s ease-out;   
+      }
     }
   }
 }
@@ -32,18 +34,14 @@ main {
   grid-area: main; 
 } 
   #main-intro-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin: 1rem;
     min-height: 85vh;
-
-    font-size: 0.625vw;
   }
   /* Project section */
   #main-projects-container {
-    min-height: 90vh;
+    min-height: 95vh;
     max-width: 100%;
     
     border-radius: 48px;
@@ -65,3 +63,8 @@ a.anchor {
     top: -160px;
     visibility: hidden;
   }
+
+/* UNDONE: Hide scroll if dialog overlay is open (zoomed images) */
+/* body:has(.dialog-overlay) {
+  overflow: hidden;
+} */

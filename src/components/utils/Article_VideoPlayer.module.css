@@ -1,0 +1,98 @@
+.video-card-container {
+    /* border-radius: 16px; border: 1px solid var(--shade-outline-1); */
+    padding: 0;
+    overflow: hidden;
+
+    background-color: var(--shade-base-0);
+    border: 1px solid var(--shade-outline-1);
+    border-radius: 22px;
+    .header-container {
+        display: none;
+        margin: 12px 16px 0px 16px;
+
+       .label-wrapper,.title-wrapper {
+        }
+        .label-wrapper {
+            margin: 8px 0 0 12px;
+            .label-type, .dividing-dot {
+                display: inline;
+                margin-right: 0.25rem;
+
+                color: var(--shade-card-0-text-0);
+                font-size: .725rem;
+                font-weight: 450;
+                letter-spacing: .01ch;
+                margin-top: .25rem;
+                font-size: .825rem;
+                line-height: 1rem;
+            }
+        }
+        .title-wrapper {
+            h5.title {
+                margin-top: .25rem;
+                font-size: 1rem;
+                font-weight: 450;
+                color: var(--shade-text-3);
+            }
+        }
+    }
+    .video-figure {
+    }
+    .buttons-wrapper {        
+        padding: 12px 8px 12px 12px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        .btn-stop {
+            border-radius: 16px;
+        }
+        .btn-stop,.btn-fullscreen {
+            span {
+                color: var(--shade-text-4);
+                font-variation-settings: 'FILL' 1
+            }
+        }
+        .btn-slider{
+            flex-grow: 1;
+            margin: 0 6px 0 8px;
+            height: 52px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            .video-slider {
+                flex-grow: 1;
+            }
+            .video-timer {
+                padding: 2px 5px 2px 6px;
+
+                background-color: var(--shade-base-1);
+                border-radius: 5px;
+                font-size: 0.75rem;
+                /* Font settings */
+                * { 
+                    font-variant-numeric: tabular-nums;
+                    color: var(--shade-text-5);
+                }
+                .timer-stat {
+                    display: inline-block;
+                    width: 25px;
+                }
+                .stat-slash {
+                    margin-right: 2px;
+                    display: inline-block;
+                    text-align: center;
+                    width: 10px;
+                }
+            }
+        }
+    }
+}
+
+.video-player-figcaption {
+    margin: 5px 0 0 16px;
+
+    color: var(--shade-card-0-text-0);
+    font-size: .85rem;
+}
