@@ -10,7 +10,7 @@ import styles from "./Article_ImgViewer.module.css";
 function FullScreenImg ( {clicky, imgSrc, classN} ) {
     return (
         <>
-        <div className={`${styles['open-overlay']} dialog-overlay`} >
+        <dialog open className={`${styles['open-overlay']} dialog-overlay`} >
             <div className={`${styles['btn-close-wrapper']}`}>
                 <button className={`${styles['btn-close']} icon-btn overlay-btn`} onClick={() => clicky()}>
                     <span className='material-symbols-sharp'> close </span>
@@ -19,7 +19,7 @@ function FullScreenImg ( {clicky, imgSrc, classN} ) {
             <div className={styles['img-container']}  onClick={() => clicky()}>
                 <img src={imgSrc} className={`${classN} filter-shadow2 ${styles['full']}`}/>
             </div>
-        </div>
+        </dialog>
         </>
     )
 }

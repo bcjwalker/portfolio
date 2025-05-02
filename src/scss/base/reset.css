@@ -57,7 +57,7 @@
   }
 
   /*
-    (BEN) Remove default button styling (UNDONE?)
+    (BEN) Remove default styling 
   */
   button {
     all: unset;
@@ -69,4 +69,7 @@
     background: transparent;
     cursor: pointer;
     width: 15rem;
+  }
+  dialog {
+    border: none;
   }

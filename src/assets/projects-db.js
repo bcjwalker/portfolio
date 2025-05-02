@@ -12,6 +12,7 @@ export const projectDataRaw =
 	{
 		// Metadata
 		"id": 0,
+		"status": "WIP",
 		"title": "Studbud",
 		"dir": "studbud",
 		"tags": [
@@ -27,6 +28,7 @@ export const projectDataRaw =
 		"desc": "Browser-based Kanban study tracker with integrated Pomodoro timer.",
 			"descFull": "Browser-based Kanban study tracker with integrated Pomodoro timer.",
 			"descFull2": "Individual project.",
+		"links": "none",
 		// Lead card info
 		"collabs": "none",
 		"roles": [
@@ -50,6 +52,7 @@ export const projectDataRaw =
 	{
 		// Metadata
 		"id": 1,
+		"status": "WIP",
 		"title": "Convey",
 		"dir": "convey",
 		"tags": [
@@ -64,6 +67,7 @@ export const projectDataRaw =
 		"desc": "An exploratory app service redesigning Sydney's bus system.",
 			"descFull": "An exploratory app service redesigning Sydney's bus system.",
 			"descFull2": "Lorem ipsum",
+		"links": "none",
 		// Lead card info
 		"collabs": {
 			"jonathan": {
@@ -93,6 +97,7 @@ export const projectDataRaw =
 	{
 		// Metadata
 		"id": 2,
+		"status": "WIP",
 		"title": "Biodiversity in the Human Era",
 		"dir": "biodiversity",
 		"tags": [
@@ -106,9 +111,10 @@ export const projectDataRaw =
 		},
 		"date": "2023",
 		"thumb": "/src/assets/projects/biodiversity/thumb.jpg",
-		"desc": "An activist website detailing the Anthropocene.",
-			"descFull": "An activist website detailing the Anthropocene.",
+		"desc": "An activist website detailing the Anthropocene, focusing on data presentation.",
+			"descFull": "An activist website detailing the Anthropocene, focusing on data presentation.",
 			"descFull2": "Individual project.",
+		"links": "none",
 		// Lead card info
 		"collabs": "none",
 		"roles": [
@@ -142,9 +148,26 @@ export const projectDataRaw =
 		},
 		"date": "2024",
 		"thumb": "/src/assets/projects/sunstop/thumb.jpg",
-		"desc": "A holistic solution to promote sun safety in young Australian men.",
-			"descFull": "A holistic solution to promote sun safety in young Australian men through interactive sunscreen kiosks, promoting sunscreen as a habit through ubiquity, convenience and rewards.",
+		"desc": "A holistic solution to promote sun safety in young Australian men through interactive sunscreen kiosks — promoting sunscreen as a habit through ubiquity, convenience and rewards.",
+			"descFull": "A holistic solution to promote sun safety in young Australian men through interactive sunscreen kiosks — promoting sunscreen as a habit through ubiquity, convenience and rewards.",
 			"descFull2": "My personal touch was in pushing for increased visual expression in the use of colour, form and motion in the interface.",
+		"links": {
+			"interface": {
+				"type": "prmry",
+				"link": "https://nicolexylow.github.io/sunstop/",
+				"label": "View interface",
+			},
+			"report1": {
+				"type": "doc",
+				"link": "/src/assets/projects/sunstop/DECO4200_A4_report.pdf",
+				"label": "Read case study",
+			},
+			"report2": {
+				"type": "doc",
+				"link": "/src/assets/projects/sunstop/DECO4200_A1_report.pdf",
+				"label": "Read initial report",
+			},
+		},
 		// Lead card info
 		"collabs": {
 			"nicole": {

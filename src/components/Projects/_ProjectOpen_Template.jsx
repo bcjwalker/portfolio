@@ -4,7 +4,7 @@ import TableOfContents from '../utils/Article_TableOfContents.jsx';
 
 // Animations :)
 import { Fade } from "react-awesome-reveal";
-import { fadeInPushUp } from "../utils/Animations.jsx";
+import { fadeInPushUp, fadeInPushDown } from "../utils/Animations.jsx";
 
 // Project info from raw table (not reversed);
 // Sunstop id 0, first in table
@@ -193,6 +193,45 @@ export function Nav( index ) {
     )
 }
 
+{/* <a href='https://nicolexylow.github.io/sunstop/' target='_blank' className='docket med icon prmry-btn metadata-link'>
+<span className='material-symbols-rounded'> open_in_new </span> 
+<label>View interface</label> 
+</a>
+<a href={projectMedia["/src/assets/projects/sunstop/DECO4200_A1_report.pdf"]} target='_blank' className='docket outline-btn outline-3 med icon metadata-link'>
+<span className='material-symbols-rounded'> description </span> <label>Read research report</label> 
+</a>
+<a href={projectMedia["/src/assets/projects/sunstop/DECO4200_A4_report.pdf"]} target='_blank' className='docket outline-btn outline-3 med icon metadata-link'>
+<span className='material-symbols-rounded'> description </span> <label>Read case study</label> 
+</a> */}
+
+function RenderLinkList ( props ) {
+    const RenderLink = (props) => { 
+        let icon;
+        let classList;
+        if (props.type == 'prmry') {
+            icon = "open_in_new";
+            classList = "docket med icon prmry-btn metadata-link";
+        } else if (props.type == "doc") {
+            icon = "description";
+            classList = "docket outline-btn outline-3 med icon metadata-link";
+        }
+    
+        return (
+            <>
+            <a href={props.link} target='_blank' className={classList}>
+                <span className='material-symbols-rounded'> {icon} </span> 
+                <label>{props.label}</label> 
+            </a>
+            </>
+        )
+    }
+    const linkKeys = Object.entries(props);
+    const linkList = linkKeys.map ( (link, index) =>
+        RenderLink(linkKeys[index][1])
+    );
+    return linkList;
+}
+
 export function ProjectOpen_Template( {children, article, index} ) {
     const currentProj = projectData[index];
 
@@ -294,32 +333,21 @@ export function ProjectOpen_Template( {children, article, index} ) {
                             <h1 style={{viewTransitionName: `post-title-${article}`}}>{currentProj.title}</h1>
                         </div>
 
-                        <Fade triggerOnce duration={200} delay={150} cascade damping={0.1}>
+                        <Fade keyframes={fadeInPushDown} triggerOnce duration={500} delay={150} cascade damping={0.1}>
                             <p className='desc-text'>{currentProj.descFull}</p>
                             <p className='desc-text'>{currentProj.descFull2}</p>
-                        </Fade>
 
-                        <Fade triggerOnce cascade damping={0.1} duration={350} delay={150}>
-                        <div className='header-metadata'>
-                            <div className='metadata-btns-wrapper'>
-                                <label className='metadata-section-label'>Links:</label>
-                                <a href='https://nicolexylow.github.io/sunstop/' target='_blank' className='docket med icon prmry-btn metadata-link'>
-                                    <span className='material-symbols-rounded'> open_in_new </span> 
-                                    <label>View interface</label> 
-                                </a>
-                                <a href={projectMedia["/src/assets/projects/sunstop/DECO4200_A1_report.pdf"]} target='_blank' className='docket outline-btn outline-3 med icon metadata-link'>
-                                    <span className='material-symbols-rounded'> description </span> <label>Read research report</label> 
-                                </a>
-                                <a href={projectMedia["/src/assets/projects/sunstop/DECO4200_A4_report.pdf"]} target='_blank' className='docket outline-btn outline-3 med icon metadata-link'>
-                                    <span className='material-symbols-rounded'> description </span> <label>Read case study</label> 
-                                </a>
+                            <div className='header-metadata'>
+                                <div className='metadata-btns-wrapper'>
+                                    <label className='metadata-section-label'>Links:</label>
+                                    {RenderLinkList(currentProj.links)}
+                                </div>
+                                <div className='metadata-tags-wrapper'>
+                                    <label className='metadata-year'>{currentProj.date}</label>
+                                    <span className='dividing-dot'>•</span>
+                                    {tagsList}
+                                </div>
                             </div>
-                            <div className='metadata-tags-wrapper'>
-                                <label className='metadata-year'>{currentProj.date}</label>
-                                <span className='dividing-dot'>•</span>
-                                {tagsList}
-                            </div>
-                        </div>
                         </Fade>
                     </div>
                     <div className='header-main-right-wrapper'>

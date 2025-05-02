@@ -92,7 +92,7 @@ nav#body-nav {
         transition: visibility .2s ease-out, opacity .2s ease-out;
         #navbox {
             position: static;
-            width: 250px;
+            width: 225px;
             height: 100%;
             z-index: 9;
             
@@ -102,6 +102,8 @@ nav#body-nav {
 
             transition: transform .15s ease-out;
             ul {
+                width: 100%;
+                padding-right: 32px;
                 float: left;
                 li {
                     margin-top: 0.25rem;

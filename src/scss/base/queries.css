@@ -33,9 +33,9 @@
     "nav aside"
     "footer footer"; 
   }
+
   #main-intro-container {
-    display: block;
-    font-size: 1.65vw;
+    font-size: 1.25vmin;
   }
 }
 
@@ -44,9 +44,21 @@
   #site-container {
     display: block;
   }
+}
 
+
+/* 
+#######################
+## CONTAINER QUERIES ##
+#######################
+*/
+
+main {
+  container: mainWrap / inline-size;
+}
+@container mainWrap (width < 950) {
   #main-intro-container {
     display: block;
-    font-size: 1.65vw;
+    font-size: 1.825vmin;
   }
 }

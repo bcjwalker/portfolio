@@ -22,7 +22,7 @@ main {
     --shade-base-null: hsl(0, 0%, 100%);
     --shade-base-0: hsl(042, 65%, 99%);
         --shade-base-0-alt: hsl(042, 24%, 90%);
-    --shade-base-1: hsl(042, 40%, 96%);
+    --shade-base-1: rgb(249, 246, 241);
         --shade-base-1-trans: hsla(042, 5%, 99%, 0.95);
     --shade-base-2: hsl(042, 36%, 93%);
     --shade-base-3: hsl(042, 32%, 90%);

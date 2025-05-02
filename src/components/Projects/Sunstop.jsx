@@ -3,7 +3,7 @@ import {useState, useRef, useEffect} from 'react'
 import { ReactCompareSlider, ReactCompareSliderImage, styleFitContainer } from 'react-compare-slider';
 // Animations :)
 import { Fade } from "react-awesome-reveal";
-import { fadeInPushUp } from "../utils/Animations.jsx";
+import { fadeInPushUp, fadeInPushDown } from "../utils/Animations.jsx";
 
 // Project info from raw table (not reversed);
 // Sunstop id 0, first in table
@@ -291,32 +291,34 @@ function Main() {
             </div>
             
             {/* Start article bulk */}
-            {/* Section 1 */}
-            <Fade keyframes={fadeInPushUp} duration={375} triggerOnce delay={750} cascade damping={0.1}>
-                <MainSection_Solution num='1'/>
-            </Fade>
+            <section className='project-sections-wrapper'>
+                {/* Section 1 */}
+                <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={100} cascade damping={0.1}>
+                    <MainSection_Solution num='1'/>
+                </Fade>
 
-            {/* Section 2 - comparisons*/}
-            <Fade keyframes={fadeInPushUp} duration={375} triggerOnce delay={100}>
-                <MainSection_Comparisons num='2'/>
-            </Fade>
+                {/* Section 2 - comparisons*/}
+                <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={100}>
+                    <MainSection_Comparisons num='2'/>
+                </Fade>
 
-            {/* Section 3 */}
-            <Fade keyframes={fadeInPushUp} duration={375} triggerOnce delay={100}>
-                <MainSection_Research num='3'/>
-            </Fade>
+                {/* Section 3 */}
+                <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={100}>
+                    <MainSection_Research num='3'/>
+                </Fade>
 
 
-            <Fade keyframes={fadeInPushUp} duration={375} triggerOnce delay={100}>
-                <MainSection_Grad num='4'/>
-            </Fade>
+                <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={100}>
+                    <MainSection_Grad num='4'/>
+                </Fade>
 
-            {/* Section 5 */}
-            <Fade keyframes={fadeInPushUp} duration={375} triggerOnce delay={100}>
-                <MainSection_Skills num='5'/>
-            </Fade>
+                {/* Section 5 */}
+                <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={100}>
+                    <MainSection_Skills num='5'/>
+                </Fade>
+            </section>
+            {/* End article bulk */}
             
-        {/* End article bulk */}
         </div>
         </>
     )

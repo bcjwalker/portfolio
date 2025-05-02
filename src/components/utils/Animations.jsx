@@ -10,6 +10,16 @@ export const fadeInPushUp = keyframes`
         transform: translateY(0);
     }
 }`;
+export const fadeInPushDown = keyframes`
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}`;
 export const fadeInPushRight = keyframes`
     from {
         opacity: 0;

@@ -38,6 +38,7 @@ main {
     grid-template-columns: 1fr 1fr;
     margin: 1rem;
     min-height: 85vh;
+    overflow: hidden;
   }
   /* Project section */
   #main-projects-container {
@@ -64,7 +65,7 @@ a.anchor {
     visibility: hidden;
   }
 
-/* UNDONE: Hide scroll if dialog overlay is open (zoomed images) */
-/* body:has(.dialog-overlay) {
+/* Prevent scroll if nav sidebar is open */
+body:has(.nav-dialog.opened) {
   overflow: hidden;
-} */
+} 

@@ -686,12 +686,22 @@
 
 /* Project article body pops in */
 .project-body-container {
-    opacity: 0;
-    animation: fadeInPushUp 0.4s ease-out 0.55s forwards;
+    opacity: 1;
     transition: flex 0.3s ease-out;  
     /* Nav fades in after */
     .project-left-container {
         opacity: 0;
-        animation: fadeIn 0.25s ease-out 0.75s forwards;
+        animation: fadeIn 0.25s ease-out 1s forwards;
+    }
+    .project-main-container {
+        opacity: 0;
+        animation: fadeInPushDown 0.4s ease-out 0.75s forwards;
+        .project-overview-cards-wrapper {
+            
+        }
+        .project-sections-wrapper {
+            opacity: 0;
+            animation: fadeInPushDown 0.4s ease-out 1s forwards;
+        }
     }
 }

@@ -1,8 +1,58 @@
+/* 
+#######################
+## CONTAINER QUERIES ##
+#######################
+*/
+
+#projects-cardousel {
+    container: cardousel / inline-size;
+}
+@container cardousel (width < 1200px) {
+    #cardousel-trailing {
+        display: block !important; 
+        a.projects-card {
+            margin-top: 8px;
+            width: 100% !important;
+            flex-direction: row;
+            text-decoration: none;
+            .projects-card-thumb {
+                margin-left: 0;
+                flex-basis: 40%;
+                img { aspect-ratio: 1; height: 100%; }
+            }
+            .projects-card-details-container {
+                flex-basis: 60%;
+                padding: 10px 8px;
+                /* Title  */
+                .projects-card-details-title {
+                    h3 {
+                        font-weight: 450;
+                        font-size: 1.75rem;
+                        line-height: initial;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#projects-big {
+    container: projBig / inline-size;
+}
+@container projBig (width < 950px) {
+    #projects-cardousel {
+        display: block !important;
+    }
+}
+
+
+
 /* Projects (big) */
 #projects-big {
     display: block;
     padding: 48px;
-    
+    /* <= Phone width */
+    @media screen and (0px <= width <= 899px) { padding:  36px 24px; }
     #projects-big-head-container {
     margin-bottom: 2.5rem;
         #projects-big-h1 {
@@ -16,21 +66,21 @@
     /* Projects carousel container */
     #projects-cardousel { 
         display: grid;
-        grid-template-columns: 1.5fr 2fr;
+        grid-template-columns: 1.75fr 2fr;
         grid-template-areas: 
         "lead trailing";
         grid-gap: 16px;
-        /* flex-direction: row;
-        flex-wrap: wrap;
-        gap: 2rem; */
         #cardousel-lead {
             grid-area: lead;
+            /* <= Phone width */
+            @media screen and (0px <= width <= 899px) { margin-bottom: 16px; }
         }
         #cardousel-trailing {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(0, 320px));
-            grid-gap: 16px;
+            grid-template-columns: minmax(100px, auto) minmax(100px, auto);
+            grid-gap: 6px 2px;
             grid-area: trailing;
+            @media screen and (0px <= width <= 899px) { display: block; }
         }
     }
 }
@@ -50,15 +100,15 @@
         .projects-card-details-title {
             h3 {
                 font-weight: 450;
-                font-size: 3.5rem;
-                line-height: initial;
+                font-size: 4rem;
+                line-height: 6.5rem;
             }
         }
         /* Desc */
         .projects-card-details-desc {   
             margin-bottom: 1rem;
         
-            line-height: 1.5rem;
+            line-height: 1.6rem;
             font-weight: 400;
             font-size: 1rem;
             color: var(--shade-text-3);
@@ -68,7 +118,7 @@
 /* Modify trailing card */
 #cardousel-trailing {
     a.projects-card {
-        max-width: 320px;
+        /* max-width: 300px; */
         height: 100%;
 
         background-color: var(--shade-base-0);
@@ -76,7 +126,7 @@
             background-color: var(--shade-base-1);
         }
         .projects-card-thumb { 
-            max-height: 150px;
+            max-height: 200px;
             .card-details-meta-container {
                 .details-taglist-wrapper {
                     /* Tag */
@@ -101,7 +151,6 @@ a.projects-card {
     /* max-height: fit-content; */
     /* z-index: 0; */
     
-
     text-decoration: none;
     background-color: var(--shade-card-0);
     border-radius: 24px;

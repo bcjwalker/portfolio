@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Wrapper sections
 import Header from './components/App/Header';
@@ -17,6 +17,31 @@ function PageWrapper() {
     const [navOpen, updateNavOpen] = useState(true);
     const handleNavUpdate = () => {
         updateNavOpen(navOpen => !navOpen)
+    }
+
+    // Wait til fonts are loaded for the site to properly load
+    const [fontsLoaded, setFontsLoaded] = useState(false);
+    useEffect(() => {
+        async function loadFonts() {
+            try {
+                await document.fonts.ready;
+                setFontsLoaded(true);
+            } catch (error) {
+                console.error("Error loading fonts:", error);
+            }
+        }
+
+        loadFonts();
+    }, []);
+
+    if (!fontsLoaded) {
+        return (
+            <>
+            <div style={{backgroundColor:'#f9f6f1'}}>
+                <p style={{color:'#f9f6f1'}}>Loading...</p>
+            </div>  
+            </>
+        )
     }
 
     return (

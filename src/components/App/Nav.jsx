@@ -7,7 +7,8 @@ function Nav ( props ) {
     // if the nav bar is closed (on hamburger button click/unclick)
     return (
         <>
-        <nav id={styles['body-nav']} className={`${props.readNavState ? null : styles['closed']}`}>
+        <nav id={`${styles['body-nav']}`} className={`${props.readNavState ? null : `${styles['closed']} opened`} nav-dialog`}
+        onClick={props.switchNavOpen}>
             {/* List of nav links for page */}
             <div id={styles['navbox']}>
                 {/* UNDONE: Nav button collapsing ${props.navOpen ? null : `closed`} */}

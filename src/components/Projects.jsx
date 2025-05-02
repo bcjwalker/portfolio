@@ -1,13 +1,14 @@
 import { Link, useOutletContext } from 'react-router';
 import { useState, useEffect } from 'react';
 import { Fade } from "react-awesome-reveal";
-import { nullAnim, fadeInPushRight } from "./utils/Animations.jsx"
+import { nullAnim, fadeInPushRight, fadeInPushDown } from "./utils/Animations.jsx"
 
 // Styles
 import styles from './Projects.module.css';
 
 // Get project DB
 import { projectData } from '../assets/projects-db.js';
+import fade from 'web-scrolling-text/modules/fade';
 // First project gets emphasis in card grid
 const leadProject = projectData[0];
 // Others get smaller cards
@@ -19,12 +20,21 @@ console.log(projectImgs);
 
 
 // Conditionally render card fade-in anim
-function RenderCondCardFade ( { children, type } ) {
+function RenderCondCardFade ( { children, delay } ) {
+    // Lead card returns null, and trailing cards return their array index
+    // So apply delay only if not null
+    let fadeDelay;
+    if (delay == null) {
+        fadeDelay = 0;
+    } else {
+        fadeDelay = (delay + 1) * 150;
+    }
+
     if (sessionStorage.getItem('is_first_render') === null) {
         console.log(sessionStorage.getItem('is_first_render'));
         return (
             <>
-            <Fade className={`${styles[type]}`} keyframes={fadeInPushRight} duration={500} triggerOnce cascade damping={0.1}>
+            <Fade keyframes={fadeInPushDown} duration={500} triggerOnce delay={fadeDelay}>
                 {children}
             </Fade>
             </>
@@ -32,16 +42,14 @@ function RenderCondCardFade ( { children, type } ) {
     } else if (sessionStorage.getItem('is_first_render') === 'false') {
         return (
         <>
-        <div className={`${styles[type]}`}>
-            {children}
-        </div>
+        {children}
         </>
         )
     }
 }
 
 // Render card with project info as props
-function RenderProjectCard( { props } ) {
+function RenderProjectCard( props, index ) {
     console.log(props);
     const tagsProps = props.cardTags;
     console.log(tagsProps);
@@ -59,29 +67,29 @@ function RenderProjectCard( { props } ) {
 
     return (
         <>
-        <RenderCondCardFade>
-            <Link className={`${styles['projects-card']}`} key={props.id} 
-            to={`/projects/${props.dir}`} viewTransition style={{viewTransitionName: `post-card-${props.dir}`}}> 
-                <div className={styles['projects-card-thumb']}>
-                    <div className={styles['card-details-meta-container']}>
-                        <div className={`projects-card-tag ${styles['details-year']} ${styles['thumb-tag']}`}>
-                            <label>{props.date}</label>
-                        </div>
-                        <div className={styles['details-taglist-wrapper']}>
-                            {tagsList}
-                        </div>
+        <RenderCondCardFade delay={index}>
+        <Link className={`${styles['projects-card']}`} key={props.id} 
+        to={`/projects/${props.dir}`} viewTransition style={{viewTransitionName: `post-card-${props.dir}`}}> 
+            <div className={styles['projects-card-thumb']}>
+                <div className={styles['card-details-meta-container']}>
+                    <div className={`projects-card-tag ${styles['details-year']} ${styles['thumb-tag']}`}>
+                        <label>{props.date}</label>
                     </div>
-                    <img className={styles['projects-card-thumb-img']} src={projectImgs[props.thumb]}/>
-                </div>
-                <div className={styles['projects-card-details-container']}> 
-                    <div className={styles['projects-card-details-title']}>
-                        <h3 style={{viewTransitionName: `post-title-${props.dir}`}}
-                        > {props.title} </h3>  
+                    <div className={styles['details-taglist-wrapper']}>
+                        {tagsList}
                     </div>
-                    <span className={styles['projects-card-details-desc']}
-                    > {props.desc} </span>
                 </div>
-            </Link>
+                <img className={styles['projects-card-thumb-img']} src={projectImgs[props.thumb]}/>
+            </div>
+            <div className={styles['projects-card-details-container']}> 
+                <div className={styles['projects-card-details-title']}>
+                    <h3 style={{viewTransitionName: `post-title-${props.dir}`}}
+                    > {props.title} </h3>  
+                </div>
+                <span className={styles['projects-card-details-desc']}
+                > {props.desc} </span>
+            </div>
+        </Link>
         </RenderCondCardFade>
         </>
     )
@@ -108,29 +116,10 @@ function RenderProjectCardTag( key, value ) {
     }
 }
 
-// Render card with project info as props
-function RenderProjectCardTrailing( props ) {
-    return (
-        <>
-        <RenderProjectCard props={props}/>
-        </>
-    )
-}
-// Render card with project info as props
-function RenderProjectCardLead( props ) {
-    return (
-        <>
-        <RenderProjectCard props={props}/>
-        </>
-    )
-}
-
 function Projects() {
     // Draw project cards as list of html objects
-    const leadCard = RenderProjectCardLead(leadProject);
-    // Draw project cards as list of html objects
     const trailingCardsList = trailingProjects.map ( (project, index) =>
-        RenderProjectCardTrailing(trailingProjects[index], index)
+        RenderProjectCard(trailingProjects[index], index)
     );
 
     return (
@@ -144,8 +133,9 @@ function Projects() {
             </div>
             {/* Cards carousel */}
             <div id={styles['projects-cardousel']}>
+                {/* Wrap in a conditional fade-in which only occurs on first load */}
                 <div id={styles['cardousel-lead']}>
-                    {leadCard}
+                    {RenderProjectCard(leadProject, null)}
                 </div>
                 <div id={styles['cardousel-trailing']}>
                     {trailingCardsList}

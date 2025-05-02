@@ -1,6 +1,8 @@
 import React from "react";
 import {useState, useRef, useEffect} from 'react'
 import ScrollingText from "web-scrolling-text/react";
+import { Fade } from "react-awesome-reveal";
+import { nullAnim, fadeInPushUp } from "./utils/Animations.jsx"
 
 // Style
 import styles from './Intro.module.css';
@@ -35,10 +37,13 @@ function Intro() {
                     <img id={styles['Intro']} src={imgSignMain} />
                     <h2> Benjamin Walker </h2>
                 </div>
+                <label className={styles['intro-titles-location']}> 
+                    <span className={`${styles['location-pin']} material-symbols-rounded`}> home_pin </span> 
+                    Sydney, Australia 
+                    </label>
                 <h3 className={styles['intro-titles-role']}> UI+UX <br/> Designer </h3>
                 <p className={styles['intro-titles-desc']}> 
                     2025 graduate <strong>Design Computing</strong> student 
-                    <br/> 
                     from the <strong>University of Sydney</strong> 
                 </p>
             </div>
@@ -48,13 +53,15 @@ function Intro() {
             <div id={styles['intro-graphicfg']}>
                 {/* Box for quote, no ids for cleanliness */}
                 <blockquote id={styles['intro-graphic-quotebox']}> 
-                    I'm a Sydney-based designer captivated by balance between
-                    <ScrollingText className={styles['rotating-text']} ref={scrollTxtRef} 
+                    I design for a balance between
+                    <div className={styles['rotating-text']}>
+                    <ScrollingText ref={scrollTxtRef} 
                     options={{enterAnimation:'flipEnter', exitAnimation:'flipExit' }}>
                     <div className={styles['rotating-text']}>expression and<br/>simplicity</div>
                     <div className={styles['rotating-text']}>novelty and<br/>familiarity</div>
                     <div className={styles['rotating-text']}>form and<br/>function</div>
                     </ScrollingText>
+                    </div>
                 </blockquote>
             </div>
         </div>

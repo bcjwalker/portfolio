@@ -115,6 +115,7 @@
                 margin: 1rem 0;
                 line-height: 6rem;
                 color: var(--shade-text-0);
+                @media screen and (0px <= width <= 899px) { font-size: 3.25rem; line-height: initial; }
             }
             p.desc-text {
                 max-width: 700px;

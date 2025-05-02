@@ -6,6 +6,12 @@ span.material-symbols-rounded, span.material-symbols-sharp {
     color: var(--shade-text-1);
     user-select: none; 
 }
+span.material-symbols-rounded {
+    font-family: "Material Symbols Rounded";
+}
+span.material-symbols-sharp {
+    font-family: "Material Symbols Sharp";
+}
 a, button {
     span.material-symbols-rounded, span.material-symbols-sharp {
         transition: font-weight 0.25s, color 0.15s;
@@ -189,7 +195,8 @@ button {
     background-color: transparent;
     border-radius: 100px;
 
-    transition: 0.275s;
+    transition: 0.275s ease-out;
+    @media screen and (0px <= width <= 899px) { width: 100%; }
     /* Button text */
     label {
         cursor: pointer;
@@ -226,7 +233,6 @@ button {
     /* Closed version: copy media query styling below */
     @media screen and (min-width: 899px) {
         &.closed {
-            width: 75px;
             padding: 8px !important;
             margin-top: 2px;
             flex-direction: column;
@@ -480,6 +486,7 @@ RANGE */
 /* Track */
 input[type="range"] {
     min-height: 52px;
+    width: auto;
     &::-webkit-slider-runnable-track, &::-moz-range-track {
         background-color: var(--shade-base-2);
         height: 8px;

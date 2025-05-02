@@ -1,11 +1,11 @@
+
+
+
 /* Name and role */
 #intro-titles {  
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    /* <= Tablet width */
-    @media screen and (0px <= width <= 1425px) { width: auto; }
-
     /* Names holds signature and print name */
     #intro-titles-names {
         margin-bottom: 1.5em;
@@ -13,12 +13,10 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        /* position: sticky; */
-        /* top: 4.5rem; */
-
         /* Signature img */
         img {
-            max-width: 415px;
+            max-width: 30em;
+            @media screen and (0px <= width <= 899px) { max-width: 100%; }
         }
         /* 'Benjamin Walker' */
         h2 {
@@ -28,14 +26,35 @@
             font-weight: 300;
             letter-spacing: 0.015em;
             line-height: 5rem;
-            font-size: 3.25rem;
+            font-size: 3.25em;
             color: var(--shade-text-4);
+            @media screen and (0px <= width <= 899px) { font-size: 5.5em; }
         }
     }
-    
+    /* Location: 'Sydney, Australia' */
+    .intro-titles-location {
+        display: flex;
+        align-items: center;
+        gap: 0.25em;
+        padding: 1px 0 0 1.25rem;
+        margin-left: 10px;
+
+        font-size: 2.125em;
+        font-weight: 500;
+        line-height: 2em;
+        color: var(--shade-text-2);
+        border-left: 2px solid var(--shade-outline-5);
+        @media screen and (0px <= width <= 899px) { font-size: 2.75em; }
+        .location-pin {
+            font-size: 1.25em;
+            font-weight: 600;
+            /* font-variation-settings: 'FILL' 1; */
+            color: var(--shade-text-2);
+        }
+    }
     /* Role: 'UI + UX Designer' */
     .intro-titles-role {
-        padding: 1px 0 0 0.25em;
+        padding: 1px 0 0 1.25rem;
         margin-left: 10px;
 
         font-size: 7em;
@@ -43,11 +62,13 @@
         line-height: 1em;
         color: var(--shade-text-0);
         border-left: 2px solid var(--shade-outline-5);
+        @media screen and (0px <= width <= 899px) { font-size: 8.75em; }
     }
     /* Short description: 'usyd etc' */
     .intro-titles-desc {
-        padding: 1.15em 0 1em 1.5em;
-        margin-left: 10px;    
+        padding: 1.15em 0 1em 1.25rem;
+        margin-left: 10px;
+        max-width: 75%;
 
         font-weight: 500;
         font-size: 1.5em;
@@ -55,6 +76,7 @@
         color: var(--shade-text-6);
         border-left: 2px solid var(--shade-outline-5);
         border-radius: 0 0 0 0.75em;
+        @media screen and (0px <= width <= 899px) { font-size: 2.75em; }
         strong {
             color: var(--shade-text-3);
         }
@@ -63,7 +85,6 @@
 
 /* Right column of intro, holds quote */
 #intro-graphicfg {
-    @media screen and (0px <= width <= 1425px) { padding: 64px 16px 72px 64px; }
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -122,21 +143,31 @@
 
             transition: border-radius 0.375s;
         } */
+    /* Phone size */
+    @media screen and (0px <= width <= 899px) { 
+        padding: 16px;         
+    }
     /* Quote box */
     #intro-graphic-quotebox {
         position: relative;
         width: 100%;   
-        padding: 5rem;
+        padding: 84px;
 
         font-weight: 500;
-        font-size: 6vmin;
+        font-size: 4.5em;
         line-height: 1.125em;
         color: var(--shade-text-1);
         background-color: var(--shade-base-1);
         border-radius: 3em 5em 5em 3em;
         z-index: 0;
+        /* Phone size */
+        @media screen and (0px <= width <= 899px) { 
+            border-radius: 3rem 5rem 5rem 3rem;
+            padding: 32px 16px 32px 0px;
+            font-size: 6em;         
+        }
         .rotating-text {
-            width: 432px;
+            max-width: 432px;
             font-weight: 500;
             color: var(--shade-text-0-highlight);
         }
@@ -159,8 +190,40 @@
     
     opacity: 0.5;
     background: radial-gradient(closest-side, var(--shade-base-5-colour) 22%, var(--shade-base-1) 100%);
+    @media screen and (0px <= width <= 899px) { 
+        left: 24%;
+        top: 50vh;
+        height: 50vh;
+    }
 }
 
+
+/* 
+################
+## ANIMATIONS ##
+################
+*/
+
+@keyframes fadeInPushDown {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Project article body pops in */
+#intro-titles {
+    opacity: 0;
+    animation: fadeInPushDown 0.35s ease-out 0.5s forwards;
+}
+/* Project article body pops in */
+#intro-graphicfg {
+    opacity: 0;
+    animation: fadeInPushDown 0.35s ease-out 0.55s forwards;
+}
 
 /* Interactions */
 /* UNDONE: Sticky name, transitions to be a part of the header */
