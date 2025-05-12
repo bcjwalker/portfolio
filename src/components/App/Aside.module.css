@@ -8,7 +8,7 @@ aside {
 #aside-infobox {
     position: sticky;
     top: 22vh;
-    width: 150px;
+    width: 165px;
     max-width: fit-content;
     margin-top: 22vh;
 
@@ -39,22 +39,27 @@ aside {
 
         /* Subtitle */
         p {
-            padding-bottom: 0.5em;
+            padding-bottom: 0.35rem;
 
             font-style: italic;
-            font-size: 0.775rem;
+            font-size: 0.785rem;
             line-height: 1.2rem;
             color: var(--shade-text-3);
         }
         /* Avatar img */
         #aside-infobox-avatar {
             margin: 5px 0px 1px 0px;
-            padding: 1rem 0.5rem 1rem 0.5rem;
+            padding: 1rem 0.5rem 1.25rem 0.5rem;
             
             /* Give a weird semi-shadow reflection  */
             filter: drop-shadow(6px 6px 0.375px hsl(090, 25%, 84%)) 
                     drop-shadow(-6px -6px 0.375px hsl(090, 25%, 84%));
         } 
+        a.resume-link {
+            margin: 8px 0;
+            border: 1px solid var(--green-outline-1);
+            * { color: inherit; }
+        }
     }
         #aside-infobox-content.closed {
             max-height: 0em;
@@ -112,7 +117,7 @@ aside {
 /* <= Tablet width */
 @media screen and ( width <= 1425px) { 
     aside {
-        padding: 10% 10%;
+        padding: 72px 10% 10% 10%;
     }
     #aside-infobox {
         width: 100%;

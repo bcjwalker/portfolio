@@ -1,0 +1,48 @@
+.projects-wip-announce-container {
+    padding: 36px 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    
+    background-color: var(--green-card-1);
+    box-shadow: var(--drop-shadow-1);
+    border-radius: 48px;
+    /* <= Phone size */
+    @media screen and (0px <= width <= 899px) { flex-direction: column; align-items: flex-start; gap: 12px; }
+    span {
+        font-size: 3.5rem;
+        font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 200;
+        color: var(--green-card-1-text-1);
+    }
+    .left-wrapper {
+        label {
+            font-family: 'Readex Pro', sans-serif;
+            font-size: 2rem;
+            line-height: 2.75rem;
+            font-weight: 500;
+            color: var(--green-card-1-text-1);
+        }
+        p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--green-card-2-text-1);
+        }
+    }
+}
+
+.projects-wip-announce-hr {
+    margin: 64px 0;
+}
+
+.projects-wip-footer-container {
+    padding: 24px 16px;
+    
+    background-color: var(--green-card-3);
+    box-shadow: var(--drop-shadow-1);
+    border-radius: 24px;
+    .head-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+}

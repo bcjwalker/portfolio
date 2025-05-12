@@ -125,3 +125,23 @@ nav#body-nav {
         }
     }
 }
+
+/* 
+################
+## ANIMATIONS ##
+################
+*/
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#navbox-foot {
+    opacity: 0;
+    animation: fadeIn 0.35s ease-out 1s forwards;
+}

@@ -1,6 +1,9 @@
 import { useNavigate, useOutletContext } from 'react-router'
 import { useState, useRef, useEffect } from 'react'
+
+// Components
 import TableOfContents from '../utils/Article_TableOfContents.jsx';
+import ImgViewer from '../utils/Article_ImgViewer.jsx';
 
 // Animations :)
 import { Fade } from "react-awesome-reveal";
@@ -16,7 +19,7 @@ const projectMedia = import.meta.glob(
     '@assets/projects/*/*.{jpg,png,mp4,png,pdf}',
     '@assets/software/*.ico'], 
     {eager: true, query: '?url', import: 'default'});
-console.log(projectMedia)
+// console.log(projectMedia)
 
 // Simple tag component
 function RenderProjectThumbTag( props ) {
@@ -31,10 +34,10 @@ function RenderProjectThumbTag( props ) {
 
 // LeadCard spits out different kinds of cards for the project overview
 export function LeadCard(props) {
-    console.log(props)
+    // console.log(props)
     const currentProj = projectData[props.index];
-    console.log(props.index)
-    console.log(currentProj)
+    // console.log(props.index)
+    // console.log(currentProj)
     // Docket for collab card
     const RenderLeadCard1CollabEntry = (props) => { 
         return (<>
@@ -56,7 +59,7 @@ export function LeadCard(props) {
         <>
         <div className='lead-card'>
             <h4>{props.cardType}</h4>
-            <div className='collabs-container'>
+            <div className='collabs-container container'>
                 {collabsList}
             </div>
         </div>
@@ -70,7 +73,7 @@ export function LeadCard(props) {
         <>
         <div className='lead-card'>
             <h4>{props.cardType}</h4>
-            <div className='roles-container'>
+            <div className='roles-container container'>
                 {rolesList}
             </div>
         </div>
@@ -79,7 +82,7 @@ export function LeadCard(props) {
     // 3: Project stack
     const softwareList = currentProj.software.map ( function (software, index) {
         return (<>
-            <div className='software-wrapper'>
+            <div className='software-wrapper container'>
                 <img src={projectMedia[`/src/assets/software/${software}.ico`]}></img>
                 <label>{currentProj.software[index]}</label>
             </div>
@@ -89,7 +92,7 @@ export function LeadCard(props) {
         <>
         <div className='lead-card'>
             <h4>{props.cardType}</h4>
-            <div className='software-container'>
+            <div className='software-container container'>
                 {softwareList}
             </div>
         </div>
@@ -100,7 +103,7 @@ export function LeadCard(props) {
         <>
         <div className='lead-card'>
             <h4>{props.cardType}</h4>
-            <div className='timeline-container'>
+            <div className='timeline-container container'>
                 <h5>{currentProj.timeline[0]}</h5>
                 <span>{currentProj.timeline[1]}</span>
             </div>
@@ -164,7 +167,10 @@ export function Details_Static( props ) {
 export function Nav( index ) {
     const navigate = useNavigate();
     const handleBackClick = () => {
-        navigate('/', { viewTransition: true } );
+        navigate('/', { 
+            viewTransition: true,
+            state: {returning: true}
+        } );
     };
     return (
         <>
@@ -177,16 +183,7 @@ export function Nav( index ) {
             </div>
             <TableOfContents/>
             <div className='nav-btns-wrapper'>
-                <label className='projects-nav-label'>External links</label>
-                <div className='btns'>
-                    <a href='https://nicolexylow.github.io/sunstop/' target='_blank' className='docket med icon prmry-btn metadata-link'>
-                        <span className='material-symbols-rounded'> open_in_new </span> 
-                        <label>View interface</label> 
-                    </a>
-                    <a href={projectMedia["/src/assets/projects/sunstop/DECO4200_A4_report.pdf"]} target='_blank' className='docket outline-btn outline-3 med icon metadata-link'>
-                        <span className='material-symbols-rounded'> open_in_new </span> <label>Read case study</label> 
-                    </a>
-                </div>
+
             </div>
         </div>
         </>
@@ -205,40 +202,50 @@ export function Nav( index ) {
 </a> */}
 
 function RenderLinkList ( props ) {
-    const RenderLink = (props) => { 
-        let icon;
-        let classList;
-        if (props.type == 'prmry') {
-            icon = "open_in_new";
-            classList = "docket med icon prmry-btn metadata-link";
-        } else if (props.type == "doc") {
-            icon = "description";
-            classList = "docket outline-btn outline-3 med icon metadata-link";
+    if (props != "none") {
+        const RenderLink = (props) => { 
+            let icon;
+            let classList;
+            if (props.type == 'prmry') {
+                icon = "open_in_new";
+                classList = "docket med icon prmry-btn metadata-link";
+            } else if (props.type == "doc") {
+                icon = "open_in_new";
+                classList = "docket outline-btn outline-3 med icon metadata-link";
+            }
+        
+            return (
+                <>
+                <a href={props.link} target='_blank' className={classList}>
+                    <span className='material-symbols-rounded'> {icon} </span> 
+                    <label>{props.label}</label> 
+                </a>
+                </>
+            )
         }
-    
-        return (
-            <>
-            <a href={props.link} target='_blank' className={classList}>
-                <span className='material-symbols-rounded'> {icon} </span> 
-                <label>{props.label}</label> 
-            </a>
-            </>
-        )
+        const linkKeys = Object.entries(props);
+        const linkList = linkKeys.map ( (link, index) =>
+            RenderLink(linkKeys[index][1])
+        );
+        return linkList;
+    } else {
+        return;
     }
-    const linkKeys = Object.entries(props);
-    const linkList = linkKeys.map ( (link, index) =>
-        RenderLink(linkKeys[index][1])
-    );
-    return linkList;
 }
 
 export function ProjectOpen_Template( {children, article, index} ) {
     const currentProj = projectData[index];
 
+    // Edit thumb.jpg to be thumb-full.jpg
+    const headerImg = `${(currentProj.thumb).slice(0,-4)}-full.jpg`;
+    
     // Route us   
     const navigate = useNavigate();
     const handleBackClick = () => {
-        navigate('/', { viewTransition: true } );
+        navigate('/', { 
+            viewTransition: true,
+            state: {returning: true}
+        } );
     };
 
     // Tags
@@ -292,7 +299,7 @@ export function ProjectOpen_Template( {children, article, index} ) {
     }, [headerSticky]); */
 
     // DEV: disable while working on article
-    //useEffect(() => { articleTopRef.current.scrollIntoView({ behavior: "instant" }); })
+    useEffect(() => { articleTopRef.current.scrollIntoView({ behavior: "instant" }); })
 
     return (
         <>
@@ -339,10 +346,16 @@ export function ProjectOpen_Template( {children, article, index} ) {
 
                             <div className='header-metadata'>
                                 <div className='metadata-btns-wrapper'>
-                                    <label className='metadata-section-label'>Links:</label>
-                                    {RenderLinkList(currentProj.links)}
+                                    <span className='metadata-section-label'>
+                                        <span className='material-symbols-rounded'> attach_file </span>
+                                    </span>
+                                    <div className='btns-list'>
+                                        {RenderLinkList(currentProj.links)}
+                                    </div>
                                 </div>
+                                <br/>
                                 <div className='metadata-tags-wrapper'>
+                                    <span className='material-symbols-rounded'> label </span>
                                     <label className='metadata-year'>{currentProj.date}</label>
                                     <span className='dividing-dot'>•</span>
                                     {tagsList}
@@ -351,7 +364,7 @@ export function ProjectOpen_Template( {children, article, index} ) {
                         </Fade>
                     </div>
                     <div className='header-main-right-wrapper'>
-                        <img src={projectMedia[currentProj.thumb]}/>
+                        <ImgViewer imgSrc={projectMedia[headerImg]}/>
                     </div>
                 </div>
             </div>

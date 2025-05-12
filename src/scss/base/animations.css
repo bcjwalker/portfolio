@@ -9,16 +9,7 @@
     animation-duration: .275s;
     animation-timing-function: ease-out;
 }
-@keyframes uniFadeInPushUp {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+
 
 /* Project card anims */
 ::view-transition-image-pair(post-card-sunstop) {
@@ -44,7 +35,7 @@
         opacity: 1;
         z-index: 2;
     }
-  }
+}
 
 
 /* Handle most universal fade-in animations */
@@ -79,168 +70,6 @@
       transition: height 0.2s ease-out, content-visibility 0.2s ease-out allow-discrete;
     }
 }
-
-/* UNDONE: Header */
-/* @keyframes headerAppear {
-    0% {
-        opacity: 0;
-    }
-    15% {
-        opacity: 0;
-    }
-    25% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
- Floating header, tracks root y 
-#root {
-    view-timeline-name: --mainTimeline;
-    view-timeline-axis: y;
-}
-header {
-    transition: opacity 0.12s; 
-    animation: headerAppear ease-out forwards;
-    animation-timeline: --mainTimeline;
-    animation-range: entry-crossing 50vh exit 100%;
-} */
-
-/* UNDONE: Project open sticky header  */
-/* @keyframes headerViewSticky {
-    0% {
-        border-bottom: 4px solid transparent;
-    }
-    12% {
-        width: 100%;
-        padding: 48px;
-        gap: 0.25rem;
-        box-shadow: none;
-        align-items: flex-start;
-
-        font-size: 4rem;
-        font-weight: 350;
-        flex-direction: column;
-        background-color: transparent;
-        pointer-events: none;
-        border-bottom: 4px solid transparent;
-    }
-    18% {
-        flex-direction: row;
-        align-items: center;
-        gap: 1.25rem;
-
-        pointer-events: none;
-        border-bottom: 4px solid transparent;
-    }
-    25% {
-        flex-direction: row;
-        align-items: center;
-        gap: 1.25rem;
-        width: 100%;
-
-        pointer-events: none;
-        border-bottom: 4px solid transparent;
-    }
-    30% {
-        width: 100%;
-        padding: 12px 36px 12px 42px;
-        gap: 1.25rem;
-        flex-direction: row;
-        align-items: center;
-
-        font-size: 1.75rem;
-        font-weight: 400;
-        background-color: var(--shade-base-2);
-        pointer-events: all;
-        box-shadow: var(--drop-shadow-1);
-        border-bottom: 4px solid var(--shade-base-4);
-    }
-    100% {
-        width: 100%;
-        padding: 12px 36px 12px 42px;
-        gap: 1.25rem;
-        flex-direction: row;
-        align-items: center;
-        
-        font-size: 1.75rem;
-        pointer-events: all;
-        font-weight: 400;
-        background-color: var(--shade-base-2);
-        box-shadow: var(--drop-shadow-1);
-        border-bottom: 4px solid var(--shade-base-4);
-    }
-} */
-/* UNDONE: Project open sticky header */
-/* @keyframes headerViewStickyBtns {
-    0% {
-    }
-    30% {
-        opacity: 0;
-        pointer-events: none;
-    }
-    35% {
-        opacity: 1;
-        pointer-events: all;
-    }
-    100% {
-        opacity: 1;
-        pointer-events: all;
-    }
-} */
-/* UNDONE: Project open sticky header */
-/* @keyframes headerViewContainerBacking {
-    35% {
-        background-color: transparent;
-    }
-    38% {
-        background-color: var(--shade-base-0);
-    }
-    100% {
-        background-color: var(--shade-base-0);
-    }
-} */
-
-/* Projects open */
-/* article.project-big-open {
-    view-timeline-name: --projectTimeline;
-    view-timeline-axis: y;
-} */
-
-
-/* UNDONE: Floating header 
-.header-topdtls-container {
-    animation: headerViewContainerBacking ease-out forwards;
-    animation-timeline: --projectTimeline;
-    animation-range: 25% 50%;
-}
-.header-topdtls {
-    font-size: 4rem;
-    font-weight: 350;
-
-    animation: headerViewSticky ease-out forwards;
-    animation-timeline: --projectTimeline;
-    animation-range: contain -400px;
-    .btns-header {
-        animation: headerViewStickyBtns ease-out forwards;
-        animation-timeline: --projectTimeline;
-        animation-range: contain -600px;
-        @media screen and ( width <= 1425px) {
-            animation: none;
-            animation-timeline: none;
-            animation-range: none;
-        }
-    }
-}
-*/
-
-/* UNDONE: Title name sticky */
-/* #main-intro-container {
-    view-timeline-name: --introTimeline;
-    view-timeline-axis: y;
-} */
 
 /* Flips */
 @keyframes flipEnter {
@@ -295,3 +124,31 @@ header {
             transform: translateY(0);
         }
     }
+    @keyframes fadeInPushRight {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+/* Page fade in */
+#site-container {
+    opacity: 0;
+        animation: fadeIn 0.275s ease-out 0.25s forwards;
+    nav {
+        opacity: 0;
+        animation: fadeInPushRight 0.4s ease-out 0.25s forwards;
+    }
+    aside {
+        opacity: 0;
+        animation: fadeIn 0.275s ease-out 0.275s forwards;
+    }
+    #main-projects-container {
+        opacity: 0;
+        animation: fadeIn 0.274s ease-out 1.125s forwards;
+    }
+}

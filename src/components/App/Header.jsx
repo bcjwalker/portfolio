@@ -1,6 +1,6 @@
 // Style
 import styles from './Header.module.css';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 // Imgs
 import imgSignHead from '../../assets/img-my-signature-head.png';
@@ -21,7 +21,7 @@ function Header ( {switchNavOpen} ) {
           ticking = false;
           return;
         }
-        setHeaderOpen(scrollY < 350 ? true : false);
+        setHeaderOpen(scrollY < 350 ? false : true);
         lastScrollY = scrollY > 0 ? scrollY : 0;
         ticking = false;
       };
@@ -38,14 +38,13 @@ function Header ( {switchNavOpen} ) {
       return () => window.removeEventListener("scroll", onScroll);
     }, [headerOpen]);
     
-
     return (
         <>
         {/* Header, only appears after user has scrolled past signature img */}
         {/* UNDONE: replaced by view anims
         <header className={`${headerOpen ? styles['fade-out'] : styles['fade-in'] }`} > */}
         
-        <header className={`${headerOpen ? styles['fade-out'] : styles['fade-in'] }`}>
+        <header className={`${headerOpen ? styles['fade-in'] : styles['fade-out'] }`}>
             {/* Hamburger menu
             * Persistent, remains on top of header 
             * Only appears in mobile width */}

@@ -8,15 +8,15 @@
   grid-template-areas: 
     "nav header header"
     "nav main aside"
-    "nav footer footer"; 
+    "footer footer footer"; 
 
-  transition: 0.325s ease-out; 
+  transition: grid 0.325s ease-out; 
   /* Retract nav buttons  */
   /* <= Tablet: disable */
     @media screen and (min-width: 1425px) {
     &.retract { 
       grid-template-columns: 0.25fr 4fr 0.5fr; 
-      transition: 0.4s ease-out;  
+      transition: grid 0.425s ease-out; 
       .project-body-container {
         margin-right: 10%;
         justify-content: center;
@@ -39,6 +39,8 @@ main {
     margin: 1rem;
     min-height: 85vh;
     overflow: hidden;
+    gap: 32px;
+
   }
   /* Project section */
   #main-projects-container {
@@ -46,6 +48,15 @@ main {
     max-width: 100%;
     
     border-radius: 48px;
+  }
+  #main-contact-container {
+    margin-bottom: 16px;
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    min-height: 60vh;
+    /* <= Phone width */
+    @media screen and (width <= 899px) { display: block;}  
   }
 aside { grid-area: aside }
 footer { grid-area: footer; }
@@ -65,7 +76,9 @@ a.anchor {
     visibility: hidden;
   }
 
-/* Prevent scroll if nav sidebar is open */
-body:has(.nav-dialog.opened) {
-  overflow: hidden;
-} 
+/* Phone: prevent scroll if nav sidebar is open */
+@media screen and (0px <= width <= 899px) {
+  body:has(.nav-dialog.opened) {
+    overflow: hidden;
+  } 
+}

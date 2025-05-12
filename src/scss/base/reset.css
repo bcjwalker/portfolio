@@ -73,3 +73,6 @@
   dialog {
     border: none;
   }
+  iframe {
+    all: unset;
+  }

@@ -21,30 +21,33 @@ export const projectDataRaw =
 			"UI/UX"
 		],
 		"cardTags": {
-			"links": "2 links",
+			"recent": "WIP",
+			"links": "1 link"
 		},
 		"date": "2021",
 		"thumb": "/src/assets/projects/studbud/thumb.jpg",
 		"desc": "Browser-based Kanban study tracker with integrated Pomodoro timer.",
 			"descFull": "Browser-based Kanban study tracker with integrated Pomodoro timer.",
 			"descFull2": "Individual project.",
-		"links": "none",
+		"links": {
+			"report1": {
+				"type": "doc",
+				"link": "https://github.com/bcjwalker/studbud/blob/main/README.md",
+				"label": "Read case study",
+			},
+		},
 		// Lead card info
 		"collabs": "none",
 		"roles": [
-			"User research",
 			"UI/UX design",
-			"Full stack webdev",
-			"Report writing"
+			"Front-end webdev",
 		],
 		"software": [
-			"Figma",
 			"Visual Studio",
-			"React.js",
 			"Node.js",
 		],
 		"timeline": [
-			"~3", 
+			"~2", 
 			"months"
 		],
 	},
@@ -60,19 +63,31 @@ export const projectDataRaw =
 			"UI/UX"
 		],
 		"cardTags": {
-			"links": "2 links",
+			"recent": "WIP",
+			"links": "2 links"
 		},
 		"date": "2022",
 		"thumb": "/src/assets/projects/convey/thumb.jpg",
 		"desc": "An exploratory app service redesigning Sydney's bus system.",
 			"descFull": "An exploratory app service redesigning Sydney's bus system.",
 			"descFull2": "Lorem ipsum",
-		"links": "none",
+		"links": {
+			"interface": {
+				"type": "prmry",
+				"link": "https://www.figma.com/proto/9o2cF5XNZLFdITPCHwKgh1/Convey-app--final-?page-id=28%3A2&node-id=95-6199&p=f&viewport=-479%2C395%2C0.17&t=IimAc7MvslukC9mc-1&scaling=contain&content-scaling=fixed&starting-point-node-id=95%3A6224&show-proto-sidebar=1",
+				"label": "View interface",
+			},
+			"report1": {
+				"type": "doc",
+				"link": "/src/assets/projects/convey/DECO2200_A4.pdf",
+				"label": "Read case study",
+			},
+		},
 		// Lead card info
 		"collabs": {
 			"jonathan": {
 				"name": "Jonathan Pratama", 
-				"thumb": "/src/assets/projects/sunstop/people/nicole.jpg", 
+				"thumb": "/src/assets/projects/convey/people/jonathan.jpg", 
 				"roles": [ "Front-end webdev", "UX research", "UI design" ],
 				"url": "https://www.linkedin.com/in/nicolexylow"
 				},
@@ -80,11 +95,13 @@ export const projectDataRaw =
 		"roles": [
 			"User research",
 			"UI/UX design",
-			"Report writing"
+			"Report writing",
+			"Video production"
 		],
 		"software": [
 			"Figma",
-			"Adobe Xd"
+			"Adobe Xd",
+			"Material 3"
 		],
 		"timeline": [
 			"~3", 
@@ -107,6 +124,7 @@ export const projectDataRaw =
 			"Datavis"
 		],
 		"cardTags": {
+			"recent": "WIP",
 			"links": "2 links"
 		},
 		"date": "2023",
@@ -114,7 +132,18 @@ export const projectDataRaw =
 		"desc": "An activist website detailing the Anthropocene, focusing on data presentation.",
 			"descFull": "An activist website detailing the Anthropocene, focusing on data presentation.",
 			"descFull2": "Individual project.",
-		"links": "none",
+		"links": {
+			"interface": {
+				"type": "prmry",
+				"link": "https://bcjwalker.github.io/deco3100-website/",
+				"label": "View interface",
+			},
+			"report1": {
+				"type": "doc",
+				"link": "/src/assets/projects/biodiversity/DECO3100_A2_doc.pdf",
+				"label": "Read case study",
+			},
+		},
 		// Lead card info
 		"collabs": "none",
 		"roles": [
@@ -125,6 +154,7 @@ export const projectDataRaw =
 		"software": [
 			"Visual Studio",
 			"Node.js",
+			"Plotly.js"
 		],
 		"timeline": [
 			"~3", 

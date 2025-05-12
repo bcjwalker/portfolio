@@ -9,20 +9,50 @@
 /* First section */
 #section1 {
     .section1a-media-double {
-        margin: 16px 0 42px 0;
-        .double-media {
-            .lead {
-                flex-basis: 75%;
+        .lead {
+            flex-basis: 75%;
+            .img1-wrapper {
+                contain:content;
             }
-            .side {
-                flex-basis: 25%;
-                /* <= Phone width */
-                @media screen and (0px <= width <= 899px) { height: auto;} 
-                .section1-img2-wrapper {
-                    @media screen and (0px <= width <= 899px) { padding: 25% 44% ;} 
+        }     
+        .side {
+            flex-basis: 30%;
+            .img2-wrapper {
+                height: 100%;
+                .img2 {
+                    object-fit: cover;
+                    width: auto;
+                    /* <= Phone width */
+                    @media screen and (0px <= width <= 899px) { 
+                        padding: 8px 64px;
+                        max-height: 800px;
+                    } 
                 }
             }
-        }
+        }     
+    }
+    .section1b-media-double {
+        .lead {
+            flex-basis: 75%;
+            .img1-wrapper {
+                contain:content;
+            }
+        }     
+        .side {
+            flex-basis: 30%;
+            .img2-wrapper {
+                height: 100%;
+                .img2 {
+                    object-fit: cover;
+                    width: auto;
+                    /* <= Phone width */
+                    @media screen and (0px <= width <= 899px) { 
+                        padding: 8px 64px;
+                        max-height: 800px;
+                    } 
+                }
+            }
+        }     
     }
     .landscape {
         padding: 8px 16px;
@@ -31,26 +61,17 @@
         /* padding-top: 48px; */
     }
     .section1b-media-gallery {
-        grid-template-columns: 2.35fr 1fr;
-        .img3 {
-            object-fit: cover;
-        }
-    }
-    .section1b-media-double {
+        grid-template-columns: 2fr 1fr;
         .lead {
             flex-basis: 60%;
             .img1-wrapper {
                 contain:content;
             }
         }     
-        .side {
-            flex-basis: 42%;
-            .img2-wrapper {
-                height: 100%;
-                .img2 {
-                    object-fit: cover;
-                    width: auto;
-                }
+        #section1b-side-1 {
+            .img2 {
+                object-fit: cover;
+                width: auto;
             }
         }     
     }

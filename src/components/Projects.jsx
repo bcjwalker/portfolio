@@ -1,5 +1,5 @@
-import { Link, useOutletContext } from 'react-router';
-import { useState, useEffect } from 'react';
+import { Link, useOutletContext, useLocation } from 'react-router';
+import { useState, useEffect, useRef } from 'react';
 import { Fade } from "react-awesome-reveal";
 import { nullAnim, fadeInPushRight, fadeInPushDown } from "./utils/Animations.jsx"
 
@@ -20,7 +20,7 @@ console.log(projectImgs);
 
 
 // Conditionally render card fade-in anim
-function RenderCondCardFade ( { children, delay } ) {
+function RenderCondCardFade ( { children, delay, returning } ) {
     // Lead card returns null, and trailing cards return their array index
     // So apply delay only if not null
     let fadeDelay;
@@ -30,8 +30,9 @@ function RenderCondCardFade ( { children, delay } ) {
         fadeDelay = (delay + 1) * 150;
     }
 
-    if (sessionStorage.getItem('is_first_render') === null) {
-        console.log(sessionStorage.getItem('is_first_render'));
+    console.log(returning)
+
+    if (returning) {
         return (
             <>
             <Fade keyframes={fadeInPushDown} duration={500} triggerOnce delay={fadeDelay}>
@@ -39,35 +40,23 @@ function RenderCondCardFade ( { children, delay } ) {
             </Fade>
             </>
         )
-    } else if (sessionStorage.getItem('is_first_render') === 'false') {
-        return (
-        <>
-        {children}
-        </>
-        )
+    } else {
+        return ( <> {children} </> )
     }
 }
 
 // Render card with project info as props
-function RenderProjectCard( props, index ) {
-    console.log(props);
+function RenderProjectCard( props, index, returningCheck ) {
+    // Render tags
     const tagsProps = props.cardTags;
-    console.log(tagsProps);
     let tagsList = [];
     for (const [key, value] of Object.entries(tagsProps)) {
         tagsList.push(RenderProjectCardTag(key, value));
     }
 
-    // Check/set session storage to see if we play card fade-in anim or not
-    useEffect(() => {
-        if (sessionStorage.getItem('is_first_render') === null) {
-            sessionStorage.setItem('is_first_render', 'false');
-        }
-    });
-
     return (
         <>
-        <RenderCondCardFade delay={index}>
+        <RenderCondCardFade delay={index} returning={returningCheck}>
         <Link className={`${styles['projects-card']}`} key={props.id} 
         to={`/projects/${props.dir}`} viewTransition style={{viewTransitionName: `post-card-${props.dir}`}}> 
             <div className={styles['projects-card-thumb']}>
@@ -97,10 +86,12 @@ function RenderProjectCard( props, index ) {
 // Simple tag component
 function RenderProjectCardTag( key, value ) {
     if (key == 'recent') {
+        let icon = (value == 'New') ? 'star' : 'construction';
+        let status = (value == 'WIP') ? 'force-open' : null;
         return (
             <>
-            <button className={`${styles['thumb-tag']} ${styles['green']} projects-card-tag tag-icontext tag-recent`}>
-                <span className='material-symbols-rounded'> star </span> <label className={`${styles['tag-desc']}`}>{value}</label> 
+            <button className={`${styles['thumb-tag']} ${styles['green']} ${styles[status]} projects-card-tag tag-icontext tag-recent`}>
+                <span className='material-symbols-rounded'> {icon} </span> <label className={`${styles['tag-desc']}`}>{value}</label> 
             </button>
             </>
         );
@@ -117,25 +108,56 @@ function RenderProjectCardTag( key, value ) {
 }
 
 function Projects() {
+    let location = useLocation();
+    console.log(location)
+    const sectionTopRef = useRef();
+
+    // Check if we're returning from /projects/*
+    let returningCheck = true;
+    if(location.state != null) { 
+        if (location.state.returning == true) {
+            returningCheck = false; 
+        } 
+    }; 
+    // Use state to determine if we pull works section to top of viewport
+    // on return from /projects/*
+    useEffect(() => { 
+        if(location.state != null) { 
+            if (location.state.returning == true) {
+                sectionTopRef.current.scrollIntoView({ behavior: "instant" }) 
+            }
+        }; 
+    })
+    // Clear state after check
+    window.history.replaceState({}, '')
+
     // Draw project cards as list of html objects
     const trailingCardsList = trailingProjects.map ( (project, index) =>
-        RenderProjectCard(trailingProjects[index], index)
+        RenderProjectCard(trailingProjects[index], index, returningCheck)
     );
-
+    
     return (
         <>
+        <a className='anchor' id='project-top'  ref={sectionTopRef}/>
         <div id={styles['main-projects']}>
         {/* Projects big grid, for my best works */}
         <div id={styles['projects-big']}>
             <div id={styles['projects-big-head-container']}>
-                <h1 id={styles['projects-big-h1']}> Works </h1>
+                <h1 id={styles['projects-big-h1']} className='main-section-h1'> Works </h1>
                 <p className='h1-sub' id={styles['projects-big-desc']}> Browse the projects I'm most proud of </p>
+            </div>
+            <div id={styles['projects-little-head-container']}>
+                <div className={styles['subhead-wrapper']}>
+                    <span className='material-symbols-rounded'> school </span>
+                    <h2 id={styles['projects-uni-h2']} className='main-section-h2'> University projects </h2>
+                </div>
+                {/* <p className='h2-sub'> Projects I've completed for uni </p> */}
             </div>
             {/* Cards carousel */}
             <div id={styles['projects-cardousel']}>
                 {/* Wrap in a conditional fade-in which only occurs on first load */}
                 <div id={styles['cardousel-lead']}>
-                    {RenderProjectCard(leadProject, null)}
+                    {RenderProjectCard(leadProject, null, returningCheck)}
                 </div>
                 <div id={styles['cardousel-trailing']}>
                     {trailingCardsList}

@@ -1,7 +1,7 @@
 {
   "name": "bcjw_portfolio23",
   "browserslist": "> 0.5%, last 2 versions, not dead",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Latest version of my (Benjamin Walker) portfolio",
   "type": "module",
   "scripts": {
@@ -30,7 +30,6 @@
   "homepage": "https://bcjwalker.github.io/portfolio",
   "dependencies": {
     "@emotion/react": "^11.14.0",
-    "@fecapark/number-rolling": "^0.1.2",
     "express": "^5.1.0",
     "react": "^19.1.0",
     "react-awesome-reveal": "^4.3.1",

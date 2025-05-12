@@ -17,7 +17,7 @@ function FullScreenImg ( {clicky, imgSrc, classN} ) {
                 </button>
             </div>
             <div className={styles['img-container']}  onClick={() => clicky()}>
-                <img src={imgSrc} className={`${classN} filter-shadow2 ${styles['full']}`}/>
+                <img src={imgSrc} className={`${classN} filter-shadow2-dark ${styles['full']}`}/>
             </div>
         </dialog>
         </>

@@ -5,12 +5,20 @@ import styles from './Aside.module.css';
 
 // Imgs
 import imgSelfie from '../../assets/img-me2022.png';
+import pdfResume from '../../assets/BCJWalker_2025_Resume.pdf';
 
 function Aside () {
     const [asideOpen, updateAsideOpen] = useState(false);
     const handleAsideUpdate = () => {
         updateAsideOpen(asideOpen => !asideOpen)
     }
+    useEffect(() => {
+        if (sessionStorage.getItem('is_first_visit') != 'false') {
+            setTimeout(()=>{
+                updateAsideOpen(true);
+            }, 650)
+        }
+    })
 
     return (
         <>
@@ -21,12 +29,13 @@ function Aside () {
                         <h4> Read all about me </h4> 
                     </div>
                     {/* Aside content div */}
-                    <div id={styles['aside-infobox-content']} 
-                    className={`${asideOpen ? null : styles['closed'] }`}>
+                    <div id={styles['aside-infobox-content']} className={`${asideOpen ? null : styles['closed'] }`}>
                         <img id={styles['aside-infobox-avatar']} src={imgSelfie} />
                         <p className={styles['aside-infobox-p']}> …or, maybe a single picture will do. </p>   
-                        { /* UNDONE: location marker
-                         <div><span class="material-symbols-rounded"> location_on </span> <span>Sydney, Australia</span></div> */}
+                        <a href={pdfResume} target='_blank' className={`docket med icon outline-btn outline-3 ${styles['resume-link']}`}>
+                            <span className='material-symbols-rounded'> open_in_new </span> 
+                            <label>View resumé</label> 
+                        </a>
                     </div>
                     {/* Aside expand/hide button div */}
                     <div id={styles['aside-infobox-btn-container']}>

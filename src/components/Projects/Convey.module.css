@@ -9,20 +9,27 @@
 /* First section */
 #section1 {
     .section1a-media-double {
-        margin: 16px 0 42px 0;
-        .double-media {
-            .lead {
-                flex-basis: 75%;
+        .lead {
+            flex-basis: 75%;
+            .img1-wrapper {
+                contain:content;
             }
-            .side {
-                flex-basis: 25%;
-                /* <= Phone width */
-                @media screen and (0px <= width <= 899px) { height: auto;} 
-                .section1-img2-wrapper {
-                    @media screen and (0px <= width <= 899px) { padding: 25% 44% ;} 
+        }     
+        .side {
+            flex-basis: 35%;
+            .img2-wrapper {
+                height: 100%;
+                .img2 {
+                    object-fit: cover;
+                    width: auto;
+                    /* <= Phone width */
+                    @media screen and (0px <= width <= 899px) { 
+                        padding: 8px 64px;
+                        max-height: 800px;
+                    } 
                 }
             }
-        }
+        }     
     }
     .landscape {
         padding: 8px 16px;
@@ -31,26 +38,19 @@
         /* padding-top: 48px; */
     }
     .section1b-media-gallery {
-        grid-template-columns: 2.35fr 1fr;
-        .img3 {
-            object-fit: cover;
-        }
-    }
-    .section1b-media-double {
-        .lead {
-            flex-basis: 60%;
+        grid-template-columns: 2fr 1fr;
+        #section1b-lead {
             .img1-wrapper {
                 contain:content;
+                img {
+                    height: 110%;
+                }
             }
         }     
-        .side {
-            flex-basis: 42%;
-            .img2-wrapper {
-                height: 100%;
-                .img2 {
-                    object-fit: cover;
-                    width: auto;
-                }
+        #section1b-side-1 {
+            .img2 {
+                object-fit: cover;
+                width: auto;
             }
         }     
     }
@@ -59,3 +59,27 @@
 .section3 {
 
 }
+
+.section2c-media-gallery {
+        max-height: 510px;
+        #lead-wrapper {
+            max-height: 510px;
+            img {
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+        #side-1-wrapper, #side-2-wrapper {
+            max-height: 250px;
+            img {
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+        .img2 {
+            width: auto;
+        }
+        figcaption {
+            margin-top: -5px;
+        }
+    }

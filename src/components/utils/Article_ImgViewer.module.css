@@ -6,7 +6,7 @@ dialog.open-overlay {
     left: 0;
     right: 0;
     position: fixed;
-    background-color: hsla(0, 0%, 0%, 0.5);
+    background-color: hsla(042, 20%, 5%, 0.75);
     .btn-close-wrapper {
         position: relative;
         top: 72px;
@@ -88,10 +88,10 @@ dialog.open-overlay {
 img.zoom-on-me {
     cursor: zoom-in;
     opacity: 1;
-    transition: opacity 0.125s ease-out;
+    transition: opacity 0.175s ease-out;
     /* Lower opacity once opened */
     &.opened {
-        opacity: 0.1;
-        transition: opacity 0.05s ease-out;
+        opacity: 0.25;
+        transition: opacity 0.125s ease-out;
     }
 }
