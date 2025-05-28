@@ -122,7 +122,7 @@ function TableOfContents() {
   return (
     <>
     <nav className='projects-nav' aria-label="Table of contents">
-      <label className='projects-nav-label'>Article contents</label>
+      <label className='projects-nav-label'>Page contents</label>
       <Headings headings={nestedHeadings}  activeId={activeId}/>
     </nav>
     </>

@@ -106,12 +106,12 @@ function Nav ( props ) {
                     </li>
                 </ul>
             </div>
-            <div id={styles['navbox-foot']} className={`${props.readNavState ? null : styles['closed']}`}>
+            {/* <div id={styles['navbox-foot']} className={`${props.readNavState ? null : styles['closed']}`}>
                 <button title="Toggle margin size" className={`icon-btn outline-btn`} id={styles['nav-expand-btn']} onClick={props.switchNavOpen}> 
                     <span className={`material-symbols-rounded ${styles['nav-expand-btn-icon']}`}> {`${props.readNavState ? `expand` : `compress` }`} </span> 
                     <label>{`${props.readNavState ? `` : `` }`}</label>
                 </button>
-            </div>
+            </div> */}
         </nav>
         </>
     )

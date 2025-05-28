@@ -34,7 +34,7 @@ button {
     border-radius: 100rem;
     color: var(--shade-text-1);
 
-    transition: background-color 0.275s;
+    transition: border-radius 0.125s ease-out, background-color 0.275s ease-out;
     label {
         white-space: nowrap;
         cursor: pointer;
@@ -107,6 +107,21 @@ button.shaded-btn {
             transition: background-color 0.1s;
         }
     }
+    a.prmry-green-btn, button.prmry-green-btn {
+        background-color: var(--green-card-1);
+        /* * { colour all elements inside (text, span) */
+        color: var(--green-card-1-text-1);
+        &:hover {
+            background-color: var(--green-card-1-hover) !important;
+    
+            transition: background-color 0.1s;
+        }
+        &:active {
+            background-color: var(--green-card-1-active) !important;
+    
+            transition: background-color 0.1s;
+        }
+    }
     /* Outlined btns */
     a.outline-btn, button.outline-btn {
         border: 1px solid var(--shade-outline-1);
@@ -150,6 +165,10 @@ button.icon-btn {
     justify-content: center;
     span.material-symbols-rounded, span.material-symbols-sharp {
 
+    }
+    &.small {
+        min-height: 3rem;
+        min-width: 3rem;
     }
 }
 .icon-text-btn, .icon-btn {

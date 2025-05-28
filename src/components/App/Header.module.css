@@ -5,7 +5,7 @@ header {
     display: flex;
     align-items: center;
     height: 64px;
-    padding-left: 17.5vw;
+    padding-left: 18.5vw;
     z-index: 10;
     gap: 16px;
 
@@ -13,10 +13,12 @@ header {
     /* backdrop-filter: blur(2px); */
     background-color: var(--shade-base-1);
     /* border-bottom: 1px solid var(--shade-base-3); */
+    /* <= Large desktop size */
+    @media screen and (1426px <= width <= 1920px) { padding-left: 13.75vw; }
     /* <= Tablet size */
     @media screen and (900px <= width <= 1425px) { padding-left: 9vw; }
     /* <= Phone size */
-    @media screen and (0px <= width <= 899px) { padding-left: 0; }
+    @media screen and (0px <= width <= 899px) { gap: 0; padding-left: 0; }
     * {
         color: var(--shade-text-0);
     }

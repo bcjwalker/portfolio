@@ -8,10 +8,10 @@ import "./scss/manifest.css";
 // Components
 import { PageWrapper, Main } from "./App_Wrapper.jsx";
 import Projects from "./components/Projects.jsx";
-  import Projects_Sunstop from "./components/Projects/Sunstop.jsx";
-  import Projects_Biodiversity from "./components/Projects/Biodiversity.jsx";
-  import Projects_Convey from "./components/Projects/Convey.jsx";
-  import Projects_Studbud from "./components/Projects/Studbud.jsx";
+  import {Projects_Sunstop, Sunstop_Main_Section1, Sunstop_Main_Section2} from "./components/Projects/Sunstop.jsx";
+  import {Projects_Biodiversity, Biodiversity_Main_Temp} from "./components/Projects/Biodiversity.jsx";
+  import {Projects_Convey, Convey_Main_Temp} from "./components/Projects/Convey.jsx";
+  import {Projects_Studbud, Studbud_Main_Temp} from "./components/Projects/Studbud.jsx";
 
 const router = createBrowserRouter([
   { element: <PageWrapper/>,
@@ -19,10 +19,28 @@ const router = createBrowserRouter([
       { element: <Main/>,
         children: [
           { path: "/", element: <Projects/> },
-          { path: "/projects/biodiversity", element: <Projects_Biodiversity/> },
-          { path: "/projects/sunstop", element: <Projects_Sunstop/> },
-          { path: "/projects/convey", element: <Projects_Convey/> },
-          { path: "/projects/studbud", element: <Projects_Studbud/> },
+          { element: <Projects_Sunstop/>, 
+            children: [
+              { path: "/projects/sunstop/", element: <Sunstop_Main_Section1/> },
+              { path: "/projects/sunstop/research", element: <Sunstop_Main_Section2/> },
+              { path: "/projects/sunstop/testing", element: <Sunstop_Main_Section2/> },
+            ]
+          },
+          { element: <Projects_Biodiversity/>, 
+            children: [
+              { path: "/projects/biodiversity/", element: <Biodiversity_Main_Temp/> },
+            ]
+          },
+          { element: <Projects_Convey/>, 
+            children: [
+              { path: "/projects/convey/", element: <Convey_Main_Temp/> },
+            ]
+          },
+          { element: <Projects_Studbud/>, 
+            children: [
+              { path: "/projects/studbud/", element: <Studbud_Main_Temp/> },
+            ]
+          },
         ]
       }
     ]

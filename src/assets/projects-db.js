@@ -70,7 +70,7 @@ export const projectDataRaw =
 		"thumb": "/src/assets/projects/convey/thumb.jpg",
 		"desc": "An exploratory app service redesigning Sydney's bus system.",
 			"descFull": "An exploratory app service redesigning Sydney's bus system.",
-			"descFull2": "Lorem ipsum",
+			"descFull2": "I contributed most of the interface and was the prime mover on the promotional video.",
 		"links": {
 			"interface": {
 				"type": "prmry",

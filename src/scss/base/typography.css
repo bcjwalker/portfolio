@@ -98,7 +98,11 @@ hr {
         margin: 12px 0px 12px 0px;
     }
     hr.divider-v {
-
+        border-right: 1px solid var(--shade-outline-1);
+        &.tab-div {
+            margin: 24px 0;
+            border-right: 1px solid var(--shade-outline-4);
+        }
     }
     hr.article-hr {
         margin-bottom: 64px;

@@ -47,7 +47,7 @@ export default function CompCard( props ) {
     return (
         <>
         <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={100} cascade damping={0.1}>
-        <div className={`project-compare-container ${styles['compare-container']}`}>
+        <div className={`project-compare-container extra-margins ${styles['compare-container']}`}>
                 {/* Compare slider figure */}
                 <figure className={`media-wrapper extra-margins ${styles['compare-media-wrapper']}`}>
                     <div className='video-wrapper bordered outline-3'>

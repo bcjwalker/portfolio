@@ -13,7 +13,8 @@
 @import "base/queries.css";
 
 /* Components */
-@import "components/ProjectOpen.css";
+/* Open project article */
+@import "components/ProjectOpen_Header.css";
 @import "components/ProjectOpen_Article.css";
 
 /* Utils */

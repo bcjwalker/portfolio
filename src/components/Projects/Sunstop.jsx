@@ -1,6 +1,7 @@
-import { useNavigate, useLocation } from 'react-router';
-import {useState, useRef, useEffect} from 'react'
-import { ReactCompareSlider, ReactCompareSliderImage, styleFitContainer } from 'react-compare-slider';
+import { useNavigate, useLocation, Outlet, useOutletContext } from 'react-router';
+import {useState, useRef, useEffect} from 'react';
+import { useInView } from "react-intersection-observer";
+
 // Animations :)
 import { Fade } from "react-awesome-reveal";
 import { fadeInPushUp, fadeInPushDown } from "../utils/Animations.jsx";
@@ -11,7 +12,10 @@ import { projectData } from '@assets/projects-db.js';
 const currentProj = projectData[0];
 
 // Components
-import { ProjectOpen_Template, LeadCard, Details, Details_Static, Nav } from './_ProjectOpen_Template.jsx';
+// Article wrapper and subnav
+import { Article_Wrapper, RenderTab, Subnav } from '../utils/Article_Wrapper.jsx';
+// Article body components
+import { Details, Details_Static, Nav, ArticleFooter } from '../utils/Article_Misc.jsx';
 import VideoPlayerCard from '../utils/Article_VideoPlayer.jsx';
 import ImgViewer from '../utils/Article_ImgViewer.jsx';
 import CompCard from '../utils/Article_CompCard.jsx';
@@ -20,10 +24,13 @@ import InfoCard from '../utils/Article_InfoCard.jsx';
 // Styles
 import styles from './Sunstop.module.css';
 
+const headerImg = `${(currentProj.thumb).slice(0,-4)}-full.jpg`;
+
+
 // Glob import
 const projectMedia = import.meta.glob(
     ['@assets/projects/sunstop/*/*.{jpg,png,mp4,png}',
-    '@assets/projects/sunstop/*.{jpg,png,mp4,png}',
+    '@assets/projects/sunstop/*.{jpg,png,mp4,png,pdf}',
     '@assets/software/*.ico'], 
     {eager: true, query: '?url', import: 'default'});
 console.log(projectMedia)
@@ -247,8 +254,7 @@ function MainSection_Research(props) {
     return (
         <>
         <section className={`projects-body-section ${styles['section4']}`}>
-            <h2 className='article-h2 text-margins' id={`sunstop-section${props.num}`}>Project background</h2>
-            <h3 className='article-h3 text-margins'>Our national cancer</h3>
+            <h2 className='article-h2 text-margins' id={`sunstop-section${props.num}`}>Our national cancer</h2>
             <div className='body-two-col extra-margins'>
                 <div className='col-left'>
                     <p className='text-margins'>We have one of the worst rates of skin cancer in the world: in 2025, <strong>2 in 3 Australians</strong> will be diagnosed with a skin cancer in their lifetimes. Despite this, <a className='external-link' href="https://www.health.gov.au/ministers/the-hon-mark-butler-mp/media/breaking-australias-suntanning-obsession" target='_blank'>74% of young Australians</a> believe their risk of getting skin cancer is unlikely. Australian men, however, are uniquely vulnerable, accounting for 58% of cancer diagnoses, and 65% of deaths. </p>
@@ -264,7 +270,7 @@ function MainSection_Research(props) {
                 </div>
             </div>
 
-            <h3 className='article-h3 text-margins'>User research</h3>
+            <h2 className='article-h2 text-margins'>User research</h2>
             <p className='text-margins'>Conducting interviews, questionnaires and diary studies (among mostly male participants), we assembled several key insights:</p>
             <div className='details-wrapper extra-margins insights-wrapper'>
                 <div className='details-row-wrapper extra-margins'>
@@ -293,7 +299,7 @@ function MainSection_Research(props) {
                 <li><strong>UVGo:</strong> an interactive kiosk for easily dispensing sunscreen</li>
             </ul> */}
 
-            <h3 className='article-h3 text-margins'>Ideation & further research</h3>
+            <h2 className='article-h2 text-margins'>Ideation & further research</h2>
             <p className='text-margins'>Mobilising these insights, we set about designing a solution, shooting off ideas like a <strong>social media platform</strong> for sunscreen reminders, a <strong>marketing campaign</strong> featuring screens with cameras to simulate what viewers would look like in the future without sun protection, and last but not least, an <strong>interactive kiosk</strong> for easily dispensing sunscreen.</p>
             <p className='text-margins'>Through <strong>design matrices</strong>, a <strong>PMI chart</strong> and <strong>further user feedback</strong>, we decided to synthesise the first two concepts into the third, leading to the creation of <strong>SunStop</strong>. </p>
             <h4 className='article-h4 text-margins'>Gamifying sunscreen</h4>
@@ -387,17 +393,7 @@ function Main() {
         </div>
         {/* Article main */}
         <div className='project-main-container'>
-            <h2 className='article-h2 text-margins article-top'  id='sunstop-section0'>(top)</h2>
-
-            {firstViewing ? <InfoCard/> : null }
-
-            {/* 4 info cards */}
-            <div className='project-overview-cards-wrapper'>
-                <LeadCard cardType='Collaborators' index={0}/>
-                <LeadCard cardType='My roles' index={0}/>
-                <LeadCard cardType='Project stack' index={0}/>
-                <LeadCard cardType='Timeline' index={0}/>
-            </div>
+            <h2 className='article-h2 text-margins article-top'  id='sunstop-section0'>(Top)</h2>
             
             {/* Start article bulk */}
             <section className='project-sections-wrapper'>
@@ -438,7 +434,7 @@ function Main() {
                         <label>Last updated...</label>
                         <p>11-05-25</p>
                     </div>
-                </div>                
+                </div>         
             </section>
             {/* End article bulk */}
         </div>
@@ -446,21 +442,172 @@ function Main() {
     )
 }
 
-function Projects_Sunstop( ) {
-    const navigate = useNavigate();
-    const handleBackClick = () => {
-        navigate(-1);
-    };
-    // Extract dispensing template from Dispense page using useLocation
-    const location = useLocation();
+// Section 1 - the  solution
+function Sunstop_Main_Section1() {
+    const [topPos, setTopPos] = useOutletContext();
+    const topRef = useRef();
+    useEffect(() => {
+        setTopPos(topRef.current.getBoundingClientRect().top)
+    });
+
+    // If this is our first article, display InfoCard
+    // Otherwise, hide it
+    let firstViewing = true;
+    if (sessionStorage.getItem('is_first_article') == null) {
+        sessionStorage.setItem('is_first_article', 'false');
+    } else if (sessionStorage.getItem('is_first_article') == 'false'){
+        firstViewing = false;
+    }
 
     return (
         <>
-        <ProjectOpen_Template article='sunstop' index={0}>
-            <Main/>
-        </ProjectOpen_Template>
+        {/* Nav with dynamic article TOC */}
+        <div className='project-left-container'>
+            <Nav/>
+        </div>
+        {/* Article main */}
+        <div className='project-main-container'>
+            <h2 className='article-h2 text-margins article-top'  id='sunstop-section0' ref={topRef}>(Top)</h2>
+
+            {firstViewing ? <InfoCard/> : null }
+            
+            <figure className={`media-wrapper extra-margins`}>
+                <div className={`img-wrapper bordered`}>
+                    <ImgViewer imgSrc={projectMedia[headerImg]}/>
+                </div>
+                <figcaption>The info panel we developed to explain the service, alongside a mockup of the kiosk</figcaption>
+            </figure>
+
+            {/* Start article bulk */}
+            <section className='project-sections-wrapper'>
+                {/* Section 1 */}
+                <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={100} cascade damping={0.1}>
+                    <MainSection_Solution num='1'/>
+                </Fade>
+
+                {/* Section 2 - comparisons*/}
+                <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={100}>
+                    <MainSection_Comparisons num='2'/>
+                </Fade>
+
+                <ArticleFooter article={'Sunstop'} articleSection={'The solution'} lastUpdate={'28-05-25'}/>
+            </section>
+            {/* End article bulk */}
+        </div>
+        </>
+    )
+}
+// Section 2 - research
+function Sunstop_Main_Section2() {
+    return (
+        <>
+        {/* Nav with dynamic article TOC */}
+        <div className='project-left-container'>
+            <Nav/>
+        </div>
+        {/* Article main */}
+        <div className='project-main-container'>
+            <h2 className='article-h2 text-margins article-top'  id='sunstop-section0'>(Top)</h2>
+            
+            {/* Start article bulk */}
+            <section className='project-sections-wrapper'>
+                
+                {/* Section 4 */}
+                <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={100}  damping={0.1}>
+                    {/* <hr className='extra-margins article-hr'/> */}
+                    <MainSection_Research num='4'/>
+                </Fade>
+
+                <ArticleFooter article={'Sunstop'} articleSection={'The solution'} lastUpdate={'28-05-25'}/>
+            </section>
+            {/* End article bulk */}
+        </div>
         </>
     )
 }
 
-export default Projects_Sunstop
+
+function Projects_Sunstop() {
+    // Handle nav
+    const navigate = useNavigate();
+
+    const handleBackClick = () => {
+        navigate('/', { 
+            viewTransition: true,
+            state: {returning: true}
+        } );
+    };
+
+    // Extract dispensing template from Dispense page using useLocation
+    const location = useLocation();
+
+    const [headerSticky, setHeaderSticky] = useState(false);
+
+    // Tab handling
+    // Active tab
+    const [activeSection, setActiveSection] = useState(`/`);
+    const activeSectionStateHandler = (data) => { 
+        if (activeSection != data && !tabListStuck) {
+            document.getElementById('sunstop-section0')?.scrollIntoView({behavior: 'instant', block: 'start'});
+        };
+        setActiveSection(data)
+    }; 
+    // Check if we sticky the tab list toolbar or not
+    const [tabListStuck, setTabListStuck] = useState(false);
+    const tabListStateHandler = (data) => {  
+        if (activeSection != data) {
+        };
+        setTabListStuck(data)
+    };
+    // Last/next tab buttons
+    const handleLastClick = () => {
+        setActiveSection(activeSection - 1)
+    };
+    const handleNextClick = () => {
+        setActiveSection(activeSection + 1)
+    };
+    useEffect(() => {
+        navigate(`/projects/sunstop${activeSection}`);
+        console.log(activeSection);
+    },[activeSection, setActiveSection]);
+
+    const [topPos, setTopPos] = useState(0);
+    useEffect(() => {
+        console.log(topPos)
+    },[topPos, setTopPos])
+
+    const sections = ['/', '/research', '/testing'];
+
+    return (
+        <>
+        <Article_Wrapper 
+        article='sunstop' index={0} topPos={topPos}
+        tabListStuck={tabListStuck} setTabListStuck={tabListStateHandler} headerSticky={headerSticky} setHeaderSticky={setHeaderSticky}> 
+            <Subnav index={0}  
+            handleBackClick={handleBackClick}
+            maxSections={2} activeSection={activeSection} 
+            tabListStuck={tabListStuck} headerSticky={headerSticky}>
+                <RenderTab name={'The solution'} id={0} icon={'lightbulb'} type={'primary'}
+                state={activeSection == sections[0] ? 'active' : null}
+                setActiveSection={() => activeSectionStateHandler(sections[0])}/>
+                {/* <hr className='tab-div divider-v'/> */}
+                <RenderTab name={'Research'} id={1} icon={'biotech'}
+                state={activeSection == sections[1] ? 'active' : null}
+                setActiveSection={() => activeSectionStateHandler(sections[1])}/>
+                {/* <RenderTab name={'User testing'} id={2} icon={'groups_3'}
+                state={activeSection == sections[2] ? 'active' : null} 
+                setActiveSection={() => activeSectionStateHandler(sections[2])}/> */}
+            </Subnav>
+            <div className='project-body-container'>                
+                <Outlet context={[topPos, setTopPos]}/>
+            </div>
+        </Article_Wrapper>
+        </>
+    )
+}
+
+export {
+    Projects_Sunstop,
+    Sunstop_Main_Section1,
+    Sunstop_Main_Section2
+}

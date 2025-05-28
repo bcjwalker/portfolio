@@ -62,7 +62,7 @@ function PageWrapper() {
             <link rel="stylesheet" 
                 href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,300..900;1,300..900&family=Readex+Pro:wght@160..700&display=swap" precedence="default" />
             <link rel="stylesheet" 
-                href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_upward,attach_file,cases,compress,construction,contact_page,copyright,description,expand,frame_inspect,fullscreen,home_pin,info,label,mail,open_in_new,pause,play_arrow,school,send,star,volume_off,volume_up" precedence="high" />
+                href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_upward,article,attach_file,biotech,cases,chevron_left,chevron_right,compress,construction,contact_page,copyright,description,expand,frame_inspect,fullscreen,groups_3,home_pin,info,label,lightbulb,mail,open_in_new,pause,play_arrow,school,send,star,volume_off,volume_up" precedence="high" />
             <link rel="stylesheet"
                 href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back,close,expand_less,format_quote,menu" precedence="high" />
             <div id='site-container' className={`${navOpen ? null : `retract` }`}>

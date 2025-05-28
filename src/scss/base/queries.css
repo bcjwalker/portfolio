@@ -94,19 +94,19 @@ main {
   }
 }
 
-.project-overview-cards-wrapper {
+summary.project-overview-cards-wrapper {
   container: projectOverviewCards / inline-size;
 }
 @container projectOverviewCards (width < 737) {
   .lead-card {
-    --text-size: 1rem !important;
+    --text-size: 0.925rem !important;
     border-radius: var(--big-corner) !important;
-    min-width: 200px !important;
+    min-width: 190px !important;
   }
 }
 @container projectOverviewCards (width < 500) {
   .lead-card {
-    flex-basis: 100% !important;
+    flex-basis: 25% !important;
     gap: 12px !important;
     .timeline-container {
       display: block !important;

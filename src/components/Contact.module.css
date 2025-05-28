@@ -185,7 +185,9 @@
     /* animation: avatarHover 2s infinite ease-out; */
     #avatar-container {
         img {
-            filter: drop-shadow(12px 12px 0.375px hsl(090, 25%, 84%)) 
+            
+            filter: drop-shadow(0 0 1px hsl(090, 15%, 40%))
+                    drop-shadow(12px 12px 0.375px hsl(090, 25%, 84%)) 
                     drop-shadow(-12px -12px 0.375px hsl(090, 25%, 84%));
         }
     }

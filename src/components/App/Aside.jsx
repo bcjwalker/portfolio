@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import styles from './Aside.module.css';
 
 // Imgs
-import imgSelfie from '../../assets/img-me2022.png';
+import imgSelfie from '../../assets/img-me2025.png';
 import pdfResume from '../../assets/BCJWalker_2025_Resume.pdf';
 
 function Aside () {
