@@ -355,7 +355,7 @@ export function Article_Wrapper( {children, article, index, tabListStuck, setTab
     }, [headerSticky]); 
 
     // DEV: disable while working on article
-    //useEffect(() => { articleTopRef.current.scrollIntoView({ behavior: "instant" }); }, [])
+    useEffect(() => { articleTopRef.current.scrollIntoView({ behavior: "instant" }); }, [])
 
     return (
         <>
