@@ -589,11 +589,17 @@
             font-size: 0.725rem;
             color: var(--shade-card-0-text-1);
         }
+        p {
+            margin: 0 !important;
+        }
     }
     .dtls-wrapper {
         label {
             font-size: 0.725rem;
             color: var(--shade-card-0-text-1);
+        }
+        p {
+            margin: 0 !important;
         }
     }
 }
