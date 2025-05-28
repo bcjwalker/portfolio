@@ -59,6 +59,7 @@ function PageWrapper() {
         <>
         {/* Render blank page until required fonts have loaded */}
         <Suspense fallback={blankPage}>
+            <link href="/static/assets/m3-favicon.ico" rel="icon" sizes="any"></link>
             <link rel="stylesheet" 
                 href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,300..900;1,300..900&family=Readex+Pro:wght@160..700&display=swap" precedence="default" />
             <link rel="stylesheet" 
