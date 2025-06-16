@@ -1,154 +1,180 @@
 * {
-    transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
 /* Universal (uni) animations */
 @view-transition {
-    navigation: auto;
+  navigation: auto;
 }
 ::view-transition-group(*) {
-    animation-duration: .275s;
-    animation-timing-function: ease-out;
+  animation-duration: 0.275s;
+  animation-timing-function: ease-out;
 }
-
 
 /* Project card anims */
 ::view-transition-image-pair(post-card-sunstop) {
-    isolation: auto;
-    z-index: 2;
+  isolation: auto;
+  z-index: 2;
 }
-    ::view-transition-new(post-card-sunstop) {
-        animation-duration: 0.125s;
-        animation-name: card-article-expand;
-    }
-    ::view-transition-old(post-card-sunstop) {
-        animation-duration: 0.125s;
-        animation-name: card-article-expand backwards;
-    }
+::view-transition-new(post-card-sunstop) {
+  animation-duration: 0.125s;
+  animation-name: card-article-expand;
+}
+::view-transition-old(post-card-sunstop) {
+  animation-duration: 0.125s;
+  animation-name: card-article-expand backwards;
+}
 
 /* Keyframes for blending when there are 2 images */
 @keyframes card-article-expand {
-    from {
-        opacity: 0;
-        z-index: 1;
-    }
-    to {
-        opacity: 1;
-        z-index: 2;
-    }
+  from {
+    opacity: 0;
+    z-index: 1;
+  }
+  to {
+    opacity: 1;
+    z-index: 2;
+  }
 }
-
 
 /* Handle most universal fade-in animations */
 @keyframes btn-p-fade {
-    0% {
-        opacity: 1.0;
-        display: inline-block;
-    }
-    99% {
-        width: 0px;
-        opacity: 0;
-        display: inline-block;
-    }
-    100% {
-        width: 0px;
-        opacity: 0;
-        display: none;
-    }
+  0% {
+    opacity: 1;
+    display: inline-block;
+  }
+  99% {
+    width: 0px;
+    opacity: 0;
+    display: inline-block;
+  }
+  100% {
+    width: 0px;
+    opacity: 0;
+    display: none;
+  }
 }
 /* Transition for details... if allowed */
 @supports (interpolate-size: allow-keywords) {
-    :root {
-      interpolate-size: allow-keywords;
-    }
-    ::details-content {
-        height: 0;
-        overflow: clip;
-        transition: height 0.2s ease-out, content-visibility 0.2s ease-out allow-discrete;
-    }
-    details[open]::details-content {
-      height: auto;
-      transition: height 0.2s ease-out, content-visibility 0.2s ease-out allow-discrete;
-    }
+  :root {
+    interpolate-size: allow-keywords;
+  }
+  ::details-content {
+    height: 0;
+    overflow: clip;
+    transition:
+      height 0.2s ease-out,
+      content-visibility 0.2s ease-out allow-discrete;
+  }
+  details[open]::details-content {
+    height: auto;
+    transition:
+      height 0.2s ease-out,
+      content-visibility 0.2s ease-out allow-discrete;
+  }
 }
 
 /* Flips */
-@keyframes flipEnter {
-    0% {
-        opacity: 0;
-        transform: translateY(-30px)
-    }
-    25% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-        transform: rotateX(0) translateY(0)
-    }
+@keyframes flipREnter {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0) translateX(0);
+  }
 }
-    @keyframes flipExit {
-        0% {
-            transform: rotateX(0) translateY(0)
-        }
-        100% {
-            opacity: 0;
-            transform: translateY(30px)
-        }
-    }
+@keyframes flipRExit {
+  0% {
+    opacity: 1;
+    transform: rotateX(0) translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+}
+@keyframes flipLEnter {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0) translateX(0);
+  }
+}
+@keyframes flipLExit {
+  0% {
+    opacity: 1;
+    transform: rotateX(0) translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+}
 
 /* Fade ins */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-    @keyframes fadeInPushDown {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    @keyframes fadeInPushUp {
-        from {
-            opacity: 0;
-            transform: translateY(-30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    @keyframes fadeInPushRight {
-        from {
-            opacity: 0;
-            transform: translateX(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+@keyframes fadeInPushDown {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInPushUp {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInPushRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* Page fade in */
 #site-container {
+  opacity: 0;
+  animation: fadeIn 0.275s ease-out 0.25s forwards;
+  nav {
     opacity: 0;
-        animation: fadeIn 0.275s ease-out 0.25s forwards;
-    nav {
-        opacity: 0;
-        animation: fadeInPushRight 0.4s ease-out 0.25s forwards;
-    }
-    aside {
-        opacity: 0;
-        animation: fadeIn 0.275s ease-out 0.275s forwards;
-    }
-    #main-projects-container {
-        opacity: 0;
-        animation: fadeIn 0.274s ease-out 1.125s forwards;
-    }
+    animation: fadeInPushRight 0.4s ease-out 0.25s forwards;
+  }
+  aside {
+    opacity: 0;
+    animation: fadeIn 0.275s ease-out 0.275s forwards;
+  }
+  #main-projects-container {
+    opacity: 0;
+    animation: fadeIn 0.274s ease-out 1.125s forwards;
+  }
 }

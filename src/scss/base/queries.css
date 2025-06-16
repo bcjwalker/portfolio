@@ -1,3 +1,9 @@
+/* 
+###################
+## MEDIA QUERIES ##
+###################
+*/
+
 /* 1080p */
 @media screen and (width <= 2200px) {
   #site-container {
@@ -8,17 +14,17 @@
 /* 1440p – 2160p  */
 @media screen and (2560px <= width <= 3840px) {
   main {
-    margin: 0 1.225vw 0 1.225vw;
+    /* margin: 0 1.225vw 0 1.225vw; */
   }
 
   html {
   }
   body {
-      grid-template-columns: 10vw auto 300px;
+    grid-template-columns: 10vw auto 300px;
   }
-    body.retract {
-      grid-template-columns: 110px auto 300px;
-    }
+  body.retract {
+    grid-template-columns: 110px auto 300px;
+  }
 }
 
 /* <= Tablet width */
@@ -26,12 +32,12 @@
   #site-container {
     display: grid;
     grid-template-columns: 100px auto;
-    grid-template-rows: 50px 1fr auto 100px; 
-    grid-template-areas: 
-    "header header"
-    "nav main"
-    "nav aside"
-    "footer footer"; 
+    grid-template-rows: 50px 1fr auto 100px;
+    grid-template-areas:
+      'nav header'
+      'nav main'
+      'nav aside'
+      'footer footer';
   }
 
   #main-intro-container {
@@ -45,11 +51,16 @@
     display: block;
   }
 
+  #main-intro-container {
+    display: block;
+    font-size: 1.825vmin;
+
+  }
+
   #main-contact-container {
-    padding: 12px 24px; 
+    padding: 12px 24px;
   }
 }
-
 
 /* 
 #######################
@@ -57,6 +68,7 @@
 #######################
 */
 
+/* GLOBAL */
 #site-container {
   container: totalWrap / inline-size;
 }
@@ -72,15 +84,47 @@
   }
 }
 
-main {
+/* MAIN CONTAINER */
+/* main {
   container: mainWrap / inline-size;
 }
 @container mainWrap (width < 950) {
   #main-intro-container {
-    display: block;
     font-size: 1.825vmin;
   }
+} */
+
+/* OPEN PROJECT ARTICLE */
+/* Header */
+.project-open-header {
+  summary.project-overview-cards-wrapper {
+    container: projectOverviewCards / inline-size;
+  }
+  @container projectOverviewCards (width < 818) {
+    .lead-card {
+      --text-size: 0.925rem !important;
+      border-radius: var(--big-corner) !important;
+    }
+  }
+  @container projectOverviewCards (width < 500) {
+    .lead-card {
+      flex-basis: 25% !important;
+      gap: 12px !important;
+      .timeline-container {
+        display: block !important;
+      }
+      div.container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem 24px;
+        .collab-wrapper {
+          width: auto !important;
+        }
+      }
+    }
+  }
 }
+/* Main */
 @container mainWrap (width < 1162) {
   .project-compare-container {
     padding-right: 0px !important;
@@ -90,34 +134,6 @@ main {
       margin-top: 16px;
       flex-direction: row !important;
       justify-content: space-around !important;
-    }
-  }
-}
-
-summary.project-overview-cards-wrapper {
-  container: projectOverviewCards / inline-size;
-}
-@container projectOverviewCards (width < 737) {
-  .lead-card {
-    --text-size: 0.925rem !important;
-    border-radius: var(--big-corner) !important;
-    min-width: 190px !important;
-  }
-}
-@container projectOverviewCards (width < 500) {
-  .lead-card {
-    flex-basis: 25% !important;
-    gap: 12px !important;
-    .timeline-container {
-      display: block !important;
-    }
-    div.container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.25rem 24px;
-      .collab-wrapper {
-        width: auto !important;
-      }
     }
   }
 }

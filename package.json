@@ -5,6 +5,7 @@
   "description": "Latest version of my (Benjamin Walker) portfolio",
   "type": "module",
   "scripts": {
+	"pretty": "prettier --write \"src/**/*.{css,js,jsx,mjs,cjs,ts,tsx,json}\"",
     "start": "node public/server.js",
     "prestart": "vite build public/index.html",
     "dev": "vite",
@@ -51,6 +52,7 @@
     "gh-pages": "^6.3.0",
     "lightningcss": "^1.29.3",
     "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
     "rimraf": "^6.0.1",
     "vite": "^6.2.5"
   }

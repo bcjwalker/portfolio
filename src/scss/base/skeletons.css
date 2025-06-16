@@ -1,0 +1,8 @@
+/* Overview card image placeholder */
+.lead-icon-placeholder {
+  width: 20px;
+  height: 20px;
+
+  border-radius: 20px;
+  background-color: lightgray;
+}

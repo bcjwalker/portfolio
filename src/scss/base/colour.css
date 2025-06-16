@@ -1,224 +1,237 @@
 main {
-    /* background-color: hwb(0 100% 0%); */
-    border-radius: 40px;
-    /* border-left: 1px solid hwb(0 100% 15%); */
+  /* background-color: hwb(0 100% 0%); */
+  border-radius: 40px;
+  /* border-left: 1px solid hwb(0 100% 15%); */
 }
 
 /* Colour variables */
 :root {
-    /* Theme colour */
-    --theme-base-0: hsl(042, 100%, 48%);
-        /* Theme interaction states, e.g. button hovers */
-        --theme-card-0-hover: hsl(042, 98%, 52%);
-        --theme-card-0-active: hsl(042, 100%, 44%);
-        --theme-base-text-0: hsl(042, 0%, 100%);
-    /* Theme colour for inline links */
-    --theme-base-1:  hsl(042, 98%, 46%);
-        /* Theme interaction states, e.g. button hovers */
-        --theme-card-1-hover: hsl(042, 100%, 50%);
-        --theme-card-1-active: hsl(042, 100%, 43%);
+  /* Theme colour */
+  --theme-base-0: hsl(042, 100%, 48%);
+  --theme-base-0-hover: hsl(042, 60%, 92%);
+  --theme-base-0-active: hsl(042, 46%, 90%);
+  /* Theme interaction states, e.g. button hovers */
+  --theme-card-0-hover: hsl(042, 98%, 52%);
+  --theme-card-0-active: hsl(042, 100%, 44%);
+  --theme-base-text-0: hsl(042, 0%, 100%);
+  /* Theme colour for inline links */
+  --theme-base-1: hsl(042, 98%, 46%);
+  /* Theme interaction states, e.g. button hovers */
+  --theme-card-1-hover: hsl(042, 100%, 50%);
+  --theme-card-1-active: hsl(042, 100%, 43%);
 
-    /* Bronze base */
-    --shade-base-null: hsl(0, 0%, 100%);
-    --shade-base-0: hsl(40, 60%, 99%);
-        --shade-base-0-alt: hsl(042, 24%, 90%);
-    --shade-base-1: hsl(38, 40%, 96%);
-        --shade-base-1-trans: hsla(042, 5%, 99%, 0.95);
-    --shade-base-2: hsl(42, 37%, 93%);
-    --shade-base-3: hsl(042, 32%, 90%);
-    --shade-base-4: hsl(042, 26%, 90%);
-    --shade-base-5: hsl(042, 20%, 87%);
-        --shade-base-5-colour: hsl(042, 25%, 85%);
-        --shade-base-5-colour-1: hsl(042, 30%, 80%);
+  /* Bronze base */
+  --shade-base-null: hsl(0, 0%, 100%);
+  --shade-base-0: hsl(40, 60%, 99%);
+  --shade-base-0-alt: hsl(042, 24%, 90%);
+  --shade-base-1: hsl(38, 40%, 96%);
+  --shade-base-1-trans: hsla(042, 5%, 99%, 0.95);
+  --shade-base-2: hsl(42, 37%, 93%);
+  --shade-base-3: hsl(042, 32%, 90%);
+  --shade-base-4: hsl(042, 26%, 90%);
+  --shade-base-5: hsl(042, 20%, 87%);
+  --shade-base-5-colour: hsl(042, 25%, 85%);
+  --shade-base-5-colour-1: hsl(042, 30%, 80%);
 
-    --shade-card-0: hsl(042, 80%, 92%);
-        --shade-card-0-text-0: hsl(042, 15%, 40%);
-            --shade-card-0-text-0-select: hsl(042, 50%, 12%);
-        --shade-card-0-text-1: hsl(042, 42%, 28%);
-        --shade-card-0-text-2: hsl(042, 65%, 28%);
-        --shade-card-0-hover: hsl(042, 85%, 89%);
-        --shade-card-0-active: hsl(042, 65%, 85%);
-    --shade-card-1: hsl(035, 65%, 90%);
-        --shade-card-1-text-1: hsl(042, 15%, 40%);
+  --shade-card-0: hsl(042, 80%, 92%);
+  --shade-card-0-text-0: hsl(042, 15%, 40%);
+  --shade-card-0-text-0-select: hsl(042, 50%, 12%);
+  --shade-card-0-text-1: hsl(042, 42%, 28%);
+  --shade-card-0-text-2: hsl(042, 65%, 28%);
+  --shade-card-0-hover: hsl(042, 85%, 89%);
+  --shade-card-0-active: hsl(042, 65%, 85%);
+  --shade-card-1: hsl(035, 65%, 90%);
+  --shade-card-1-text-1: hsl(042, 15%, 40%);
 
-    /* Base shade accent - interaction states for transparent elements, e.g. button hovers */
-    --shade-button-accent-1: hsla(042, 45%, 80%, 0.2);
-    --shade-button-accent-2: hsla(042, 40%, 78%, 0.3);
+  /* Base shade accent - interaction states for transparent elements, e.g. button hovers */
+  --shade-button-accent-1: hsla(042, 45%, 80%, 0.2);
+  --shade-button-accent-2: hsla(042, 40%, 78%, 0.3);
 
-    /* Text shades */
-    --shade-text-0: hsl(042, 4%, 10%);
-        --shade-text-0-highlight: hsl(040, 100%, 45%);
-        --shade-text-0-tonal: hsl(040, 50%, 45%);
-    --shade-text-1: hsl(042, 5%, 15%);
-        --shade-text-1-strong: hsl(042, 100%, 10%);
-    --shade-text-2: hsl(042, 7%, 21%);
-    --shade-text-3: hsl(042, 7%, 26%);
-    --shade-text-4: hsl(042, 9%, 30%);
-    --shade-text-5: hsl(042, 9%, 34%);
-    --shade-text-6: hsl(042, 11%, 42%);
-    --shade-text-7: hsl(042, 13%, 48%);
+  /* Text shades */
+  --shade-text-0: hsl(042, 4%, 10%);
+  --shade-text-0-highlight: hsl(040, 100%, 45%);
+  --shade-text-0-tonal: hsl(040, 50%, 45%);
+  --shade-text-1: hsl(042, 5%, 15%);
+  --shade-text-1-strong: hsl(042, 100%, 10%);
+  --shade-text-2: hsl(042, 7%, 21%);
+  --shade-text-3: hsl(042, 7%, 26%);
+  --shade-text-4: hsl(042, 9%, 30%);
+  --shade-text-5: hsl(042, 9%, 34%);
+  --shade-text-6: hsl(042, 11%, 42%);
+  --shade-text-7: hsl(042, 13%, 48%);
 
-    /* Outline shades */
-    --shade-outline-1: hsl(042, 25%, 87%);
-        --shade-outline-1-colour: hsl(042, 35%, 80%);
-        --shade-outline-1-highlight: hsl(040, 85%, 65%);
-    --shade-outline-2: hsl(042, 25%, 84%);
-    --shade-outline-3: hsl(042, 20%, 79%);
-    --shade-outline-4: hsl(042, 15%, 75%);
-    --shade-outline-5: hsl(042, 10%, 65%);
-        --shade-outline-5-colour: hsl(042, 30%, 70%);
+  /* Outline shades */
+  --shade-outline-1: hsl(042, 25%, 87%);
+  --shade-outline-1-colour: hsl(042, 35%, 80%);
+  --shade-outline-1-highlight: hsl(040, 85%, 65%);
+  --shade-outline-2: hsl(042, 25%, 84%);
+  --shade-outline-3: hsl(042, 20%, 79%);
+  --shade-outline-4: hsl(042, 15%, 75%);
+  --shade-outline-5: hsl(042, 10%, 65%);
+  --shade-outline-5-colour: hsl(042, 30%, 70%);
 
-    /* Inverted shades - for necessarily contrasting elements, e.g. tooltips */
-    --shade-invert-base-1: hsl(042, 8%, 35%);
-        --shade-invert-base-1-trans: hsla(042, 8%, 35%, 0.85);
-    --shade-invert-base-2: hsl(042, 8%, 45%);
-    --shade-invert-base-3: hsl(042, 8%, 55%);
-    --shade-invert-text-1: var(--shade-base-1);
+  /* Inverted shades - for necessarily contrasting elements, e.g. tooltips */
+  --shade-invert-base-1: hsl(042, 8%, 35%);
+  --shade-invert-base-1-trans: hsla(042, 8%, 35%, 0.85);
+  --shade-invert-base-2: hsl(042, 8%, 45%);
+  --shade-invert-base-3: hsl(042, 8%, 55%);
+  --shade-invert-text-1: var(--shade-base-1);
 
-    /* Tonal */
-    --tonal-card-0: hsl(042, 55%, 95%);
-        --tonal-card-0-text-1: hsl(042, 20%, 23%);
-        --tonal-card-0-text-2: hsl(042, 20%, 18%);
-        --tonal-card-0-hover: hsl(042, 60%, 92%);
-        --tonal-card-0-active: hsl(042, 46%, 90%);
-    --tonal-card-1: hsl(042, 41%, 90%);
-        --tonal-card-1-text-0: hsl(042, 26%, 30%);
-        --tonal-card-1-text-1: hsl(042, 80%, 18%);
-        --tonal-card-1-text-2: hsl(042, 40%, 35%);
-        --tonal-card-1-text-3: hsl(042, 15%, 30%);
-        --tonal-card-1-hover: hsl(042, 40%, 88%);
-        --tonal-card-1-active: hsl(042, 40%, 83%);
-        --tonal-card-1-active-alt: hsl(042, 40%, 88%);
+  /* Tonal */
+  --tonal-card-0: hsl(042, 55%, 95%);
+  --tonal-card-0-text-1: hsl(042, 20%, 23%);
+  --tonal-card-0-text-2: hsl(042, 20%, 18%);
+  --tonal-card-0-hover: hsl(042, 60%, 92%);
+  --tonal-card-0-active: hsl(042, 46%, 90%);
+  --tonal-card-1: hsl(042, 41%, 90%);
+  --tonal-card-1-text-0: hsl(042, 26%, 30%);
+  --tonal-card-1-text-1: hsl(042, 80%, 18%);
+  --tonal-card-1-text-2: hsl(042, 40%, 35%);
+  --tonal-card-1-text-3: hsl(042, 15%, 30%);
+  --tonal-card-1-hover: hsl(042, 40%, 88%);
+  --tonal-card-1-active: hsl(042, 40%, 83%);
+  --tonal-card-1-active-alt: hsl(042, 40%, 88%);
 
-    /* Green */
-    --green-base-0: hsl(090, 44%, 98%);
-        --green-base-0-alt: hsl(090, 24%, 90%);
-    --green-base-1: hsl(090, 44%, 96%);
-        --green-base-1-trans: hsla(090, 5%, 99%, 0.95);
-    --green-base-2: hsl(090, 37%, 95%);
-    --green-base-3: hsl(090, 32%, 92%);
-    --green-base-4: hsl(090, 17%, 90%);
-    --green-base-5: hsl(090, 10%, 87%);
+  /* Green */
+  --green-base-0: hsl(090, 44%, 98%);
+  --green-base-0-alt: hsl(090, 24%, 90%);
+  --green-base-1: hsl(090, 44%, 96%);
+  --green-base-1-trans: hsla(090, 5%, 99%, 0.95);
+  --green-base-2: hsl(090, 37%, 95%);
+  --green-base-3: hsl(090, 32%, 92%);
+  --green-base-4: hsl(090, 17%, 90%);
+  --green-base-5: hsl(090, 10%, 87%);
 
-    --green-outline-1: hsl(090, 25%, 86%);
-    --green-outline-2: hsl(090, 20%, 75%);
+  --green-outline-1: hsl(090, 25%, 86%);
+  --green-outline-2: hsl(090, 20%, 75%);
 
-    --green-card-1: hsl(090, 55%, 90%);
-        --green-card-1-text-1: hsl(090, 22%, 23%);
-        --green-card-1-text-2: hsl(090, 50%, 20%);
-        --green-card-1-outline: hsl(090, 12%, 79%);
-        --green-card-1-hover: hsl(090, 45%, 85%);
-        --green-card-1-active: hsl(090, 40%, 80%);
-    --green-card-2: hsl(090, 40%, 91%);
-        --green-card-2-text-1: hsl(090, 15%, 35%);
-        --green-card-2-outline: hsl(090, 12%, 75%);
-    --green-card-3: hsl(090, 40%, 95%);
-        --green-card-3-text-1: hsl(090, 35%, 29%);
-        --green-card-3-text-2: hsl(090, 25%, 35%);
-        --green-card-3-outline: hsl(090, 12%, 75%);
-    --green-card-4: hsl(090, 75%, 80%);
+  --green-card-1: hsl(090, 55%, 90%);
+  --green-card-1-text-1: hsl(090, 22%, 23%);
+  --green-card-1-text-2: hsl(090, 50%, 20%);
+  --green-card-1-outline: hsl(090, 12%, 79%);
+  --green-card-1-hover: hsl(090, 45%, 85%);
+  --green-card-1-active: hsl(090, 40%, 80%);
+  --green-card-2: hsl(090, 40%, 91%);
+  --green-card-2-text-1: hsl(090, 15%, 35%);
+  --green-card-2-outline: hsl(090, 12%, 75%);
+  --green-card-3: hsl(090, 40%, 95%);
+  --green-card-3-text-1: hsl(090, 35%, 29%);
+  --green-card-3-text-2: hsl(090, 25%, 35%);
+  --green-card-3-outline: hsl(090, 12%, 75%);
+  --green-card-4: hsl(090, 75%, 80%);
 
-    /* Oxidised accent - interaction states, e.g. button hovers */
-    --green-button-accent-1: hsla(090, 80%, 80%, 0.2);
-    --green-button-accent-2: hsla(090, 60%, 72%, 0.3);
+  /* Oxidised accent - interaction states, e.g. button hovers */
+  --green-button-accent-1: hsla(090, 80%, 80%, 0.2);
+  --green-button-accent-2: hsla(090, 60%, 72%, 0.3);
 
-    --green-accent-0: hsl(090, 12%, 60%);
+  --green-accent-0: hsl(090, 12%, 60%);
 }
-    .outline-1 {
-        border-color: var(--shade-outline-1) !important;
-    }
-    .outline-2 {
-        border-color: var(--shade-outline-2) !important;
-    }
-    .outline-3 {
-        border-color: var(--shade-outline-3) !important;
-    }
-    .outline-4 {
-        border-color: var(--shade-outline-4) !important;
-    }
-    .outline-5 {
-        border-color: var(--shade-outline-5) !important;
-    }
+.outline-1 {
+  border-color: var(--shade-outline-1) !important;
+}
+.outline-2 {
+  border-color: var(--shade-outline-2) !important;
+}
+.outline-3 {
+  border-color: var(--shade-outline-3) !important;
+}
+.outline-4 {
+  border-color: var(--shade-outline-4) !important;
+}
+.outline-5 {
+  border-color: var(--shade-outline-5) !important;
+}
 
 /* Misc styles */
 :root {
-    --drop-shadow-1: 0px 1px 2px 0px hsla(042, 20%, 20%, 0.15), 0px 1px 2px 1px hsla(042, 20%, 20%, 0.075);
-    --drop-shadow-2: 0px 1.5px 2px 0px hsla(042, 20%, 20%, 0.15), 0px 1px 3px 1px hsla(042, 20%, 20%, 0.1);
+  --drop-shadow-1: 0px 1px 2px 0px hsla(042, 20%, 20%, 0.15), 0px 1px 2px 1px hsla(042, 20%, 20%, 0.075);
+  --drop-shadow-2: 0px 1.5px 2px 0px hsla(042, 20%, 20%, 0.15), 0px 1px 3px 1px hsla(042, 20%, 20%, 0.1);
 
-    --filter-drop-shadow-1: drop-shadow(0px 1px 1px hsla(042, 20%, 20%, 0.35)) drop-shadow(0px 1px 3px hsla(042, 20%, 20%, 0.125));
-    --filter-drop-shadow-2: drop-shadow(0px 2px 2px hsla(042, 20%, 20%, 0.35)) drop-shadow(0px 1px 3px hsla(042, 20%, 20%, 0.125));
-    --filter-drop-shadow-2-dark: drop-shadow(0px 2px 2px hsla(042, 20%, 5%, 0.4)) drop-shadow(0px 1px 3px hsla(042, 20%, 5%, 0.2));
-    .filter-shadow1 {
-        filter: var(--filter-drop-shadow-1);
-    }
-    .filter-shadow2 {
-        filter: var(--filter-drop-shadow-2);
-    }
-    .filter-shadow2-dark {
-        filter: var(--filter-drop-shadow-2-dark);
-    }
+  --filter-drop-shadow-1: drop-shadow(0px 1px 1px hsla(042, 20%, 20%, 0.35))
+    drop-shadow(0px 1px 3px hsla(042, 20%, 20%, 0.125));
+  --filter-drop-shadow-2: drop-shadow(0px 2px 2px hsla(042, 20%, 20%, 0.35))
+    drop-shadow(0px 1px 3px hsla(042, 20%, 20%, 0.125));
+  --filter-drop-shadow-2-dark: drop-shadow(0px 2px 2px hsla(042, 20%, 5%, 0.4))
+    drop-shadow(0px 1px 3px hsla(042, 20%, 5%, 0.2));
+  .filter-shadow1 {
+    filter: var(--filter-drop-shadow-1);
+  }
+  .filter-shadow2 {
+    filter: var(--filter-drop-shadow-2);
+  }
+  .filter-shadow2-dark {
+    filter: var(--filter-drop-shadow-2-dark);
+  }
 }
-    .shadow-1 {
-        box-shadow: var(--drop-shadow-1);
-    }
+.shadow-1 {
+  box-shadow: var(--drop-shadow-1);
+}
 
 body {
-    background-color: var(--shade-base-1);
+  background-color: var(--shade-base-1);
 }
 #main-projects-container {
-    background-color: var(--shade-base-0);
+  background-color: var(--shade-base-0);
 }
 
 /* Per-project theme colour  */
 /* (Used for button colours) */
 @property --prmry-btn-theme {
-    syntax: '<color>';
-    initial-value: red;
-    inherits: true;
+  syntax: '<color>';
+  initial-value: red;
+  inherits: true;
 }
 /* (Used for gradient hues) */
 @property --prmry-grad-theme {
-    syntax: '<color>';
-    initial-value: red;
-    inherits: true;
+  syntax: '<color>';
+  initial-value: red;
+  inherits: true;
 }
 
 .project-big-open {
-    --grad-theme: linear-gradient(0deg, var(--shade-base-2) 0%, var(--prmry-grad-theme) 80%); 
+  --grad-theme: linear-gradient(0deg, var(--shade-base-2) 0%, var(--prmry-grad-theme) 80%);
 }
 .project-big-open.sunstop {
-    --theme-base-0: hsl(042, 100%, 48%);
-        --theme-card-0-hover: hsl(042, 98%, 52%);
-        --theme-card-0-active: hsl(042, 100%, 44%);
-    --prmry-grad-theme: hsl(042, 65%, 92%);
+  --theme-base-0: hsl(042, 100%, 48%);
+  --theme-base-0-hover: hsla(042, 40%, 89%, 0.85);
+  --theme-base-0-active: hsl(042, 40%, 86%);
+  --theme-card-0-hover: hsl(042, 98%, 52%);
+  --theme-card-0-active: hsl(042, 100%, 44%);
+  --prmry-grad-theme: hsl(042, 65%, 90%);
 
-    --prmry-h1-theme: hsl(29, 4%, 10%);
-    --prmry-p-theme: hsl(29, 15%, 18%);
+  --prmry-h1-theme: hsl(29, 4%, 10%);
+  --prmry-p-theme: hsl(29, 15%, 18%);
 }
 .project-big-open.biodiversity {
-    --theme-base-0: hsl(221, 70%, 44%);
-        --theme-card-0-hover: hsl(221, 75%, 52%);
-        --theme-card-0-active: hsl(221, 65%, 38%);
-    --prmry-grad-theme: hsl(221, 10%, 92%);
+  --theme-base-0: hsl(221, 65%, 50%);
+  --theme-base-0-hover: hsla(221, 40%, 92%, 0.85);
+  --theme-base-0-active: hsl(221, 40%, 86%);
+  --theme-card-0-hover: hsl(221, 75%, 52%);
+  --theme-card-0-active: hsl(221, 65%, 38%);
+  --prmry-grad-theme: hsl(221, 10%, 92%);
 
-    --prmry-h1-theme: hsl(221, 4%, 10%);
-    --prmry-p-theme: hsl(221, 15%, 18%);
+  --prmry-h1-theme: hsl(221, 4%, 10%);
+  --prmry-p-theme: hsl(221, 15%, 18%);
 }
 .project-big-open.convey {
-    --theme-base-0: hsl(266, 50%, 50%);
-        --theme-card-0-hover: hsl(266, 55%, 57%);
-        --theme-card-0-active: hsl(266, 45%, 42%);
-    --prmry-grad-theme: hsl(266, 35%, 96%);
+  --theme-base-0: hsl(258, 60%, 58%);
+  --theme-base-0-hover: hsla(258, 40%, 92%, 0.85);
+  --theme-base-0-active: hsl(258, 40%, 86%);
+  --theme-card-0-hover: hsl(258, 55%, 57%);
+  --theme-card-0-active: hsl(258, 45%, 42%);
+  --prmry-grad-theme: hsl(258, 25%, 95%);
 
-    --prmry-h1-theme: hsl(253, 4%, 10%);
-    --prmry-p-theme: hsl(253, 15%, 18%);
+  --prmry-h1-theme: hsl(253, 4%, 10%);
+  --prmry-p-theme: hsl(253, 15%, 18%);
 }
 .project-big-open.studbud {
-    --theme-base-0: hsl(29, 75%, 50%);
-        --theme-card-0-hover: hsl(29, 98%, 52%);
-        --theme-card-0-active: hsl(29, 100%, 44%);
-    --prmry-grad-theme: hsl(29, 75%, 90%);
+  --theme-base-0: hsl(29, 75%, 50%);
+  --theme-base-0-hover: hsla(29, 40%, 90%, 0.85);
+  --theme-base-0-active: hsl(29, 40%, 86%);
+  --theme-card-0-hover: hsl(29, 98%, 52%);
+  --theme-card-0-active: hsl(29, 100%, 44%);
+  --prmry-grad-theme: hsl(29, 75%, 90%);
 
-    --prmry-h1-theme: hsl(29, 4%, 10%);
-    --prmry-p-theme: hsl(29, 15%, 18%);
+  --prmry-h1-theme: hsl(29, 4%, 10%);
+  --prmry-p-theme: hsl(29, 15%, 18%);
 }

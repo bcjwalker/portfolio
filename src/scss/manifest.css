@@ -1,21 +1,22 @@
 /* Base  */
-@import "base/reset.css";
+@import 'base/reset.css';
 
-@import "base/colour.css";
-@import "base/buttons.css";
-@import "base/typography.css";
-@import "base/animations.css";
+@import 'base/colour.css';
+@import 'base/buttons.css';
+@import 'base/typography.css';
+@import 'base/animations.css';
+@import 'base/skeletons.css';
 
 /* Layout  */
-@import "layouts/body.css";
+@import 'layouts/body.css';
 
 /* Media queries */
-@import "base/queries.css";
+@import 'base/queries.css';
 
 /* Components */
 /* Open project article */
-@import "components/ProjectOpen_Header.css";
-@import "components/ProjectOpen_Article.css";
+@import 'components/ProjectOpen_Header.css';
+@import 'components/ProjectOpen_Article.css';
 
 /* Utils */
-@import "components/Tooltip.css";
+@import 'components/Tooltip.css';

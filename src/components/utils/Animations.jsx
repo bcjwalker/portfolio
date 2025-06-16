@@ -1,4 +1,4 @@
-import { keyframes } from "@emotion/react";
+import { keyframes } from '@emotion/react'
 
 export const fadeInPushUp = keyframes`
     from {
@@ -9,7 +9,7 @@ export const fadeInPushUp = keyframes`
         opacity: 1;
         transform: translateY(0);
     }
-}`;
+}`
 export const fadeInPushDown = keyframes`
     from {
         opacity: 0;
@@ -19,7 +19,7 @@ export const fadeInPushDown = keyframes`
         opacity: 1;
         transform: translateY(0);
     }
-}`;
+}`
 export const fadeInPushRight = keyframes`
     from {
         opacity: 0;
@@ -29,7 +29,7 @@ export const fadeInPushRight = keyframes`
         opacity: 1;
         transform: translateX(0);
     }
-}`;
+}`
 
 export const nullAnim = keyframes`
     from { opacity: 1 }
