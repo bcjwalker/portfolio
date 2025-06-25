@@ -14,12 +14,12 @@ const currentProj = projectData[3]
 // Article wrapper and subnav
 import { Article_Wrapper, RenderTab, Subnav } from '../utils/Article_Wrapper.jsx'
 // Article body components
-import { Details, Details_Static, Nav, ArticleFooter } from '../utils/Article_Misc.jsx'
-import VideoPlayerCard from '../utils/Article_VideoPlayer.jsx'
-import ImgViewer from '../utils/Article_ImgViewer.jsx'
-import CompCard from '../utils/Article_CompCard.jsx'
-import InfoCard from '../utils/Article_InfoCard.jsx'
-import { WipCard, WipCardFooter } from '../utils/Article_WipCard.jsx'
+import { Details, Details_Static, Nav, ArticleFooter } from '../utils/article/Misc.jsx'
+import VideoPlayerCard from '../utils/article/VideoPlayer.jsx'
+import ImgViewer from '../utils/article/ImgViewer.jsx'
+import CompCard from '../utils/article/CompCard.jsx'
+import InfoCard from '../utils/article/InfoCard.jsx'
+import { WipCard, WipCardFooter } from '../utils/article/WipCard.jsx'
 
 // Styles
 import styles from './Studbud.module.css'

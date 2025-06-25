@@ -1,12 +1,12 @@
 import { useRef, useState, useEffect } from 'react'
 // Animations :)
 import { Fade } from 'react-awesome-reveal'
-import { fadeInPushDown } from '../utils/Animations.jsx'
+import { fadeInPushDown } from '../Animations.jsx'
 
-import CheckisDesktop from '../utils/CheckIsMob.jsx'
+import CheckisDesktop from '../CheckIsMob.jsx'
 
 // Styles
-import styles from './Article_VideoPlayer.module.css'
+import styles from './VideoPlayer.module.css'
 
 const minChecker = (time) => {
   let videoMins = 0

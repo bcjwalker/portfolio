@@ -6,10 +6,10 @@ import { ReactCompareSlider, ReactCompareSliderHandle, styleFitContainer } from 
 
 // Animations :)
 import { Fade } from 'react-awesome-reveal'
-import { fadeInPushDown } from '../utils/Animations.jsx'
+import { fadeInPushDown } from '../Animations.jsx'
 
 // Styles
-import styles from './Article_CompCard.module.css'
+import styles from './CompCard.module.css'
 
 export default function CompCard(props) {
   console.log(props)

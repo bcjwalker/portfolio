@@ -285,12 +285,13 @@ export function LeadCard(props) {
 // Wrap header, children (subhead + article page) in one function
 export function Article_Wrapper({
   children,
-  article,
-  index,
-  tabListStuck,
-  setTabListStuck,
-  headerSticky,
-  setHeaderSticky,
+  // article id, index in projectsdb
+  article, index,
+  // Subnav sticky state
+  tabListStuck, setTabListStuck,
+  // Header sticky state (UNDONE?)
+  headerSticky, setHeaderSticky,
+  // Y coords of main-projects-container
   topPos,
 }) {
   const currentProj = projectData[index]
@@ -388,7 +389,6 @@ export function Article_Wrapper({
 
   return (
     <>
-      {/* Article template */}
       <a className="anchor" id="project-open-top" ref={articleTopRef} />
 
       <article
@@ -406,11 +406,10 @@ export function Article_Wrapper({
         {/* Main content */}
         {children}
         <button
-          className={`icon-btn topscroll-btn prmry-green-btn ${headerSticky ? `active` : null}`}
+          className={`icon-btn topscroll-btn prmry-green-btn ${headerSticky && inView == false ? `active` : null}`}
           title="Scroll to top"
           onClick={() =>
-            document
-              .getElementById('project-open-top')
+            document.getElementById('project-open-top')
               ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }>
           <span className="material-symbols-rounded"> arrow_upward </span>

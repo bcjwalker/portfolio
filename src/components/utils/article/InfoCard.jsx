@@ -2,10 +2,10 @@ import { useRef, useState, useEffect } from 'react'
 
 // Animations :)
 import { Fade } from 'react-awesome-reveal'
-import { fadeInPushUp } from './Animations.jsx'
+import { fadeInPushUp } from '../Animations.jsx'
 
 // Styles
-import styles from './Article_InfoCard.module.css'
+import styles from './InfoCard.module.css'
 
 export default function InfoCard() {
   const [open, setOpen] = useState(true)

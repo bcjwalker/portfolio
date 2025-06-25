@@ -1,6 +1,7 @@
 /* Universal classes for project showcases */
 .project-big-open {
   max-width: 100%;
+  padding-bottom: 96px;
 
   --header-side-padding: 36px;
   --header-vert-padding: 48px;
@@ -412,7 +413,7 @@ summary.project-overview-cards-wrapper {
 */
 /* Section dedicated to the tablist navigation */
 .project-subhead-container {
-  height: 76px;
+  height: 62px;
   display: flex;
   align-items: stretch;
   width: 100%;
@@ -426,7 +427,10 @@ summary.project-overview-cards-wrapper {
   /* border-bottom: 1px solid var(--shade-outline-1); */
   border-radius: 0 0 24px 24px;
   transition: background-color 0.125s;
-
+  /* >= Phone size, ignore header height */
+  @media screen and (width >= 899px) {
+    top: 0;
+  }
   .subnav-label-wrapper {
     display: flex;
     align-items: center;
@@ -460,16 +464,13 @@ summary.project-overview-cards-wrapper {
   .project-subnav-container {
     display: flex;
     align-items: stretch;
-
     .subnav-head-wrapper {
       margin: 8px 0;
       display: none;
       align-items: center;
-
       * {
         color: var(--shade-text-5);
       }
-
       span.material-symbols-rounded {
         margin-left: 1px;
         margin-right: 6px;
@@ -479,13 +480,11 @@ summary.project-overview-cards-wrapper {
           'wght' 300,
           'GRAD' 200;
       }
-
       label {
         font-weight: 500;
         font-size: 0.85rem;
       }
     }
-
     /* Tablist */
     .subnav-tablist-wrapper {
       display: flex;
@@ -495,16 +494,14 @@ summary.project-overview-cards-wrapper {
       scroll-margin: 10px;
       scroll-snap-stop: normal;
       scroll-snap-type: x mandatory;
-
       .tablist {
         display: flex;
-
+        /* Tab button */
         .btn-tab-wrapper {
           /* Text needs extra padding for visual balance */
           flex-grow: 1;
           padding: 0;
           min-width: 172px;
-          min-height: 72px;
           display: flex;
           flex-direction: column;
           justify-content: end;
@@ -519,11 +516,9 @@ summary.project-overview-cards-wrapper {
           @media screen and (0px <=width <=899) {
             min-height: 56px;
           }
-
           * {
             color: var(--tonal-card-1-text-1);
           }
-
           .tab-label {
             margin-right: 4px;
             flex-grow: 1;
@@ -531,18 +526,15 @@ summary.project-overview-cards-wrapper {
             align-items: center;
             flex-direction: row;
             gap: 8px;
-
             span.material-symbols-rounded {
               /* display: none; */
               font-size: 1.5rem;
             }
-
             label {
               font-size: 1rem;
               letter-spacing: 0.025ch;
             }
           }
-
           .tab-active-bar {
             margin-top: -3px;
             min-height: 3px;

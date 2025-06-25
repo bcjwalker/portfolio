@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 
 // Styles
-import styles from './Article_WipCard.module.css'
+import styles from './WipCard.module.css'
 
 export function WipCard() {
   return (

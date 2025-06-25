@@ -11,7 +11,10 @@ header {
   font-size: 2vmin;
   /* backdrop-filter: blur(2px); */
   background-color: var(--shade-base-1);
-  /* border-bottom: 1px solid var(--shade-base-3); */
+  /* >= Phone size, hide */
+  @media screen and (width >= 899px) {
+    display: none;
+  }
   * {
     color: var(--shade-text-0);
   }

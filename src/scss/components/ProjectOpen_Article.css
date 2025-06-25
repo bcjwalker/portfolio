@@ -71,7 +71,7 @@
 */
 /* Nav */
 .project-left-container {
-  margin-top: 42px;
+  margin-top: 32px;
   grid-area: article-nav;
   contain: paint;
   z-index: 0;
@@ -83,8 +83,8 @@
   .project-nav-wrapper {
     max-width: 120px;
     position: sticky;
-    top: 184px;
-    margin-bottom: 10rem;
+    top: 132px;
+    margin-bottom: 224px;
     min-width: 100px;
     /* <= Tablet width */
     @media screen and (0px <= width <= 1425px) {
@@ -400,6 +400,24 @@
     }
   }
 
+  /* Base media container */
+  .media-container {
+    figcaption {
+      display: block;
+      margin: 5px 8px 0 16px;
+      /* <= Phone width */
+      @media screen and (0px <= width <= 899px) {
+        margin: 5px 8px 0 8px;
+      }
+
+      font-size: 0.85rem;
+      color: var(--shade-card-0-text-0);
+      &.nowrap {
+        white-space: nowrap;
+      }
+    }
+  }
+
   /* Wrapper for media, img/video, can be in a media container */
   figure.media-wrapper {
     margin: 2rem 0;
@@ -618,7 +636,7 @@
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  margin: 72px 0 96px 0;
+  margin-top: 48px;
   padding: 32px;
   border-radius: 32px;
   background-color: var(--shade-base-2);

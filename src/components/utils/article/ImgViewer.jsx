@@ -2,10 +2,10 @@ import React, { useRef, useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 // Animations :)
 import { Fade } from 'react-awesome-reveal'
-import { fadeInPushUp } from '../utils/Animations.jsx'
+import { fadeInPushUp } from '../Animations.jsx'
 
 // Styles
-import styles from './Article_ImgViewer.module.css'
+import styles from './ImgViewer.module.css'
 
 function FullScreenImg({ clicky, imgSrc, classN }) {
   return (

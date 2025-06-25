@@ -53,8 +53,7 @@ function Intro() {
               /front-end web dev
             </p> */}
             <p className={styles['intro-titles-desc']}>
-              2025 graduate <strong>Design Computing</strong> student from the{' '}
-              <strong>University of Sydney</strong>
+              Recent graduate from the <strong>University of Sydney</strong>
             </p>
           </div>
         </div>
@@ -81,7 +80,7 @@ function Intro() {
                 <div className={styles['rotating-text']}>products</div>
               </ScrollingText>
             </div>
-            on the cusp of
+            that balance
             <div className={styles['rotating-text']}>
               <ScrollingText
                 ref={scrollTxtRef}
@@ -97,10 +96,6 @@ function Intro() {
                 <div className={styles['rotating-text']}>
                   novelty &<br />
                   familiarity
-                </div>
-                <div className={styles['rotating-text']}>
-                  form &<br />
-                  function
                 </div>
                 <div className={styles['rotating-text']}>
                   whimsy &<br />

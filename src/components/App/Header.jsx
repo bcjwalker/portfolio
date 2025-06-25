@@ -21,7 +21,7 @@ function Header({ switchNavOpen }) {
         ticking = false
         return
       }
-      setHeaderOpen(scrollY < 350 ? false : true)
+      setHeaderOpen(scrollY < 200 ? false : true)
       lastScrollY = scrollY > 0 ? scrollY : 0
       ticking = false
     }

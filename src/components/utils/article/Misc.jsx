@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router'
 
 // Components
-import TableOfContents from './Article_TableOfContents.jsx'
+import TableOfContents from './TableOfContents.jsx'
 
 // Animations :)
 import { Fade } from 'react-awesome-reveal'
-import { fadeInPushUp, fadeInPushDown } from './Animations.jsx'
+import { fadeInPushUp, fadeInPushDown } from '../Animations.jsx'
 
 // Project info from raw table (not reversed);
-import { projectData } from '../../assets/projects-db.js'
+import { projectData } from '../../../assets/projects-db.js'
 
 // Glob import
 const projectMedia = import.meta.glob(

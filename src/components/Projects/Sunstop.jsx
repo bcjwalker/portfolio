@@ -15,11 +15,11 @@ const currentProj = projectData[0]
 // Article wrapper and subnav
 import { Article_Wrapper, RenderTab, Subnav } from '../utils/Article_Wrapper.jsx'
 // Article body components
-import { Details, Details_Static, Nav, ArticleFooter } from '../utils/Article_Misc.jsx'
-import VideoPlayerCard from '../utils/Article_VideoPlayer.jsx'
-import ImgViewer from '../utils/Article_ImgViewer.jsx'
-import CompCard from '../utils/Article_CompCard.jsx'
-import InfoCard from '../utils/Article_InfoCard.jsx'
+import { Details, Details_Static, Nav, ArticleFooter } from '../utils/article/Misc.jsx'
+import VideoPlayerCard from '../utils/article/VideoPlayer.jsx'
+import ImgViewer from '../utils/article/ImgViewer.jsx'
+import CompCard from '../utils/article/CompCard.jsx'
+import InfoCard from '../utils/article/InfoCard.jsx'
 
 // Styles
 import styles from './Sunstop.module.css'
@@ -474,9 +474,8 @@ function MainSection_Research(props) {
               We have one of the worst rates of skin cancer in the world: in 2025,{' '}
               <strong>2 in 3 Australians</strong> will be diagnosed with a skin cancer in their lifetimes.
               Despite this,{' '}
-              <a
-                className="external-link" target="_blank">
-                href="https://www.health.gov.au/ministers/the-hon-mark-butler-mp/media/breaking-australias-suntanning-obsession"
+              <a className="external-link" target="_blank"
+                href="https://www.health.gov.au/ministers/the-hon-mark-butler-mp/media/breaking-australias-suntanning-obsession">
                 74% of young Australians
               </a>{' '}
               believe their risk of getting skin cancer is unlikely. Australian men, however, are uniquely
