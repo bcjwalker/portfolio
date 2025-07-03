@@ -1,3 +1,6 @@
+// Components
+import MatSymbol from '../utils/MatSymbol'
+
 // Style
 import styles from './Header.module.css'
 import { useState, useEffect } from 'react'
@@ -49,7 +52,7 @@ function Header({ switchNavOpen }) {
          * Persistent, remains on top of header
          * Only appears in mobile width */}
         <button className="icon-btn" id={styles['head-hamburger-btn']} onClick={() => switchNavOpen()}>
-          <span className="material-symbols-sharp"> menu </span>
+          <MatSymbol type='material-symbols-sharp' icon='menu'/>
         </button>
         <div id={styles['header-headline-wrapper']}>
           <img className={styles['headline-icon']} src={imgSignHead} />

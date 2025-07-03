@@ -5,6 +5,7 @@
   flex-direction: row;
   gap: 12px;
   padding-right: 8px;
+  overflow: hidden;
 
   /* border: 1px solid var(--shade-outline-1);
     overflow: hidden;
@@ -12,14 +13,10 @@
   .compare-media-wrapper {
     flex-basis: 85%;
     /* max-width: 780px; */
-    margin: 0 0 1rem 0;
 
     /* Style slider */
     *:not(figcaption) {
       color: hsl(090, 0%, 98%);
-    }
-    figcaption {
-      min-height: 41px;
     }
     /* UNDONE: before/after label moved to slider
         .compare-label-wrapper {
@@ -45,26 +42,27 @@
   .buttons-wrapper {
     flex-basis: 15%;
     max-height: 541px;
-    overflow-y: auto;
+    overflow-y: visible;
+
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
     /* justify-content: space-between; */
     .thumb-btn {
-      position: relative;
-      padding: 8px 16px;
+      padding: 4px 8px;
+      min-width: 140px;
       max-width: 170px;
+      min-height: 64px;
       object-fit: cover;
 
       border-radius: 16px;
       border: 2px solid transparent;
 
-      transition: none;
       transition: border 0.125s ease-out;
       .thumb-btn-img {
-        border-radius: 4px;
+        border-radius: 8px;
       }
-      &::before {
+      /* &::before {
         content: ' ';
         position: absolute;
         z-index: 1;
@@ -72,9 +70,9 @@
         left: -2px;
         right: -2px;
         bottom: -2px;
-        border-radius: 16px;
-        border: 1px solid var(--shade-outline-1);
-      }
+        border-radius: 12px;
+        border: 1px solid transparent;
+      } */
       &.active {
         background-color: var(--tonal-card-0-active);
         border: 2px solid var(--shade-outline-5);
@@ -82,9 +80,6 @@
         transition: border 0.125s ease-out;
         .thumb-btn-img {
           filter: brightness(95%);
-        }
-        &::before {
-          border: 1px solid transparent;
         }
         &:hover {
           background-color: var(--tonal-card-0-active);

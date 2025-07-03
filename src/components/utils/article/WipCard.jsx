@@ -1,5 +1,8 @@
 import { useRef, useState, useEffect } from 'react'
 
+// Components
+import MatSymbol from '../MatSymbol.jsx'
+
 // Styles
 import styles from './WipCard.module.css'
 
@@ -7,7 +10,7 @@ export function WipCard() {
   return (
     <>
       <div className={`${styles['projects-wip-announce-container']} extra-margins`}>
-        <span className={`material-symbols-rounded`}> construction </span>
+        <MatSymbol type='material-symbols-rounded' icon='construction'/>
 
         <div className={styles['left-wrapper']}>
           <label>Article under construction</label>

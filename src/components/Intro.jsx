@@ -2,11 +2,14 @@ import { useState, useRef, useEffect } from 'react'
 import ScrollingText from 'web-scrolling-text/react'
 // import { MeshGradient } from '@blur-ui/mesh-gradient';
 
+// Components
+import Aside from './App/Aside';
+
 // Style
-import styles from './Intro.module.css'
+import styles from './Intro.module.css';
 
 // Imgs
-import imgSignMain from '../assets/img-my-signature-main.png'
+import imgSignMain from '../assets/img-my-signature-main.png';
 
 function Intro() {
   const scrollTxtRef = useRef()
@@ -43,7 +46,6 @@ function Intro() {
           <div id={styles['intro-titles-dlts-wrap']}>
             {/* <label className={styles['intro-titles-location']}>
               <span className={`${styles['location-pin']} material-symbols-rounded`}> home_pin </span>
-              Benjamin Walker
             </label> */}
             <h3 className={styles['intro-titles-role']}>
               {' '}
@@ -55,8 +57,10 @@ function Intro() {
             <p className={styles['intro-titles-desc']}>
               Recent <strong>Design Computing</strong> graduate from the <strong>University of Sydney</strong>
             </p>
+            <Aside dialogType={true}/>
           </div>
         </div>
+
 
         {/* <MeshGradient colors={colors} className={styles['intro-graphic-mesh']} animationDuration={200}/> */}
 
@@ -80,7 +84,7 @@ function Intro() {
                 <div className={styles['rotating-text']}>products</div>
               </ScrollingText>
             </div>
-            that balance
+            balancing
             <div className={styles['rotating-text']}>
               <ScrollingText
                 ref={scrollTxtRef}

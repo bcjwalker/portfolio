@@ -1,5 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
+
+// Components
+import MatSymbol from '../MatSymbol.jsx'
+
 // Animations :)
 import { Fade } from 'react-awesome-reveal'
 import { fadeInPushUp } from '../Animations.jsx'
@@ -13,7 +17,7 @@ function FullScreenImg({ clicky, imgSrc, classN }) {
       <dialog open className={`${styles['open-overlay']} dialog-overlay`}>
         <div className={`${styles['btn-close-wrapper']}`}>
           <button className={`${styles['btn-close']} icon-btn overlay-btn`} onClick={() => clicky()}>
-            <span className="material-symbols-sharp"> close </span>
+            <MatSymbol type='material-symbols-sharp' icon='close'/>
           </button>
         </div>
         <div className={styles['img-container']} onClick={() => clicky()}>

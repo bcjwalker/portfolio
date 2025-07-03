@@ -48,8 +48,8 @@ export default function CompCard(props) {
       <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={100} cascade damping={0.1}>
         <div className={`project-compare-container extra-margins ${styles['compare-container']}`}>
           {/* Compare slider figure */}
-          <figure className={`media-wrapper extra-margins ${styles['compare-media-wrapper']}`}>
-            <div className="video-wrapper bordered outline-3">
+          <figure className={`media-wrapper no-margin ${styles['compare-media-wrapper']}`}>
+            <div className="video-wrapper bordered">
               <ReactCompareSlider
                 transition="0.2s ease-out"
                 onPointerDown={() => setLabelOpacity(0)}
@@ -101,7 +101,10 @@ export default function CompCard(props) {
                 itemTwo={props[activeComp][2]()}
               />
             </div>
-            <figcaption>{props[activeComp][3]}</figcaption>
+            <figcaption className='tiered'>
+              <span className='caption-title'>{props[activeComp][3]}</span>
+              <span className='caption-desc'>{props[activeComp][4]}</span>
+            </figcaption>
           </figure>
           {/* Buttons */}
           <div className={`text-margins project-buttons-wrapper ${styles['buttons-wrapper']}`}>

@@ -48,7 +48,7 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   margin: 16px;
   /* min-height: 85vh; */
-  padding-bottom: 64px;
+  padding: 2vh 0 64px 0;
   overflow: hidden;
   gap: 32px;
   /* scroll-snap-align: start; */
@@ -86,9 +86,12 @@ a.anchor {
   position: relative;
   top: -64px;
   visibility: hidden;
-  /* >= Phone size, ignore header height */
+  /* >= Phone size, ignore header height on all except intro */
   @media screen and (width >= 899px) {
     top: 0;
+    &#intro {
+      top: -64px;
+    }
   }
 }
 /* Anchor for project nav */

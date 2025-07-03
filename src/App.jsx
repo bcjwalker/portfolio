@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 // Global style
-import './scss/manifest.css'
+import './css/manifest.css'
 
 // Components
 import { PageWrapper, Main } from './App_Wrapper.jsx'

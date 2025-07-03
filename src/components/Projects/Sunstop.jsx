@@ -2,16 +2,13 @@ import { useNavigate, useLocation, Outlet, useOutletContext } from 'react-router
 import { useState, useRef, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
-// Animations :)
-import { Fade } from 'react-awesome-reveal'
-import { fadeInPushUp, fadeInPushDown } from '../utils/Animations.jsx'
-
 // Project info from raw table (not reversed);
 // Sunstop id 0
 import { projectData } from '@assets/projects-db.js'
 const currentProj = projectData[0]
 
 // Components
+import MatSymbol from '../utils/MatSymbol'
 // Article wrapper and subnav
 import { Article_Wrapper, RenderTab, Subnav } from '../utils/Article_Wrapper.jsx'
 // Article body components
@@ -20,6 +17,10 @@ import VideoPlayerCard from '../utils/article/VideoPlayer.jsx'
 import ImgViewer from '../utils/article/ImgViewer.jsx'
 import CompCard from '../utils/article/CompCard.jsx'
 import InfoCard from '../utils/article/InfoCard.jsx'
+
+// Animations :)
+import { Fade } from 'react-awesome-reveal'
+import { fadeInPushUp, fadeInPushDown } from '../utils/Animations.jsx'
 
 // Styles
 import styles from './Sunstop.module.css'
@@ -56,7 +57,7 @@ function MainSection_Solution(props) {
           Our innovative solution to this problem was <strong className="special">Sunstop</strong>.
         </p>
 
-        <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={20} cascade damping={0.1}>
+        <Fade keyframes={fadeInPushDown} duration={150} triggerOnce delay={20} cascade damping={0.1}>
           <figure className={`${styles['section1a-media-double']} media-container double extra-margins`}>
             <figure className={`${styles['lead']} media-wrapper`}>
               <div className="video-wrapper bordered">
@@ -106,7 +107,7 @@ function MainSection_Solution(props) {
           </div>
           <div className="col-right">
             <blockquote className="col-right">
-              <span className={`material-symbols-sharp quote-glyph`}> format_quote </span>
+              <MatSymbol type='material-symbols-sharp' classes='quote-glyph' icon='format_quote'/>
               <span className="quote-text desc">
                 My team and I decided to focus on{' '}
                 <strong>how the sunscreen experience could be reframed</strong>
@@ -159,7 +160,7 @@ function MainSection_Solution(props) {
           accumulate points along a score tracker, building towards a set of rewards.
         </p>
 
-        <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={20} cascade damping={0.1}>
+        <Fade keyframes={fadeInPushDown} duration={150} triggerOnce delay={20} cascade damping={0.1}>
           <div className={`${styles['section1b-media-double']}`}>
             <div className={`${styles['double-media']} media-container double extra-margins`}>
               <figure className={`${styles['lead']} media-wrapper`}>
@@ -213,7 +214,7 @@ function MainSection_Solution(props) {
           the target audience.
         </p>
 
-        <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={20} cascade damping={0.1}>
+        <Fade keyframes={fadeInPushDown} duration={150} triggerOnce delay={20} cascade damping={0.1}>
           <figure className={`media-container gallery-3 extra-margins ${styles['section1c-media-gallery']}`}>
             <figure className="media-wrapper lead" id={styles['section1c-lead']}>
               <div className="img-wrapper bordered" id={styles['wrapper']}>
@@ -351,37 +352,35 @@ function MainSection_Solution_Comparisons(props) {
           <strong>generally improving user control, clarity of copy and visibility of system status</strong>
           .{' '}
         </p>
-        <p className="text-margins">
-          {' '}
-          Below are some before/after comparisons to demonstrate the visual changes I singlehandedly oversaw.
-          It seems like a lot of work for one person, but every difference between these two iterations was
-          done <strong>solely</strong> by me:
-        </p>
 
         <CompCard
           compA={[
             projectMedia['/src/assets/projects/sunstop/screens/screen-landing.png'],
             compBitem1,
             compBitem2,
-            'Landing page: shows the more modern colour palette I created; plus redesigned call-to-action button; also note the persistent header clock I added',
+            'Landing page',
+            'Shows the more modern colour palette I created; plus redesigned call-to-action button; also note the persistent header clock I added',
           ]}
           compB={[
             projectMedia['/src/assets/projects/sunstop/screens/screen-login.png'],
             compCitem1,
             compCitem2,
-            'Login/signup page: added progress bar to track login process; completely rewrote copy to modern standards; note absence of about button, which I removed due to the page being printed on the kiosk itself',
+            'Login/signup page',
+            'Added progress bar to track login process; completely rewrote copy to modern standards; note absence of about button, which I removed due to the page being printed on the kiosk itself',
           ]}
           compC={[
             projectMedia['/src/assets/projects/sunstop/screens/screen-verif.png'],
             compAitem1,
             compAitem2,
-            'Verification page: designed spinner to inform user of system status; updated button sizes for tablet interactions; updated button copy for clarity',
+            'Verification page',
+            'Designed spinner to inform user of system status; updated button sizes for tablet interactions; updated button copy for clarity',
           ]}
           compD={[
             projectMedia['/src/assets/projects/sunstop/screens/screen-home-redeem.png'],
             compDitem1,
             compDitem2,
-            'Home page: made buttons more interesting; added flavour text to congratulate user; scaled up progress tracker for clarity',
+            'Home page',
+            'Made buttons more interesting; added flavour text to congratulate user; scaled up progress tracker for clarity',
           ]}
         />
 
@@ -392,7 +391,7 @@ function MainSection_Solution_Comparisons(props) {
           user details, a major issue for user control and freedom.{' '}
         </p>
 
-        <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={20} cascade damping={0.1}>
+        <Fade keyframes={fadeInPushDown} duration={150} triggerOnce delay={20} cascade damping={0.1}>
           <div className={`${styles['section2b-media-double']}`}>
             <div className={`${styles['double-media']} media-container double extra-margins`}>
               <figure className={`${styles['lead']} media-wrapper`}>
@@ -425,7 +424,7 @@ function MainSection_Solution_Comparisons(props) {
           emphasised information density, while also providing enough whitespace for readability.{' '}
         </p>
 
-        <Fade keyframes={fadeInPushDown} duration={375} triggerOnce cascade delay={20} damping={0.1}>
+        <Fade keyframes={fadeInPushDown} duration={150} triggerOnce cascade delay={20} damping={0.1}>
           <figure className={`media-container gallery-3 extra-margins ${styles['section2c-media-gallery']}`}>
             <figure className="media-wrapper lead" id={styles['section2-lead']}>
               <div className="img-wrapper bordered" id={styles['lead-wrapper']}>
@@ -492,7 +491,7 @@ function MainSection_Research(props) {
           </div>
           <div className="col-right">
             <blockquote className="col-right card green">
-              <span className={`material-symbols-sharp quote-glyph`}> format_quote </span>
+              <MatSymbol type='material-symbols-sharp' classes='quote-glyph' icon='format_quote'/>
               <span className="quote-text callout">2 in 3</span>
               <span className="quote-text desc">
                 Australians will be diagnosed with a skin cancer in their lifetimes
@@ -626,7 +625,7 @@ function MainSection_Research(props) {
           </div>
           <div className="col-right">
             <blockquote className="col-right">
-              <span className={`material-symbols-sharp quote-glyph`}> format_quote </span>
+              <MatSymbol type='material-symbols-sharp' classes='quote-glyph' icon='format_quote'/>
               <span className="quote-text desc">
                 I asked myself: how can app design promote positive habits in end users?
               </span>
@@ -661,7 +660,7 @@ function MainSection_Grad(props) {
           the results speak for themselves.{' '}
         </p>
 
-        <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={20} cascade damping={0.1}>
+        <Fade keyframes={fadeInPushDown} duration={150} triggerOnce delay={20} cascade damping={0.1}>
           <figure className={`media-container gallery-3 extra-margins ${styles['section5a-media-gallery']}`}>
             <figure className="media-wrapper lead" id={styles['section5-lead']}>
               <div className="img-wrapper bordered" id={styles['lead-wrapper']}>
@@ -767,12 +766,12 @@ function Sunstop_Main_Section1() {
         {/* Start article bulk */}
         <section className="project-sections-wrapper">
           {/* Section 1 */}
-          <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={100} cascade damping={0.1}>
+          <Fade keyframes={fadeInPushDown} duration={150} triggerOnce delay={50} cascade damping={0.1}>
             <MainSection_Solution num="1" />
           </Fade>
 
           {/* Section 2 - comparisons*/}
-          <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={100}>
+          <Fade keyframes={fadeInPushDown} duration={150} triggerOnce delay={50}>
             <MainSection_Solution_Comparisons num="2" />
           </Fade>
 
@@ -800,7 +799,7 @@ function Sunstop_Main_Section2() {
         {/* Start article bulk */}
         <section className="project-sections-wrapper">
           {/* Section 4 */}
-          <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={100} damping={0.1}>
+          <Fade keyframes={fadeInPushDown} duration={150} triggerOnce delay={50} damping={0.1}>
             {/* <hr className='extra-margins article-hr'/> */}
             <MainSection_Research num="1" />
           </Fade>

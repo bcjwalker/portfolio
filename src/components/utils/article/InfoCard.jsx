@@ -1,5 +1,8 @@
 import { useRef, useState, useEffect } from 'react'
 
+// Components
+import MatSymbol from '../MatSymbol.jsx'
+
 // Animations :)
 import { Fade } from 'react-awesome-reveal'
 import { fadeInPushUp } from '../Animations.jsx'
@@ -15,7 +18,7 @@ export default function InfoCard() {
     <>
       <div className={`${open ? null : `${styles[`closed`]}`} ${styles['project-infocard-container']}`}>
         <div className={styles['left-wrapper']}>
-          <span className={`material-symbols-rounded ${styles['icon-info']}`}> frame_inspect </span>
+          <MatSymbol type='material-symbols-rounded' classes={styles['icon-info']} icon='frame_inspect'/>
           <div className={styles['text']}>
             <h4>Image zooming</h4>
             <p>
@@ -24,7 +27,7 @@ export default function InfoCard() {
           </div>
         </div>
         <button className={`icon-btn ${styles['btn-close']}`} onClick={handleClick}>
-          <span className={`material-symbols-sharp`}> close </span>
+          <MatSymbol type='material-symbols-sharp' icon='close'/>
         </button>
       </div>
     </>

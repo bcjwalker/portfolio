@@ -2,6 +2,9 @@ import { useNavigate } from 'react-router'
 import { useState, useRef, useEffect, Suspense } from 'react'
 import { useInView } from 'react-intersection-observer'
 
+// Components
+import MatSymbol from '../utils/MatSymbol'
+
 // Animations :)
 import { Fade } from 'react-awesome-reveal'
 import { fadeInPushUp, fadeInPushDown } from './Animations.jsx'
@@ -42,7 +45,7 @@ export function RenderTab(props) {
         className={`btn-tab-wrapper icon-text-btn ${props.state} ${props.type}`}
         onClick={props.setActiveSection}>
         <div className={`tab-label`}>
-          <span className="material-symbols-rounded"> {props.icon} </span>
+          <MatSymbol type='material-symbols-rounded' icon={props.icon}/>
           <label>{props.name}</label>
         </div>
         <div className={`tab-active-bar`}></div>
@@ -58,7 +61,7 @@ export function Subnav({ children, index, activeSection, handleBackClick, tabLis
         className={`project-subhead-container ${tabListStuck ? null : `stuck`} ${headerSticky ? `active` : null}`}>
         <div className={`subnav-label-wrapper`} onClick={(e) => e.stopPropagation()}>
           <button title="Go back" className="icon-btn small nav-backbtn" onClick={handleBackClick}>
-            <span className="material-symbols-sharp"> arrow_back </span>
+            <MatSymbol type='material-symbols-sharp' icon='arrow_back'/>
           </button>
           <label> {projectData[index].title} </label>
         </div>
@@ -66,7 +69,7 @@ export function Subnav({ children, index, activeSection, handleBackClick, tabLis
         <div className="project-subnav-container">
           {/* Tab list head */}
           <div className="subnav-head-wrapper">
-            <span className="material-symbols-rounded"> article </span>
+            <MatSymbol type='material-symbols-rounded' icon='article'/>
             <label>Sections</label>
           </div>
           <div className="subnav-tablist-wrapper">
@@ -105,7 +108,7 @@ function Header(props) {
           <div className="header-main-left-wrapper">
             <div className={`header-topdtls`}>
               <button title="Go back" className="icon-btn header-backbtn" onClick={props.handleBackClick}>
-                <span className="material-symbols-sharp"> arrow_back </span>
+                <MatSymbol type='material-symbols-sharp' icon='arrow_back'/>
               </button>
               <h1
                 lang="de"
@@ -121,13 +124,13 @@ function Header(props) {
               <div className="header-metadata">
                 <div className="metadata-btns-wrapper">
                   <span className="metadata-section-label">
-                    <span className="material-symbols-rounded"> attach_file </span>
+                    <MatSymbol type='material-symbols-rounded' icon='attach_file'/>
                   </span>
                   <div className="btns-list">{RenderLinkList(props.currentProj.links)}</div>
                 </div>
                 <br />
                 <div className="metadata-tags-wrapper">
-                  <span className="material-symbols-rounded"> label </span>
+                  <MatSymbol type='material-symbols-rounded' icon='label'/>
                   <label className="metadata-year">{props.currentProj.date}</label>
                   <span className="dividing-dot">•</span>
                   {tagsList}
@@ -171,7 +174,7 @@ function RenderLinkList(props) {
       return (
         <>
           <a href={link} target="_blank" className={classList}>
-            <span className="material-symbols-rounded"> {icon} </span>
+            <MatSymbol type='material-symbols-rounded' icon={icon}/>
             <label>{props.label}</label>
           </a>
         </>
@@ -412,7 +415,7 @@ export function Article_Wrapper({
             document.getElementById('project-open-top')
               ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }>
-          <span className="material-symbols-rounded"> arrow_upward </span>
+          <MatSymbol type='material-symbols-rounded' icon='arrow_upward'/>
         </button>
       </article>
     </>

@@ -3,6 +3,9 @@ import { useState, useEffect, useRef } from 'react'
 import { Fade } from 'react-awesome-reveal'
 import { nullAnim, fadeInPushRight, fadeInPushDown } from './utils/Animations.jsx'
 
+// Components
+import MatSymbol from './utils/MatSymbol'
+
 // Styles
 import styles from './Projects.module.css'
 
@@ -30,7 +33,7 @@ function RenderCondCardFade({ children, delay, returning }) {
   if (delay == null) {
     fadeDelay = 0
   } else {
-    fadeDelay = (delay + 1) * 150
+    fadeDelay = (delay + 1) * 50
   }
 
   console.log(returning)
@@ -38,7 +41,7 @@ function RenderCondCardFade({ children, delay, returning }) {
   if (returning) {
     return (
       <>
-        <Fade keyframes={fadeInPushDown} duration={500} triggerOnce delay={fadeDelay}>
+        <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={fadeDelay}>
           {children}
         </Fade>
       </>
@@ -95,7 +98,7 @@ function RenderProjectCardTag(key, value) {
       <>
         <button
           className={`${styles['thumb-tag']} ${styles['green']} ${styles[status]} projects-card-tag tag-icontext tag-recent`}>
-          <span className="material-symbols-rounded"> {icon} </span>{' '}
+          <MatSymbol type='material-symbols-rounded' icon={icon}/>
           <label className={`${styles['tag-desc']}`}>{value}</label>
         </button>
       </>
@@ -106,7 +109,7 @@ function RenderProjectCardTag(key, value) {
       <>
         <button
           className={`${styles['thumb-tag']} ${styles['green']} projects-card-tag tag-icontext tag-links`}>
-          <span className="material-symbols-rounded"> attach_file </span>{' '}
+          <MatSymbol type='material-symbols-rounded' icon='attach_file'/>{' '}
           <label className={`${styles['tag-desc']}`}>{value}</label>
         </button>
       </>
@@ -161,7 +164,7 @@ function Projects() {
           </div>
           <div id={styles['projects-little-head-container']}>
             <div className={styles['subhead-wrapper']}>
-              <span className="material-symbols-rounded"> school </span>
+              <MatSymbol type='material-symbols-rounded' icon='school'/>
               <h2 id={styles['projects-uni-h2']} className="main-section-h2">
                 {' '}
                 University projects{' '}

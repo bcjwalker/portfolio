@@ -121,11 +121,13 @@
           border: 1px solid var(--shade-outline-1);
 
           transition: background-color 0.125s ease-out;
-          /* <= Small phone width */
-          @media screen and (width <= 499px) {
+          /* <= Phone width */
+          @media screen and (width <= 799px) {
             min-width: auto;
-            flex-direction: column;
             align-items: flex-start;
+          }
+          /* <= Small phone width */
+          @media screen and (width <= 349px) {
             gap: 0.5rem;
           }
           span {

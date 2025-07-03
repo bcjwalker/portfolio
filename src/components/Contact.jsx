@@ -1,4 +1,8 @@
 import { useState, useEffect } from 'react'
+
+// Components
+import MatSymbol from './utils/MatSymbol'
+
 // Animations :)
 import { Fade } from 'react-awesome-reveal'
 import { fadeInPushUp, fadeInPushRight, fadeInPushDown } from './utils/Animations.jsx'
@@ -27,7 +31,7 @@ function Contact() {
             {/* <p className='h1-sub'> Get in touch </p> */}
           </div>
           <div id={styles['contact-content-container']}>
-            <Fade keyframes={fadeInPushDown} duration={375} triggerOnce delay={150}>
+            <Fade keyframes={fadeInPushDown} duration={375} triggerOnce>
               <div id={styles['content-left-container']}>
                 <div id={styles['avatar-container']}>
                   <img src={imgSelfie} />
@@ -47,14 +51,14 @@ function Contact() {
               </div>
             </Fade>
             <div id={styles['content-right-container']}>
-              <Fade keyframes={fadeInPushRight} duration={500} triggerOnce delay={100} cascade damping={0.1}>
+              <Fade keyframes={fadeInPushRight} duration={500} triggerOnce cascade damping={0.1}>
                 <div id={styles['contacts-list-wrapper']}>
                   <div id={styles['contacts-formal']} className={styles['contacts-wrap']}>
                     <a
                       className={`icon-text-btn ${styles['contact-entry-wrapper']}`}
                       href="mailto:bwal9030@gmail.com"
                       target="_blank">
-                      <span className="material-symbols-rounded"> mail </span>
+                      <MatSymbol type='material-symbols-rounded' icon='mail'/>
                       <label>bwal9030@gmail.com</label>
                     </a>
                     <a

@@ -186,6 +186,7 @@
 
   /* Basic section */
   section.projects-body-section {
+    max-width: 100%;
     display: inline-block;
     margin-bottom: 4.5rem;
     /* Section titles */
@@ -404,10 +405,10 @@
   .media-container {
     figcaption {
       display: block;
-      margin: 5px 8px 0 16px;
+      padding: 5px 8px 0 16px;
       /* <= Phone width */
       @media screen and (0px <= width <= 899px) {
-        margin: 5px 8px 0 8px;
+        padding: 5px 8px 0 8px;
       }
 
       font-size: 0.85rem;
@@ -423,18 +424,42 @@
     margin: 2rem 0;
     display: flex;
     flex-direction: column;
+    &.no-margin {
+      margin: 0;
+    }
     figcaption {
       display: block;
-      margin: 5px 8px 0 16px;
+      padding: 5px 8px 0 16px;
       /* <= Phone width */
       @media screen and (0px <= width <= 899px) {
-        margin: 5px 8px 0 8px;
+        padding: 5px 8px 0 8px;
       }
 
       font-size: 0.85rem;
       color: var(--shade-card-0-text-0);
       &.nowrap {
         white-space: nowrap;
+      }
+    }
+    /* Figcaption tiered card */
+    figcaption.tiered {
+      margin-top: 4px;
+      padding: 12px 16px;
+      min-height: 41px;
+
+      border-radius: 22px 22px;
+      background-color: var(--tonal-card-0);
+      span {
+        &.caption-title {
+          display: block;
+
+          font-weight: 500;
+          line-height: 1.5rem;
+          color: var(--shade-text-3);
+        }
+        &.caption-desc {
+          color: var(--shade-card-0-text-0);
+        }
       }
     }
     &:last-child {
@@ -525,10 +550,10 @@
         }
       }
       figcaption {
-        margin: 5px 8px 0 16px;
+        padding: 5px 8px 0 16px;
         /* <= Phone width */
         @media screen and (0px <= width <= 899px) {
-          margin: 5px 8px 0 8px;
+          padding: 5px 8px 0 8px;
         }
       }
       &:nth-child(2) {
@@ -602,11 +627,11 @@
       }
     }
     figcaption {
-      margin-top: -5px;
+      padding-top: -5px;
       grid-column: span 2;
       /* <= Phone width */
       @media screen and (0px <= width <= 899px) {
-        margin: 0px 8px 0 8px;
+        padding: 0px 8px 0 8px;
       }
     }
   }

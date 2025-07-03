@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router'
 
 // Components
 import TableOfContents from './TableOfContents.jsx'
+import MatSymbol from '../MatSymbol.jsx'
 
 // Animations :)
 import { Fade } from 'react-awesome-reveal'
@@ -39,7 +40,7 @@ export function Details(props) {
             <span className="summary-label">{cardType}</span>
             <h5>{props.title}</h5>
           </div>
-          <span className="material-symbols-sharp expand-btn"> expand_less </span>
+          <MatSymbol type='material-symbols-sharp' classes='expand-btn' icon='expand_less'/>
         </summary>
         <div className="details-content-wrapper">{props.children}</div>
       </details>

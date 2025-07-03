@@ -1,5 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
 
+// Components
+import MatSymbol from '../utils/MatSymbol'
+
+// Style
+import styles from './Nav.module.css'
+
 /**
  * This tracks which section is active and adds active styling
  */
@@ -60,9 +66,9 @@ const useIntersectionObserver = (setActiveId, activeId) => {
   }, [setActiveId, activeId])
 }
 
-// Style
-import styles from './Nav.module.css'
-
+/**
+ * Nav component
+ */
 function Nav(props) {
   const [activeId, setActiveId] = useState()
   useIntersectionObserver(setActiveId, activeId)
@@ -71,8 +77,7 @@ function Nav(props) {
   // if the nav bar is closed (on hamburger button click/unclick)
   return (
     <>
-      <nav
-        id={`${styles['body-nav']}`}
+      <nav id={`${styles['body-nav']}`}
         className={`${props.readNavState ? null : `${styles['closed']} opened`} nav-dialog`}>
         {/* List of nav links for page */}
         <div id={styles['navbox']}>
@@ -84,7 +89,7 @@ function Nav(props) {
                 onClick={() =>
                   document.querySelector('a#intro')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }>
-                <span className="material-symbols-rounded"> contact_page </span>
+                <MatSymbol type='material-symbols-rounded' icon='contact_page'/>
                 <label> Intro </label>
               </button>
             </li>
@@ -94,7 +99,7 @@ function Nav(props) {
                 onClick={() =>
                   document.querySelector('a#works')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }>
-                <span className="material-symbols-rounded"> cases </span>
+                <MatSymbol type='material-symbols-rounded' icon='cases'/>
                 <label> Works </label>
               </button>
             </li>
@@ -104,18 +109,12 @@ function Nav(props) {
                 onClick={() =>
                   document.querySelector('a#contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }>
-                <span className="material-symbols-rounded"> send </span>
+                <MatSymbol type='material-symbols-rounded' icon='send'/>
                 <label> Contact </label>
               </button>
             </li>
           </ul>
         </div>
-        {/* <div id={styles['navbox-foot']} className={`${props.readNavState ? null : styles['closed']}`}>
-                <button title="Toggle margin size" className={`icon-btn outline-btn`} id={styles['nav-expand-btn']} onClick={props.switchNavOpen}> 
-                    <span className={`material-symbols-rounded ${styles['nav-expand-btn-icon']}`}> {`${props.readNavState ? `expand` : `compress` }`} </span> 
-                    <label>{`${props.readNavState ? `` : `` }`}</label>
-                </button>
-            </div> */}
       </nav>
     </>
   )

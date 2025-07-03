@@ -10,6 +10,16 @@
   animation-timing-function: ease-out;
 }
 
+/* Skeleton flashing for load */
+@keyframes skeleton-loading {
+  0% {
+    background-color: var(--shade-base-5);
+  }
+  100% {
+    background-color: var(--shade-base-2);
+  }
+}
+
 /* Project card anims */
 ::view-transition-image-pair(post-card-sunstop) {
   isolation: auto;
@@ -163,18 +173,16 @@
 
 /* Page fade in */
 #site-container {
-  opacity: 0;
-  animation: fadeIn 0.275s ease-out 0.25s forwards;
   nav {
     opacity: 0;
-    animation: fadeInPushRight 0.4s ease-out 0.25s forwards;
+    animation: fadeInPushRight 0.325s ease-out forwards;
   }
   aside {
     opacity: 0;
-    animation: fadeIn 0.275s ease-out 0.275s forwards;
+    animation: fadeIn 0.375s ease-out 0.125s forwards;
   }
   #main-projects-container {
     opacity: 0;
-    animation: fadeIn 0.274s ease-out 1.125s forwards;
+    animation: fadeIn 0.275s ease-out 0.25s forwards;
   }
 }

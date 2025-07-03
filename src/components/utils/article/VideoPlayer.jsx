@@ -1,4 +1,8 @@
 import { useRef, useState, useEffect } from 'react'
+
+// Components
+import MatSymbol from '../MatSymbol.jsx'
+
 // Animations :)
 import { Fade } from 'react-awesome-reveal'
 import { fadeInPushDown } from '../Animations.jsx'
@@ -195,14 +199,14 @@ function VideoPlayerDesktop({ children, margins, id, audio, type, caption, title
             </div>
             <div className={styles['buttons-wrapper']}>
               <button className={`icon-btn toned-btn ${styles[`btn-stop`]}`} onClick={handleStopClick}>
-                <span className="material-symbols-rounded">{`${play ? `pause` : `play_arrow`}`}</span>
+                <MatSymbol type='material-symbols-rounded' icon={`${play ? `pause` : `play_arrow`}`}/>
               </button>
               {/* Draw audio button if video has sound */}
               {audio ? (
                 <button
                   className={`icon-btn outline-btn outline-1 ${styles[`btn-audio`]}`}
                   onClick={handleAudioClick}>
-                  <span className="material-symbols-rounded">{`${muted ? `volume_off` : `volume_up`}`}</span>
+                  <MatSymbol type='material-symbols-rounded' icon={`${muted ? `volume_off` : `volume_up`}`}/>
                 </button>
               ) : null}
               <div className={styles['btn-slider']}>
@@ -225,7 +229,7 @@ function VideoPlayerDesktop({ children, margins, id, audio, type, caption, title
                 </div>
               </div>
               <button className={`icon-btn ${styles[`btn-fullscreen`]}`} onClick={toggleFullScreen}>
-                <span className="material-symbols-rounded">fullscreen</span>
+                <MatSymbol type='material-symbols-rounded' icon='fullscreen'/>
               </button>
             </div>
           </div>

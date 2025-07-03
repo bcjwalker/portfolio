@@ -1,7 +1,37 @@
-/* Import Readex Pro and Outfit */
+/* Default font: Outfit */
 * {
   font-family: 'Outfit', sans-serif;
   color: var(--shade-text-1);
+}
+
+/* All material symbols */
+span.material-symbols-rounded,
+span.material-symbols-sharp {
+  font-size: 1.65rem;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' 0;
+  font-optical-sizing: auto;
+  color: var(--shade-text-1);
+  user-select: none;
+}
+span.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded';
+}
+span.material-symbols-sharp {
+  font-family: 'Material Symbols Sharp';
+}
+/* MS skeleton placeholder */
+.material-symbols-skeleton {
+  width: 1.65rem;
+  height: 1.65rem;
+
+  border-radius: 8px;
+  background-color: var(--shade-base-5);
+  mix-blend-mode: luminosity;
+  
+  animation: skeleton-loading 0.5s ease-out infinite alternate;
 }
 
 /* Headings */
