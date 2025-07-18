@@ -49,7 +49,7 @@ function Intro() {
             </label> */}
             <h3 className={styles['intro-titles-role']}>
               {' '}
-              UI+UX <br /> Designer{' '}
+              Product <br /> Designer{' '}
             </h3>
             {/* <p id={styles['intro-titles-role-add']} className={styles['intro-titles-desc']}>
               /front-end web dev

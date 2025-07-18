@@ -148,6 +148,7 @@
           a {
             font-variation-settings: 'wght' 550;
             color: var(--shade-text-3);
+            /* <= Tablet size */
             @media screen and (0px <= width <= 1425px) {
               font-variation-settings: 'wght' 400;
               color: var(--shade-card-0-text-0);
@@ -188,10 +189,14 @@
   section.projects-body-section {
     max-width: 100%;
     display: inline-block;
-    margin-bottom: 4.5rem;
+    margin-bottom: 2rem;
+    /* <= Small phone size */
+    @media screen and (0px <= width <= 499px) {
+      margin-bottom: 1rem;
+    }
     /* Section titles */
     h2 {
-      margin-bottom: 1rem;
+      margin-top: 0.5rem;
       scroll-margin-top: 180px;
     }
     /* Extra spacing for h2 if h3 follows */
@@ -232,37 +237,40 @@
 
     /* Basic lists */
     ul {
-      margin: 1rem 0;
-
       list-style-type: '⬩';
       padding-left: 1.25rem;
       list-style-position: inside;
       font-weight: inherit;
       font-size: inherit;
+      /* <= Small phone size */
+      @media screen and (0px <= width <= 499px) {
+        padding-left: 1rem;
+      }
       /* Extra padding if header follows */
       &:has(+ h3, h2) {
-        padding-bottom: 1.5rem;
-      }
-      li:not(:last-child) {
-        margin-block-end: 1rem;
+        padding-bottom: 1rem;
       }
       li {
+        margin: 0.5rem 0;
         padding-left: 0.625rem;
-        font-weight: 400;
-        font-size: 1.05rem;
-        line-height: 1.55rem;
         list-style-position: outside;
         color: var(--shade-text-1);
-        strong {
-          padding: 0 0;
-          /* border-radius: 2px; */
-          /* background-color: var(--shade-base-1); */
-          color: var(--shade-text-1);
-          font-weight: 600;
-          letter-spacing: 0.005ch;
-          /* &.special {
-                        font-weight: 650;
-                    } */
+        /* <= Small phone size */
+        @media screen and (0px <= width <= 499px) {
+          margin: 0.25rem 0;
+          padding-left: 0.625rem;
+        }
+        p {
+          margin: 0;
+          font-weight: 400;
+          strong {
+            padding: 0 0;
+            /* border-radius: 2px; */
+            /* background-color: var(--shade-base-1); */
+            color: var(--shade-text-1);
+            font-weight: 600;
+            letter-spacing: 0.005ch;
+          }
         }
       }
       li::marker {
@@ -278,7 +286,7 @@
     display: flex;
     gap: 32px;
     /* Small phone layout */
-    @media screen and (0px <= width <= 599px) {
+    @media screen and (0px <= width <= 499px) {
       display: block;
     }
     /* Left column always contains text */
@@ -296,12 +304,13 @@
         border-radius: 0 16px 16px 16px;
         border-left: 2px solid var(--shade-outline-4);
         /* Small phone layout */
-        @media screen and (0px <= width <= 599px) {
+        @media screen and (0px <= width <= 499px) {
           max-width: 100%;
         }
         * {
           color: var(--shade-text-3);
         }
+        /* Quotation mark symbol */
         .quote-glyph {
           display: block;
           text-align: right;
@@ -313,11 +322,13 @@
           font-variation-settings: 'FILL' 1;
           transform: rotateY(180deg);
           /* Small phone layout */
-          @media screen and (0px <= width <= 599px) {
-            font-size: 2.25rem;
-            line-height: 1.375rem;
+          @media screen and (0px <= width <= 499px) {
+            margin-bottom: 0.75rem;
+            font-size: 1.75rem;
+            line-height: 1rem;
           }
         }
+        /* Text */
         .quote-text {
           strong {
             color: var(--tonal-card-0-text-1);
@@ -334,7 +345,7 @@
             font-size: 2.75rem;
             line-height: 2.75rem;
             /* Small phone layout */
-            @media screen and (0px <= width <= 599px) {
+            @media screen and (0px <= width <= 499px) {
               font-size: 2.25rem;
               line-height: 3rem;
             }
@@ -346,9 +357,9 @@
             letter-spacing: -0.01ch;
             line-height: 1.4rem;
             /* Small phone layout */
-            @media screen and (0px <= width <= 599px) {
-              font-size: 1.25rem;
-              line-height: 1.825rem;
+            @media screen and (0px <= width <= 499px) {
+              font-size: 1rem;
+              line-height: 1.5rem;
             }
           }
         }
@@ -462,9 +473,9 @@
         }
       }
     }
-    &:last-child {
+    /* &:last-child {
       margin: 48px 0 0px 0;
-    }
+    } */
     /* Types */
     .img-wrapper {
       display: flex;
@@ -532,6 +543,10 @@
     @media screen and (0px <= width <= 899px) {
       display: block;
     }
+    /* <= Small phone size */
+    @media screen and (0px <= width <= 499px) {
+      margin: 1.5rem 0;
+    }
     .media-wrapper {
       margin: 0;
       .img-wrapper {
@@ -573,6 +588,7 @@
     gap: 10px;
     /* <= Phone width */
     @media screen and (0px <= width <= 899px) {
+      margin: 1.5rem 0;
       gap: 5px;
     }
     .media-wrapper {

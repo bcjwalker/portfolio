@@ -193,16 +193,16 @@ function MainSection_Solution(props) {
         </p>
         <ul className="text-margins">
           <li>
-            <strong>Franchise Sunstop kiosks</strong> for external organisations, who could implement targeted
-            rewards for their specific target users;
+            <p><strong>Franchise Sunstop kiosks</strong> for external organisations, who could implement targeted
+            rewards for their specific target users</p>
           </li>
           <li>
-            <strong>A rotating set of rewards</strong> that would change throughout the year, potentially
-            giving the service a sense of <strong>FOMO</strong>;
+            <p><strong>A rotating set of rewards</strong> that would change throughout the year, potentially
+            giving the service a sense of <strong>FOMO</strong></p>
           </li>
           <li>
-            And <strong>seasonal collaborations</strong> with popular brands, possibly featuring coupons as
-            rewards.
+            <p>And <strong>seasonal collaborations</strong> with popular brands, possibly featuring coupons as
+            rewards</p>
           </li>
         </ul>
 
@@ -583,16 +583,16 @@ function MainSection_Research(props) {
         </p>
         <ul className="text-margins">
           <li>
-            <strong>Rayminder:</strong> A social media platform based around sunscreen application 'nudges'
-            for your friends
+            <p><strong>Rayminder:</strong> A social media platform based around sunscreen application 'nudges'
+            for your friends</p>
           </li>
           <li>
-            <strong>SkinRay:</strong> A marketing campaign for sunscreen via public screens equipped with
+            <p><strong>SkinRay:</strong> A marketing campaign for sunscreen via public screens equipped with
             camera tech, simulating what the user might look like in the future without adequate sun
-            protection
+            protection</p>
           </li>
           <li>
-            <strong>UVGo:</strong> an interactive kiosk for easily dispensing sunscreen
+            <p><strong>UVGo:</strong> an interactive kiosk for easily dispensing sunscreen</p>
           </li>
         </ul>
         <p className="text-margins">
@@ -708,10 +708,10 @@ function MainSection_Skills(props) {
         <p className="text-margins">Sunstop presented me with two new challenges:</p>
         <ul className="text-margins">
           <li>
-            Designing for a <strong>tablet interface</strong>
+            <p>Designing for a <strong>tablet interface</strong></p>
           </li>
           <li>
-            Coding with <strong>React.js</strong>
+            <p>Coding with <strong>React.js</strong></p>
           </li>
         </ul>
         <p className="text-margins">

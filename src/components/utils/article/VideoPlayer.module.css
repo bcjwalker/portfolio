@@ -6,6 +6,10 @@
   background-color: var(--shade-base-0);
   border: 1px solid var(--shade-outline-3);
   border-radius: 22px;
+  /* <= Phone size */
+  @media screen and (0px <= width <= 899px) {
+    border-radius: 12px;
+  }
   .header-container {
     display: none;
     margin: 12px 16px 0px 16px;
@@ -124,8 +128,6 @@
 }
 
 .video-player-figcaption {
-  margin: 5px 0 0 16px;
-
   color: var(--shade-card-0-text-0);
   font-size: 0.85rem;
 }
