@@ -1,12 +1,13 @@
 // Components
 import MatSymbol from '../utils/MatSymbol'
+import Aside from '../App/Aside';
 
 // Style
 import styles from './Header.module.css'
 import { useState, useEffect } from 'react'
 
 // Imgs
-import imgSignHead from '../../assets/img-my-signature-head.png'
+import imgSignHead from '../../assets/img-favicon-head.png'
 
 function Header({ switchNavOpen }) {
   // Lovely scroll tracking from https://stackoverflow.com/questions/62497110/detect-scroll-direction-in-react-js/62497293#62497293
@@ -55,8 +56,10 @@ function Header({ switchNavOpen }) {
           <MatSymbol type='material-symbols-sharp' icon='menu'/>
         </button>
         <div id={styles['header-headline-wrapper']}>
-          <img className={styles['headline-icon']} src={imgSignHead} />
-          <p className={styles['headline-text']}> Benjamin Walker </p>
+          <div id={styles['headline-icon-wrapper']}>
+            <img className={styles['headline-icon']} src={imgSignHead} />
+          </div>
+          <Aside dialogType={true}/>
         </div>
       </header>
     </>

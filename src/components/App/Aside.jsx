@@ -9,6 +9,7 @@ import styles from './Aside.module.css'
 
 // Imgs
 import imgSelfie from '../../assets/img-me2025.png'
+import imgSelfieSmall from '../../assets/img-me2025-small.png'
 import pdfResume from '../../assets/BCJWalker_2025_Resume.pdf'
 
 function Aside(props) {
@@ -76,9 +77,8 @@ function Infobox(props) {
           <button
             id={styles['aside-infobox-btn']}
             onClick={handleAsideUpdate}
-            className={`icon-text-btn prmry-btn ${asideOpen ? null : `${styles['closed']}`} ${props.dialogType ? styles['aside-infobox-dialog-btn'] : null}`}>
-            <label>Read all about me</label> 
-            <MatSymbol type='material-symbols-sharp' icon='expand_content'/>
+            className={`${asideOpen ? null : `${styles['closed']}`} ${props.dialogType ? styles['aside-infobox-dialog-btn'] : null}`}>
+            <img className={styles['infobox-btn-img']} src={imgSelfieSmall} />
           </button>
         </div>
       </div>

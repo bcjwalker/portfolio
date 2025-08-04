@@ -5,7 +5,7 @@
   justify-content: center;
   /* Names holds signature and print name */
   #intro-titles-names {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     height: auto;
     display: flex;
     flex-direction: column;

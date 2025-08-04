@@ -2,9 +2,6 @@ import { useState, useRef, useEffect } from 'react'
 import ScrollingText from 'web-scrolling-text/react'
 // import { MeshGradient } from '@blur-ui/mesh-gradient';
 
-// Components
-import Aside from './App/Aside';
-
 // Style
 import styles from './Intro.module.css';
 
@@ -48,16 +45,14 @@ function Intro() {
               <span className={`${styles['location-pin']} material-symbols-rounded`}> home_pin </span>
             </label> */}
             <h3 className={styles['intro-titles-role']}>
-              {' '}
-              Product <br /> Designer{' '}
+              UI+UX <br/> Designer
             </h3>
             {/* <p id={styles['intro-titles-role-add']} className={styles['intro-titles-desc']}>
               /front-end web dev
             </p> */}
             <p className={styles['intro-titles-desc']}>
-              Recent <strong>Design Computing</strong> graduate from the <strong>University of Sydney</strong>
+              Highly-skilled <strong>Design Computing</strong> graduate from the <strong>University of Sydney</strong>
             </p>
-            <Aside dialogType={true}/>
           </div>
         </div>
 

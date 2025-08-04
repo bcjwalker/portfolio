@@ -137,15 +137,11 @@ aside {
 @media screen and (width <= 1425px) {
   #infobox-btn-wrapper {
     display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
+    .infobox-btn-img {
+      height: 44px;
+    }
   }
   #aside-infobox-btn-container {
-    margin: 16px 0 4px 10px;
-    /* width: 100%; */
-    /* display: flex; */
-    /* justify-content: center; */
-
     border: none;
     .aside-infobox-dialog-btn {
       /* width: 100%; */

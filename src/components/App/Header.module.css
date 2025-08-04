@@ -4,44 +4,44 @@ header {
   top: 0;
   display: flex;
   align-items: center;
-  height: 64px;
-  padding-left: 32px;
+  height: 56px;
+  padding-right: 12px;
   z-index: 10;
 
   font-size: 2vmin;
   /* backdrop-filter: blur(2px); */
   background-color: var(--shade-base-1);
-  /* >= Phone size, hide */
-  @media screen and (width >= 899px) {
+  /* Hide for desktop users, show for tablet + phone dimensions */
+  @media screen and (width >= 1425px) {
     display: none;
   }
   * {
     color: var(--shade-text-0);
   }
+  /* Wrapper for signature img  */
   #header-headline-wrapper {
-    /* padding-bottom: 4px;
-        display: flex;
-        align-items: center; */
-    .headline-icon {
-      padding: 16px;
-      width: auto;
-      height: 52px;
-      /* padding-right: 1rem;
-            margin-right: 1rem; */
-
-      opacity: 0.95;
-      background-color: var(--shade-base-2);
-      border-radius: 48px;
-      overflow: visible;
-      /* border-right: 1px solid var(--shade-outline-4); */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    #headline-icon-wrapper {
+      width: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* <= Phone size */
+      @media screen and (0px <= width <= 899px) {
+        width: auto;
+        display: block
+      }
     }
-    .headline-text {
-      display: none;
-      font-family: 'Readex Pro', sans-serif;
+    /* Signature img */
+    .headline-icon {
+      width: 48px;
+      height: 48px;
 
-      font-weight: 400;
-      font-size: 0.85rem;
-      color: var(--shade-text-5);
+      opacity: 0.85;
+      /* border-right: 1px solid var(--shade-outline-4); */
     }
   }
 }
@@ -85,7 +85,7 @@ header {
     transition:
       transform 0.15s ease-out,
       opacity 0.2s;
-    @media screen and (0px <= width <= 899px) {
+    @media screen and (0px <= width <= 1425px) {
       opacity: 1;
       transform: translateY(0px);
     }
