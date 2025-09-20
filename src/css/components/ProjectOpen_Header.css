@@ -35,7 +35,7 @@
   z-index: 1;
   border-radius: 38px 38px 0 0;
   /* background-color: var(--shade-base-3); */
-  border-bottom: 4px solid var(--shade-base-0);
+  border-bottom: 1px solid var(--shade-outline-2);
   background: var(--grad-theme);
 
   .header-main {
@@ -420,7 +420,7 @@ summary.project-overview-cards-wrapper {
   padding: 0 var(--header-side-padding);
 
   position: sticky;
-  top: 64px;
+  top: 0px;
   z-index: 1;
 
   background-color: var(--shade-base-2);
@@ -428,8 +428,8 @@ summary.project-overview-cards-wrapper {
   border-radius: 0 0 24px 24px;
   transition: background-color 0.125s;
   /* >= Phone size, ignore header height */
-  @media screen and (width >= 899px) {
-    top: 0;
+  @media screen and (899px <= width <= 1425px) {
+    top: 56px;
   }
   .subnav-label-wrapper {
     display: flex;
@@ -621,12 +621,12 @@ summary.project-overview-cards-wrapper {
 
   .subnav-label-wrapper {
     gap: 6px;
-    padding: 12px;
+    padding: 12px 4px;
     margin-top: 4px;
-    max-width: 190px;
+    max-width: 180px;
     content-visibility: visible;
 
-    border-radius: 16px 0 0 16px;
+    border-radius: 16px;
     box-shadow: var(--drop-shadow-1);
     transition:
       max-width 0.125s ease-out,
@@ -637,7 +637,7 @@ summary.project-overview-cards-wrapper {
     margin-top: 4px;
     flex-basis: 100%;
 
-    border-radius: 0 16px 16px 0;
+    border-radius: 16px;
     overflow: hidden;
     background-color: var(--shade-base-2);
     box-shadow: var(--drop-shadow-1);
@@ -682,7 +682,7 @@ summary.project-overview-cards-wrapper {
   @media screen and (0px <=width <=899) {
     width: auto;
     margin: 0 8px;
-    top: 68px;
+    top: 60px;
     gap: 0;
     border-radius: 16px;
     overflow: hidden;

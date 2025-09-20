@@ -59,30 +59,45 @@ function RenderProjectCard(props, index, returningCheck) {
   for (const [key, value] of Object.entries(tagsProps)) {
     tagsList.push(RenderProjectCardTag(key, value))
   }
+  let tagsListCallout = []
+  for (const [key, value] of Object.entries(tagsProps)) {
+    tagsListCallout.push(RenderProjectCardTag(key, value, 'callout'))
+  }
 
   return (
     <>
       <RenderCondCardFade delay={index} returning={returningCheck}>
         <Link
-          className={`${styles['projects-card']}`}
-          key={props.id}
-          to={`/projects/${props.dir}`}
-          viewTransition
-          style={{ viewTransitionName: `post-card-${props.dir}` }}>
-          <div className={styles['projects-card-thumb']}>
-            <div className={styles['card-details-meta-container']}>
-              <div className={`projects-card-tag ${styles['details-year']} ${styles['thumb-tag']}`}>
-                <label>{props.date}</label>
+          className={`${styles['project-card-container']}`}
+          style={{ viewTransitionName: `post-card-${props.dir}` }} key={props.id}
+          to={`/projects/${props.dir}`} viewTransition>
+
+          {/* Thumb wrapper with image and tags */}
+          <div className={styles['card-thumb-wrapper']}>
+            {/* At the top of the thumb, draw little metadata tags */}
+            <div className={styles['thumb-taglist-wrapper']}>
+              {/* Year + info */}
+              <div className={styles['taglist']}>
+                <div className={`card-tag ${styles['details-year']} ${styles['thumb-tag']}`}>
+                  <label>{props.date}</label>
+                </div>
+                {tagsList}
               </div>
-              <div className={styles['details-taglist-wrapper']}>{tagsList}</div>
+              {/* Callouts */}
+              <div className={styles['taglist']}>
+                {tagsListCallout}
+              </div>
             </div>
-            <img className={styles['projects-card-thumb-img']} src={projectImgs[props.thumb]} />
+            {/* Thumb img */}
+            <img className={styles['thumb-img']} src={projectImgs[props.thumb]} />
           </div>
-          <div className={styles['projects-card-details-container']}>
-            <div className={styles['projects-card-details-title']}>
+
+          {/* Details text */}
+          <div className={styles['card-details-wrapper']}>
+            <div className={styles['details-title']}>
               <h3 style={{ viewTransitionName: `post-title-${props.dir}` }}> {props.title} </h3>
             </div>
-            <span className={styles['projects-card-details-desc']}> {props.desc} </span>
+            <span className={styles['details-desc']}> {props.desc} </span>
           </div>
         </Link>
       </RenderCondCardFade>
@@ -90,31 +105,42 @@ function RenderProjectCard(props, index, returningCheck) {
   )
 }
 // Simple tag component
-function RenderProjectCardTag(key, value) {
-  if (key == 'recent') {
-    let icon = value == 'New' ? 'star' : 'construction'
-    let status = value == 'WIP' ? 'force-open' : null
-    return (
-      <>
-        <button
-          className={`${styles['thumb-tag']} ${styles['green']} ${styles[status]} projects-card-tag tag-icontext tag-recent`}>
-          <MatSymbol type='material-symbols-rounded' icon={icon}/>
-          <label className={`${styles['tag-desc']}`}>{value}</label>
-        </button>
-      </>
-    )
+// Key = tag | Value = tag text | Type = metadata type (left/right end of wrapper)
+function RenderProjectCardTag(key, value, type) {
+  let colour;
+  let icon;
+  let status;
+
+  // Type is either:
+  // null (default, left of tag wrapper)
+  if (type !== 'callout') {
+    if (key == 'recent') {
+      return;
+    }
+    if (key == 'links') {
+      icon='open_in_new'
+    }
   }
-  if (key == 'links') {
-    return (
-      <>
-        <button
-          className={`${styles['thumb-tag']} ${styles['green']} projects-card-tag tag-icontext tag-links`}>
-          <MatSymbol type='material-symbols-rounded' icon='attach_file'/>{' '}
-          <label className={`${styles['tag-desc']}`}>{value}</label>
-        </button>
-      </>
-    )
+  // callout (right of tag wrapper)
+  if (type == 'callout') {
+    colour = 'green';
+    if (key == 'links') {
+      return; 
+    }
+    if (key == 'recent') {
+      icon = value == 'New' ? 'star' : 'construction'
+      status = value == 'WIP' ? 'force-open' : null
+    }
   }
+  return (
+    <>
+      <button
+        className={`${styles['thumb-tag']} ${colour} ${styles[status]} card-tag tag-icontext tag-links`}>
+        <MatSymbol type='material-symbols-rounded' icon={icon}/>{' '}
+        <label className={`${styles['tag-desc']}`}>{value}</label>
+      </button>
+    </>
+  )
 }
 
 function Projects() {

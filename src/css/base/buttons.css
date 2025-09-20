@@ -145,7 +145,7 @@ button.outline-btn {
 a.overlay-btn,
 button.overlay-btn {
   background-color: hsla(042, 10%, 10%, 0.625);
-  * {
+  span {
     color: var(--shade-base-4);
   }
   &:hover {

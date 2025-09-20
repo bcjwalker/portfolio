@@ -51,7 +51,7 @@ function Intro() {
               /front-end web dev
             </p> */}
             <p className={styles['intro-titles-desc']}>
-              Highly-skilled <strong>Design Computing</strong> graduate from the <strong>University of Sydney</strong>
+              <strong>Design Computing</strong> graduate from the <strong>University of Sydney</strong>
             </p>
           </div>
         </div>

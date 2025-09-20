@@ -32,7 +32,7 @@ header {
       /* <= Phone size */
       @media screen and (0px <= width <= 899px) {
         width: auto;
-        display: block
+        display: block;
       }
     }
     /* Signature img */
@@ -40,7 +40,7 @@ header {
       width: 48px;
       height: 48px;
 
-      opacity: 0.85;
+      opacity: 0.875;
       /* border-right: 1px solid var(--shade-outline-4); */
     }
   }

@@ -124,7 +124,7 @@ function Header(props) {
               <div className="header-metadata">
                 <div className="metadata-btns-wrapper">
                   <span className="metadata-section-label">
-                    <MatSymbol type='material-symbols-rounded' icon='attach_file'/>
+                    <MatSymbol type='material-symbols-rounded' icon='open_in_new'/>
                   </span>
                   <div className="btns-list">{RenderLinkList(props.currentProj.links)}</div>
                 </div>

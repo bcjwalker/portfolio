@@ -86,8 +86,8 @@ a.anchor {
   position: relative;
   top: -64px;
   visibility: hidden;
-  /* >= Phone size, ignore header height on all except intro */
-  @media screen and (width >= 899px) {
+  /* >= Tablet size, ignore header height on all except intro */
+  @media screen and (width >= 1425px) {
     top: 0;
     &#intro {
       top: -64px;

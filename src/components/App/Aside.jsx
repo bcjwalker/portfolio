@@ -30,13 +30,15 @@ function Infobox(props) {
     updateAsideOpen((asideOpen) => !asideOpen)
   };
 
-  useEffect(() => {
-    if (sessionStorage.getItem('is_first_visit') != 'false') {
-      setTimeout(() => {
-        updateAsideOpen(true)
-      }, 650)
-    }
-  });
+  // UNDONE: Die silly effect
+  // Delayed aside-opening on first visit
+  // useEffect(() => {
+  //   if (sessionStorage.getItem('is_first_visit') != 'false') {
+  //     setTimeout(() => {
+  //       updateAsideOpen(true)
+  //     }, 650)
+  //   }
+  // });
 
   return (
     <>

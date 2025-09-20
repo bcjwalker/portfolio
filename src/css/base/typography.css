@@ -186,7 +186,7 @@ hr.article-hr {
 }
 
 /* Tag */
-.projects-card-tag {
+.card-tag {
   display: flex;
   align-items: center;
   padding: 4px;
@@ -205,6 +205,7 @@ hr.article-hr {
     white-space: nowrap;
     overflow: hidden;
   }
+  /* Types */
   &.tag-icontext {
     padding: 4px 2px;
     gap: 2px;
@@ -218,11 +219,11 @@ hr.article-hr {
       font-variation-settings: 'FILL' 1;
     }
   }
-  &.tag-recent,
-  &.tag-links {
-    background-color: var(--green-card-1);
+  /* Colours */
+  &.green {
+        background-color: var(--green-card-1);
     * {
-      color: var(--green-card-1-text-2);
+      color: var(--green-card-1-text-1);
     }
   }
 }
